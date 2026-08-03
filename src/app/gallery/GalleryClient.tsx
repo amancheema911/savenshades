@@ -167,7 +167,7 @@ function Lightbox({
           </div>
         </div>
 
-        <div className="relative aspect-[16/11] overflow-hidden rounded-[1.25rem] bg-[#0B1120] ring-1 ring-white/10 sm:rounded-[1.5rem]">
+        <div className="relative aspect-[16/11] overflow-hidden rounded-[1.25rem] bg-[#05070b] ring-1 ring-white/10 sm:rounded-[1.5rem]">
           <Image
             src={item.image}
             alt={item.imageAlt}
@@ -368,7 +368,7 @@ export default function GalleryClient() {
                     onKeyDown={(event) => onFilterKeyDown(event, index)}
                     className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-color)] ${
                       active
-                        ? "bg-[#0B1120] text-white shadow-[0_8px_20px_rgba(11,17,32,0.2)]"
+                        ? "bg-[#05070b] text-white shadow-[0_8px_20px_rgba(11,17,32,0.2)]"
                         : "bg-white text-black/55 ring-1 ring-black/8 hover:text-[#0B1120]"
                     }`}
                   >

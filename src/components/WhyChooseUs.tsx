@@ -197,7 +197,7 @@ export default function WhyChooseUs() {
             </p>
             <Link
               href="/gallery"
-              className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-[#0B1120] px-6 py-3.5 text-sm font-semibold text-white transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
+              className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-[#05070b] px-6 py-3.5 text-sm font-semibold text-white transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
             >
               See The Difference
               <ArrowIcon />

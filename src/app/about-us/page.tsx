@@ -318,7 +318,7 @@ export default function AboutUsPage() {
                   </div>
                 </div>
 
-                <div className="absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-[#0B1120]/75 px-4 py-3 backdrop-blur-md sm:bottom-7 sm:left-7 sm:px-5 sm:py-3.5">
+                <div className="absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-[#05070b]/75 px-4 py-3 backdrop-blur-md sm:bottom-7 sm:left-7 sm:px-5 sm:py-3.5">
                   <p className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
                     Est. 2014
                   </p>

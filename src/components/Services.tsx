@@ -122,7 +122,7 @@ export default function Services() {
               onClick={() => scrollByCard("prev")}
               disabled={!canPrev}
               aria-label="Previous services"
-              className="inline-flex size-11 items-center justify-center rounded-full border border-black/10 bg-white text-[#0B1120] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition-[transform,background-color,opacity] hover:bg-[#0B1120] hover:text-white active:scale-95 disabled:pointer-events-none disabled:opacity-35"
+              className="inline-flex size-11 items-center justify-center rounded-full border border-black/10 bg-white text-[#0B1120] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition-[transform,background-color,opacity] hover:bg-[#05070b] hover:text-white active:scale-95 disabled:pointer-events-none disabled:opacity-35"
             >
               <ChevronLeftIcon />
             </button>
