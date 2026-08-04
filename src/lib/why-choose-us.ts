@@ -57,12 +57,12 @@ export const whyChooseFeatures: WhyChooseFeature[] = [
     description: "Simple to clean",
     icon: "maintenance",
   },
-  {
-    id: "slip-resistant",
-    title: "Slip Resistant",
-    description: "Safer for every environment",
-    icon: "slip",
-  },
+  // {
+  //   id: "slip-resistant",
+  //   title: "Slip Resistant",
+  //   description: "Safer for every environment",
+  //   icon: "slip",
+  // },
   {
     id: "custom-finishes",
     title: "Custom Finishes",

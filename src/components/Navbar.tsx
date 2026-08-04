@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
+import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
   { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/our-work", label: "Our Work" },
   { href: "/contact-us", label: "Contact Us" },
 ];
 
@@ -58,27 +59,6 @@ function LogoMark() {
           <stop offset="1" stopColor="#6B4F0E" />
         </linearGradient>
       </defs>
-    </svg>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M5 12H19M19 12L12 5M19 12L12 19"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
     </svg>
   );
 }
@@ -209,14 +189,10 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-3 sm:gap-4">
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-color)] px-3.5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(107,79,14,0.35)] transition-[transform,filter,box-shadow] hover:brightness-110 hover:shadow-[0_10px_28px_rgba(107,79,14,0.45)] active:scale-[0.98] sm:px-5"
-            >
+            <Button href="/contact-us" size="sm" className="max-[399px]:pl-3.5">
               <span className="hidden min-[400px]:inline">Get Free Quote</span>
               <span className="min-[400px]:hidden">Quote</span>
-              <ArrowIcon />
-            </Link>
+            </Button>
 
             <button
               type="button"
@@ -293,14 +269,13 @@ export default function Navbar() {
         </ul>
 
         <div className="border-t border-white/10 p-4">
-          <Link
+          <Button
             href="/contact-us"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(145deg,#C9A84B_0%,#B8860B_48%,#6B4F0E_100%)] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(107,79,14,0.35)] transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
+            fullWidth
             onClick={() => setMenuOpen(false)}
           >
             Get Free Quote
-            <ArrowIcon />
-          </Link>
+          </Button>
         </div>
       </aside>
     </header>

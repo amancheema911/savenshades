@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 const CTA_PERKS = [
   "100% Free Estimate",
@@ -8,29 +9,10 @@ const CTA_PERKS = [
   "Satisfaction Guaranteed",
 ] as const;
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function CalendarIcon() {
   return (
-    <svg
+    <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/80 bg-white/30 text-white transition-transform duration-300 group-hover:scale-105 size-10 sm:size-11">
+      <svg
       width="16"
       height="16"
       viewBox="0 0 24 24"
@@ -60,6 +42,7 @@ function CalendarIcon() {
         strokeLinejoin="round"
       />
     </svg>
+    </span>
   );
 }
 
@@ -116,16 +99,10 @@ export default function CallToAction() {
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <Button href="/contact-us">Get Free Quote</Button>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand-color)] px-6 py-3.5 text-sm font-bold tracking-wide text-white uppercase transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
-                >
-                  Get Free Quote
-                  <ArrowIcon />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/80 bg-transparent px-6 py-3.5 text-sm font-bold tracking-wide text-white uppercase transition-colors hover:bg-white/10 active:scale-[0.98]"
+                  href="/contact-us"
+                  className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
                 >
                   Schedule Consultation
                   <CalendarIcon />

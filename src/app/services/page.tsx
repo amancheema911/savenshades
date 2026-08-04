@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import Button from "@/components/ui/Button";
 import { services, type ServiceIcon } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -9,6 +10,28 @@ export const metadata: Metadata = {
   description:
     "Explore Floorix epoxy flooring services including garage, commercial, industrial, metallic, flake, quartz, and decorative systems.",
 };
+
+function ArrowUpRightIcon({ size = 18 }: { size?: number }) {
+  return (
+    <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/80 bg-white/30 text-white transition-transform duration-300 group-hover:scale-105 size-10 sm:size-11">
+      <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M7 17 17 7M9 7h8v8"
+        stroke="currentColor"
+        strokeWidth="2.1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+    </span>
+  );
+}
 
 const servicePerks = [
   {
@@ -196,20 +219,13 @@ export default function ServicesPage() {
                 designed for results that look intentional, not temporary.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
-                <Link
-                  href="/contact-us"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--brand-color)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(184,134,11,0.35)] transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
-                >
-                  Get Free Quote
-                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                    <ArrowIcon />
-                  </span>
-                </Link>
+                <Button href="/contact-us">Get Free Quote</Button>
                 <Link
                   href="#all-services"
-                  className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/50 hover:bg-white/10 active:scale-[0.98]"
+                  className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
                 >
                   Browse Systems
+                  <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>

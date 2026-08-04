@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { workProjects } from "@/lib/work";
+import { getFeaturedOurWorkItems } from "@/lib/ourwork";
 
 function ChevronIcon() {
   return (
@@ -24,6 +24,8 @@ function ChevronIcon() {
 }
 
 export default function OurWork() {
+  const projects = getFeaturedOurWorkItems();
+
   return (
     <section className="relative bg-gray-50 pt-6 " aria-labelledby="our-work-heading">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,17 +38,17 @@ export default function OurWork() {
             </h2>
           </div>
 
-          <Link href="/gallery" className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-black/45 transition-colors hover:text-[var(--brand-color)]">
+          <Link href="/our-work" className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-black/45 transition-colors hover:text-[var(--brand-color)]">
             View All Projects
             <span className="text-[var(--brand-color)]"><ChevronIcon /></span>
           </Link>
         </div>
 
         <ul className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
-          {workProjects.map((project) => (
+          {projects.map((project) => (
             <li key={project.id}>
               <Link
-                href={project.href}
+                href={`/our-work?project=${project.id}`}
                 className="group relative block overflow-hidden rounded-[1.35rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand-color)]"
               >
                 <div className="relative aspect-[3/3] overflow-hidden rounded-[1.35rem]">

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 import {
   whyChooseFeatures,
   type WhyChooseFeature,
@@ -149,26 +149,6 @@ function FeatureIcon({ icon }: { icon: WhyChooseFeature["icon"] }) {
   }
 }
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function WhyChooseUs() {
   return (
     <section
@@ -195,13 +175,9 @@ export default function WhyChooseUs() {
               Our epoxy floors deliver unmatched performance and elevate every
               space.
             </p>
-            <Link
-              href="/gallery"
-              className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-[#05070b] px-6 py-3.5 text-sm font-semibold text-white transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
-            >
-              See The Difference
-              <ArrowIcon />
-            </Link>
+            <Button href="/about-us" className="mt-7">
+              More About Us
+            </Button>
           </div>
 
           {/* Divider + features */}

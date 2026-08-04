@@ -11,6 +11,9 @@
   /* Keep alias so existing classnames keep working */
   --brand-color: var(--brand-gold);
   --brand-color-deep: var(--brand-gold-deep);
+  /* Primary CTA button (maroon pill + gold icon) */
+  --btn-primary: #5e122d;
+  --btn-primary-icon: #ccb07d;
 }
 
 @theme inline {

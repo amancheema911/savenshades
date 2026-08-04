@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   useCallback,
   useEffect,
@@ -11,11 +12,34 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import {
-  galleryCategories,
-  galleryItems,
-  type GalleryCategory,
-  type GalleryItem,
-} from "@/lib/gallery";
+  ourWorkCategories,
+  ourWorkItems,
+  type OurWorkCategory,
+  type OurWorkItem,
+} from "@/lib/ourwork";
+import Button from "@/components/ui/Button";
+
+function ArrowUpRightIcon({ size = 18 }: { size?: number }) {
+  return (
+    <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/80 bg-white/30 text-white transition-transform duration-300 group-hover:scale-105 size-10 sm:size-11">
+      <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M7 17 17 7M9 7h8v8"
+        stroke="currentColor"
+        strokeWidth="2.1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+    </span>
+  );
+}
 
 function ArrowIcon({ size = 16 }: { size?: number }) {
   return (
@@ -92,14 +116,14 @@ function ExpandIcon() {
   );
 }
 
-function Lightbox({
+function ProjectLightbox({
   items,
   index,
   onClose,
   onPrev,
   onNext,
 }: {
-  items: GalleryItem[];
+  items: OurWorkItem[];
   index: number;
   onClose: () => void;
   onPrev: () => void;
@@ -107,6 +131,11 @@ function Lightbox({
 }) {
   const titleId = useId();
   const item = items[index];
+  const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    setImageIndex(0);
+  }, [item?.id]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -125,22 +154,23 @@ function Lightbox({
 
   if (!item) return null;
 
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={titleId}
-    >
-      <button
-        type="button"
-        className="absolute inset-0 bg-black/85 backdrop-blur-sm"
-        aria-label="Close image preview"
-        onClick={onClose}
-      />
+  const ourWork = item.images.length > 0 ? item.images : [{ src: item.image, alt: item.imageAlt }];
+  const activeImage = ourWork[imageIndex] ?? ourWork[0];
 
-      <div className="relative z-10 flex w-full max-w-5xl flex-col">
-        <div className="mb-3 flex items-center justify-between gap-3 sm:mb-4">
+  const showPrevImage = () => {
+    setImageIndex((current) => (current - 1 + ourWork.length) % ourWork.length);
+  };
+
+  const showNextImage = () => {
+    setImageIndex((current) => (current + 1) % ourWork.length);
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-end justify-center p-0 sm:items-center sm:p-6" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+      <button type="button" className="absolute inset-0 bg-black/85 backdrop-blur-sm" aria-label="Close project preview" onClick={onClose} />
+
+      <div className="relative z-10 flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-t-[1.5rem] bg-[#05070b] sm:max-h-[90vh] sm:rounded-[1.5rem] border border-white/20">
+        <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-4">
           <div className="min-w-0">
             <p className="text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--brand-color)] uppercase">
               {item.category}
@@ -154,7 +184,7 @@ function Lightbox({
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <span className="hidden text-sm text-white/50 sm:inline">
-              {index + 1} / {items.length}
+              Project {index + 1} / {items.length}
             </span>
             <button
               type="button"
@@ -167,36 +197,106 @@ function Lightbox({
           </div>
         </div>
 
-        <div className="relative aspect-[16/11] overflow-hidden rounded-[1.25rem] bg-[#05070b] ring-1 ring-white/10 sm:rounded-[1.5rem]">
-          <Image
-            src={item.image}
-            alt={item.imageAlt}
-            fill
-            sizes="(max-width: 1024px) 94vw, 1024px"
-            className="object-contain"
-            priority
-          />
-        </div>
+        <div className="grid min-h-0 flex-1 overflow-y-auto lg:grid-cols-[1.35fr_1fr]">
+          <div className="relative flex flex-col bg-[#05070b]">
+            <div className="relative aspect-[16/11] w-full sm:aspect-[16/10] lg:aspect-auto lg:min-h-[420px] lg:flex-1">
+              <Image
+                src={activeImage.src}
+                alt={activeImage.alt}
+                fill
+                sizes="(max-width: 1024px) 94vw, 640px"
+                className="object-contain"
+                priority
+              />
 
-        <div className="mt-3 flex items-center justify-between gap-3 sm:mt-4">
-          <p className="text-sm text-white/55">{item.location}</p>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={onPrev}
-              className="inline-flex size-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-colors hover:bg-white/20"
-              aria-label="Previous image"
-            >
-              <ChevronLeftIcon />
-            </button>
-            <button
-              type="button"
-              onClick={onNext}
-              className="inline-flex size-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-colors hover:bg-white/20"
-              aria-label="Next image"
-            >
-              <ChevronRightIcon />
-            </button>
+              {ourWork.length > 1 ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={showPrevImage}
+                    className="absolute top-1/2 left-3 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/65"
+                    aria-label="Previous project image"
+                  >
+                    <ChevronLeftIcon />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={showNextImage}
+                    className="absolute top-1/2 right-3 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/65"
+                    aria-label="Next project image"
+                  >
+                    <ChevronRightIcon />
+                  </button>
+                </>
+              ) : null}
+            </div>
+
+            {ourWork.length > 1 ? (
+              <div className="flex gap-2 overflow-x-auto border-t border-white/10 px-3 py-3 sm:px-4">
+                {ourWork.map((image, thumbIndex) => {
+                  const active = thumbIndex === imageIndex;
+                  return (
+                    <button
+                      key={`${item.id}-${image.src}-${thumbIndex}`}
+                      type="button"
+                      onClick={() => setImageIndex(thumbIndex)}
+                      className={`relative size-14 shrink-0 overflow-hidden rounded-lg ring-2 transition-opacity sm:size-16 ${
+                        active
+                          ? "ring-[var(--brand-color)] opacity-100"
+                          : "ring-transparent opacity-60 hover:opacity-100"
+                      }`}
+                      aria-label={`Show image ${thumbIndex + 1}`}
+                      aria-current={active ? "true" : undefined}
+                    >
+                      <Image
+                        src={image.src}
+                        alt=""
+                        fill
+                        sizes="64px"
+                        className="object-cover"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            ) : null}
+          </div>
+
+          <div className="flex flex-col gap-5 border-t border-white/10 p-5 sm:p-6 lg:border-t-0 lg:border-l">
+            <div>
+              <p className="text-sm text-white/55">{item.location}</p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-white/80 sm:text-base">
+                {item.description}
+              </p>
+            </div>
+
+            <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5">
+              <p className="text-sm text-white/45">
+                {ourWork.length} {ourWork.length === 1 ? "photo" : "photos"}
+              </p>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={onPrev}
+                  className="inline-flex size-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-colors hover:bg-white/20"
+                  aria-label="Previous project"
+                >
+                  <ChevronLeftIcon />
+                </button>
+                <button
+                  type="button"
+                  onClick={onNext}
+                  className="inline-flex size-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-colors hover:bg-white/20"
+                  aria-label="Next project"
+                >
+                  <ChevronRightIcon />
+                </button>
+              </div>
+            </div>
+
+            <Button href="/contact-us" size="sm">
+              Start a Similar Project
+            </Button>
           </div>
         </div>
       </div>
@@ -204,36 +304,93 @@ function Lightbox({
   );
 }
 
-export default function GalleryClient() {
-  const [category, setCategory] = useState<GalleryCategory>("All");
+export default function OurWorkClient() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const projectParam = searchParams.get("project");
+
+  const [category, setCategory] = useState<OurWorkCategory>("All");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const filtered = useMemo(() => {
-    if (category === "All") return galleryItems;
-    return galleryItems.filter((item) => item.category === category);
+    if (category === "All") return ourWorkItems;
+    return ourWorkItems.filter((item) => item.category === category);
   }, [category]);
 
-  const selectCategory = (next: GalleryCategory) => {
-    setCategory(next);
-    setActiveIndex(null);
-  };
+  const syncProjectParam = useCallback(
+    (projectId: string | null) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (projectId) {
+        params.set("project", projectId);
+      } else {
+        params.delete("project");
+      }
+      const query = params.toString();
+      router.replace(query ? `/our-work?${query}` : "/our-work", { scroll: false });
+    },
+    [router, searchParams],
+  );
 
-  const openAt = (index: number) => setActiveIndex(index);
-  const close = useCallback(() => setActiveIndex(null), []);
+  const openAt = useCallback(
+    (index: number) => {
+      const item = filtered[index];
+      if (!item) return;
+      setActiveIndex(index);
+      syncProjectParam(item.id);
+    },
+    [filtered, syncProjectParam],
+  );
+
+  const close = useCallback(() => {
+    setActiveIndex(null);
+    syncProjectParam(null);
+  }, [syncProjectParam]);
 
   const showPrev = useCallback(() => {
     setActiveIndex((current) => {
       if (current === null || filtered.length === 0) return current;
-      return (current - 1 + filtered.length) % filtered.length;
+      const next = (current - 1 + filtered.length) % filtered.length;
+      const item = filtered[next];
+      if (item) syncProjectParam(item.id);
+      return next;
     });
-  }, [filtered.length]);
+  }, [filtered, syncProjectParam]);
 
   const showNext = useCallback(() => {
     setActiveIndex((current) => {
       if (current === null || filtered.length === 0) return current;
-      return (current + 1) % filtered.length;
+      const next = (current + 1) % filtered.length;
+      const item = filtered[next];
+      if (item) syncProjectParam(item.id);
+      return next;
     });
-  }, [filtered.length]);
+  }, [filtered, syncProjectParam]);
+
+  // Deep-link from homepage (and shareable URLs): /our-work?project=<id>
+  useEffect(() => {
+    if (!projectParam) return;
+
+    const indexInFiltered = filtered.findIndex((item) => item.id === projectParam);
+    if (indexInFiltered >= 0) {
+      setActiveIndex(indexInFiltered);
+      return;
+    }
+
+    // Project is outside the current filter — reset to All so it can open
+    if (category !== "All") {
+      setCategory("All");
+      return;
+    }
+
+    const index = ourWorkItems.findIndex((item) => item.id === projectParam);
+    if (index >= 0) setActiveIndex(index);
+  }, [projectParam, category, filtered]);
+
+  const selectCategory = (next: OurWorkCategory) => {
+    setCategory(next);
+    setActiveIndex(null);
+    syncProjectParam(null);
+  };
 
   const onFilterKeyDown = (
     event: ReactKeyboardEvent<HTMLButtonElement>,
@@ -243,10 +400,9 @@ export default function GalleryClient() {
     event.preventDefault();
     const next =
       event.key === "ArrowRight"
-        ? (index + 1) % galleryCategories.length
-        : (index - 1 + galleryCategories.length) % galleryCategories.length;
-    setCategory(galleryCategories[next]);
-    setActiveIndex(null);
+        ? (index + 1) % ourWorkCategories.length
+        : (index - 1 + ourWorkCategories.length) % ourWorkCategories.length;
+    selectCategory(ourWorkCategories[next]);
   };
 
   return (
@@ -280,7 +436,7 @@ export default function GalleryClient() {
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-[var(--brand-color)] animate-about-line sm:w-14" />
                 <p className="text-xs font-bold tracking-[0.22em] text-[var(--brand-color)] sm:text-sm">
-                  GALLERY
+                  OUR WORK
                 </p>
               </div>
               <h1 className="mt-5 font-display text-[2.55rem] font-bold leading-[1.02] tracking-[-0.035em] text-white sm:text-[3.5rem] lg:text-[4.25rem]">
@@ -291,23 +447,16 @@ export default function GalleryClient() {
               </h1>
               <p className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-white/78 sm:text-lg">
                 Browse finished installs across residential, commercial, and
-                industrial spaces — click any image to open a full preview.
+                industrial spaces — click any project to open photos and details.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
+                <Button href="#our-work-grid">Explore Our Work</Button>
                 <Link
-                  href="#gallery-grid"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--brand-color)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(184,134,11,0.35)] transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
-                >
-                  Explore Gallery
-                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                    <ArrowIcon />
-                  </span>
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/50 hover:bg-white/10 active:scale-[0.98]"
+                  href="#all-services"
+                  className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
                 >
                   Start Your Project
+                  <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -318,7 +467,7 @@ export default function GalleryClient() {
                   Projects
                 </p>
                 <p className="mt-1 font-display text-4xl font-bold tracking-tight text-white">
-                  {galleryItems.length}+
+                  {ourWorkItems.length}+
                 </p>
                 <div className="mt-4 h-px w-full bg-gradient-to-r from-[var(--brand-color)] to-transparent" />
                 <p className="mt-4 text-sm leading-snug text-white/65">
@@ -330,11 +479,11 @@ export default function GalleryClient() {
         </div>
       </section>
 
-      {/* Gallery grid */}
+      {/* Our Work grid */}
       <section
-        id="gallery-grid"
+        id="our-work-grid"
         className="relative bg-[#F7F8FA] px-3 py-14 sm:px-4 sm:py-16 md:px-6 lg:px-8 lg:py-20"
-        aria-labelledby="gallery-heading"
+        aria-labelledby="our-work-heading"
       >
         <div className="container mx-auto">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -343,7 +492,7 @@ export default function GalleryClient() {
                 PROJECT ARCHIVE
               </p>
               <h2
-                id="gallery-heading"
+                id="our-work-heading"
                 className="mt-3 font-display text-[1.9rem] font-bold tracking-tight text-[#0B1120] sm:text-[2.4rem] lg:text-[2.65rem]"
               >
                 Surfaces Worth{" "}
@@ -354,9 +503,9 @@ export default function GalleryClient() {
             <div
               className="flex flex-wrap gap-2"
               role="tablist"
-              aria-label="Filter gallery by category"
+              aria-label="Filter our work by category"
             >
-              {galleryCategories.map((item, index) => {
+              {ourWorkCategories.map((item, index) => {
                 const active = category === item;
                 return (
                   <button
@@ -438,7 +587,7 @@ export default function GalleryClient() {
       </section>
 
       {activeIndex !== null ? (
-        <Lightbox
+        <ProjectLightbox
           items={filtered}
           index={activeIndex}
           onClose={close}

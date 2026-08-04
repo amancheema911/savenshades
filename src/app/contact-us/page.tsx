@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -53,6 +54,16 @@ const promises = [
     description: "Transparent pricing with prep, materials, and finish defined.",
   },
 ] as const;
+
+function PhoneIcon() {
+  return (
+    <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/80 bg-white/30 text-white transition-transform duration-300 group-hover:scale-105 size-10">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+      </svg>
+    </span>
+  );
+}
 
 function ArrowIcon() {
   return (
@@ -170,21 +181,20 @@ export default function ContactUsPage() {
               usually within one business day.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
-              <Link
-                href="#contact-form"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--brand-color)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(184,134,11,0.35)] transition-[transform,filter] hover:brightness-110 active:scale-[0.98]"
-              >
-                Send A Message
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                  <ArrowIcon />
-                </span>
-              </Link>
-              <a
+              <Button href="#contact-form">Send A Message</Button>
+              {/* <a
                 href="tel:+11234567890"
                 className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/50 hover:bg-white/10 active:scale-[0.98]"
               >
                 Call (123) 456-7890
-              </a>
+              </a> */}
+              <Link
+                  href="tel:+11234567890"
+                  className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
+                >
+                  Call (123) 456-7890
+                  <PhoneIcon />
+                </Link>
             </div>
           </div>
         </div>

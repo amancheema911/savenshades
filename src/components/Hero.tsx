@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroQuoteForm from "@/components/HeroQuoteForm";
+import Button from "@/components/ui/Button";
 
 const STATS = [
   { value: "10+", label: "Years Experience" },
@@ -60,31 +61,10 @@ const PARTNERS = [
   },
 ];
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M5 12H19M19 12L12 5M19 12L12 19"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function PlayIcon() {
   return (
     <span
-      className="inline-flex size-7 items-center justify-center rounded-full border border-white/80"
+      className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/80 bg-white/30 text-white transition-transform duration-300 group-hover:scale-105 size-10 sm:size-11"
       aria-hidden="true"
     >
       <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
@@ -118,12 +98,9 @@ export default function Hero() {
               <p className="mt-5 text-[1.02rem] leading-[1.65] text-white/85 sm:text-lg">High performance epoxy flooring systems built for beauty, durability, and a lifetime of performance.</p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2.5 rounded-full bg-[var(--brand-color)] px-6 py-3.5 text-[0.95rem] font-semibold text-white shadow-[0_10px_30px_rgba(184,134,11,0.35)] transition-[transform,filter,box-shadow] hover:brightness-110 hover:shadow-[0_12px_34px_rgba(184,134,11,0.45)] active:scale-[0.98]">
-                  Get Free Quote
-                  <ArrowIcon />
-                </Link>
+                <Button href="/contact-us">Get Free Quote</Button>
 
-                <Link href="/gallery" className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent px-6 py-3.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]">
+                <Link href="/our-work" className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]">
                   Explore Finishes
                   <PlayIcon />
                 </Link>

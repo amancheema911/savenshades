@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Button from "@/components/ui/Button";
 
 const PROJECT_TYPES = [
   "Garage Floors",
@@ -12,26 +13,6 @@ const PROJECT_TYPES = [
   "Decorative Flooring",
   "Other",
 ] as const;
-
-function ArrowIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 function CheckIcon() {
   return (
@@ -175,14 +156,14 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <button
+      <Button
         type="submit"
         disabled={submitting}
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--brand-color)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(184,134,11,0.35)] transition-[transform,filter] hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-6"
+        showIcon={!submitting}
       >
         {submitting ? "Sending..." : "Send Message"}
-        {!submitting ? <ArrowIcon /> : null}
-      </button>
+      </Button>
 
       <p className="mt-4 text-center text-xs leading-relaxed text-black/40">
         By submitting, you agree to be contacted about your project. No spam —
