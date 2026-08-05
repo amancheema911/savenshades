@@ -2,37 +2,20 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import PageHeader from "@/components/PageHeader";
 import Button from "@/components/ui/Button";
 import Counters from "@/components/Counters";
+import { contactInfo } from "@/lib/config";
 import { counterItems } from "@/lib/counters";
+import Heading from "@/components/Heading";
+
+const { phone } = contactInfo;
+const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 
 export const metadata: Metadata = {
-  title: "About Us | Floorix Premium Epoxy Solutions",
-  description:
-    "Learn how Floorix crafts high-performance epoxy floors — our story, values, and the standards behind every install.",
+  title: "About Us | Saven shades Premium Epoxy Solutions",
+  description: "Learn how Saven shades crafts high-performance epoxy floors — our story, values, and the standards behind every install.",
 };
-
-function ArrowUpRightIcon({ size = 18 }: { size?: number }) {
-  return (
-    <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/80 bg-white/30 text-white transition-transform duration-300 group-hover:scale-105 size-10 sm:size-11">
-      <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M7 17 17 7M9 7h8v8"
-        stroke="currentColor"
-        strokeWidth="2.1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-    </span>
-  );
-}
 
 const aboutValues = [
   {
@@ -102,7 +85,7 @@ const aboutSurfaces = [
     href: "/services/quartz-flooring",
     icon: "quartz" as const,
   },
-] as const;
+];
 
 type SurfaceIconName = (typeof aboutSurfaces)[number]["icon"];
 
@@ -135,7 +118,7 @@ const aboutQualities = [
       "Over a decade specializing in epoxy floors that perform under real residential and commercial use.",
     icon: "experience" as const,
   },
-] as const;
+];
 
 type QualityIconName = (typeof aboutQualities)[number]["icon"];
 
@@ -392,104 +375,49 @@ function ValueIcon({ icon }: { icon: ValueIconName }) {
 export default function AboutUsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative isolate -mt-[4.75rem] min-h-[72vh] overflow-hidden sm:min-h-[78vh]">
-        <Image
-          src="/images/hero-epoxy-floor.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center animate-hero-zoom"
-        />
-        <div
-          className="absolute inset-0 bg-[linear-gradient(115deg,rgba(5,9,16,0.95)_0%,rgba(5,9,16,0.78)_40%,rgba(5,9,16,0.42)_72%,rgba(5,9,16,0.7)_100%),linear-gradient(180deg,rgba(5,9,16,0.45)_0%,transparent_30%,rgba(5,9,16,0.75)_100%)]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-soft-light"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E\")",
-          }}
-          aria-hidden="true"
-        />
-
-        <div className="relative z-10 container mx-auto flex min-h-[72vh] w-full flex-col justify-end px-4 pb-14 pt-32 sm:min-h-[78vh] sm:px-6 sm:pb-16 sm:pt-36 lg:px-8 lg:pb-20">
-          <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
-            <div className="max-w-3xl animate-hero-rise lg:col-span-8">
-              <div className="flex items-center gap-3">
-                <span className="h-px w-10 bg-[var(--brand-color)] animate-about-line sm:w-14" />
-                <p className="text-xs font-bold tracking-[0.22em] text-[var(--brand-color)] sm:text-sm">
-                  ABOUT US
-                </p>
-              </div>
-              <h1 className="mt-5 font-display text-[2.55rem] font-bold leading-[1.02] tracking-[-0.035em] text-white sm:text-[3.5rem] lg:text-[4.25rem]">
-                Floor Built{" "} 
-                with{" "} <span className="text-[var(--brand-color)]">obsession.</span>
-              </h1>
-              <p className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-white/78 sm:text-lg">
-                We're not just a company — we're a team of obsessive perfectionists who are passionate about creating the best epoxy floors possible.
-              </p>
-              <div className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
-                <Button href="/contact-us">Work With Us</Button>
-                <Link
-                  href="#all-services"
-                  className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
-                >
-                  View Our Work
-                  <ArrowUpRightIcon />
-                </Link>
-              </div>
-            </div>
-
-            <div className="hidden animate-hero-rise-delayed lg:col-span-4 lg:flex lg:justify-end">
-              <div className="w-full max-w-[240px] rounded-[1.35rem] border border-white/15 bg-white/5 p-5 backdrop-blur-md">
-                <p className="text-[0.68rem] font-semibold tracking-[0.16em] text-white/45 uppercase">
-                  Since
-                </p>
-                <p className="mt-1 font-display text-4xl font-bold tracking-tight text-white">
-                  2014
-                </p>
-                <div className="mt-4 h-px w-full bg-gradient-to-r from-[var(--brand-color)] to-transparent" />
-                <p className="mt-4 text-sm leading-snug text-white/65">
-                A decade refining epoxy systems that stay sharp under real use.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="ABOUT US"
+        title={
+          <>
+            Floor Built with{" "}
+            <span className="text-[var(--brand-color)]">obsession.</span>
+          </>
+        }
+        description="We're not just a company — we're a team of obsessive perfectionists who are passionate about creating the best epoxy floors possible."
+        primaryAction={{ href: "/contact-us", label: "Work With Us" }}
+        secondaryAction={{
+          href: "/our-work",
+          label: "View Our Work",
+          icon: "arrow",
+        }}
+        aside={{
+          label: "Since",
+          value: "2014",
+          description:
+            "A decade refining epoxy systems that stay sharp under real use.",
+        }}
+      />
 
       {/* Story — asymmetric editorial */}
-      <section
-        className="relative overflow-hidden bg-[#F7F8FA] px-3 py-16 sm:px-4 sm:py-20 md:px-6 lg:px-8 lg:py-24"
-        aria-labelledby="about-story-heading"
-      >
-        <div
-          className="pointer-events-none absolute top-0 left-0 h-64 w-full bg-[radial-gradient(ellipse_at_top_left,rgba(184,134,11,0.08),transparent_55%)]"
-          aria-hidden="true"
-        />
+      <section className="relative overflow-hidden bg-[#F7F8FA] px-3 py-16 sm:px-4 sm:py-20 md:px-6 lg:px-8 lg:py-24">
+        
+        <div className="pointer-events-none absolute top-0 left-0 h-64 w-full bg-[radial-gradient(ellipse_at_top_left,rgba(184,134,11,0.08),transparent_55%)]" />
+        
         <div className="relative z-10 container mx-auto">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-12">
+            {/* Left image */}
             <div className="relative lg:col-span-6 xl:col-span-7">
               <div className="relative mx-auto max-w-xl lg:mx-0 lg:max-w-none">
-                <div
-                  className="absolute -top-4 -left-4 hidden h-28 w-28 rounded-[1.25rem] border border-[var(--brand-color)]/40 sm:block lg:-top-6 lg:-left-6"
-                  aria-hidden="true"
-                />
+                <div className="absolute -top-4 -left-4 hidden h-28 w-28 rounded-[1.25rem] border border-[var(--brand-color)]/40 sm:block lg:-top-6 lg:-left-6" />
                 <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
                   <Image
                     src="/images/services/service-garage.png"
-                    alt="Premium epoxy garage floor installed by Floorix"
+                    alt="Premium epoxy garage floor installed by Saven shades"
                     fill
                     sizes="(max-width: 1024px) 92vw, 55vw"
                     className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                   />
-                  <div
-                    className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,9,16,0.65)_100%)]"
-                    aria-hidden="true"
-                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,9,16,0.65)_100%)]" />
                 </div>
 
                 <div className="absolute -right-2 -bottom-8 w-[42%] overflow-hidden rounded-[1.15rem] shadow-[0_20px_50px_rgba(0,0,0,0.28)] ring-1 ring-white/20 sm:-right-4 sm:-bottom-10 sm:rounded-[1.35rem] lg:-right-6 animate-about-float">
@@ -504,58 +432,36 @@ export default function AboutUsPage() {
                   </div>
                 </div>
 
-                <div className="absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-[#05070b]/75 px-4 py-3 backdrop-blur-md sm:bottom-7 sm:left-7 sm:px-5 sm:py-3.5">
-                  <p className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                    Est. 2014
-                  </p>
-                  <p className="mt-0.5 text-[0.75rem] text-white/65 sm:text-sm">
-                    Residential &amp; commercial epoxy
-                  </p>
+                <div className="absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-[var(--brand-color)]/75 px-4 py-3 backdrop-blur-md sm:bottom-7 sm:left-7 sm:px-5 sm:py-3.5">
+                  <p className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">Est. 2014</p>
+                  <p className="mt-0.5 text-[0.75rem] text-white/65 sm:text-sm">Residential &amp; commercial epoxy</p>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-6 xl:col-span-5 lg:pl-4 xl:pl-8">
-              <p className="text-xs font-bold tracking-[0.2em] text-[var(--brand-color)] sm:text-sm">
-                OUR STORY
-              </p>
-              <h2
-                id="about-story-heading"
-                className="mt-3 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-[#0B1120] sm:text-[2.55rem] lg:text-[2.85rem]"
-              >
-                More Than Coatings.
-                <br />
-                <span className="bg-gradient-to-r from-[var(--brand-color)] to-[#926e19] bg-clip-text text-transparent">
-                  A Standard.
-                </span>
-              </h2>
-              <p className="mt-5 text-[0.98rem] leading-relaxed text-black/55 sm:text-base">
-                Floorix started with a simple frustration: too many floors looked
-                great on day one and failed by year three. We rebuilt the process
-                from the slab up — materials, prep, install discipline — so every
-                surface earns its finish.
-              </p>
-              <p className="mt-4 text-[0.98rem] leading-relaxed text-black/55 sm:text-base">
-                Today we partner with homeowners, builders, and facility managers
-                who want floors that stay sharp under real use.
-              </p>
+            {/* Right content */}
+            <div className="lg:col-span-6 xl:col-span-5 lg:pl-4 xl:pl-8">            
+              <Heading
+                tag="h2"
+                size="section"
+                tone="dark"
+                eyebrow="OUR STORY"
+                title={<>More Than Coatings. <span className="text-[var(--brand-color)]">A Standard.</span></>}
+                description={<>
+                  <p>Saven shades started with a simple frustration: too many floors looked great on day one and failed by year three. We rebuilt the process from the slab up — materials, prep, install discipline — so every surface earns its finish. </p>
+                  
+                  <p>Today we partner with homeowners, builders, and facility managers who want floors that stay sharp under real use.</p>
+                </>}
+              />
 
               <div className="mt-9 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-black/8">
                 <div className="bg-white px-5 py-5 sm:px-6 sm:py-6">
-                  <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-black/35 uppercase">
-                    Focus
-                  </p>
-                  <p className="mt-2 font-display text-lg font-bold text-[#0B1120] sm:text-xl">
-                    Epoxy only
-                  </p>
+                  <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-black/35 uppercase">Focus</p>
+                  <p className="mt-2 font-display text-lg font-bold text-[#0B1120] sm:text-xl">Epoxy only</p>
                 </div>
                 <div className="bg-white px-5 py-5 sm:px-6 sm:py-6">
-                  <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-black/35 uppercase">
-                    Promise
-                  </p>
-                  <p className="mt-2 font-display text-lg font-bold text-[#0B1120] sm:text-xl">
-                    Built to last
-                  </p>
+                  <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-black/35 uppercase">Promise</p>
+                  <p className="mt-2 font-display text-lg font-bold text-[#0B1120] sm:text-xl">Built to last</p>
                 </div>
               </div>
             </div>
@@ -564,63 +470,28 @@ export default function AboutUsPage() {
       </section>
 
       {/* Values — modern bento strip */}
-      <section
-        className="relative overflow-hidden bg-gray-50 px-3 py-16 sm:px-4 sm:py-20 md:px-6 lg:px-8 lg:py-24"
-        aria-labelledby="about-values-heading"
-      >
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(184,134,11,0.08),transparent_45%),radial-gradient(ellipse_at_90%_80%,rgba(184,134,11,0.05),transparent_40%)]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-color)]/40 to-transparent"
-          aria-hidden="true"
-        />
-
+      <section className="relative overflow-hidden bg-gray-50 px-3 py-16 sm:px-4 sm:py-20 md:px-6 lg:px-8 lg:py-24" aria-labelledby="about-values-heading">
         <div className="relative z-10 container mx-auto">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-xl">
-              <p className="text-xs font-bold tracking-[0.2em] text-[var(--brand-color)] sm:text-sm">
-                WHAT DRIVES US
-              </p>
-              <h2
-                id="about-values-heading"
-                className="mt-3 font-display text-[2rem] font-bold tracking-tight text-[#0B1120] sm:text-[2.55rem] lg:text-[2.85rem]"
-              >
-                Principles Under{" "}
-                <span className="text-[var(--brand-color)]">Every Coat.</span>
-              </h2>
-            </div>
-            <p className="max-w-sm text-[0.95rem] leading-relaxed text-black/50 lg:text-right">
-              Four standards we refuse to compromise — on every project, every
-              slab.
-            </p>
+          <div className="max-w-xl">
+            <Heading
+              tag="h2"
+              size="section"
+              tone="dark"
+              eyebrow="WHAT DRIVES US"
+              title={<>Principles Under <span className="text-[var(--brand-color)]">Every Coat.</span></>}
+              description="Four standards we refuse to compromise — on every project, every slab."
+            />
           </div>
 
           <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
             {aboutValues.map((value, index) => (
-              <li
-                key={value.id}
-                className={`group relative overflow-hidden rounded-[1.35rem] border border-black/[0.06] bg-white p-6 shadow-[0_8px_24px_rgba(11,17,32,0.04)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[var(--brand-color)]/35 hover:shadow-[0_16px_40px_rgba(11,17,32,0.08)] sm:p-7 ${
-                  index % 2 === 1 ? "lg:mt-8" : ""
-                }`}
-              >
-                <div
-                  className="pointer-events-none absolute -top-8 -right-8 size-28 rounded-full bg-[radial-gradient(circle,rgba(184,134,11,0.14),transparent_70%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  aria-hidden="true"
-                />
-                <span className="font-display text-4xl font-bold tracking-tight text-black/[0.06] transition-colors duration-300 group-hover:text-[var(--brand-color)]/20">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="mt-5 flex size-12 items-center justify-center rounded-full border border-black/8 bg-[var(--brand-color)]/10 text-[var(--brand-color)] transition-colors duration-300 group-hover:border-[var(--brand-color)]/40 group-hover:bg-[var(--brand-color)]/15">
-                  <ValueIcon icon={value.icon} />
-                </span>
-                <h3 className="mt-5 font-display text-lg font-bold tracking-tight text-[#0B1120]">
-                  {value.title}
-                </h3>
-                <p className="mt-2 text-[0.88rem] leading-relaxed text-black/50">
-                  {value.description}
-                </p>
+              <li key={value.id} className={`group relative overflow-hidden rounded-[1.35rem] space-y-3 border border-black/[0.06] bg-white p-6 shadow-[0_8px_24px_rgba(11,17,32,0.04)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[var(--brand-color)]/35 hover:shadow-[0_16px_40px_rgba(11,17,32,0.08)] sm:p-7 ${
+                  index % 2 === 1 ? "lg:mt-8" : "" }`}>
+                <div className="pointer-events-none absolute -top-8 -right-8 size-28 rounded-full bg-[radial-gradient(circle,var(--brand-color),transparent_70%)] opacity-20 transition-opacity duration-300" />
+                <span className="font-display text-4xl font-bold tracking-tight text-black/[0.06] transition-colors duration-300 group-hover:text-[var(--brand-color)]/20">{String(index + 1).padStart(2, "0")}</span>
+                <span className="mt-5 flex size-12 items-center justify-center rounded-full border border-black/8 bg-[var(--brand-color)]/10 text-[var(--brand-color)] transition-colors duration-300 group-hover:border-[var(--brand-color)]/40 group-hover:bg-[var(--brand-color)]/15"><ValueIcon icon={value.icon} /></span>
+                <h3 className="font-display text-lg font-bold tracking-tight text-[#0B1120]">{value.title}</h3>
+                <p>{value.description}</p>
               </li>
             ))}
           </ul>
@@ -628,10 +499,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Surfaces collection — split layout */}
-      <section
-        className="relative overflow-hidden bg-[#05070b]"
-        aria-labelledby="about-surfaces-heading"
-      >
+      <section className="relative overflow-hidden bg-[#05070b]">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left image */}
           <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[640px]">
@@ -646,50 +514,23 @@ export default function AboutUsPage() {
 
           {/* Right content */}
           <div className="relative flex flex-col justify-center px-5 py-12 sm:px-8 sm:py-16 md:px-10 lg:px-12 xl:px-16 lg:py-20">
-            {/* Subtle tile texture */}
-            <div
-              className="pointer-events-none absolute inset-0 opacity-[0.07]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)",
-                backgroundSize: "18px 28px",
-              }}
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_10%,rgba(184,134,11,0.12),transparent_45%)]"
-              aria-hidden="true"
-            />
-
             <div className="relative z-10">
-              
-              <div className="flex items-center gap-3">
-                <span className="h-px w-10 bg-[var(--brand-color)] animate-about-line sm:w-14" />
-                <p className="text-xs font-bold tracking-[0.22em] text-[var(--brand-color)] uppercase sm:text-sm">
-                Our Surfaces
-                </p>
-              </div>
-
-              <h2 className="mt-3 font-display text-[2rem] font-bold tracking-tight text-white sm:text-[2.55rem] lg:text-[2.85rem]">Enhance your spaces with elegant <span className="text-[var(--brand-color)]">surface collection</span></h2>
-
-              <p className="mt-4 max-w-lg text-[0.92rem] leading-relaxed text-white/60 sm:text-[0.98rem]">
-                From garages to showrooms, Floorix systems are engineered for
-                durability and designed for spaces that deserve a finished look —
-                not a temporary coat.
-              </p>
-              <p className="mt-3 max-w-lg text-[0.92rem] leading-relaxed text-white/60 sm:text-[0.98rem]">
-                Choose the surface that fits your traffic, style, and timeline.
-                Every install starts with precision prep and ends with lasting
-                protection.
-              </p>
+              <Heading
+                tag="h2"
+                size="section"
+                tone="light"
+                eyebrow="Our Surfaces"
+                title={<>Enhance your spaces with elegant <span className="text-[var(--brand-color)]">surface collection</span></>}
+                description={<>
+                  <p>From garages to showrooms, Saven shades systems are engineered for durability and designed for spaces that deserve a finished look — not a temporary coat.</p>
+                  <p>Choose the surface that fits your traffic, style, and timeline. Every install starts with precision prep and ends with lasting protection.</p>
+                </>}
+              />
 
               <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
                 {aboutSurfaces.map((surface) => (
                   <li key={surface.id}>
-                    <Link
-                      href={surface.href}
-                      className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-5 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-color)]/30 hover:bg-white/[0.07] sm:px-5 sm:py-6"
-                    >
+                    <Link href={surface.href} className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-5 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-color)]/30 hover:bg-white/[0.07] sm:px-5 sm:py-6">
                       <span className="text-[var(--brand-color)] transition-transform duration-300 group-hover:scale-110">
                         <SurfaceIcon icon={surface.icon} />
                       </span>
@@ -704,17 +545,11 @@ export default function AboutUsPage() {
               <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
                 <Button href="/contact-us">Get In Touch</Button>
 
-                <Link href="tel:+1234567890" className="group inline-flex items-center gap-3 text-white transition-opacity hover:opacity-90">
-                  <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-[#1a1408] shadow-[0_10px_28px_rgba(184,134,11,0.28)] transition-transform duration-300 group-hover:scale-105">
-                    <HeadsetIcon />
-                  </span>
+                <Link href={phoneHref} className="group inline-flex items-center gap-3 text-white transition-opacity hover:opacity-90">
+                  <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-[#1a1408] shadow-[0_10px_28px_rgba(184,134,11,0.28)] transition-transform duration-300  group-hover:scale-105"><HeadsetIcon /></span>
                   <span className="min-w-0">
-                    <span className="block text-sm font-semibold text-white/90">
-                      Call Us!
-                    </span>
-                    <span className="mt-0.5 block font-display text-base font-bold tracking-tight text-white sm:text-lg">
-                      +123 456 7890
-                    </span>
+                    <span className="block text-sm font-semibold text-white/90">Call Us!</span>
+                    <span className="mt-0.5 block font-display text-base font-bold tracking-tight text-white sm:text-lg">{phone}</span>
                   </span>
                 </Link>
               </div>
@@ -726,22 +561,15 @@ export default function AboutUsPage() {
       <Counters items={counterItems} />
 
       {/* Product qualities */}
-      <section className="bg-gray-50" aria-labelledby="about-qualities-heading">
+      <section className="bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
             {/* Left — visual composition */}
             <div className="relative mx-auto w-full max-w-[420px] sm:max-w-md lg:col-span-5 lg:mx-0 lg:max-w-none">
               <div className="relative w-full">
                 {/* Dot grid accent */}
-                <div
-                  className="pointer-events-none absolute top-[3%] right-0 z-0 h-[28%] w-[38%] opacity-60 sm:top-[4%] sm:h-[36%] sm:w-[42%] sm:opacity-70"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle, rgba(11,17,32,0.14) 1.1px, transparent 1.2px)",
-                    backgroundSize: "10px 10px",
-                  }}
-                  aria-hidden="true"
-                />
+                <div className="pointer-events-none absolute top-[3%] right-0 z-0 h-[28%] w-[38%] opacity-60 sm:top-[4%] sm:h-[36%] sm:w-[42%] sm:opacity-70" style={{ backgroundImage: "radial-gradient(circle, rgba(11,17,32,0.14) 1.1px, transparent 1.2px)", backgroundSize: "10px 10px", }} />
 
                 {/* Top/back image — left aligned (your position) */}
                 <div className="relative mr-auto aspect-[4/5] w-[78%] max-w-[450px] overflow-hidden rounded-[1.15rem] shadow-[0_18px_40px_rgba(11,17,32,0.12)] sm:w-[75%] sm:rounded-[1.35rem] lg:w-[72%]">
@@ -766,64 +594,38 @@ export default function AboutUsPage() {
                 </div>
 
                 {/* Satisfaction callout — top right (your position) */}
-                <div className="absolute top-4 right-0 z-[3] flex w-[38%] max-w-[120px] flex-col items-center justify-center bg-[var(--brand-color)] px-2.5 py-4 text-center text-white shadow-md sm:top-10 sm:w-[38%] sm:max-w-[168px] sm:px-4 sm:py-7">
-                  <p className="font-display text-[1.65rem] font-bold leading-none tracking-tight sm:text-[2.5rem]">
-                    98%
-                  </p>
-                  <p className="mt-1 text-[0.58rem] leading-snug text-white/90 sm:mt-2 sm:text-[0.75rem]">
-                    Client Satisfaction
-                    <br className="hidden sm:block" /> Rate
-                  </p>
+                <div className="absolute top-4 right-0 z-[3] flex w-[38%] max-w-[120px] flex-col items-center justify-center bg-[var(--brand-color)] px-2.5 py-4 text-center text-white shadow-md sm:top-10 sm:w-[38%] sm:max-w-[168px] sm:px-4 sm:py-7 space-y-2">
+                  <div className="font-display text-[1.65rem] font-bold leading-none tracking-tight sm:text-[2.5rem]">98%</div>
+                  <p className="leading-snug text-white/90 text-sm">Client Satisfaction Rate</p>
                 </div>
               </div>
             </div>
 
             {/* Right — headline + quality cards */}
             <div className="lg:col-span-7 lg:col-start-6">
-              <div className="flex items-center gap-3">
-                <span className="h-px w-10 bg-[var(--brand-color)] animate-about-line sm:w-14" />
-                <p className="text-xs font-bold tracking-[0.22em] text-[var(--brand-color)] uppercase sm:text-sm">
-                  Our Product Qualities
-                </p>
-              </div>
-
-              <h2 className="mt-3 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-[#0B1120] sm:text-[2.55rem] lg:text-[2.85rem]">
-                The standards that make our{" "}
-                <span className="text-[var(--brand-color)]">
-                  epoxy floors exceptional
-                </span>
-              </h2>
-              <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-black/50 sm:text-base">
-                Our floors are crafted to the highest standards, combining
-                precision prep, rigorous quality checks, and superior materials.
-              </p>
+              <Heading
+                tag="h2"
+                size="section"
+                tone="dark"
+                eyebrow="Our Product Qualities"
+                title={<>The standards that make our <span className="text-[var(--brand-color)]">epoxy floors exceptional</span></>}
+                description="Our floors are crafted to the highest standards, combining precision prep, rigorous quality checks, and superior materials."
+              />
 
               <ul className="mt-8 grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:gap-5">
                 {aboutQualities.map((quality) => (
-                  <li
-                    key={quality.id}
-                    className="group relative overflow-hidden rounded-[1.25rem] border border-black/[0.06] bg-white p-4 shadow-[0_8px_24px_rgba(11,17,32,0.04)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(11,17,32,0.08)] sm:rounded-2xl sm:p-5 lg:p-6"
-                  >
-                    <span
-                      className="pointer-events-none absolute -right-2 -bottom-2 text-[var(--brand-color)] opacity-[0.08] transition-opacity duration-300 group-hover:opacity-[0.14]"
-                      aria-hidden="true"
-                    >
-                      <span className="block origin-bottom-right scale-[2.4]">
-                        <QualityIcon icon={quality.icon} />
-                      </span>
+                  <li key={quality.id} className="group relative overflow-hidden rounded-[1.25rem] border border-black/[0.06] bg-white p-4 shadow-[0_8px_24px_rgba(11,17,32,0.04)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(11,17,32,0.08)] sm:rounded-2xl sm:p-5 lg:p-6">
+                    <span className="pointer-events-none absolute -right-2 -bottom-2 text-[var(--brand-color)] opacity-[0.08] transition-opacity duration-300 group-hover:opacity-[0.14]">
+                      <span className="block origin-bottom-right scale-[2.4]"><QualityIcon icon={quality.icon} /></span>
                     </span>
 
                     <div className="relative z-10 flex items-start gap-3 sm:gap-3.5">
-                      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white sm:size-10">
-                        <QualityIcon icon={quality.icon} />
-                      </span>
-                      <div className="min-w-0 pt-0.5">
+                      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white sm:size-10"><QualityIcon icon={quality.icon} /></span>
+                      <div className="min-w-0 pt-0.5 space-y-2">
                         <h3 className="font-display text-base font-bold tracking-tight text-[#0B1120] sm:text-[1.05rem] lg:text-lg">
                           {quality.title}
                         </h3>
-                        <p className="mt-1 text-[0.8rem] leading-relaxed text-black/50 sm:mt-1.5 sm:text-[0.84rem]">
-                          {quality.description}
-                        </p>
+                        <p>{quality.description}</p>
                       </div>
                     </div>
                   </li>

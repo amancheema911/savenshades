@@ -9,140 +9,140 @@ import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
 
 export const metadata: Metadata = {
-  title: "Garage Epoxy Flooring Installation | Saven shades",
+  title: "Flake Epoxy Flooring Installation | Saven shades",
   description:
-    "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    "Professional flake epoxy flooring by Saven shades. Multi-tone flake systems for garages, retail, and high-traffic spaces — textured grip, durable style, and easy everyday care.",
   keywords: [
-    "garage epoxy flooring",
-    "garage floor coating",
-    "epoxy garage floor installation",
-    "hot tire resistant epoxy",
-    "residential garage floors",
+    "flake epoxy flooring",
+    "full flake epoxy floor",
+    "decorative flake flooring",
+    "garage flake epoxy",
+    "flake floor coating installation",
   ],
-  alternates: { canonical: "/services/garage-floors" },
+  alternates: { canonical: "/services/flake-flooring" },
   openGraph: {
-    title: "Garage Epoxy Flooring Installation | Saven shades",
+    title: "Flake Epoxy Flooring Installation | Saven shades",
     description:
-      "Showroom-grade garage floors engineered for hot tires, oil, salt, and daily life.",
+      "Full flake epoxy floors with texture, grip, and lasting multi-tone style for residential and commercial spaces.",
     type: "website",
     images: [
       {
         url: "/images/services/service-garage.png",
-        alt: "Luxury car on a finished garage epoxy floor",
+        alt: "Decorative flake epoxy flooring finish",
       },
     ],
   },
 };
 
 const specs = [
-  { label: "Best for", value: "Residential & collector garages" },
-  { label: "Finish options", value: "Gloss · Satin · Full flake" },
-  { label: "Typical install", value: "2–3 days" },
-  { label: "Return to vehicles", value: "Usually 48–72 hours" },
+  { label: "Best for", value: "Garages · Retail · High traffic" },
+  { label: "Finish options", value: "Partial · Full · Custom blend" },
+  { label: "Typical install", value: "2–4 days" },
+  { label: "Return to use", value: "Usually 48–72 hours" },
 ];
 
 const benefits = [
   {
-    title: "Hot-tire & chemical resistant",
+    title: "Grip without bulky texture",
     description:
-      "Formulated to resist tire softener, road salt, oil, and grease without etching or peeling — so your investment stays intact season after season.",
+      "Broadcast flakes add practical slip resistance underfoot while keeping a polished, finished look — ideal for garages, entries, and busy interiors.",
   },
   {
-    title: "Easy everyday care",
+    title: "Hides everyday wear",
     description:
-      "A seamless non-porous surface that dust-mops clean. No stained concrete, no musty damp odors trapped in open pores.",
+      "Multi-tone flake camouflages dust, micro-scuffs, and light tire marks between cleanings better than solid color alone.",
   },
   {
-    title: "Grip where you need it",
+    title: "Color blends that fit the space",
     description:
-      "Optional texture packages for wet-weather entries without sacrificing the polished, intentional look you want.",
+      "From quiet neutrals to high-contrast blends, we match flake systems to your style, lighting, and how aggressively the floor is used.",
   },
   {
-    title: "Color that stays true",
+    title: "Tough, seamless performance",
     description:
-      "UV-stable clears and pigmented systems that resist ambering under garage-door sunlight.",
+      "Under the flake layer sits a properly prepped epoxy system — chemical resistant, easy to clean, and built for real daily traffic.",
   },
 ];
 
 const process = [
   {
     step: "01",
-    title: "Inspect & moisture test",
+    title: "Consult & blend selection",
     description:
-      "We evaluate cracks, oil contamination, and moisture so the system bonds for the long term.",
+      "We review use patterns and style goals, then recommend partial or full flake coverage and a blend that reads right in your space.",
   },
   {
     step: "02",
-    title: "Diamond grind & repair",
+    title: "Precision prep",
     description:
-      "Mechanical profiling opens the slab. Joints and imperfections are repaired before any coat goes down.",
+      "Diamond grinding, crack repair, and contamination removal create a mechanical bond that keeps flakes and clear coats locked in.",
   },
   {
     step: "03",
-    title: "Coat & finish",
+    title: "Coat, broadcast & seal",
     description:
-      "Primer, color base, optional flake broadcast, and UV-clear applied with precision.",
+      "Base coats go down, flakes are broadcast to the specified coverage, excess is removed, and a durable clear seals the system.",
   },
   {
     step: "04",
     title: "Cure & care guide",
     description:
-      "Walkthrough of return-to-use timing and simple maintenance that keeps the sheen for years.",
+      "Clear return-to-use timing plus simple maintenance tips that keep flake floors looking intentional for years.",
   },
 ];
 
 const finishes = [
   {
-    id: "solid",
-    name: "Solid Color",
-    detail: "Clean, continuous color with a high-gloss or satin clear.",
-    image: "/images/services/service-commercial.png",
-  },
-  {
-    id: "flake",
+    id: "full",
     name: "Full Flake",
-    detail: "Multi-tone broadcast for grip, style, and everyday forgiveness.",
+    detail: "Complete broadcast coverage for maximum camouflage, grip, and a dense finished look.",
     image: "/images/services/service-garage.png",
   },
   {
-    id: "metallic",
-    name: "Metallic Accent",
-    detail: "Liquid depth for collector bays that deserve a feature floor.",
+    id: "partial",
+    name: "Partial Flake",
+    detail: "Base color remains visible with flake accents — lighter texture with a cleaner showroom feel.",
+    image: "/images/services/service-commercial.png",
+  },
+  {
+    id: "custom",
+    name: "Custom Blend",
+    detail: "Tailored flake mixes matched to brand colors, cabinetry, or architectural accents.",
     image: "/images/services/service-metallic.png",
   },
 ];
 
 const faqs = [
   {
-    question: "How long does garage epoxy flooring last?",
+    question: "What’s the difference between full flake and partial flake?",
     answer:
-      "A properly prepped and installed Saven shades garage system typically lasts many years with normal residential use. Longevity depends on prep quality, topcoat, UV exposure, and how vehicles and chemicals are managed.",
+      "Full flake covers the base color for maximum camouflage and texture. Partial flake leaves more of the solid base visible for a lighter, cleaner look with accent texture.",
   },
   {
-    question: "Can I park cars soon after install?",
+    question: "Is flake epoxy good for garages and high-traffic areas?",
     answer:
-      "Light foot traffic is often possible within 24–48 hours. Vehicle parking is usually recommended after 48–72 hours depending on temperature and the system we install — we confirm exact timing at handoff.",
+      "Yes. Flake systems are popular in residential garages, retail floors, and busy interiors because they add grip and hide everyday wear better than many solid finishes.",
   },
   {
-    question: "Will epoxy peel from my garage floor?",
+    question: "Will flakes peel or chip over time?",
     answer:
-      "Peeling is almost always a prep or moisture issue — not epoxy itself. We grind for mechanical adhesion, remediate contaminants, and only install when conditions support a lasting bond.",
+      "When prep and clear coats are done correctly, flakes are locked into the system. Peeling is usually a prep issue — we grind for adhesion and only install when conditions support a lasting bond.",
   },
   {
-    question: "Solid color or flake — which should I choose?",
+    question: "How do I choose a flake color blend?",
     answer:
-      "Choose solid for a clean showroom look. Choose full flake when you want more grip and a surface that hides dust and micro-scuffs between cleanings. We’ll recommend based on how you use the space.",
+      "We start with lighting, surrounding finishes, and how dirty the space gets between cleans. Sample boards help lock in neutrals, contrast blends, or custom mixes before install.",
   },
 ];
 
 const idealFor = [
   "Residential garages",
-  "Collector & display bays",
-  "Home workshops",
-  "Basements & gyms",
+  "Retail & service floors",
+  "Basements & workshops",
+  "High-traffic interiors",
 ];
 
-const related = services.filter((s) => s.id !== "garage-floors").slice(0, 3);
+const related = services.filter((s) => s.id !== "flake-flooring").slice(0, 3);
 
 function ArrowIcon({ size = 16 }: { size?: number }) {
   return (
@@ -178,7 +178,7 @@ function CheckIcon() {
   );
 }
 
-export default function GarageFloorsPage() {
+export default function FlakeFlooringPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -192,12 +192,12 @@ export default function GarageFloorsPage() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Garage Epoxy Flooring",
+    name: "Flake Epoxy Flooring",
     description:
-      "Professional garage epoxy flooring installation with hot-tire resistance, UV-stable finishes, and optional flake systems.",
+      "Professional flake epoxy flooring with multi-tone texture, grip, and lasting style for garages, retail, and high-traffic spaces.",
     provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Garage Epoxy Flooring Installation",
-    url: "/services/garage-floors",
+    serviceType: "Flake Epoxy Flooring Installation",
+    url: "/services/flake-flooring",
     image: "/images/services/service-garage.png",
   };
 
@@ -213,14 +213,14 @@ export default function GarageFloorsPage() {
       />
 
       <PageHeader
-        eyebrow="GARAGE EPOXY SYSTEMS"
+        eyebrow="FLAKE EPOXY SYSTEMS"
         title={
           <>
-            Garage Floors Built To{" "}
-            <span className="text-[var(--brand-color)]">Outlast.</span>
+            Floors With{" "}
+            <span className="text-[var(--brand-color)]">Texture & Style.</span>
           </>
         }
-        description="Showroom-grade epoxy for residential and collector garages — hot-tire resistant, easy to clean, finished for decades of daily use."
+        description="Multi-tone flake epoxy for garages, retail, and high-traffic spaces — grip where you need it, camouflage for everyday wear, finished for lasting clarity."
         primaryAction={{ href: "/contact-us", label: "Get Free Quote" }}
         secondaryAction={{
           href: "#system",
@@ -230,7 +230,7 @@ export default function GarageFloorsPage() {
         asideContent={
           <div className="w-full max-w-[240px] rounded-[1.35rem] border border-white/15 bg-white/5 p-5 backdrop-blur-md">
             <ul className="w-full max-w-[240px] space-y-3.5">
-              {["Hot-tire resistant", "UV-stable clear", "2–3 day install"].map(
+              {["Added grip", "Hides micro-wear", "Custom blends"].map(
                 (item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-white/85">
                     <span className="inline-flex size-6 items-center justify-center rounded-full bg-[var(--brand-color)]/20 text-[var(--brand-color)]"><CheckIcon /></span>
@@ -270,9 +270,9 @@ export default function GarageFloorsPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Your garage is more than parking — it&apos;s cars, tools, seasonal traffic, and the first space guests see. Saven shades garage epoxy transforms bare concrete into a seamless, high-performance surface with UV-stable clears and lasting chemical resistance.</p>
+                  <p>Flake epoxy delivers the best of both worlds: a durable seamless floor with multi-tone texture that adds grip and hides daily wear. Saven shades flake systems turn ordinary concrete into a finished surface that stays sharp between cleanings.</p>
 
-                  <p>Whether you want a mirror polish under a weekend car or a tough flake system that hides dust between cleanings, we diamond-grind the slab and install coatings built to last — not thin temporary coverings.</p>
+                  <p>From residential garages to retail and busy interiors, we diamond-grind the slab, broadcast flakes to your coverage preference, and seal with a clear coat built for real use — not temporary floor paint.</p>
                   </>
                 }
               />
@@ -296,7 +296,7 @@ export default function GarageFloorsPage() {
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
                   src="/images/services/service-garage.png"
-                  alt="Finished garage epoxy floor with luxury vehicle"
+                  alt="Decorative flake epoxy flooring finish"
                   fill
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-cover"
@@ -307,8 +307,8 @@ export default function GarageFloorsPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-[0_28px_70px_rgba(11,17,32,0.3)] sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/hero-epoxy-floor.png"
-                    alt="Wide residential epoxy flooring detail"
+                    src="/images/services/service-commercial.png"
+                    alt="Flake epoxy flooring detail with multi-tone texture"
                     fill
                     sizes="300px"
                     className="object-cover"
@@ -318,7 +318,7 @@ export default function GarageFloorsPage() {
 
               <div className="absolute top-5 right-5 hidden rounded-2xl border border-white/20 bg-black/35 px-4 py-3 backdrop-blur-md sm:block">
                 <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-white/55 uppercase">Finish</p>
-                <div className="mt-0.5 font-display text-base font-bold text-white">Showroom gloss</div>
+                <div className="mt-0.5 font-display text-base font-bold text-white">Full flake</div>
               </div>
             </div>
           </div>
@@ -333,20 +333,20 @@ export default function GarageFloorsPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="garage-benefits-heading"
+              id="flake-benefits-heading"
               align="center"
               size="section"
               tone="light"
-              eyebrow="WHY GARAGE EPOXY"
+              eyebrow="WHY FLAKE EPOXY"
               title={
                 <>
                   Performance You Notice{" "}
                   <span className="text-[var(--brand-color)]">
-                    Every Time You Park.
+                    Every Step.
                   </span>
                 </>
               }
-              description="A garage isn’t just a parking spot — it’s your space for cars, tools, and family time. Hot-tire resistance, UV-stable clears, and a showroom sheen that holds up to everyday life."
+              description="A flake floor isn’t decoration alone — it’s practical texture. Better grip, better camouflage of daily wear, and a finish that stays sharp between cleanings."
               descriptionClassName="mx-auto max-w-2xl text-white/60"
             />
           </div>
@@ -397,8 +397,8 @@ export default function GarageFloorsPage() {
                 size="section"
                 tone="dark"
                 eyebrow="FINISH LIBRARY"
-                title={<>Choose How Your Garage <span className="text-[var(--brand-color)]">Shows Up.</span></>}
-                description="Matched to your cars, tools, and how the space lives day to day."
+                title={<>Choose How Your Flake <span className="text-[var(--brand-color)]">Shows Up.</span></>}
+                description="Matched to traffic, cleaning habits, and the blend of texture and color you want underfoot."
               />
               </div>
           </div>
@@ -437,7 +437,7 @@ export default function GarageFloorsPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="garage-process-heading"
+                id="flake-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -445,22 +445,22 @@ export default function GarageFloorsPage() {
                   <>
                     From Bare Slab To{" "}
                     <span className="text-[var(--brand-color)]">
-                      Finished Surface.
+                      Finished Flake.
                     </span>
                   </>
                 }
-                description="Prep first. No shortcuts. Every coat earns the next one."
+                description="Prep first. Broadcast with intent. Every coat earns the next one."
                 descriptionClassName="max-w-md"
               />
 
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/8 pt-6">
                 <div>
                   <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Typical install</p>
-                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">2–3 days</p>
+                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">2–4 days</p>
                 </div>
                 <span className="hidden h-10 w-px bg-black/10 sm:block" aria-hidden="true" />
                 <div>
-                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Drive-on</p>
+                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Return to use</p>
                   <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">48–72 hrs</p>
                 </div>
               </div>
@@ -504,11 +504,11 @@ export default function GarageFloorsPage() {
               eyebrow="QUESTIONS"
               title={
                 <>
-                  Garage Floor{" "}
+                  Flake Floor{" "}
                   <span className="text-[var(--brand-color)]">FAQs</span>
                 </>
               }
-              description="Clear answers before you commit — prep, cure times, finishes, and long-term care."
+              description="Clear answers before you commit — coverage options, grip, care, and choosing the right blend."
               align="center"
             />
           </div>
@@ -530,7 +530,7 @@ export default function GarageFloorsPage() {
                 tone="dark"
                 eyebrow="KEEP EXPLORING"
                 title={<>Related<span className="text-[var(--brand-color)]">Systems.</span></>}
-                description="Explore our other garage epoxy flooring systems."
+                description="Explore other epoxy systems that pair well with flake floors."
               />
             </div>
             <Link href="/services" className="group inline-flex items-center gap-1.5 text-sm font-medium text-black/45 transition-colors hover:text-[var(--brand-color)]">

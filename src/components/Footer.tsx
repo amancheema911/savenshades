@@ -1,5 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { contactInfo, socialLinks } from "@/lib/config";
+
+const { phone, address, email } = contactInfo;
+const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
+const emailHref = `mailto:${email}`;
 
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
@@ -36,11 +41,11 @@ function LogoMark() {
     >
       <path
         d="M21 2.5L37.5 12.25V31.75L21 41.5L4.5 31.75V12.25L21 2.5Z"
-        fill="url(#floorix-footer-logo-grad)"
+        fill="var(--brand-color)"
       />
       <path
         d="M21 9L30.5 14.5V25.5L21 31L11.5 25.5V14.5L21 9Z"
-        fill="#0B1A2A"
+        fill="var(--black)"
         fillOpacity="0.35"
       />
       <path
@@ -57,7 +62,7 @@ function LogoMark() {
       />
       <defs>
         <linearGradient
-          id="floorix-footer-logo-grad"
+          id="Saven shades-footer-logo-grad"
           x1="4.5"
           y1="2.5"
           x2="37.5"
@@ -142,12 +147,12 @@ function PinIcon() {
   );
 }
 
-const SOCIAL = [
-  { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-  { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
-  { label: "X", href: "https://x.com", Icon: XIcon },
-  { label: "Houzz", href: "https://houzz.com", Icon: HouzzIcon },
-] as const;
+// const SOCIAL = [
+//   { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
+//   { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
+//   { label: "X", href: "https://x.com", Icon: XIcon },
+//   { label: "Houzz", href: "https://houzz.com", Icon: HouzzIcon },
+// ];
 
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -162,31 +167,29 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-3" aria-label="Floorix home">
+            <Link href="/" className="inline-flex items-center gap-3" aria-label="Saven shades home">
               <LogoMark />
               <span className="flex flex-col leading-none">
-                <span className="font-display text-[1.35rem] font-bold tracking-[0.08em]">FLOORIX</span>
+                <span className="font-display text-[1.35rem] font-bold tracking-[0.08em]">Saven shades</span>
                 <span className="mt-1 text-[0.58rem] font-medium tracking-[0.16em] text-white/60">PREMIUM EPOXY FLOORING</span>
               </span>
             </Link>
 
             <p>We transform ordinary concrete into extraordinary floors that are beautiful, durable and built to last.</p>
 
-            <ul className="mt-6 flex items-center gap-3">
-              {SOCIAL.map(({ label, href, Icon }) => (
-                <li key={label}>
-                  <a
-                    href={href}
+              <div className="flex items-center space-x-2 mt-4">
+                {socialLinks.map((item) => (
+                  <Link
+                    key={item.link}
+                    href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={label}
-                    className="inline-flex size-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white/15 hover:text-white"
-                  >
-                    <Icon />
-                  </a>
-                </li>
-              ))}
-            </ul>
+                    aria-label={item.ariaLabel}
+                    className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/50 hover:text-[var(--brand-color)] transition-colors duration-300 hover:border-[var(--brand-color)]"
+                    dangerouslySetInnerHTML={{ __html: item.icon }}
+                  />
+                ))}
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -230,38 +233,22 @@ export default function Footer() {
             <h2 className="text-base font-semibold text-white">Contact Us</h2>
             <ul className="mt-5 flex flex-col gap-4">
               <li>
-                <a
-                  href="tel:+11234567890"
-                  className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white"
-                >
-                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80">
-                    <PhoneIcon />
-                  </span>
-                  <span className="pt-1.5">(123) 456-7890</span>
+                <a href={phoneHref} className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
+                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80"><PhoneIcon /></span>
+                  <span className="pt-1.5">{phone}</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:info@floorix.com"
-                  className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white"
-                >
-                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80">
-                    <MailIcon />
-                  </span>
-                  <span className="pt-1.5">info@floorix.com</span>
+                <a href={emailHref} className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
+                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80"><MailIcon /></span>
+                  <span className="pt-1.5">{email}</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-[0.92rem] text-white/55">
-                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80">
-                    <PinIcon />
-                  </span>
-                  <span className="pt-1.5 leading-relaxed">
-                    123 Flooring Way,
-                    <br />
-                    Dallas, TX 75001
-                  </span>
-                </div>
+                  <div className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
+                    <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80"><PinIcon /></span>
+                    <span className="pt-1.5 leading-relaxed">{address}</span>
+                  </div>
               </li>
             </ul>
           </div>

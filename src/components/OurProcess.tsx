@@ -1,3 +1,4 @@
+import Heading from "@/components/Heading";
 import { processSteps, type ProcessStep } from "@/lib/process";
 
 function StepIcon({ icon }: { icon: ProcessStep["icon"] }) {
@@ -157,55 +158,46 @@ function StepIcon({ icon }: { icon: ProcessStep["icon"] }) {
 
 export default function OurProcess() {
   return (
-    <section className="relative overflow-hidden bg-[#05070b] py-14 lg:py-20" aria-labelledby="process-heading">
+    <section className="relative overflow-hidden bg-[#05070b] py-14 lg:py-20">
       {/* Ambient glow on the right */}
-      <div className="pointer-events-none absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(184,134,11,0.22)_0%,transparent_68%)] blur-2xl" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-[linear-gradient(90deg,transparent,rgba(184,134,11,0.06))]" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(204, 200, 200, 0.22)_0%,transparent_68%)] blur-2xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-[linear-gradient(90deg,transparent,hsla(36, 6.30%, 84.50%, 0.06))]" aria-hidden="true" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">OUR PROCESS</p>
-          <h2 className="mt-3 font-display text-[1.9rem] font-bold tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-            Precision. Process.{" "}
-            <span className="text-[var(--brand-color)]">Perfection.</span>
-          </h2>
-          <p className="mt-4 text-[0.95rem] text-white/60 sm:text-base">A proven 8-step process for flawless results.</p>
+          <Heading
+            tag="h2"
+            align="center"
+            size="section"
+            tone="light"
+            eyebrow="OUR PROCESS"
+            title={
+              <>
+                Precision. Process.{" "}
+                <span className="text-[var(--brand-color)]">Perfection.</span>
+              </>
+            }
+            description="A proven 8-step process for flawless results."
+          />
         </div>
 
         {/* Desktop / tablet timeline */}
         <div className="relative mt-14 hidden sm:block">
-          {/* Connecting line through icon centers */}
-          <div
-            className="pointer-events-none absolute top-7 right-[6.25%] left-[6.25%] hidden h-px bg-white/20 lg:block"
-            aria-hidden="true"
-          />
-          {/* Midpoint dots between steps */}
+          <div className="pointer-events-none absolute top-7 right-[6.25%] left-[6.25%] hidden h-px bg-white/20 lg:block -z-1" aria-hidden="true" />
           {Array.from({ length: processSteps.length - 1 }, (_, index) => (
-            <span
-              key={`dot-${index}`}
-              className="pointer-events-none absolute top-7 hidden size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-color)] lg:block"
-              style={{ left: `${((index + 1) / processSteps.length) * 100}%` }}
-              aria-hidden="true"
-            />
+            <span key={`dot-${index}`} className="pointer-events-none absolute top-7 hidden size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-color)] lg:block" style={{ left: `${((index + 1) / processSteps.length) * 100}%` }} aria-hidden="true"/>
           ))}
 
-          <ol className="relative grid grid-cols-4 gap-x-3 gap-y-12 lg:grid-cols-8 lg:gap-x-2">
+          <ol className="relative z-10 grid grid-cols-4 gap-x-3 gap-y-12 lg:grid-cols-8 lg:gap-x-2">
             {processSteps.map((step) => (
-              <li
-                key={step.id}
-                className="relative z-10 flex flex-col items-center text-center"
-              >
-                <span className="inline-flex size-14 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_0_24px_rgba(184,134,11,0.35)]">
+              <li key={step.id} className="flex flex-col items-center text-center">
+                <span className="inline-flex size-14 items-center justify-center rounded-full bg-[var(--brand-color)]/30 text-white border border-white/30">
                   <StepIcon icon={step.icon} />
                 </span>
 
                 <p className="mt-4 text-xs font-medium text-white/70">{step.step}</p>
-                <h3 className="mt-1.5 text-[0.92rem] font-bold leading-snug text-white lg:text-[0.95rem]">
-                  {step.title}
-                </h3>
-                <p className="mt-1.5 max-w-[9.5rem] text-[0.75rem] leading-snug text-white/50 lg:text-[0.78rem]">
-                  {step.description}
-                </p>
+                <h3 className="mt-1.5 text-[0.92rem] font-bold leading-snug text-white lg:text-[0.95rem]">{step.title}</h3>
+                <p className="mt-1.5 max-w-[9.5rem] text-[0.75rem] leading-snug text-white/50 lg:text-[0.78rem]">{step.description}</p>
               </li>
             ))}
           </ol>
@@ -213,10 +205,7 @@ export default function OurProcess() {
 
         {/* Mobile vertical timeline */}
         <ol className="relative mt-12 space-y-8 sm:hidden">
-          <div
-            className="absolute top-3 bottom-3 left-[1.75rem] w-px bg-white/20"
-            aria-hidden="true"
-          />
+          <div className="absolute top-3 bottom-3 left-[1.75rem] w-px bg-white/20" />
           {processSteps.map((step) => (
             <li key={step.id} className="relative flex gap-4 pl-1">
               <span className="relative z-10 inline-flex size-14 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_0_24px_rgba(184,134,11,0.35)]">

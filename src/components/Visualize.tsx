@@ -8,6 +8,7 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react";
+import Heading from "@/components/Heading";
 
 const FEATURES = [
   {
@@ -113,15 +114,7 @@ function FeatureIcon({ icon }: { icon: (typeof FEATURES)[number]["icon"] }) {
 
 function SliderHandleIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M8 12H4m16 0h-4M9 9l-3 3 3 3M15 9l3 3-3 3"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 7-5 5 5 5"/><path d="m15 7 5 5-5 5"/></svg>
   );
 }
 
@@ -188,31 +181,21 @@ export default function Visualize() {
   };
 
   return (
-    <div
-      className="relative overflow-hidden py-12 sm:py-14 lg:py-20"
-      aria-labelledby="visualize-heading"
-    >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(184,134,11,0.08)_0%,transparent_55%)]"
-        aria-hidden="true"
-      />
+    <div className="relative overflow-hidden py-12 sm:py-14 lg:py-20">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(184,134,11,0.08)_0%,transparent_55%)]" aria-hidden="true" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-8 md:gap-10 lg:grid-cols-12 lg:gap-6 xl:gap-8">
           {/* Title */}
           <div className="text-center lg:col-span-3 lg:text-left">
-            <p className="text-xs font-semibold tracking-[0.22em] text-[var(--brand-color)] sm:text-sm">
-              BEFORE &amp; AFTER
-            </p>
-            <h2
-              id="visualize-heading"
-              className="mt-3 font-display text-[1.85rem] font-bold leading-[1.15] tracking-tight text-[#0B1120] sm:mt-4 sm:text-[2.35rem] lg:text-[2.5rem] xl:text-[2.85rem]"
-            >
-              Experience the Difference
-            </h2>
-            <p className="mt-3 text-sm text-black/50 sm:mt-4 sm:text-base">
-              The same space. A stunning transformation.
-            </p>
+            <Heading
+              tag="h2"
+              size="section"
+              tone="dark"
+              eyebrow="BEFORE & AFTER"
+              title="Experience the Difference"
+              description="The same space. A stunning transformation."
+            />
           </div>
 
           {/* Slider */}
@@ -241,15 +224,12 @@ export default function Visualize() {
                   className="object-cover"
                   priority={false}
                 />
-                <span className="absolute top-3 right-3 rounded-md bg-[var(--brand-color)] px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-[#1a1408] sm:top-4 sm:right-4 sm:px-3.5 sm:py-1.5 sm:text-[0.7rem]">
+                <span className="absolute top-3 right-3 rounded-md bg-[var(--brand-color)] px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-white sm:top-4 sm:right-4 sm:px-3.5 sm:py-1.5 sm:text-[0.7rem]">
                   AFTER
                 </span>
               </div>
 
-              <div
-                className="absolute inset-0"
-                style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
-              >
+              <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
                 <Image
                   src="/images/before-after/before-floor.png"
                   alt="Warehouse with worn unfinished concrete floor"
@@ -262,12 +242,8 @@ export default function Visualize() {
                 </span>
               </div>
 
-              <div
-                className="absolute inset-y-0 z-10 w-0.5 bg-[var(--brand-color)]"
-                style={{ left: `${position}%`, transform: "translateX(-50%)" }}
-                aria-hidden="true"
-              >
-                <span className="absolute top-1/2 left-1/2 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--brand-color)] text-[#1a1408] shadow-[0_8px_28px_rgba(0,0,0,0.45)] ring-2 ring-[var(--brand-color)]/40 sm:size-12">
+              <div className="absolute inset-y-0 z-10 w-0.5 bg-[var(--brand-color)]" style={{ left: `${position}%`, transform: "translateX(-50%)" }} aria-hidden="true">
+                <span className="absolute top-1/2 left-1/2 flex size-15 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--brand-color)] text-white ring-2 ring-[var(--brand-color)]/40">
                   <SliderHandleIcon />
                 </span>
               </div>
@@ -275,26 +251,13 @@ export default function Visualize() {
 
             <div className="mt-4 flex items-center justify-center gap-3 border-b border-black/10 py-4 sm:gap-6">
               <div className="min-w-0 flex-1 text-center sm:text-left">
-                <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">
-                  BEFORE
-                </p>
-                <p className="mt-1 text-xs text-black/55 sm:text-sm">
-                  Worn. Dull. Uninspiring.
-                </p>
+                <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">BEFORE</p>
+                <p className="mt-1 text-xs text-black/55 sm:text-sm">Worn. Dull. Uninspiring.</p>
               </div>
-              <span
-                className="shrink-0 text-base text-[var(--brand-color)] sm:text-xl"
-                aria-hidden="true"
-              >
-                →
-              </span>
+              <span className="shrink-0 text-base text-[var(--brand-color)] sm:text-xl">→</span>
               <div className="min-w-0 flex-1 text-center sm:text-right">
-                <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">
-                  AFTER
-                </p>
-                <p className="mt-1 text-xs text-black/55 sm:text-sm">
-                  Seamless. Durable. Exceptional.
-                </p>
+                <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">AFTER</p>
+                <p className="mt-1 text-xs text-black/55 sm:text-sm">Seamless. Durable. Exceptional.</p>
               </div>
             </div>
           </div>
@@ -303,10 +266,7 @@ export default function Visualize() {
           <div className="lg:col-span-3">
             <ul className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-1 lg:gap-y-5">
               {FEATURES.map((feature) => (
-                <li
-                  key={feature.id}
-                  className="flex items-center gap-2.5 sm:gap-3 lg:gap-3.5 bg-white/60 rounded-2xl p-3 border border-black/8"
-                >
+                <li key={feature.id} className="flex items-center gap-2.5 sm:gap-3 lg:gap-3.5 bg-white/60 rounded-2xl p-3 border border-black/8">
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white sm:size-14 lg:size-12">
                     <FeatureIcon icon={feature.icon} />
                   </span>
@@ -323,9 +283,7 @@ export default function Visualize() {
                   <DragHandIcon />
                 </span>
                 <span className="sm:hidden">Drag to compare</span>
-                <span className="hidden sm:inline">
-                  Drag the slider left or right to compare
-                </span>
+                <span className="hidden sm:inline">Drag the slider left or right to compare</span>
               </p>
             </div>
           </div>

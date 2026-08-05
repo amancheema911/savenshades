@@ -71,17 +71,7 @@ export const services: Service[] = [
     image: "/images/services/service-commercial.png",
     imageAlt: "Quartz epoxy flooring in a commercial space",
     icon: "quartz",
-  },
-  {
-    id: "decorative",
-    title: "Decorative Flooring",
-    description: "Custom designs that elevate any room.",
-    href: "/services/decorative",
-    image: "/images/services/service-metallic.png",
-    imageAlt: "Decorative epoxy flooring with artistic finish",
-    icon: "decorative",
-  },
-  
+  },  
 ];
 
 /** Home section carousel uses the first four featured services. */

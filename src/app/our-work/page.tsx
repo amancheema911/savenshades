@@ -4,8 +4,8 @@ import CallToAction from "@/components/CallToAction";
 import WorkClient from "./workClient";
 
 export const metadata: Metadata = {
-  title: "Our Work | Floorix Premium Epoxy Flooring",
-  description: "Browse Floorix epoxy flooring projects — residential garages, commercial spaces, industrial floors, and decorative metallic finishes.",
+  title: "Our Work | Saven shades Premium Epoxy Flooring",
+  description: "Browse Saven shades epoxy flooring projects — residential garages, commercial spaces, industrial floors, and decorative metallic finishes.",
 };
 
 export default function OurWorkPage() {

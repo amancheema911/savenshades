@@ -9,140 +9,140 @@ import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
 
 export const metadata: Metadata = {
-  title: "Garage Epoxy Flooring Installation | Saven shades",
+  title: "Quartz Epoxy Flooring Installation | Saven shades",
   description:
-    "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    "Professional quartz epoxy flooring by Saven shades. Heavy-duty quartz systems for commercial kitchens, wash-down areas, and demanding spaces — refined look with maximum toughness.",
   keywords: [
-    "garage epoxy flooring",
-    "garage floor coating",
-    "epoxy garage floor installation",
-    "hot tire resistant epoxy",
-    "residential garage floors",
+    "quartz epoxy flooring",
+    "quartz floor coating",
+    "commercial quartz flooring",
+    "heavy duty quartz epoxy",
+    "quartz epoxy installation",
   ],
-  alternates: { canonical: "/services/garage-floors" },
+  alternates: { canonical: "/services/quartz-flooring" },
   openGraph: {
-    title: "Garage Epoxy Flooring Installation | Saven shades",
+    title: "Quartz Epoxy Flooring Installation | Saven shades",
     description:
-      "Showroom-grade garage floors engineered for hot tires, oil, salt, and daily life.",
+      "Heavy-duty quartz epoxy floors with refined texture for wash-down zones, commercial service areas, and high-abuse spaces.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-garage.png",
-        alt: "Luxury car on a finished garage epoxy floor",
+        url: "/images/services/service-commercial.png",
+        alt: "Quartz epoxy flooring in a commercial space",
       },
     ],
   },
 };
 
 const specs = [
-  { label: "Best for", value: "Residential & collector garages" },
-  { label: "Finish options", value: "Gloss · Satin · Full flake" },
-  { label: "Typical install", value: "2–3 days" },
-  { label: "Return to vehicles", value: "Usually 48–72 hours" },
+  { label: "Best for", value: "Kitchens · Wash-down · Service areas" },
+  { label: "Finish options", value: "Fine · Medium · Heavy texture" },
+  { label: "Typical install", value: "3–5 days" },
+  { label: "Return to use", value: "Often 48–72 hours" },
 ];
 
 const benefits = [
   {
-    title: "Hot-tire & chemical resistant",
+    title: "Heavy-duty under real abuse",
     description:
-      "Formulated to resist tire softener, road salt, oil, and grease without etching or peeling — so your investment stays intact season after season.",
+      "Quartz aggregate systems build a denser, more resilient surface than standard coatings — made for carts, wash-downs, and demanding service traffic.",
   },
   {
-    title: "Easy everyday care",
+    title: "Slip resistance where it counts",
     description:
-      "A seamless non-porous surface that dust-mops clean. No stained concrete, no musty damp odors trapped in open pores.",
+      "Textured quartz profiles improve footing in wet process areas, commercial kitchens, and zones where safety and sanitation both matter.",
   },
   {
-    title: "Grip where you need it",
+    title: "Refined enough for public spaces",
     description:
-      "Optional texture packages for wet-weather entries without sacrificing the polished, intentional look you want.",
+      "Despite the toughness, quartz floors read clean and intentional — professional color options without looking unfinished or purely industrial.",
   },
   {
-    title: "Color that stays true",
+    title: "Easy to sanitize & maintain",
     description:
-      "UV-stable clears and pigmented systems that resist ambering under garage-door sunlight.",
+      "A seamless, non-porous system that stands up to cleaning routines and helps resist staining in high-moisture commercial environments.",
   },
 ];
 
 const process = [
   {
     step: "01",
-    title: "Inspect & moisture test",
+    title: "Use-case assessment",
     description:
-      "We evaluate cracks, oil contamination, and moisture so the system bonds for the long term.",
+      "We review traffic, moisture, cleaning chemicals, and safety needs so texture and system build match how the space actually operates.",
   },
   {
     step: "02",
-    title: "Diamond grind & repair",
+    title: "Precision prep",
     description:
-      "Mechanical profiling opens the slab. Joints and imperfections are repaired before any coat goes down.",
+      "Diamond grinding, crack repair, and contamination removal create a mechanical bond strong enough for quartz aggregate systems.",
   },
   {
     step: "03",
-    title: "Coat & finish",
+    title: "Build, broadcast & seal",
     description:
-      "Primer, color base, optional flake broadcast, and UV-clear applied with precision.",
+      "Base coats, quartz broadcast, and clear seals are applied in controlled stages for coverage, texture, and long-term durability.",
   },
   {
     step: "04",
-    title: "Cure & care guide",
+    title: "Handoff & care plan",
     description:
-      "Walkthrough of return-to-use timing and simple maintenance that keeps the sheen for years.",
+      "Clear return-to-use timing plus maintenance guidance for staff cleaning schedules and ongoing slip-resistant performance.",
   },
 ];
 
 const finishes = [
   {
-    id: "solid",
-    name: "Solid Color",
-    detail: "Clean, continuous color with a high-gloss or satin clear.",
+    id: "fine",
+    name: "Fine Quartz",
+    detail: "Subtle texture with a refined look — ideal for corridors and professionally finished service spaces.",
     image: "/images/services/service-commercial.png",
   },
   {
-    id: "flake",
-    name: "Full Flake",
-    detail: "Multi-tone broadcast for grip, style, and everyday forgiveness.",
-    image: "/images/services/service-garage.png",
+    id: "medium",
+    name: "Medium Quartz",
+    detail: "Balanced grip and appearance for kitchens, labs adjacent areas, and high-traffic commercial floors.",
+    image: "/images/services/service-industrial.png",
   },
   {
-    id: "metallic",
-    name: "Metallic Accent",
-    detail: "Liquid depth for collector bays that deserve a feature floor.",
-    image: "/images/services/service-metallic.png",
+    id: "heavy",
+    name: "Heavy Quartz",
+    detail: "Maximum texture and toughness for wash-down zones, docks, and the most demanding wet areas.",
+    image: "/images/services/service-garage.png",
   },
 ];
 
 const faqs = [
   {
-    question: "How long does garage epoxy flooring last?",
+    question: "How is quartz flooring different from flake?",
     answer:
-      "A properly prepped and installed Saven shades garage system typically lasts many years with normal residential use. Longevity depends on prep quality, topcoat, UV exposure, and how vehicles and chemicals are managed.",
+      "Quartz systems use denser mineral aggregate for heavier texture and typically higher abuse resistance. Flake offers multi-tone camouflage with lighter decorative texture. We recommend quartz when grip, moisture, and durability are the priority.",
   },
   {
-    question: "Can I park cars soon after install?",
+    question: "Is quartz epoxy good for commercial kitchens and wash-down areas?",
     answer:
-      "Light foot traffic is often possible within 24–48 hours. Vehicle parking is usually recommended after 48–72 hours depending on temperature and the system we install — we confirm exact timing at handoff.",
+      "Yes. Quartz profiles are frequently specified for wet process zones, food service adjacent areas, and spaces that need both sanitation-friendly surfaces and reliable traction.",
   },
   {
-    question: "Will epoxy peel from my garage floor?",
+    question: "Will quartz floors feel too rough?",
     answer:
-      "Peeling is almost always a prep or moisture issue — not epoxy itself. We grind for mechanical adhesion, remediate contaminants, and only install when conditions support a lasting bond.",
+      "Texture is selectable. Fine profiles feel more refined underfoot, while heavier builds maximize slip resistance. We’ll match texture to footwear, traffic, and safety requirements.",
   },
   {
-    question: "Solid color or flake — which should I choose?",
+    question: "How long does quartz epoxy flooring last?",
     answer:
-      "Choose solid for a clean showroom look. Choose full flake when you want more grip and a surface that hides dust and micro-scuffs between cleanings. We’ll recommend based on how you use the space.",
+      "A properly prepped Saven shades quartz system is engineered for years of commercial use. Lifespan depends on prep quality, traffic, cleaning chemicals, and the texture profile installed.",
   },
 ];
 
 const idealFor = [
-  "Residential garages",
-  "Collector & display bays",
-  "Home workshops",
-  "Basements & gyms",
+  "Commercial kitchens",
+  "Wash-down & wet zones",
+  "Corridors & service areas",
+  "Labs & clinical spaces",
 ];
 
-const related = services.filter((s) => s.id !== "garage-floors").slice(0, 3);
+const related = services.filter((s) => s.id !== "quartz-flooring").slice(0, 3);
 
 function ArrowIcon({ size = 16 }: { size?: number }) {
   return (
@@ -178,7 +178,7 @@ function CheckIcon() {
   );
 }
 
-export default function GarageFloorsPage() {
+export default function QuartzFlooringPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -192,13 +192,13 @@ export default function GarageFloorsPage() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Garage Epoxy Flooring",
+    name: "Quartz Epoxy Flooring",
     description:
-      "Professional garage epoxy flooring installation with hot-tire resistance, UV-stable finishes, and optional flake systems.",
+      "Professional quartz epoxy flooring with heavy-duty texture and a refined finish for commercial kitchens, wash-down areas, and demanding service spaces.",
     provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Garage Epoxy Flooring Installation",
-    url: "/services/garage-floors",
-    image: "/images/services/service-garage.png",
+    serviceType: "Quartz Epoxy Flooring Installation",
+    url: "/services/quartz-flooring",
+    image: "/images/services/service-commercial.png",
   };
 
   return (
@@ -213,14 +213,14 @@ export default function GarageFloorsPage() {
       />
 
       <PageHeader
-        eyebrow="GARAGE EPOXY SYSTEMS"
+        eyebrow="QUARTZ EPOXY SYSTEMS"
         title={
           <>
-            Garage Floors Built To{" "}
-            <span className="text-[var(--brand-color)]">Outlast.</span>
+            Floors Built For{" "}
+            <span className="text-[var(--brand-color)]">Tough Duty.</span>
           </>
         }
-        description="Showroom-grade epoxy for residential and collector garages — hot-tire resistant, easy to clean, finished for decades of daily use."
+        description="Heavy-duty quartz epoxy for commercial kitchens, wash-down zones, and service areas — maximum toughness with a clean, professional finish."
         primaryAction={{ href: "/contact-us", label: "Get Free Quote" }}
         secondaryAction={{
           href: "#system",
@@ -230,7 +230,7 @@ export default function GarageFloorsPage() {
         asideContent={
           <div className="w-full max-w-[240px] rounded-[1.35rem] border border-white/15 bg-white/5 p-5 backdrop-blur-md">
             <ul className="w-full max-w-[240px] space-y-3.5">
-              {["Hot-tire resistant", "UV-stable clear", "2–3 day install"].map(
+              {["Heavy-duty build", "Wet-area grip", "Easy to sanitize"].map(
                 (item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-white/85">
                     <span className="inline-flex size-6 items-center justify-center rounded-full bg-[var(--brand-color)]/20 text-[var(--brand-color)]"><CheckIcon /></span>
@@ -270,9 +270,9 @@ export default function GarageFloorsPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Your garage is more than parking — it&apos;s cars, tools, seasonal traffic, and the first space guests see. Saven shades garage epoxy transforms bare concrete into a seamless, high-performance surface with UV-stable clears and lasting chemical resistance.</p>
+                  <p>Quartz epoxy is the system you choose when the floor has to work as hard as the rest of the facility. Dense mineral aggregate builds a tough, textured surface that stands up to wash-downs, carts, and demanding service traffic — without looking unfinished.</p>
 
-                  <p>Whether you want a mirror polish under a weekend car or a tough flake system that hides dust between cleanings, we diamond-grind the slab and install coatings built to last — not thin temporary coverings.</p>
+                  <p>From commercial kitchens and wet process zones to corridors and clinical spaces, we diamond-grind the slab and install quartz systems matched to grip, sanitation, and long-term durability.</p>
                   </>
                 }
               />
@@ -295,8 +295,8 @@ export default function GarageFloorsPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/service-garage.png"
-                  alt="Finished garage epoxy floor with luxury vehicle"
+                  src="/images/services/service-commercial.png"
+                  alt="Quartz epoxy flooring in a commercial space"
                   fill
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-cover"
@@ -307,8 +307,8 @@ export default function GarageFloorsPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-[0_28px_70px_rgba(11,17,32,0.3)] sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/hero-epoxy-floor.png"
-                    alt="Wide residential epoxy flooring detail"
+                    src="/images/services/service-industrial.png"
+                    alt="Quartz epoxy flooring texture detail"
                     fill
                     sizes="300px"
                     className="object-cover"
@@ -318,7 +318,7 @@ export default function GarageFloorsPage() {
 
               <div className="absolute top-5 right-5 hidden rounded-2xl border border-white/20 bg-black/35 px-4 py-3 backdrop-blur-md sm:block">
                 <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-white/55 uppercase">Finish</p>
-                <div className="mt-0.5 font-display text-base font-bold text-white">Showroom gloss</div>
+                <div className="mt-0.5 font-display text-base font-bold text-white">Quartz texture</div>
               </div>
             </div>
           </div>
@@ -333,20 +333,20 @@ export default function GarageFloorsPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="garage-benefits-heading"
+              id="quartz-benefits-heading"
               align="center"
               size="section"
               tone="light"
-              eyebrow="WHY GARAGE EPOXY"
+              eyebrow="WHY QUARTZ EPOXY"
               title={
                 <>
                   Performance You Notice{" "}
                   <span className="text-[var(--brand-color)]">
-                    Every Time You Park.
+                    Under Pressure.
                   </span>
                 </>
               }
-              description="A garage isn’t just a parking spot — it’s your space for cars, tools, and family time. Hot-tire resistance, UV-stable clears, and a showroom sheen that holds up to everyday life."
+              description="A quartz floor isn’t a light decorative broadcast — it’s a heavy-duty system. Tough aggregate texture, wet-area traction, and a finish that still looks intentional."
               descriptionClassName="mx-auto max-w-2xl text-white/60"
             />
           </div>
@@ -397,8 +397,8 @@ export default function GarageFloorsPage() {
                 size="section"
                 tone="dark"
                 eyebrow="FINISH LIBRARY"
-                title={<>Choose How Your Garage <span className="text-[var(--brand-color)]">Shows Up.</span></>}
-                description="Matched to your cars, tools, and how the space lives day to day."
+                title={<>Choose How Your Quartz <span className="text-[var(--brand-color)]">Performs.</span></>}
+                description="Matched to moisture risk, cleaning routines, and the texture profile your space needs."
               />
               </div>
           </div>
@@ -437,7 +437,7 @@ export default function GarageFloorsPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="garage-process-heading"
+                id="quartz-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -445,22 +445,22 @@ export default function GarageFloorsPage() {
                   <>
                     From Bare Slab To{" "}
                     <span className="text-[var(--brand-color)]">
-                      Finished Surface.
+                      Service-Ready.
                     </span>
                   </>
                 }
-                description="Prep first. No shortcuts. Every coat earns the next one."
+                description="Prep first. Build texture with intent. Every coat earns the next one."
                 descriptionClassName="max-w-md"
               />
 
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/8 pt-6">
                 <div>
                   <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Typical install</p>
-                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">2–3 days</p>
+                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">3–5 days</p>
                 </div>
                 <span className="hidden h-10 w-px bg-black/10 sm:block" aria-hidden="true" />
                 <div>
-                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Drive-on</p>
+                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Return to use</p>
                   <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">48–72 hrs</p>
                 </div>
               </div>
@@ -504,11 +504,11 @@ export default function GarageFloorsPage() {
               eyebrow="QUESTIONS"
               title={
                 <>
-                  Garage Floor{" "}
+                  Quartz Floor{" "}
                   <span className="text-[var(--brand-color)]">FAQs</span>
                 </>
               }
-              description="Clear answers before you commit — prep, cure times, finishes, and long-term care."
+              description="Clear answers before you commit — texture levels, wet-area use, durability, and how quartz compares to flake."
               align="center"
             />
           </div>
@@ -530,7 +530,7 @@ export default function GarageFloorsPage() {
                 tone="dark"
                 eyebrow="KEEP EXPLORING"
                 title={<>Related<span className="text-[var(--brand-color)]">Systems.</span></>}
-                description="Explore our other garage epoxy flooring systems."
+                description="Explore other epoxy systems that pair well with quartz floors."
               />
             </div>
             <Link href="/services" className="group inline-flex items-center gap-1.5 text-sm font-medium text-black/45 transition-colors hover:text-[var(--brand-color)]">

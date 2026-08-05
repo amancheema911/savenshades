@@ -9,140 +9,140 @@ import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
 
 export const metadata: Metadata = {
-  title: "Garage Epoxy Flooring Installation | Saven shades",
+  title: "Metallic Epoxy Flooring Installation | Saven shades",
   description:
-    "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and one-of-a-kind patterns for showrooms, residences, and feature spaces — stunning, durable, and custom finished.",
   keywords: [
-    "garage epoxy flooring",
-    "garage floor coating",
-    "epoxy garage floor installation",
-    "hot tire resistant epoxy",
-    "residential garage floors",
+    "metallic epoxy flooring",
+    "metallic epoxy floor coating",
+    "decorative metallic floors",
+    "luxury epoxy flooring",
+    "metallic epoxy installation",
   ],
-  alternates: { canonical: "/services/garage-floors" },
+  alternates: { canonical: "/services/metallic-epoxy" },
   openGraph: {
-    title: "Garage Epoxy Flooring Installation | Saven shades",
+    title: "Metallic Epoxy Flooring Installation | Saven shades",
     description:
-      "Showroom-grade garage floors engineered for hot tires, oil, salt, and daily life.",
+      "Stunning metallic epoxy floors with liquid depth, custom color movement, and showroom-ready finishes.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-garage.png",
-        alt: "Luxury car on a finished garage epoxy floor",
+        url: "/images/services/service-metallic.png",
+        alt: "Close-up of blue and silver metallic epoxy floor",
       },
     ],
   },
 };
 
 const specs = [
-  { label: "Best for", value: "Residential & collector garages" },
-  { label: "Finish options", value: "Gloss · Satin · Full flake" },
-  { label: "Typical install", value: "2–3 days" },
-  { label: "Return to vehicles", value: "Usually 48–72 hours" },
+  { label: "Best for", value: "Showrooms · Homes · Feature spaces" },
+  { label: "Finish options", value: "Gloss · Satin · Custom blend" },
+  { label: "Typical install", value: "2–4 days" },
+  { label: "Return to use", value: "Usually 48–72 hours" },
 ];
 
 const benefits = [
   {
-    title: "Hot-tire & chemical resistant",
+    title: "Liquid depth & movement",
     description:
-      "Formulated to resist tire softener, road salt, oil, and grease without etching or peeling — so your investment stays intact season after season.",
+      "Metallic pigments create flowing, three-dimensional patterns — no two floors look the same, and every walk across the surface feels intentional.",
   },
   {
-    title: "Easy everyday care",
+    title: "Custom color choreography",
     description:
-      "A seamless non-porous surface that dust-mops clean. No stained concrete, no musty damp odors trapped in open pores.",
+      "Choose metallics that match brand, mood, or architecture. We blend and manipulate pigment for controlled drama or soft luminous sheen.",
   },
   {
-    title: "Grip where you need it",
+    title: "Showroom-grade clarity",
     description:
-      "Optional texture packages for wet-weather entries without sacrificing the polished, intentional look you want.",
+      "UV-stable clears lock in the metallic effect with a polished finish that photographs beautifully and holds its presence under lighting.",
   },
   {
-    title: "Color that stays true",
+    title: "Art that still performs",
     description:
-      "UV-stable clears and pigmented systems that resist ambering under garage-door sunlight.",
+      "Under the visual layer sits a properly prepped, bonded system — seamless, cleanable, and durable enough for real use in homes and feature commercial spaces.",
   },
 ];
 
 const process = [
   {
     step: "01",
-    title: "Inspect & moisture test",
+    title: "Design consult",
     description:
-      "We evaluate cracks, oil contamination, and moisture so the system bonds for the long term.",
+      "We review color direction, lighting, and how the space lives so the metallic movement reads as intended — subtle, bold, or somewhere between.",
   },
   {
     step: "02",
-    title: "Diamond grind & repair",
+    title: "Precision prep",
     description:
-      "Mechanical profiling opens the slab. Joints and imperfections are repaired before any coat goes down.",
+      "Diamond grinding, repairs, and moisture evaluation create a clean canvas. Metallic systems demand flat, well-bonded substrates.",
   },
   {
     step: "03",
-    title: "Coat & finish",
+    title: "Metallic pour & artistry",
     description:
-      "Primer, color base, optional flake broadcast, and UV-clear applied with precision.",
+      "Base coats and metallic pigment are placed and manipulated by hand for unique depth — then sealed with a UV-stable clear finish.",
   },
   {
     step: "04",
     title: "Cure & care guide",
     description:
-      "Walkthrough of return-to-use timing and simple maintenance that keeps the sheen for years.",
+      "Clear return-to-use timing plus maintenance tips that protect the sheen and keep the metallic depth looking intentional for years.",
   },
 ];
 
 const finishes = [
   {
-    id: "solid",
-    name: "Solid Color",
-    detail: "Clean, continuous color with a high-gloss or satin clear.",
+    id: "ocean",
+    name: "Ocean Metallic",
+    detail: "Cool blues and silvers with flowing depth — ideal for modern residences and gallery-like spaces.",
+    image: "/images/services/service-metallic.png",
+  },
+  {
+    id: "bronze",
+    name: "Bronze Metallic",
+    detail: "Warm gold and bronze movement for showrooms and feature floors that need richness underlight.",
     image: "/images/services/service-commercial.png",
   },
   {
-    id: "flake",
-    name: "Full Flake",
-    detail: "Multi-tone broadcast for grip, style, and everyday forgiveness.",
-    image: "/images/services/service-garage.png",
-  },
-  {
-    id: "metallic",
-    name: "Metallic Accent",
-    detail: "Liquid depth for collector bays that deserve a feature floor.",
-    image: "/images/services/service-metallic.png",
+    id: "graphite",
+    name: "Graphite Metallic",
+    detail: "Deep charcoal metallics with subtle pearl shift — refined, dramatic, and architectural.",
+    image: "/images/services/service-industrial.png",
   },
 ];
 
 const faqs = [
   {
-    question: "How long does garage epoxy flooring last?",
+    question: "Is every metallic epoxy floor unique?",
     answer:
-      "A properly prepped and installed Saven shades garage system typically lasts many years with normal residential use. Longevity depends on prep quality, topcoat, UV exposure, and how vehicles and chemicals are managed.",
+      "Yes. Metallic pigment is manipulated during install, so pattern and movement vary by space, technique, and color blend. We aim for a designed look — not a factory-repeat print.",
   },
   {
-    question: "Can I park cars soon after install?",
+    question: "Can metallic epoxy work in homes and showrooms?",
     answer:
-      "Light foot traffic is often possible within 24–48 hours. Vehicle parking is usually recommended after 48–72 hours depending on temperature and the system we install — we confirm exact timing at handoff.",
+      "Absolutely. Metallic systems are popular for living areas, studios, collector bays, boutiques, and showrooms where the floor itself is part of the design statement.",
   },
   {
-    question: "Will epoxy peel from my garage floor?",
+    question: "Will the metallic finish scratch or dull easily?",
     answer:
-      "Peeling is almost always a prep or moisture issue — not epoxy itself. We grind for mechanical adhesion, remediate contaminants, and only install when conditions support a lasting bond.",
+      "A quality UV clear protects the metallic layer. Like any premium finish, avoiding harsh abrasives and following care guidance keeps clarity and depth looking sharp longer.",
   },
   {
-    question: "Solid color or flake — which should I choose?",
+    question: "How do I choose the right metallic colors?",
     answer:
-      "Choose solid for a clean showroom look. Choose full flake when you want more grip and a surface that hides dust and micro-scuffs between cleanings. We’ll recommend based on how you use the space.",
+      "We start with lighting, wall tones, and the mood you want. Sample boards and color consults help lock in cool, warm, or high-contrast blends before install day.",
   },
 ];
 
 const idealFor = [
-  "Residential garages",
+  "Feature living spaces",
+  "Showrooms & boutiques",
   "Collector & display bays",
-  "Home workshops",
-  "Basements & gyms",
+  "Reception & gallery floors",
 ];
 
-const related = services.filter((s) => s.id !== "garage-floors").slice(0, 3);
+const related = services.filter((s) => s.id !== "metallic-epoxy").slice(0, 3);
 
 function ArrowIcon({ size = 16 }: { size?: number }) {
   return (
@@ -178,7 +178,7 @@ function CheckIcon() {
   );
 }
 
-export default function GarageFloorsPage() {
+export default function MetallicEpoxyPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -192,13 +192,13 @@ export default function GarageFloorsPage() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Garage Epoxy Flooring",
+    name: "Metallic Epoxy Flooring",
     description:
-      "Professional garage epoxy flooring installation with hot-tire resistance, UV-stable finishes, and optional flake systems.",
+      "Professional metallic epoxy flooring with liquid depth and custom color movement for showrooms, residences, and feature spaces.",
     provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Garage Epoxy Flooring Installation",
-    url: "/services/garage-floors",
-    image: "/images/services/service-garage.png",
+    serviceType: "Metallic Epoxy Flooring Installation",
+    url: "/services/metallic-epoxy",
+    image: "/images/services/service-metallic.png",
   };
 
   return (
@@ -213,14 +213,14 @@ export default function GarageFloorsPage() {
       />
 
       <PageHeader
-        eyebrow="GARAGE EPOXY SYSTEMS"
+        eyebrow="METALLIC EPOXY SYSTEMS"
         title={
           <>
-            Garage Floors Built To{" "}
-            <span className="text-[var(--brand-color)]">Outlast.</span>
+            Floors With{" "}
+            <span className="text-[var(--brand-color)]">Liquid Depth.</span>
           </>
         }
-        description="Showroom-grade epoxy for residential and collector garages — hot-tire resistant, easy to clean, finished for decades of daily use."
+        description="Stunning metallic epoxy for showrooms, residences, and feature spaces — custom color movement, showroom clarity, and artistry sealed to last."
         primaryAction={{ href: "/contact-us", label: "Get Free Quote" }}
         secondaryAction={{
           href: "#system",
@@ -230,7 +230,7 @@ export default function GarageFloorsPage() {
         asideContent={
           <div className="w-full max-w-[240px] rounded-[1.35rem] border border-white/15 bg-white/5 p-5 backdrop-blur-md">
             <ul className="w-full max-w-[240px] space-y-3.5">
-              {["Hot-tire resistant", "UV-stable clear", "2–3 day install"].map(
+              {["One-of-a-kind look", "Custom color blend", "UV-stable clear"].map(
                 (item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-white/85">
                     <span className="inline-flex size-6 items-center justify-center rounded-full bg-[var(--brand-color)]/20 text-[var(--brand-color)]"><CheckIcon /></span>
@@ -270,9 +270,9 @@ export default function GarageFloorsPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Your garage is more than parking — it&apos;s cars, tools, seasonal traffic, and the first space guests see. Saven shades garage epoxy transforms bare concrete into a seamless, high-performance surface with UV-stable clears and lasting chemical resistance.</p>
+                  <p>Metallic epoxy is where performance meets design. Pigments move through the resin to create liquid metal depth — luminous, dimensional, and unique to every install. Saven shades metallic systems turn ordinary concrete into a feature surface that defines the room.</p>
 
-                  <p>Whether you want a mirror polish under a weekend car or a tough flake system that hides dust between cleanings, we diamond-grind the slab and install coatings built to last — not thin temporary coverings.</p>
+                  <p>From residential statement floors to boutique showrooms and collector spaces, we diamond-grind the slab and hand-finish metallic coats for controlled movement — then lock it in with a UV-stable clear.</p>
                   </>
                 }
               />
@@ -295,8 +295,8 @@ export default function GarageFloorsPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/service-garage.png"
-                  alt="Finished garage epoxy floor with luxury vehicle"
+                  src="/images/services/service-metallic.png"
+                  alt="Close-up of blue and silver metallic epoxy floor"
                   fill
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-cover"
@@ -308,7 +308,7 @@ export default function GarageFloorsPage() {
                 <div className="relative aspect-[4/3]">
                   <Image
                     src="/images/hero-epoxy-floor.png"
-                    alt="Wide residential epoxy flooring detail"
+                    alt="Metallic epoxy flooring detail with depth and sheen"
                     fill
                     sizes="300px"
                     className="object-cover"
@@ -318,7 +318,7 @@ export default function GarageFloorsPage() {
 
               <div className="absolute top-5 right-5 hidden rounded-2xl border border-white/20 bg-black/35 px-4 py-3 backdrop-blur-md sm:block">
                 <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-white/55 uppercase">Finish</p>
-                <div className="mt-0.5 font-display text-base font-bold text-white">Showroom gloss</div>
+                <div className="mt-0.5 font-display text-base font-bold text-white">Liquid metallic</div>
               </div>
             </div>
           </div>
@@ -333,20 +333,20 @@ export default function GarageFloorsPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="garage-benefits-heading"
+              id="metallic-benefits-heading"
               align="center"
               size="section"
               tone="light"
-              eyebrow="WHY GARAGE EPOXY"
+              eyebrow="WHY METALLIC EPOXY"
               title={
                 <>
                   Performance You Notice{" "}
                   <span className="text-[var(--brand-color)]">
-                    Every Time You Park.
+                    In Every Reflection.
                   </span>
                 </>
               }
-              description="A garage isn’t just a parking spot — it’s your space for cars, tools, and family time. Hot-tire resistance, UV-stable clears, and a showroom sheen that holds up to everyday life."
+              description="A metallic floor isn’t coating — it’s composition. Custom pigment movement, luminous depth, and a clear finish that keeps the artistry present every day."
               descriptionClassName="mx-auto max-w-2xl text-white/60"
             />
           </div>
@@ -397,8 +397,8 @@ export default function GarageFloorsPage() {
                 size="section"
                 tone="dark"
                 eyebrow="FINISH LIBRARY"
-                title={<>Choose How Your Garage <span className="text-[var(--brand-color)]">Shows Up.</span></>}
-                description="Matched to your cars, tools, and how the space lives day to day."
+                title={<>Choose How Your Metallic <span className="text-[var(--brand-color)]">Moves.</span></>}
+                description="Matched to lighting, architecture, and the mood you want the floor to carry."
               />
               </div>
           </div>
@@ -437,7 +437,7 @@ export default function GarageFloorsPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="garage-process-heading"
+                id="metallic-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -445,22 +445,22 @@ export default function GarageFloorsPage() {
                   <>
                     From Bare Slab To{" "}
                     <span className="text-[var(--brand-color)]">
-                      Finished Surface.
+                      Living Art.
                     </span>
                   </>
                 }
-                description="Prep first. No shortcuts. Every coat earns the next one."
+                description="Prep first. Color with intention. Every coat earns the next one."
                 descriptionClassName="max-w-md"
               />
 
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/8 pt-6">
                 <div>
                   <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Typical install</p>
-                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">2–3 days</p>
+                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">2–4 days</p>
                 </div>
                 <span className="hidden h-10 w-px bg-black/10 sm:block" aria-hidden="true" />
                 <div>
-                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Drive-on</p>
+                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Return to use</p>
                   <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">48–72 hrs</p>
                 </div>
               </div>
@@ -504,11 +504,11 @@ export default function GarageFloorsPage() {
               eyebrow="QUESTIONS"
               title={
                 <>
-                  Garage Floor{" "}
+                  Metallic Floor{" "}
                   <span className="text-[var(--brand-color)]">FAQs</span>
                 </>
               }
-              description="Clear answers before you commit — prep, cure times, finishes, and long-term care."
+              description="Clear answers before you commit — uniqueness, care, color selection, and where metallic shines most."
               align="center"
             />
           </div>
@@ -530,7 +530,7 @@ export default function GarageFloorsPage() {
                 tone="dark"
                 eyebrow="KEEP EXPLORING"
                 title={<>Related<span className="text-[var(--brand-color)]">Systems.</span></>}
-                description="Explore our other garage epoxy flooring systems."
+                description="Explore other epoxy systems that pair well with metallic feature floors."
               />
             </div>
             <Link href="/services" className="group inline-flex items-center gap-1.5 text-sm font-medium text-black/45 transition-colors hover:text-[var(--brand-color)]">

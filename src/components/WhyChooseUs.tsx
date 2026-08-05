@@ -1,3 +1,4 @@
+import Heading from "@/components/Heading";
 import Button from "@/components/ui/Button";
 import {
   whyChooseFeatures,
@@ -151,33 +152,28 @@ function FeatureIcon({ icon }: { icon: WhyChooseFeature["icon"] }) {
 
 export default function WhyChooseUs() {
   return (
-    <section
-      className="bg-gray-50 pb-12 lg:pb-20"
-      aria-labelledby="why-choose-heading"
-    >
+    <section className="bg-gray-50 pb-12 lg:pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 sm:rounded-[2.25rem] lg:rounded-[2.75rem]">
         <div className="rounded-[1.75rem] bg-white overflow-hidden px-8 py-12 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-0 lg:items-center">
           {/* Left content */}
-          <div className="lg:col-span-4 lg:pr-10 xl:pr-14">
-            <p className="text-xs font-bold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">
-              WHY CHOOSE US
-            </p>
-            <h2
-              id="why-choose-heading"
-              className="mt-3 font-display text-[1.9rem] font-bold leading-[1.15] tracking-tight text-[#0B1120] sm:text-[2.35rem] lg:text-[2.6rem]"
-            >
-              Stronger. Safer.
-              <br />
-              Better.{" "}
-              <span className="text-[var(--brand-color)]">Forever.</span>
-            </h2>
-            <p className="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-black/50 sm:text-base">
-              Our epoxy floors deliver unmatched performance and elevate every
-              space.
-            </p>
-            <Button href="/about-us" className="mt-7">
-              More About Us
-            </Button>
+          <div className="lg:col-span-4 lg:pr-10 xl:pr-14 space-y-4">
+            <Heading
+              tag="h2"
+              size="section"
+              tone="dark"
+              eyebrow="WHY CHOOSE US"
+              title={
+                <>
+                  Stronger. Safer.
+                  <br />
+                  Better.{" "}
+                  <span className="text-[var(--brand-color)]">Forever.</span>
+                </>
+              }
+              description="Our epoxy floors deliver unmatched performance and elevate every space."
+            />
+
+            <Button href="/about-us">More About Us</Button>
           </div>
 
           {/* Divider + features */}
@@ -185,7 +181,7 @@ export default function WhyChooseUs() {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-10">
               {whyChooseFeatures.map((feature) => (
                 <li key={feature.id} className="min-w-0">
-                  <span className="inline-flex size-12 items-center justify-center rounded-full bg-[rgba(184,134,11,0.12)] text-[var(--brand-color)]">
+                  <span className="inline-flex size-12 items-center justify-center rounded-full bg-[var(--brand-color)] text-white">
                     <FeatureIcon icon={feature.icon} />
                   </span>
                   <h3 className="mt-3 text-[0.92rem] font-bold tracking-tight text-[#0B1120] sm:text-[0.95rem]">

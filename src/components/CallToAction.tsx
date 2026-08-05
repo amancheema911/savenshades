@@ -71,7 +71,6 @@ export default function CallToAction() {
     <section className="bg-gray-50 py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-[#050A14] sm:rounded-[2.25rem] lg:rounded-[2.75rem]">
-          {/* Glossy floor graphic on the right */}
           <div className="pointer-events-none absolute inset-y-0 right-0 w-full sm:w-[55%] lg:w-[48%]">
             <Image
               src="/images/services/service-metallic.png"
@@ -80,10 +79,7 @@ export default function CallToAction() {
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover object-center opacity-80"
             />
-            <div
-              className="absolute inset-0 bg-[linear-gradient(90deg,#050A14_0%,rgba(5,10,20,0.92)_28%,rgba(5,10,20,0.45)_58%,rgba(5,10,20,0.15)_100%)] sm:bg-[linear-gradient(90deg,#050A14_0%,rgba(5,10,20,0.95)_18%,rgba(5,10,20,0.55)_48%,transparent_78%)]"
-              aria-hidden="true"
-            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#050A14_0%,rgba(5,10,20,0.92)_28%,rgba(5,10,20,0.45)_58%,rgba(5,10,20,0.15)_100%)] sm:bg-[linear-gradient(90deg,#050A14_0%,rgba(5,10,20,0.95)_18%,rgba(5,10,20,0.55)_48%,transparent_78%)]" />
           </div>
 
           <div className="relative z-10 grid grid-cols-1 gap-8 px-6 py-10 sm:px-8 sm:py-12 lg:grid-cols-12 lg:items-center lg:gap-6 lg:px-12 lg:py-14">
@@ -94,9 +90,7 @@ export default function CallToAction() {
                 <span className="text-[var(--brand-color)]">Upgrade</span> Your
                 Floors?
               </h2>
-              <p className="mt-3 text-[0.95rem] text-white/75 sm:text-base">
-                Get a free consultation and estimate today.
-              </p>
+              <p className="mt-3 text-[0.95rem] text-white/75 sm:text-base">Get a free consultation and estimate today.</p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <Button href="/contact-us">Get Free Quote</Button>
@@ -114,13 +108,8 @@ export default function CallToAction() {
             <div className="lg:col-span-5 lg:justify-self-end xl:pr-8">
               <ul className="flex flex-col gap-3.5 sm:gap-4">
                 {CTA_PERKS.map((perk) => (
-                  <li
-                    key={perk}
-                    className="flex items-center gap-3 text-sm text-white sm:text-[0.95rem]"
-                  >
-                    <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white">
-                      <CheckIcon />
-                    </span>
+                  <li key={perk} className="flex items-center gap-3 text-sm text-white sm:text-[0.95rem]">
+                    <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white"><CheckIcon /></span>
                     {perk}
                   </li>
                 ))}

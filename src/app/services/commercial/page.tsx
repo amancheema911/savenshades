@@ -9,85 +9,85 @@ import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
 
 export const metadata: Metadata = {
-  title: "Garage Epoxy Flooring Installation | Saven shades",
+  title: "Commercial Epoxy Flooring Installation | Saven shades",
   description:
-    "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
   keywords: [
-    "garage epoxy flooring",
-    "garage floor coating",
-    "epoxy garage floor installation",
-    "hot tire resistant epoxy",
-    "residential garage floors",
+    "commercial epoxy flooring",
+    "retail epoxy floor coating",
+    "commercial floor installation",
+    "high traffic epoxy flooring",
+    "business epoxy floors",
   ],
-  alternates: { canonical: "/services/garage-floors" },
+  alternates: { canonical: "/services/commercial" },
   openGraph: {
-    title: "Garage Epoxy Flooring Installation | Saven shades",
+    title: "Commercial Epoxy Flooring Installation | Saven shades",
     description:
-      "Showroom-grade garage floors engineered for hot tires, oil, salt, and daily life.",
+      "High-performance commercial floors engineered for foot traffic, daily cleaning, and brand-ready spaces.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-garage.png",
-        alt: "Luxury car on a finished garage epoxy floor",
+        url: "/images/services/service-commercial.png",
+        alt: "Bright commercial interior with epoxy flooring",
       },
     ],
   },
 };
 
 const specs = [
-  { label: "Best for", value: "Residential & collector garages" },
-  { label: "Finish options", value: "Gloss · Satin · Full flake" },
-  { label: "Typical install", value: "2–3 days" },
-  { label: "Return to vehicles", value: "Usually 48–72 hours" },
+  { label: "Best for", value: "Retail · Offices · Hospitality" },
+  { label: "Finish options", value: "Solid · Flake · Quartz" },
+  { label: "Typical install", value: "Phased · 2–5 days" },
+  { label: "Return to traffic", value: "Often 24–48 hours" },
 ];
 
 const benefits = [
   {
-    title: "Hot-tire & chemical resistant",
+    title: "Built for constant foot traffic",
     description:
-      "Formulated to resist tire softener, road salt, oil, and grease without etching or peeling — so your investment stays intact season after season.",
+      "Dense, abrasion-resistant systems that hold up to customers, carts, chairs, and daily open hours — without looking tired mid-season.",
   },
   {
-    title: "Easy everyday care",
+    title: "Fast, sanitary cleaning",
     description:
-      "A seamless non-porous surface that dust-mops clean. No stained concrete, no musty damp odors trapped in open pores.",
+      "A seamless non-porous surface that resists spills and stains. Ideal for retail floors, cafés, waiting rooms, and shared commercial spaces.",
   },
   {
-    title: "Grip where you need it",
+    title: "Safer footing under pressure",
     description:
-      "Optional texture packages for wet-weather entries without sacrificing the polished, intentional look you want.",
+      "Optional texture packages for wet entries, kitchens-adjacent zones, and areas where slip resistance matters as much as appearance.",
   },
   {
-    title: "Color that stays true",
+    title: "Brand-ready color & finish",
     description:
-      "UV-stable clears and pigmented systems that resist ambering under garage-door sunlight.",
+      "Solid colors, flake blends, and quartz systems tuned to your brand — consistent, professional, and easy to maintain across locations.",
   },
 ];
 
 const process = [
   {
     step: "01",
-    title: "Inspect & moisture test",
+    title: "Site survey & schedule",
     description:
-      "We evaluate cracks, oil contamination, and moisture so the system bonds for the long term.",
+      "We review use patterns, hours of operation, and moisture so install windows fit your business — not the other way around.",
   },
   {
     step: "02",
-    title: "Diamond grind & repair",
+    title: "Prep & profile",
     description:
-      "Mechanical profiling opens the slab. Joints and imperfections are repaired before any coat goes down.",
+      "Diamond grinding, crack repair, and contamination removal create a mechanical bond strong enough for daily commercial wear.",
   },
   {
     step: "03",
-    title: "Coat & finish",
+    title: "System install",
     description:
-      "Primer, color base, optional flake broadcast, and UV-clear applied with precision.",
+      "Primer, build coats, and finish systems applied in controlled stages — solid, flake, or quartz — matched to traffic and cleaning needs.",
   },
   {
     step: "04",
-    title: "Cure & care guide",
+    title: "Handoff & care plan",
     description:
-      "Walkthrough of return-to-use timing and simple maintenance that keeps the sheen for years.",
+      "Clear reopen timing plus practical maintenance guidance so staff can keep the floor looking intentional between deep cleans.",
   },
 ];
 
@@ -95,54 +95,54 @@ const finishes = [
   {
     id: "solid",
     name: "Solid Color",
-    detail: "Clean, continuous color with a high-gloss or satin clear.",
+    detail: "Clean, continuous color that reads polished and professional in offices and showrooms.",
     image: "/images/services/service-commercial.png",
   },
   {
     id: "flake",
     name: "Full Flake",
-    detail: "Multi-tone broadcast for grip, style, and everyday forgiveness.",
+    detail: "Multi-tone broadcast for grip, camouflage of everyday wear, and high-traffic resilience.",
     image: "/images/services/service-garage.png",
   },
   {
-    id: "metallic",
-    name: "Metallic Accent",
-    detail: "Liquid depth for collector bays that deserve a feature floor.",
-    image: "/images/services/service-metallic.png",
+    id: "quartz",
+    name: "Quartz System",
+    detail: "Heavy-duty texture and durability for corridors, service areas, and demanding commercial zones.",
+    image: "/images/services/service-industrial.png",
   },
 ];
 
 const faqs = [
   {
-    question: "How long does garage epoxy flooring last?",
+    question: "How long does commercial epoxy flooring last?",
     answer:
-      "A properly prepped and installed Saven shades garage system typically lasts many years with normal residential use. Longevity depends on prep quality, topcoat, UV exposure, and how vehicles and chemicals are managed.",
+      "A properly prepped Saven shades commercial system is designed for years of daily foot traffic. Lifespan depends on prep quality, traffic volume, cleaning chemicals, and the finish system specified for the space.",
   },
   {
-    question: "Can I park cars soon after install?",
+    question: "Can you install without fully shutting down my business?",
     answer:
-      "Light foot traffic is often possible within 24–48 hours. Vehicle parking is usually recommended after 48–72 hours depending on temperature and the system we install — we confirm exact timing at handoff.",
+      "Often yes. We plan phased installs and off-hour work whenever possible. Exact sequencing depends on square footage, access, and cure windows — we’ll map a schedule around your operations.",
   },
   {
-    question: "Will epoxy peel from my garage floor?",
+    question: "Will the floor hold up to carts, chairs, and cleaning chemicals?",
     answer:
-      "Peeling is almost always a prep or moisture issue — not epoxy itself. We grind for mechanical adhesion, remediate contaminants, and only install when conditions support a lasting bond.",
+      "Commercial systems are selected for abrasion and chemical resistance. We’ll recommend solid, flake, or quartz based on how the space is used and how aggressively it is cleaned.",
   },
   {
-    question: "Solid color or flake — which should I choose?",
+    question: "Solid, flake, or quartz — which is best for commercial spaces?",
     answer:
-      "Choose solid for a clean showroom look. Choose full flake when you want more grip and a surface that hides dust and micro-scuffs between cleanings. We’ll recommend based on how you use the space.",
+      "Solid fits polished offices and showrooms. Flake adds grip and hides micro-wear in high-traffic retail. Quartz suits corridors and service zones that need maximum toughness. We’ll match the system to your use case.",
   },
 ];
 
 const idealFor = [
-  "Residential garages",
-  "Collector & display bays",
-  "Home workshops",
-  "Basements & gyms",
+  "Retail & boutiques",
+  "Offices & lobbies",
+  "Restaurants & cafés",
+  "Showrooms & clinics",
 ];
 
-const related = services.filter((s) => s.id !== "garage-floors").slice(0, 3);
+const related = services.filter((s) => s.id !== "commercial").slice(0, 3);
 
 function ArrowIcon({ size = 16 }: { size?: number }) {
   return (
@@ -178,7 +178,7 @@ function CheckIcon() {
   );
 }
 
-export default function GarageFloorsPage() {
+export default function CommercialPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -192,13 +192,13 @@ export default function GarageFloorsPage() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Garage Epoxy Flooring",
+    name: "Commercial Epoxy Flooring",
     description:
-      "Professional garage epoxy flooring installation with hot-tire resistance, UV-stable finishes, and optional flake systems.",
+      "Professional commercial epoxy flooring for retail, offices, hospitality, and showrooms — durable, cleanable, and built for high foot traffic.",
     provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Garage Epoxy Flooring Installation",
-    url: "/services/garage-floors",
-    image: "/images/services/service-garage.png",
+    serviceType: "Commercial Epoxy Flooring Installation",
+    url: "/services/commercial",
+    image: "/images/services/service-commercial.png",
   };
 
   return (
@@ -213,14 +213,14 @@ export default function GarageFloorsPage() {
       />
 
       <PageHeader
-        eyebrow="GARAGE EPOXY SYSTEMS"
+        eyebrow="COMMERCIAL EPOXY SYSTEMS"
         title={
           <>
-            Garage Floors Built To{" "}
-            <span className="text-[var(--brand-color)]">Outlast.</span>
+            Floors Built For{" "}
+            <span className="text-[var(--brand-color)]">Business.</span>
           </>
         }
-        description="Showroom-grade epoxy for residential and collector garages — hot-tire resistant, easy to clean, finished for decades of daily use."
+        description="High-performance epoxy for retail, offices, restaurants, and showrooms — tough enough for daily traffic, polished enough for your brand."
         primaryAction={{ href: "/contact-us", label: "Get Free Quote" }}
         secondaryAction={{
           href: "#system",
@@ -230,7 +230,7 @@ export default function GarageFloorsPage() {
         asideContent={
           <div className="w-full max-w-[240px] rounded-[1.35rem] border border-white/15 bg-white/5 p-5 backdrop-blur-md">
             <ul className="w-full max-w-[240px] space-y-3.5">
-              {["Hot-tire resistant", "UV-stable clear", "2–3 day install"].map(
+              {["High-traffic ready", "Easy sanitation", "Phased installs"].map(
                 (item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-white/85">
                     <span className="inline-flex size-6 items-center justify-center rounded-full bg-[var(--brand-color)]/20 text-[var(--brand-color)]"><CheckIcon /></span>
@@ -270,9 +270,9 @@ export default function GarageFloorsPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Your garage is more than parking — it&apos;s cars, tools, seasonal traffic, and the first space guests see. Saven shades garage epoxy transforms bare concrete into a seamless, high-performance surface with UV-stable clears and lasting chemical resistance.</p>
+                  <p>Your commercial floor works every open hour — welcoming customers, taking carts and chair traffic, and facing daily cleaning. Saven shades commercial epoxy turns ordinary concrete into a seamless, high-performance surface that looks intentional and stays maintainable.</p>
 
-                  <p>Whether you want a mirror polish under a weekend car or a tough flake system that hides dust between cleanings, we diamond-grind the slab and install coatings built to last — not thin temporary coverings.</p>
+                  <p>From retail sales floors to office lobbies and hospitality spaces, we diamond-grind the slab and install systems chosen for abrasion, sanitation, and lasting appearance — not thin temporary coatings.</p>
                   </>
                 }
               />
@@ -295,8 +295,8 @@ export default function GarageFloorsPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/service-garage.png"
-                  alt="Finished garage epoxy floor with luxury vehicle"
+                  src="/images/services/service-commercial.png"
+                  alt="Bright commercial interior with epoxy flooring"
                   fill
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-cover"
@@ -307,8 +307,8 @@ export default function GarageFloorsPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-[0_28px_70px_rgba(11,17,32,0.3)] sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/hero-epoxy-floor.png"
-                    alt="Wide residential epoxy flooring detail"
+                    src="/images/services/service-industrial.png"
+                    alt="Commercial corridor epoxy flooring detail"
                     fill
                     sizes="300px"
                     className="object-cover"
@@ -318,7 +318,7 @@ export default function GarageFloorsPage() {
 
               <div className="absolute top-5 right-5 hidden rounded-2xl border border-white/20 bg-black/35 px-4 py-3 backdrop-blur-md sm:block">
                 <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-white/55 uppercase">Finish</p>
-                <div className="mt-0.5 font-display text-base font-bold text-white">Showroom gloss</div>
+                <div className="mt-0.5 font-display text-base font-bold text-white">Traffic-ready gloss</div>
               </div>
             </div>
           </div>
@@ -333,20 +333,20 @@ export default function GarageFloorsPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="garage-benefits-heading"
+              id="commercial-benefits-heading"
               align="center"
               size="section"
               tone="light"
-              eyebrow="WHY GARAGE EPOXY"
+              eyebrow="WHY COMMERCIAL EPOXY"
               title={
                 <>
                   Performance You Notice{" "}
                   <span className="text-[var(--brand-color)]">
-                    Every Time You Park.
+                    Every Open Hour.
                   </span>
                 </>
               }
-              description="A garage isn’t just a parking spot — it’s your space for cars, tools, and family time. Hot-tire resistance, UV-stable clears, and a showroom sheen that holds up to everyday life."
+              description="A commercial floor isn’t backdrop — it’s part of the customer experience. Abrasion resistance, easy sanitation, and a finish that stays sharp through daily traffic."
               descriptionClassName="mx-auto max-w-2xl text-white/60"
             />
           </div>
@@ -397,8 +397,8 @@ export default function GarageFloorsPage() {
                 size="section"
                 tone="dark"
                 eyebrow="FINISH LIBRARY"
-                title={<>Choose How Your Garage <span className="text-[var(--brand-color)]">Shows Up.</span></>}
-                description="Matched to your cars, tools, and how the space lives day to day."
+                title={<>Choose How Your Space <span className="text-[var(--brand-color)]">Shows Up.</span></>}
+                description="Matched to traffic patterns, cleaning routines, and how your brand should feel underfoot."
               />
               </div>
           </div>
@@ -437,7 +437,7 @@ export default function GarageFloorsPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="garage-process-heading"
+                id="commercial-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -445,23 +445,23 @@ export default function GarageFloorsPage() {
                   <>
                     From Bare Slab To{" "}
                     <span className="text-[var(--brand-color)]">
-                      Finished Surface.
+                      Business-Ready.
                     </span>
                   </>
                 }
-                description="Prep first. No shortcuts. Every coat earns the next one."
+                description="Prep first. Schedule around your hours. Every coat earns the next one."
                 descriptionClassName="max-w-md"
               />
 
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/8 pt-6">
                 <div>
                   <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Typical install</p>
-                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">2–3 days</p>
+                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">2–5 days</p>
                 </div>
                 <span className="hidden h-10 w-px bg-black/10 sm:block" aria-hidden="true" />
                 <div>
-                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Drive-on</p>
-                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">48–72 hrs</p>
+                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Foot traffic</p>
+                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">24–48 hrs</p>
                 </div>
               </div>
             </div>
@@ -504,11 +504,11 @@ export default function GarageFloorsPage() {
               eyebrow="QUESTIONS"
               title={
                 <>
-                  Garage Floor{" "}
+                  Commercial Floor{" "}
                   <span className="text-[var(--brand-color)]">FAQs</span>
                 </>
               }
-              description="Clear answers before you commit — prep, cure times, finishes, and long-term care."
+              description="Clear answers before you commit — scheduling, traffic readiness, finishes, and long-term care."
               align="center"
             />
           </div>
@@ -530,7 +530,7 @@ export default function GarageFloorsPage() {
                 tone="dark"
                 eyebrow="KEEP EXPLORING"
                 title={<>Related<span className="text-[var(--brand-color)]">Systems.</span></>}
-                description="Explore our other garage epoxy flooring systems."
+                description="Explore other epoxy systems that pair well with commercial spaces."
               />
             </div>
             <Link href="/services" className="group inline-flex items-center gap-1.5 text-sm font-medium text-black/45 transition-colors hover:text-[var(--brand-color)]">

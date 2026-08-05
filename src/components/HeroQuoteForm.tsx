@@ -29,7 +29,7 @@ export default function HeroQuoteForm() {
   };
 
   return (
-    <div className="liquid-glass relative w-full max-w-[420px] overflow-hidden rounded-3xl border border-white/25 p-5 sm:p-6">
+    <div className="animate-hero-rise-delayed liquid-glass bg-white/5 backdrop-blur-md relative w-full max-w-[420px] overflow-hidden rounded-3xl border border-white/25 p-5 sm:p-6">
       {/* Liquid ripple + specular layers */}
       <div className="liquid-glass-ripple pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="liquid-glass-shine pointer-events-none absolute inset-y-[-20%] left-0 w-1/2" aria-hidden="true" />
@@ -38,7 +38,7 @@ export default function HeroQuoteForm() {
 
       <div className="relative z-10">
         <h2 className="mt-2 font-display text-xl font-bold tracking-tight text-white sm:text-2xl">Get Your Estimate</h2>
-        <p className="mt-1.5 text-sm text-white/70">Tell us about your project and we&apos;ll get back within 24 hours.</p>
+        <p className="mt-1.5 text-md font-medium text-white">Tell us about your project and we&apos;ll get back within 24 hours.</p>
 
         {submitted ? (
           <div className="mt-6 rounded-2xl border border-white/25 bg-white/10 px-4 py-5 text-center backdrop-blur-md" role="status">

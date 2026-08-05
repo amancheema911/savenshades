@@ -26,11 +26,11 @@ function LogoMark() {
     >
       <path
         d="M21 2.5L37.5 12.25V31.75L21 41.5L4.5 31.75V12.25L21 2.5Z"
-        fill="url(#floorix-logo-grad)"
+        fill="var(--brand-color)"
       />
       <path
         d="M21 9L30.5 14.5V25.5L21 31L11.5 25.5V14.5L21 9Z"
-        fill="#0B1A2A"
+        fill="var(--black)"
         fillOpacity="0.35"
       />
       <path
@@ -47,7 +47,7 @@ function LogoMark() {
       />
       <defs>
         <linearGradient
-          id="floorix-logo-grad"
+          id="Saven shades-logo-grad"
           x1="4.5"
           y1="2.5"
           x2="37.5"
@@ -148,12 +148,12 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex shrink-0 items-center gap-3"
-            aria-label="Floorix home"
+            aria-label="Saven shades home"
           >
             <LogoMark />
             <span className="flex flex-col leading-none">
               <span className="font-display text-[1.35rem] font-bold tracking-[0.08em] text-white sm:text-[1.5rem]">
-                FLOORIX
+                Saven shades
               </span>
               <span className="mt-1 text-[0.58rem] font-medium tracking-[0.18em] text-white/75 sm:text-[0.62rem]">
                 PREMIUM EPOXY SOLUTIONS

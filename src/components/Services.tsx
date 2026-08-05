@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Heading from "@/components/Heading";
 import ServiceCard from "@/components/ServiceCard";
 import { featuredServices } from "@/lib/services";
 
@@ -78,38 +79,26 @@ export default function Services() {
   };
 
   return (
-    <section
-      className="relative -mt-0 rounded-t-[2rem] bg-gray-50 py-12 sm:-mt-0 md:-mt-16 sm:rounded-t-[2.75rem] lg:rounded-t-[3.5rem] lg:py-20"
-      aria-labelledby="services-heading"
-    >
+    <section className="relative -mt-0 rounded-t-[2rem] bg-gray-50 py-12 sm:-mt-0 md:-mt-16 sm:rounded-t-[2.75rem] lg:rounded-t-[3.5rem] lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">
-            OUR SERVICES
-          </p>
-          <h2
-            id="services-heading"
-            className="mt-3 font-display text-[1.85rem] font-bold tracking-tight text-[#0B1120] sm:text-4xl lg:text-[2.75rem]"
-          >
-            Premium Flooring Solutions
-          </h2>
-          <p className="mx-auto mt-4 text-[0.95rem] leading-relaxed text-black/50 sm:text-base">
-            High performance epoxy systems for every space. Engineered for
-            durability. Designed for stunning results.
-          </p>
+        <div className="mx-auto max-w-3xl text-center space-y-4">
+          <Heading
+            tag="h2"
+            align="center"
+            size="section"
+            tone="dark"
+            eyebrow="OUR SERVICES"
+            title="Premium Flooring Solutions"
+            description="High performance epoxy systems for every space. Engineered for durability. Designed for stunning results."
+            titleClassName="mt-0"
+            descriptionClassName="mt-0"
+          />
         </div>
 
         <div className="relative mt-10 sm:mt-12">
-          <div
-            ref={trackRef}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-5 lg:gap-6 xl:gap-7 [&::-webkit-scrollbar]:hidden"
-          >
+          <div ref={trackRef} className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-5 lg:gap-6 xl:gap-7 [&::-webkit-scrollbar]:hidden">
             {featuredServices.map((service) => (
-              <div
-                key={service.id}
-                data-service-card
-                className="w-[min(82vw,310px)] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3rem)/3)] xl:w-[calc((100%-5.25rem)/4)]"
-              >
+              <div key={service.id} data-service-card className="w-[min(82vw,310px)] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3rem)/3)] xl:w-[calc((100%-5.25rem)/4)]">
                 <ServiceCard service={service} />
               </div>
             ))}

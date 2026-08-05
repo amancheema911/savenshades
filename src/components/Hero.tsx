@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Heading from "@/components/Heading";
 import HeroQuoteForm from "@/components/HeroQuoteForm";
 import Button from "@/components/ui/Button";
 
@@ -77,27 +78,33 @@ function PlayIcon() {
 export default function Hero() {
   return (
     <section className="relative isolate -mt-[4.75rem] min-h-screen overflow-hidden py-12 sm:py-20">
-      <Image src="/images/hero-epoxy-floor.png" alt="" fill priority sizes="100vw" className="object-cover object-[72%_center] animate-hero-zoom" />
+      <Image src="/images/hero-epoxy-floor-1.1.png" alt="" fill priority sizes="100vw" className="object-cover object-[72%_center] animate-hero-zoom" />
 
-      <div className="absolute inset-0 bg-[#05070b]/60" aria-hidden="true" />
+      {/* <div className="absolute inset-0 bg-[#05070b]/70" aria-hidden="true" /> */}
+      <div className="w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>
 
       <div className="relative z-10 container mx-auto flex min-h-screen w-full flex-col justify-center px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
           {/* Left content */}
           <div className="lg:col-span-7 xl:col-span-7">
-            <div className="max-w-[680px] animate-hero-rise">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-[rgba(8,12,20,0.55)] px-3.5 py-1.5 text-[0.68rem] font-semibold tracking-[0.16em] text-white backdrop-blur-md sm:text-[0.72rem]">
-                <span>PREMIUM EPOXY FLOORING</span>
-              </div>
+            <div className="max-w-[680px] animate-hero-rise text-white space-y-6">
+              <Heading
+                tag="h1"
+                size="hero"
+                tone="light"
+                eyebrow="PREMIUM EPOXY FLOORING"
+                title={
+                  <>
+                    Transform Concrete Into{" "}
+                    <span className="text-[var(--brand-color)]">Luxury Floors</span>
+                  </>
+                }
+                description="High performance epoxy flooring systems built for beauty, durability, and a lifetime of performance."
+                titleClassName="mt-0"
+                descriptionClassName="mt-0"
+              />
 
-              <h1 className="mt-6 font-display text-[2.4rem] font-bold leading-[1.05] tracking-[-0.025em] text-white sm:text-[3.4rem] lg:text-[4rem]">
-                Transform Concrete Into{" "}
-                <span className="text-[var(--brand-color)]">Luxury Floors</span>
-              </h1>
-
-              <p className="mt-5 text-[1.02rem] leading-[1.65] text-white/85 sm:text-lg">High performance epoxy flooring systems built for beauty, durability, and a lifetime of performance.</p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 <Button href="/contact-us">Get Free Quote</Button>
 
                 <Link href="/our-work" className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]">
@@ -144,7 +151,7 @@ export default function Hero() {
           </div>
 
           {/* Right glassmorphism form */}
-          <div className="animate-hero-rise-delayed flex justify-center lg:col-span-5 lg:justify-end">
+          <div className="flex justify-center lg:col-span-5 lg:justify-end">
             <HeroQuoteForm />
           </div>
         </div>

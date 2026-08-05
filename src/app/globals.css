@@ -1,19 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a1018;
-  --foreground: #f4f7fb;
-  /* Dark golden brand palette */
-  --brand-gold-shine: #c9a84b;
-  --brand-gold: #d3ad69;
-  --brand-gold-deep: #926e19;
-  --brand-rgb: 184, 134, 11;
-  /* Keep alias so existing classnames keep working */
-  --brand-color: var(--brand-gold);
-  --brand-color-deep: var(--brand-gold-deep);
-  /* Primary CTA button (maroon pill + gold icon) */
-  --btn-primary: #5e122d;
-  --btn-primary-icon: #ccb07d;
+  --black: #0a1018;
+  --white: #f4f7fb;
+  /* --brand-color: #6D1731; */
+  --brand-color: #0d7fe8;
+  --brand-color-deep: #141d28;
 }
 
 @theme inline {
@@ -25,8 +17,8 @@
 }
 
 body {
-  background: var(--foreground);
-  color: var(--foreground);
+  font-size: 15px;
+  color: var(--black);
   font-family: var(--font-geist-sans), ui-sans-serif, sans-serif;
 }
 

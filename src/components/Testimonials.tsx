@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Heading from "@/components/Heading";
 import {
   testimonials,
   testimonialRating,
@@ -45,21 +46,15 @@ function Stars({ count }: { count: number }) {
 
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
-    <article className="flex h-full min-h-[260px] flex-col rounded-[1.5rem] shadow-sm bg-white p-6 sm:min-h-[280px] sm:p-7">
+    <article className="flex flex-col rounded-[1.5rem] shadow-sm bg-white p-6 sm:p-7 space-y-4">
       <QuoteIcon />
-      <p className="mt-5 flex-1 text-[0.98rem] leading-relaxed text-[#1f2937] sm:text-base">
-        {item.quote}
-      </p>
+      <p>{item.quote}</p>
       <div className="mt-6 flex items-center gap-3">
-        <span
-          className="inline-flex size-11 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-          style={{ backgroundColor: item.avatarColor }}
-          aria-hidden="true"
-        >
+        <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: item.avatarColor }} aria-hidden="true">
           {item.initials}
         </span>
         <div>
-          <p className="text-sm font-bold text-[#0B1120]">- {item.name}</p>
+          <p className="text-sm font-bold text-[var(--black)]">{item.name}</p>
           <p className="text-sm text-black/45">{item.role}</p>
         </div>
       </div>
@@ -125,20 +120,22 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-gray-50" aria-labelledby="testimonials-heading">
+    <section className="bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-bold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">
-              TESTIMONIALS
-            </p>
-            <h2
-              id="testimonials-heading"
-              className="mt-2 font-display text-[1.85rem] font-bold tracking-tight text-[#0B1120] sm:text-3xl lg:text-[2.5rem]"
-            >
-              Loved By{" "}
-              <span className="text-[var(--brand-color)]">Thousands</span>
-            </h2>
+            <Heading
+              tag="h2"
+              size="section"
+              tone="dark"
+              eyebrow="TESTIMONIALS"
+              title={
+                <>
+                  Loved By{" "}
+                  <span className="text-[var(--brand-color)]">Thousands</span>
+                </>
+              }
+            />
           </div>
 
           <div className="flex items-center gap-2.5">
@@ -153,28 +150,16 @@ export default function Testimonials() {
         </div>
 
         <div className="relative mt-8 sm:mt-10">
-          <div
-            ref={trackRef}
-            onScroll={onScroll}
-            className="flex snap-x snap-mandatory gap-2 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 lg:gap-4 [&::-webkit-scrollbar]:hidden"
-          >
+          <div ref={trackRef} onScroll={onScroll} className="flex snap-x snap-mandatory gap-2 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 lg:gap-4 [&::-webkit-scrollbar]:hidden">
             {testimonials.map((item) => (
-              <div
-                key={item.id}
-                data-testimonial-card
-                className="w-[min(88vw,360px)] p-2 shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3rem)/3)]"
-              >
+              <div key={item.id} data-testimonial-card className="w-[min(88vw,360px)] p-2 shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3rem)/3)]">
                 <TestimonialCard item={item} />
               </div>
             ))}
           </div>
         </div>
 
-        <div
-          className="mt-8 flex items-center justify-center gap-2.5"
-          role="tablist"
-          aria-label="Testimonials slides"
-        >
+        <div className="mt-8 flex items-center justify-center gap-2.5" role="tablist" aria-label="Testimonials slides">
           {Array.from({ length: maxIndex + 1 }, (_, index) => {
             const active = index === activeIndex;
             return (

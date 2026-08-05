@@ -12,7 +12,7 @@ const openSans = Open_Sans({
 
 
 export const metadata: Metadata = {
-  title: "Floorix | Premium Epoxy Solutions",
+  title: "Saven shades | Premium Epoxy Solutions",
   description:
     "Premium epoxy flooring solutions for residential and commercial spaces.",
 };
