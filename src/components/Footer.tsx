@@ -78,40 +78,6 @@ function LogoMark() {
   );
 }
 
-function FacebookIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z" />
-    </svg>
-  );
-}
-
-function InstagramIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
-      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
-    </svg>
-  );
-}
-
-function XIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.735-8.835L2.25 2.25H8.08l4.261 5.686L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
-    </svg>
-  );
-}
-
-function HouzzIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 3 3 10.2V21h7.2v-5.4h3.6V21H21V10.2L12 3Zm1.8 10.8h-3.6V9h3.6v4.8Z" />
-    </svg>
-  );
-}
-
 function PhoneIcon() {
   return (
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -147,13 +113,6 @@ function PinIcon() {
   );
 }
 
-// const SOCIAL = [
-//   { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-//   { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
-//   { label: "X", href: "https://x.com", Icon: XIcon },
-//   { label: "Houzz", href: "https://houzz.com", Icon: HouzzIcon },
-// ];
-
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link href={href} className="text-[0.92rem] text-white/55 transition-colors hover:text-white">{children}</Link>
@@ -170,8 +129,8 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Saven shades home">
               <LogoMark />
               <span className="flex flex-col leading-none">
-                <span className="font-display text-[1.35rem] font-bold tracking-[0.08em]">Saven shades</span>
-                <span className="mt-1 text-[0.58rem] font-medium tracking-[0.16em] text-white/60">PREMIUM EPOXY FLOORING</span>
+                <span className="text-lg font-bold tracking-wide uppercase">Saven shades</span>
+                <span className="text-[0.65rem] font-medium tracking-wide text-white/75 uppercase">PREMIUM EPOXY SOLUTIONS</span>
               </span>
             </Link>
 
@@ -256,9 +215,9 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <p className="mx-auto container px-4 text-center text-sm text-white/45 sm:px-6 lg:px-8 py-5">
-          © 2026 Saven Shades. All rights reserved.
-        </p>
+        <div className="mx-auto container px-4 sm:px-6 lg:px-8 py-5 text-white/70">
+          <p>© 2026 Saven Shades. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );

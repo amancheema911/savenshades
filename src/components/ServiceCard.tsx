@@ -165,12 +165,8 @@ export default function ServiceCard({ service, className = "" }: ServiceCardProp
 
       <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-3 p-4 sm:p-5">
         <div className="min-w-0 flex-1">
-          <h3 className="font-display text-xl font-bold tracking-tight text-white sm:text-[1.35rem]">
-            {service.title}
-          </h3>
-          <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-white/80">
-            {service.description}
-          </p>
+          <h3 className="text-xl font-bold tracking-tight text-white">{service.title}</h3>
+          <p className="text-white/70">{service.description}</p>
         </div>
 
         <Link

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import Button from "@/components/ui/Button";
+import { contactInfo } from "@/lib/config";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -12,6 +13,15 @@ const NAV_LINKS = [
   { href: "/our-work", label: "Our Work" },
   { href: "/contact-us", label: "Contact Us" },
 ];
+
+const { phone, hours } = contactInfo;
+const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
+
+function PhoneIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+  );
+}
 
 function LogoMark() {
   return (
@@ -129,35 +139,31 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
+  const isHome = pathname === "/";
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
+  const navSolid = !isHome || scrolled || menuOpen;
+
   return (
     <header className="sticky top-0 z-50 inset-x-0">
       <nav
         className={`relative z-50 transition-[background-color,box-shadow,backdrop-filter,border-color] duration-300 ${
-          scrolled || menuOpen
-            ? "border-b border-white/10 bg-[#05070b] backdrop-blur-xl"
+          navSolid
+            ? "border-b border-white/10 bg-[var(--black)] backdrop-blur-xl"
             : "border-b border-transparent bg-transparent backdrop-blur-md"
         }`}
         aria-label="Primary"
       >
         <div className="container mx-auto flex items-center justify-between gap-4 py-3 px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="flex shrink-0 items-center gap-3"
-            aria-label="Saven shades home"
-          >
+          <Link href="/" className="flex shrink-0 items-center gap-3">
             <LogoMark />
             <span className="flex flex-col leading-none">
-              <span className="font-display text-[1.35rem] font-bold tracking-[0.08em] text-white sm:text-[1.5rem]">
-                Saven shades
-              </span>
-              <span className="mt-1 text-[0.58rem] font-medium tracking-[0.18em] text-white/75 sm:text-[0.62rem]">
-                PREMIUM EPOXY SOLUTIONS
-              </span>
+              <span className="text-lg font-bold tracking-wide text-white sm:text-xl uppercase">Saven shades</span>
+              <span className="text-[0.65rem] font-medium tracking-wide text-white/75 uppercase">PREMIUM EPOXY SOLUTIONS</span>
             </span>
           </Link>
 
@@ -168,7 +174,7 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`relative px-3 py-2 text-[0.95rem] font-medium transition-colors ${
+                    className={`relative px-3 py-2 text-sm font-medium transition-colors ${
                       active
                         ? "text-[var(--brand-color)]"
                         : "text-white/90 hover:text-white"
@@ -188,11 +194,19 @@ export default function Navbar() {
             })}
           </ul>
 
-          <div className="flex items-center gap-3 sm:gap-4">
-            <Button href="/contact-us" size="sm" className="max-[399px]:pl-3.5">
-              <span className="hidden min-[400px]:inline">Get Free Quote</span>
-              <span className="min-[400px]:hidden">Quote</span>
-            </Button>
+          <div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
+            <a href={phoneHref} className="hidden items-center gap-3 transition-opacity hover:opacity-90 xl:flex">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[var(--brand-color)] text-[var(--brand-color)]"><PhoneIcon /></span>
+              <span className="flex flex-col leading-tight">
+                <span className="text-[0.8rem] font-medium text-white">Call Us Today</span>
+                <span className="text-base font-bold tracking-tight text-white">{phone}</span>
+                <span className="text-[0.72rem] font-medium text-white/90">{hours}</span>
+              </span>
+            </a>
+
+            <div className="hidden sm:block">
+              <Button href="/contact-us" size="sm">Get Free Quote</Button>
+            </div>
 
             <button
               type="button"
@@ -233,7 +247,7 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-          <span className="font-display text-sm font-semibold tracking-[0.14em] text-white/80">
+          <span className=" text-sm font-semibold tracking-[0.14em] text-white/80">
             MENU
           </span>
           <button
@@ -269,13 +283,16 @@ export default function Navbar() {
         </ul>
 
         <div className="border-t border-white/10 p-4">
-          <Button
-            href="/contact-us"
-            fullWidth
-            onClick={() => setMenuOpen(false)}
-          >
-            Get Free Quote
-          </Button>
+          <a href={phoneHref} className="mb-4 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-3 transition-colors hover:bg-white/10" onClick={() => setMenuOpen(false)}>
+            <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[var(--brand-color)] text-[var(--brand-color)]"><PhoneIcon /></span>
+            <span className="flex min-w-0 flex-col leading-tight">
+              <span className="text-[0.75rem] font-medium text-white">Call Us Today</span>
+              <span className="truncate text-sm font-bold text-white">{phone}</span>
+              <span className="text-[0.7rem] font-medium text-white/80">{hours}</span>
+            </span>
+          </a>
+
+          <Button href="/contact-us" fullWidth onClick={() => setMenuOpen(false)}>Get Free Quote</Button>
         </div>
       </aside>
     </header>

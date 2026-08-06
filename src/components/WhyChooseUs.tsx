@@ -152,7 +152,7 @@ function FeatureIcon({ icon }: { icon: WhyChooseFeature["icon"] }) {
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-gray-50 pb-12 lg:pb-20">
+    <section className="bg-gray-50 py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 sm:rounded-[2.25rem] lg:rounded-[2.75rem]">
         <div className="rounded-[1.75rem] bg-white overflow-hidden px-8 py-12 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-0 lg:items-center">
           {/* Left content */}
@@ -187,9 +187,7 @@ export default function WhyChooseUs() {
                   <h3 className="mt-3 text-[0.92rem] font-bold tracking-tight text-[#0B1120] sm:text-[0.95rem]">
                     {feature.title}
                   </h3>
-                  <p className="mt-1 text-[0.8rem] leading-snug text-black/45 sm:text-[0.82rem]">
-                    {feature.description}
-                  </p>
+                  <p>{feature.description}</p>
                 </li>
               ))}
             </ul>

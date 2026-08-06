@@ -59,7 +59,7 @@ export default function PageHeader({
   image = "/images/hero-epoxy-floor-1.jpg",
   imageAlt = "",
   imageClassName = "object-cover object-bottom animate-hero-zoom",
-  minHeightClassName = "min-h-[50vh] sm:min-h-[50vh]",
+  minHeightClassName = "py-14 sm:py-16",
   primaryAction,
   secondaryAction,
   aside,
@@ -69,13 +69,13 @@ export default function PageHeader({
   const showAside = Boolean(asideContent || aside);
 
   return (
-    <section className={`relative isolate -mt-[4.75rem] overflow-hidden ${minHeightClassName}`}>
+    <section className={`relative isolate overflow-hidden ${minHeightClassName}`}>
       <Image src={image} alt={imageAlt} fill priority sizes="100vw" className={imageClassName} />
 
       <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(5,9,16,0.95)_0%,rgba(5,9,16,0.78)_40%,rgba(5,9,16,0.42)_72%,rgba(5,9,16,0.7)_100%),linear-gradient(180deg,rgba(5,9,16,0.45)_0%,transparent_30%,rgba(5,9,16,0.75)_100%)]" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-soft-light" style={{ backgroundImage: NOISE_BG }} aria-hidden="true" />
 
-      <div className="relative z-10 container mx-auto flex w-full flex-col justify-end px-4 pb-14 pt-32 sm:px-6 sm:pb-16 sm:pt-36 lg:px-8 lg:pb-20">
+      <div className="relative z-10 container mx-auto flex w-full flex-col justify-end px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
           <div className={`max-w-3xl animate-hero-rise ${showAside ? "lg:col-span-8" : "lg:col-span-10"}`}>
             <Heading
@@ -109,11 +109,11 @@ export default function PageHeader({
           {showAside ? (
             <div className="hidden animate-hero-rise-delayed lg:col-span-4 lg:flex lg:justify-end">
               {asideContent ?? (
-                <div className="w-full max-w-[240px] rounded-[1.35rem] border border-white/15 bg-white/5 p-5 backdrop-blur-md">
-                  <p className="text-[0.68rem] font-semibold tracking-[0.16em] text-white/45 uppercase">{aside!.label}</p>
-                  <p className="mt-1 font-display text-4xl font-bold tracking-tight text-white">{aside!.value}</p>
-                  <div className="mt-4 h-px w-full bg-gradient-to-r from-[var(--brand-color)] to-transparent" />
-                  <p className="mt-4 text-sm leading-snug text-white/65">{aside!.description}</p>
+                <div className="w-full max-w-[240px] rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-md space-y-3">
+                  <div className="text-white/70">{aside!.label}</div>
+                  <div className="text-4xl font-bold tracking-tight text-white">{aside!.value}</div>
+                  <div className="h-px w-full bg-gradient-to-r from-[var(--brand-color)] to-transparent" />
+                  <p className="text-white/70">{aside!.description}</p>
                 </div>
               )}
             </div>

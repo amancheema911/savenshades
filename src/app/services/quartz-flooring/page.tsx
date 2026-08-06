@@ -250,7 +250,7 @@ export default function QuartzFlooringPage() {
             {specs.map((spec, index) => (
               <div key={spec.label} className={index > 0 ? "lg:border-l lg:border-black/8 lg:pl-8" : undefined}>
                 <dt className="text-xs font-bold tracking-[0.2em] text-[var(--brand-color)] uppercase">{spec.label}</dt>
-                <dd className="font-display text-lg font-bold tracking-tight text-black">{spec.value}</dd>
+                <dd className=" text-lg font-bold tracking-tight text-black">{spec.value}</dd>
               </div>
             ))}
           </dl>
@@ -278,7 +278,7 @@ export default function QuartzFlooringPage() {
               />
 
               <div className="mt-9">
-                <p className="text-[0.68rem] font-semibold tracking-[0.16em] text-black/35 uppercase">Ideal for</p>
+                <div>Ideal for</div>
                 <ul className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                   {idealFor.map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-black">
@@ -317,8 +317,8 @@ export default function QuartzFlooringPage() {
               </div>
 
               <div className="absolute top-5 right-5 hidden rounded-2xl border border-white/20 bg-black/35 px-4 py-3 backdrop-blur-md sm:block">
-                <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-white/55 uppercase">Finish</p>
-                <div className="mt-0.5 font-display text-base font-bold text-white">Quartz texture</div>
+                <div className="text-white/70">Finish</div>
+                <div className="text-lg font-bold text-white">Quartz texture</div>
               </div>
             </div>
           </div>
@@ -368,14 +368,14 @@ export default function QuartzFlooringPage() {
                     .filter(Boolean)
                     .join(" ")}
                 >
-                  <span className="pointer-events-none absolute top-4 right-5 font-display text-6xl font-bold leading-none tracking-tight text-white/[0.04] transition-colors duration-500 group-hover:text-[var(--brand-color)]/15 sm:top-5 sm:right-6 sm:text-7xl">{number}</span>
+                  <span className="pointer-events-none absolute top-4 right-5  text-6xl font-bold leading-none tracking-tight text-white/[0.04] transition-colors duration-500 group-hover:text-[var(--brand-color)]/15 sm:top-5 sm:right-6 sm:text-7xl">{number}</span>
 
                   <div className="relative z-10 flex h-full flex-col text-white/85 space-y-2">
                     <span className="inline-flex items-center gap-3 text-[0.72rem] font-semibold tracking-[0.16em] text-[var(--brand-color)] uppercase">
                       <span className="h-px w-6 bg-[var(--brand-color)] transition-all duration-500 group-hover:w-10" />
                       {number}
                     </span>
-                    <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-[var(--brand-color)] sm:text-2xl">{benefit.title}</h3>
+                    <h3 className="mt-5  text-xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-[var(--brand-color)] sm:text-2xl">{benefit.title}</h3>
                     <p>{benefit.description}</p>
                   </div>
 
@@ -416,8 +416,7 @@ export default function QuartzFlooringPage() {
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white/85 space-y-2">
-                    <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-[var(--brand-color)] uppercase">Option {String(index + 1).padStart(2, "0")}</p>
-                    <h3 className="font-display text-2xl font-bold text-white">{finish.name}</h3>
+                    <h3 className=" text-2xl font-bold text-white">{finish.name}</h3>
                     <p>{finish.detail}</p>
                   </div>
                 </div>
@@ -455,13 +454,13 @@ export default function QuartzFlooringPage() {
 
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/8 pt-6">
                 <div>
-                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Typical install</p>
-                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">3–5 days</p>
+                  <div>Typical install</div>
+                  <div className="text-2xl font-bold tracking-tight text-[#0B1120]">3–5 days</div>
                 </div>
                 <span className="hidden h-10 w-px bg-black/10 sm:block" aria-hidden="true" />
                 <div>
-                  <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/35 uppercase">Return to use</p>
-                  <p className="mt-1 font-display text-2xl font-bold tracking-tight text-[#0B1120]">48–72 hrs</p>
+                  <div>Return to use</div>
+                  <div className="text-2xl font-bold tracking-tight text-[#0B1120]">48–72 hrs</div>
                 </div>
               </div>
             </div>
@@ -478,11 +477,11 @@ export default function QuartzFlooringPage() {
 
                   <div className="min-w-0 space-y-2">
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                      <span className="font-display text-sm font-bold tracking-[0.16em] text-[var(--brand-color)]">{item.step}</span>
+                      <span className=" text-sm font-bold tracking-[0.16em] text-[var(--brand-color)]">{item.step}</span>
                       <span className="hidden h-px w-8 bg-[var(--brand-color)]/40 sm:inline-block"/>
                       <span className="text-[0.68rem] font-semibold tracking-[0.14em] text-black/30 uppercase">Step {index + 1} of {process.length}</span>
                     </div>
-                    <h3 className="font-display text-xl font-bold tracking-tight text-black transition-colors duration-300 group-hover:text-[var(--brand-color)] sm:text-2xl">{item.title}</h3>
+                    <h3 className=" text-xl font-bold tracking-tight text-black transition-colors duration-300 group-hover:text-[var(--brand-color)] sm:text-2xl">{item.title}</h3>
                     <p>{item.description}</p>
                   </div>
                 </li>
@@ -553,7 +552,7 @@ export default function QuartzFlooringPage() {
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
                     <div className="min-w-0 text-white/85 space-y-2">
-                      <h3 className="font-display text-xl font-bold">{item.title}</h3>
+                      <h3 className=" text-xl font-bold">{item.title}</h3>
                       <p>{item.description}</p>
                     </div>
                     <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">

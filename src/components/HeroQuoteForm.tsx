@@ -37,7 +37,7 @@ export default function HeroQuoteForm() {
       <div className="pointer-events-none absolute -right-10 -bottom-14 size-44 rounded-full bg-[radial-gradient(circle,rgba(184,134,11,0.35),transparent_70%)] blur-2xl" aria-hidden="true" />
 
       <div className="relative z-10">
-        <h2 className="mt-2 font-display text-xl font-bold tracking-tight text-white sm:text-2xl">Get Your Estimate</h2>
+        <h2 className="mt-2  text-xl font-bold tracking-tight text-white sm:text-2xl">Get Your Estimate</h2>
         <p className="mt-1.5 text-md font-medium text-white">Tell us about your project and we&apos;ll get back within 24 hours.</p>
 
         {submitted ? (

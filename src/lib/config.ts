@@ -5,6 +5,7 @@ export const contactInfo = {
     phone: "+1 (234) 567-8901",
     email: "info@Saven shades.com",
     address: "123 Shades Ave, Dallas, TX 75001",
+    hours: "Mon - Sat: 7AM - 7PM",
 };
 
 

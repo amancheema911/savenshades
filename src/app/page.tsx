@@ -1,8 +1,10 @@
 import CallToAction from "@/components/CallToAction";
 import Counters from "@/components/Counters";
-import Hero from "@/components/Hero";
+import FloorServices from "@/components/FloorServices";
+import HeroBanner from "@/components/HeroBanner";
 import OurProcess from "@/components/OurProcess";
 import OurWork from "@/components/OurWork";
+import ReviewsBar from "@/components/ReviewsBar";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Visualize from "@/components/Visualize";
@@ -13,10 +15,16 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <Hero />
+      <HeroBanner />
+
+      {/* Floor Services Section */}
+      <FloorServices />
+
+      {/* Reviews Section */}
+      <ReviewsBar />
 
       {/* Services Section */}
-      <Services />
+      {/* <Services /> */}
 
       {/* Why Choose Us Section */}
       <WhyChooseUs />

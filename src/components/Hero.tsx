@@ -130,12 +130,8 @@ export default function Hero() {
                     >
                       <dt className="sr-only">{stat.label}</dt>
                       <dd>
-                        <p className="font-display text-[1.65rem] font-bold tracking-tight text-white sm:text-[1.85rem]">
-                          {stat.value}
-                        </p>
-                        <p className="mt-1 text-[0.72rem] font-medium text-white/70 sm:text-[0.78rem]">
-                          {stat.label}
-                        </p>
+                        <p className=" text-[1.65rem] font-bold tracking-tight text-white sm:text-[1.85rem]">{stat.value}</p>
+                        <p className="mt-1 text-[0.72rem] font-medium text-white/70 sm:text-[0.78rem]">{stat.label}</p>
                       </dd>
                     </div>
                   ))}

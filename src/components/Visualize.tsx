@@ -251,13 +251,13 @@ export default function Visualize() {
 
             <div className="mt-4 flex items-center justify-center gap-3 border-b border-black/10 py-4 sm:gap-6">
               <div className="min-w-0 flex-1 text-center sm:text-left">
-                <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">BEFORE</p>
-                <p className="mt-1 text-xs text-black/55 sm:text-sm">Worn. Dull. Uninspiring.</p>
+                <p className="text-sm font-semibold text-[var(--brand-color)]">BEFORE</p>
+                <p className="text-black/70">Worn. Dull. Uninspiring.</p>
               </div>
               <span className="shrink-0 text-base text-[var(--brand-color)] sm:text-xl">→</span>
               <div className="min-w-0 flex-1 text-center sm:text-right">
-                <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-[var(--brand-color)] sm:text-sm">AFTER</p>
-                <p className="mt-1 text-xs text-black/55 sm:text-sm">Seamless. Durable. Exceptional.</p>
+                <p className="text-sm font-semibold text-[var(--brand-color)]">AFTER</p>
+                <p className="text-black/70">Seamless. Durable. Exceptional.</p>
               </div>
             </div>
           </div>
@@ -270,21 +270,17 @@ export default function Visualize() {
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white sm:size-14 lg:size-12">
                     <FeatureIcon icon={feature.icon} />
                   </span>
-                  <p className="max-w-[9rem] text-[0.8rem] font-semibold leading-snug text-[#0B1120] sm:max-w-none sm:text-sm">
-                    {feature.label}
-                  </p>
+                  <div className="text-sm font-semibold text-[#0B1120]">{feature.label}</div>
                 </li>
               ))}
             </ul>
 
             <div className="mt-8 flex justify-center lg:mt-10 lg:justify-start">
-              <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-black/15 px-3.5 py-2.5 text-[0.6rem] font-semibold tracking-[0.1em] text-black/45 uppercase sm:gap-2.5 sm:px-5 sm:text-[0.7rem] sm:tracking-[0.14em]">
-                <span className="shrink-0 text-[var(--brand-color)]">
-                  <DragHandIcon />
-                </span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/15 px-3 py-2 text-black/70">
+                <span className="shrink-0 text-[var(--brand-color)]"><DragHandIcon /></span>
                 <span className="sm:hidden">Drag to compare</span>
                 <span className="hidden sm:inline">Drag the slider left or right to compare</span>
-              </p>
+              </div>
             </div>
           </div>
         </div>

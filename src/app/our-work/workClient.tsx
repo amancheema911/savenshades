@@ -151,15 +151,8 @@ function ProjectLightbox({
       <div className="relative z-10 flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-t-[1.5rem] bg-[#05070b] sm:max-h-[90vh] sm:rounded-[1.5rem] border border-white/20">
         <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-4">
           <div className="min-w-0">
-            <p className="text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--brand-color)] uppercase">
-              {item.category}
-            </p>
-            <h2
-              id={titleId}
-              className="truncate font-display text-lg font-bold text-white sm:text-xl"
-            >
-              {item.title}
-            </h2>
+            <div className="text-sm text-[var(--brand-color)] uppercase">{item.category}</div>
+            <h2 id={titleId} className="truncate text-2xl font-bold text-white">{item.title}</h2>
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <span className="hidden text-sm text-white/50 sm:inline">
@@ -243,16 +236,12 @@ function ProjectLightbox({
 
           <div className="flex flex-col gap-5 border-t border-white/10 p-5 sm:p-6 lg:border-t-0 lg:border-l">
             <div>
-              <p className="text-sm text-white/55">{item.location}</p>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-white/80 sm:text-base">
-                {item.description}
-              </p>
+              <div className="text-white/80">{item.location}</div>
+              <p className="text-white">{item.description}</p>
             </div>
 
             <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5">
-              <p className="text-sm text-white/45">
-                {ourWork.length} {ourWork.length === 1 ? "photo" : "photos"}
-              </p>
+              <div className="text-white/70">{ourWork.length} {ourWork.length === 1 ? "photo" : "photos"}</div>
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -467,10 +456,10 @@ export default function OurWorkClient() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95"/>
                       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 sm:p-5">
-                        <div className="min-w-0">
-                          <p className="text-[0.68rem] font-semibold tracking-[0.14em] text-white/70 uppercase">{item.category}</p>
-                          <p className="mt-1 font-display text-lg font-bold text-white sm:text-xl">{item.title}</p>
-                          <p className="mt-0.5 text-sm text-white/65">{item.location}</p>
+                        <div className="space-y-1">
+                          <div className="text-white/70 uppercase">{item.category}</div>
+                          <div className="text-lg font-bold text-white">{item.title}</div>
+                          <div className="text-white/70">{item.location}</div>
                         </div>
                         <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/50 bg-white/10 text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
                           <ExpandIcon />
@@ -484,7 +473,7 @@ export default function OurWorkClient() {
           </ul>
 
           {filtered.length === 0 ? (
-            <p className="mt-12 text-center text-sm text-black/45">No projects in this category yet.</p>
+            <p>No projects in this category yet.</p>
           ) : null}
         </div>
       </section>

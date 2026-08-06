@@ -190,14 +190,13 @@ export default function OurProcess() {
 
           <ol className="relative z-10 grid grid-cols-4 gap-x-3 gap-y-12 lg:grid-cols-8 lg:gap-x-2">
             {processSteps.map((step) => (
-              <li key={step.id} className="flex flex-col items-center text-center">
+              <li key={step.id} className="flex flex-col items-center text-center space-y-3">
                 <span className="inline-flex size-14 items-center justify-center rounded-full bg-[var(--brand-color)]/30 text-white border border-white/30">
                   <StepIcon icon={step.icon} />
                 </span>
-
-                <p className="mt-4 text-xs font-medium text-white/70">{step.step}</p>
-                <h3 className="mt-1.5 text-[0.92rem] font-bold leading-snug text-white lg:text-[0.95rem]">{step.title}</h3>
-                <p className="mt-1.5 max-w-[9.5rem] text-[0.75rem] leading-snug text-white/50 lg:text-[0.78rem]">{step.description}</p>
+                <p className="text-white/70">{step.step}</p>
+                <h3 className="text-md font-semibold text-white">{step.title}</h3>
+                <p className="text-white/70">{step.description}</p>
               </li>
             ))}
           </ol>
@@ -212,9 +211,9 @@ export default function OurProcess() {
                 <StepIcon icon={step.icon} />
               </span>
               <div className="pt-1.5">
-                <p className="text-xs font-medium text-white/70">{step.step}</p>
+                <p className="text-white/70">{step.step}</p>
                 <h3 className="mt-1 text-base font-bold text-white">{step.title}</h3>
-                <p className="mt-1 text-sm text-white/50">{step.description}</p>
+                <p className="text-white/70">{step.description}</p>
               </div>
             </li>
           ))}

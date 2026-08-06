@@ -12,14 +12,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brand: var(--brand-gold);
-  --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-outfit);
+  --font-roboto: var(--font-roboto);
 }
 
 body {
   font-size: 15px;
-  color: var(--black);
-  font-family: var(--font-geist-sans), ui-sans-serif, sans-serif;
+  color: #0a1018b2;
+  font-family: var(--font-roboto), ui-sans-serif, sans-serif;
 }
 
 @keyframes hero-rise {

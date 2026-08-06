@@ -85,12 +85,12 @@ export default function CallToAction() {
           <div className="relative z-10 grid grid-cols-1 gap-8 px-6 py-10 sm:px-8 sm:py-12 lg:grid-cols-12 lg:items-center lg:gap-6 lg:px-12 lg:py-14">
             {/* Left: headline + CTAs */}
             <div className="lg:col-span-7">
-              <h2 className="font-display text-[1.55rem] font-bold tracking-wide text-white sm:text-3xl lg:text-[2.15rem] lg:leading-[1.15]">
+              <h2 className=" text-[1.55rem] font-bold tracking-wide text-white sm:text-3xl lg:text-[2.15rem] lg:leading-[1.15]">
                 Ready To{" "}
                 <span className="text-[var(--brand-color)]">Upgrade</span> Your
                 Floors?
               </h2>
-              <p className="mt-3 text-[0.95rem] text-white/75 sm:text-base">Get a free consultation and estimate today.</p>
+              <p className="text-white/70">Get a free consultation and estimate today.</p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <Button href="/contact-us">Get Free Quote</Button>

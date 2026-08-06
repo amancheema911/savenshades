@@ -54,8 +54,8 @@ function TestimonialCard({ item }: { item: Testimonial }) {
           {item.initials}
         </span>
         <div>
-          <p className="text-sm font-bold text-[var(--black)]">{item.name}</p>
-          <p className="text-sm text-black/45">{item.role}</p>
+          <div className="text-sm font-bold text-[var(--black)]">{item.name}</div>
+          <p>{item.role}</p>
         </div>
       </div>
     </article>
@@ -140,12 +140,12 @@ export default function Testimonials() {
 
           <div className="flex items-center gap-2.5">
             <Stars count={testimonialRating.stars} />
-            <p className="text-sm text-black/55">
+            <div>
               <span className="font-semibold text-[#0B1120]">
                 {testimonialRating.score}
               </span>{" "}
               <span>{testimonialRating.countLabel}</span>
-            </p>
+            </div>
           </div>
         </div>
 

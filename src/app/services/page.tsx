@@ -179,8 +179,8 @@ export default function ServicesPage() {
       />
 
       {/* Featured bento */}
-      <section className="relative bg-[#F7F8FA] px-3 py-14 sm:px-4 sm:py-16 md:px-6 lg:px-8 lg:py-20">
-        <div className="container mx-auto">
+      <section className="relative bg-[#F7F8FA] py-14 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
             <Heading
               tag="h2"
@@ -210,10 +210,10 @@ export default function ServicesPage() {
                   </span>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 sm:p-8">
-                  <div className="min-w-0">
-                    <p className="text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--brand-color)] uppercase">Featured</p>
-                    <h3 className="mt-2 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">{featured.title}</h3>
-                    <p className="mt-2 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">{featured.description}</p>
+                  <div className="space-y-1">
+                    <div className="text-sm text-[var(--brand-color)] uppercase">Featured</div>
+                    <h3 className="text-2xl font-bold tracking-tight text-white">{featured.title}</h3>
+                    <p className="text-white/70">{featured.description}</p>
                   </div>
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
                     <ArrowIcon size={18} />
@@ -231,9 +231,9 @@ export default function ServicesPage() {
                     <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white"><ServiceIconGlyph icon={service.icon} /></span>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <div className="min-w-0">
-                      <h3 className="font-display text-xl font-bold tracking-tight text-white">{service.title}</h3>
-                      <p className="mt-1 text-sm text-white/75">{service.description}</p>
+                    <div className="space-y-1">
+                      <h3 className=" text-xl font-bold tracking-tight text-white">{service.title}</h3>
+                      <p className="text-white/70">{service.description}</p>
                     </div>
                     <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
                       <ArrowIcon />
@@ -258,9 +258,9 @@ export default function ServicesPage() {
                       </span>
                     </div>
                     <div className="relative z-10 flex items-end justify-between gap-3 p-5">
-                      <div className="min-w-0">
-                        <h3 className="font-display text-xl font-bold tracking-tight text-white">{service.title}</h3>
-                        <p className="mt-1.5 text-sm leading-snug text-white/75">{service.description}</p>
+                      <div className="space-y-1">
+                        <h3 className=" text-xl font-bold tracking-tight text-white">{service.title}</h3>
+                        <p className="text-white/70">{service.description}</p>
                       </div>
                       <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
                         <ArrowIcon />
@@ -275,10 +275,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Perks strip */}
-      <section className="relative overflow-hidden bg-[#070b14] px-3 py-14 sm:px-4 sm:py-16 md:px-6 lg:px-8 lg:py-20">
+      <section className="relative overflow-hidden bg-[#070b14] py-14 sm:py-16 lg:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgba(184,134,11,0.14),transparent_45%),radial-gradient(ellipse_at_90%_100%,rgba(184,134,11,0.1),transparent_40%)]" />
         
-        <div className="relative z-10 container mx-auto">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <Heading
               tag="h2"
@@ -293,11 +293,11 @@ export default function ServicesPage() {
           <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
             {servicePerks.map((perk, index) => (
               <li key={perk.id} className="group rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-6 transition-[transform,border-color,background-color] duration-300 hover:-translate-y-1 hover:border-[var(--brand-color)]/35 hover:bg-white/[0.06] sm:p-7 space-y-2">
-                <span className="font-display text-3xl font-bold tracking-tight text-white/10 transition-colors duration-300 group-hover:text-[var(--brand-color)]/30">
+                <span className=" text-3xl font-bold tracking-tight text-white/10 transition-colors duration-300 group-hover:text-[var(--brand-color)]/30">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display text-lg font-bold tracking-tight text-white">{perk.title}</h3>
-                <p className="text-white/48">{perk.description}</p>
+                <h3 className=" text-lg font-bold tracking-tight text-white">{perk.title}</h3>
+                <p className="text-white/70">{perk.description}</p>
               </li>
             ))}
           </ul>

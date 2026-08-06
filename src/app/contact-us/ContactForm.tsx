@@ -55,12 +55,8 @@ export default function ContactForm() {
         <span className="inline-flex size-14 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_10px_28px_rgba(184,134,11,0.35)]">
           <CheckIcon />
         </span>
-        <h3 className="mt-5 font-display text-2xl font-bold tracking-tight text-[#0B1120]">
-          Message sent
-        </h3>
-        <p className="mt-2 max-w-sm text-[0.95rem] leading-relaxed text-black/50">
-          Thanks for reaching out. Our team will get back to you within 24 hours.
-        </p>
+        <h3 className="mt-5  text-2xl font-bold tracking-tight text-[#0B1120]">Message sent</h3>
+        <p>Thanks for reaching out. Our team will get back to you within 24 hours.</p>
         <button
           type="button"
           onClick={() => setSubmitted(false)}
@@ -165,10 +161,7 @@ export default function ContactForm() {
         {submitting ? "Sending..." : "Send Message"}
       </Button>
 
-      <p className="mt-4 text-center text-xs leading-relaxed text-black/40">
-        By submitting, you agree to be contacted about your project. No spam —
-        ever.
-      </p>
+      <p>By submitting, you agree to be contacted about your project. No spam — ever.</p>
     </form>
   );
 }

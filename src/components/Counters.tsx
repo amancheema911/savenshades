@@ -96,18 +96,16 @@ export default function Counters({
   return (
     <section className={`bg-gray-50 py-12 lg:py-20 ${className}`} aria-label="Company statistics">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[1.75rem] bg-[#05070b] px-5 py-7 sm:rounded-[2rem] sm:px-8 sm:py-8 lg:rounded-[2.5rem] lg:px-10 lg:py-9">
+        <div className="rounded-[1.75rem] bg-[var(--black)] px-5 py-7 sm:rounded-[2rem] sm:px-8 sm:py-8 lg:rounded-[2.5rem] lg:px-10 lg:py-9">
           <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-6">
             {items.map((item) => (
               <li key={item.id} className="flex items-center gap-4">
-                <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-2xl border border-[var(--brand-color)]/50 bg-[rgba(184,134,11,0.08)] text-[var(--brand-color)] shadow-[0_0_20px_rgba(184,134,11,0.25)]">
+                <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-2xl border border-[var(--brand-color)]/50 bg-[var(--black)] text-[var(--brand-color)] shadow-md">
                   <CounterGlyph icon={item.icon} />
                 </span>
                 <div className="min-w-0">
-                  <p className="font-display text-[1.65rem] font-bold leading-none tracking-tight text-white sm:text-[1.85rem]">
-                    {item.value}
-                  </p>
-                  <p className="mt-1.5 text-sm text-white/55">{item.label}</p>
+                  <div className="text-2xl font-bold tracking-tight text-white">{item.value}</div>
+                  <div className="text-white/70">{item.label}</div>
                 </div>
               </li>
             ))}

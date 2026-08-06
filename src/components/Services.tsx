@@ -79,9 +79,9 @@ export default function Services() {
   };
 
   return (
-    <section className="relative -mt-0 rounded-t-[2rem] bg-gray-50 py-12 sm:-mt-0 md:-mt-16 sm:rounded-t-[2.75rem] lg:rounded-t-[3.5rem] lg:py-20">
+    <section className="relative bg-gray-50 py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center space-y-4">
+        <div className="mx-auto max-w-3xl text-center">
           <Heading
             tag="h2"
             align="center"
@@ -90,8 +90,6 @@ export default function Services() {
             eyebrow="OUR SERVICES"
             title="Premium Flooring Solutions"
             description="High performance epoxy systems for every space. Engineered for durability. Designed for stunning results."
-            titleClassName="mt-0"
-            descriptionClassName="mt-0"
           />
         </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
@@ -8,6 +9,7 @@ import Counters from "@/components/Counters";
 import { contactInfo } from "@/lib/config";
 import { counterItems } from "@/lib/counters";
 import Heading from "@/components/Heading";
+import { services, type ServiceIcon } from "@/lib/services";
 
 const { phone } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
@@ -126,8 +128,8 @@ type ValueIconName = (typeof aboutValues)[number]["icon"];
 
 function SurfaceIcon({ icon }: { icon: SurfaceIconName }) {
   const common = {
-    width: 22,
-    height: 22,
+    width: 30,
+    height: 30,
     viewBox: "0 0 24 24",
     fill: "none" as const,
     "aria-hidden": true as const,
@@ -207,6 +209,126 @@ function SurfaceIcon({ icon }: { icon: SurfaceIconName }) {
       return null;
   }
 }
+
+function GarageIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9.5Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path d="M9 21v-7h6v7" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function CommercialIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 20V8.5L12 4l8 4.5V20"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path d="M9 20v-5h6v5M10 10h.01M14 10h.01M10 13h.01M14 13h.01" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IndustrialIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 20V10l5 3V10l5 3V7l6 3.5V20"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path d="M4 20h16" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function MetallicIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="m12 3 1.2 3.4L16.5 8 13.2 9.2 12 12.5l-1.2-3.3L7.5 8l3.3-1.6L12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m18 11 .8 2.2L21 14.4l-2.2.8L18 17.5l-.8-2.3L15 14.4l2.2-.8L18 11Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m6.5 13 .7 1.8L9 15.6l-1.8.7L6.5 18l-.7-1.7L4 15.6l1.8-.8L6.5 13Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function FlakeIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="7.2" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="7.5" r="1.1" fill="currentColor" />
+      <circle cx="15.8" cy="9.2" r="1.1" fill="currentColor" />
+      <circle cx="16.5" cy="13" r="1.1" fill="currentColor" />
+      <circle cx="13.5" cy="16" r="1.1" fill="currentColor" />
+      <circle cx="9.4" cy="15.5" r="1.1" fill="currentColor" />
+      <circle cx="7.6" cy="11.8" r="1.1" fill="currentColor" />
+      <circle cx="9.2" cy="8.6" r="1.1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function StoneIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 3.5 19 8v8l-7 4.5L5 16V8l7-4.5Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path d="M12 3.5 12 12M12 12 19 8M12 12 5 8" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function DecorativeIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 3.5 20 8v8l-8 4.5L4 16V8l8-4.5Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="12" r="2.2" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+const SERVICE_ICONS: Record<ServiceIcon, ReactNode> = {
+  garage: <GarageIcon />,
+  commercial: <CommercialIcon />,
+  industrial: <IndustrialIcon />,
+  metallic: <MetallicIcon />,
+  flake: <FlakeIcon />,
+  quartz: <StoneIcon />,
+  decorative: <DecorativeIcon />,
+};
 
 function HeadsetIcon() {
   return (
@@ -375,7 +497,7 @@ function ValueIcon({ icon }: { icon: ValueIconName }) {
 export default function AboutUsPage() {
   return (
     <>
-      <PageHeader
+      {/* <PageHeader
         eyebrow="ABOUT US"
         title={
           <>
@@ -396,14 +518,14 @@ export default function AboutUsPage() {
           description:
             "A decade refining epoxy systems that stay sharp under real use.",
         }}
-      />
+      /> */}
 
       {/* Story — asymmetric editorial */}
-      <section className="relative overflow-hidden bg-[#F7F8FA] px-3 py-16 sm:px-4 sm:py-20 md:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-24">
         
         <div className="pointer-events-none absolute top-0 left-0 h-64 w-full bg-[radial-gradient(ellipse_at_top_left,rgba(184,134,11,0.08),transparent_55%)]" />
         
-        <div className="relative z-10 container mx-auto">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-12">
             {/* Left image */}
             <div className="relative lg:col-span-6 xl:col-span-7">
@@ -433,8 +555,8 @@ export default function AboutUsPage() {
                 </div>
 
                 <div className="absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-[var(--brand-color)]/75 px-4 py-3 backdrop-blur-md sm:bottom-7 sm:left-7 sm:px-5 sm:py-3.5">
-                  <p className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">Est. 2014</p>
-                  <p className="mt-0.5 text-[0.75rem] text-white/65 sm:text-sm">Residential &amp; commercial epoxy</p>
+                  <div className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Est. 2014</div>
+                  <p className="text-white/70">Residential &amp; commercial epoxy</p>
                 </div>
               </div>
             </div>
@@ -456,12 +578,12 @@ export default function AboutUsPage() {
 
               <div className="mt-9 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-black/8">
                 <div className="bg-white px-5 py-5 sm:px-6 sm:py-6">
-                  <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-black/35 uppercase">Focus</p>
-                  <p className="mt-2 font-display text-lg font-bold text-[#0B1120] sm:text-xl">Epoxy only</p>
+                  <div>Focus</div>
+                  <div className="text-lg font-bold text-[var(--black)]">Epoxy only</div>
                 </div>
                 <div className="bg-white px-5 py-5 sm:px-6 sm:py-6">
-                  <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-black/35 uppercase">Promise</p>
-                  <p className="mt-2 font-display text-lg font-bold text-[#0B1120] sm:text-xl">Built to last</p>
+                  <div>Promise</div>
+                  <div className="text-lg font-bold text-[var(--black)]">Built to last</div>
                 </div>
               </div>
             </div>
@@ -470,8 +592,8 @@ export default function AboutUsPage() {
       </section>
 
       {/* Values — modern bento strip */}
-      <section className="relative overflow-hidden bg-gray-50 px-3 py-16 sm:px-4 sm:py-20 md:px-6 lg:px-8 lg:py-24" aria-labelledby="about-values-heading">
-        <div className="relative z-10 container mx-auto">
+      <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-24">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
             <Heading
               tag="h2"
@@ -488,9 +610,9 @@ export default function AboutUsPage() {
               <li key={value.id} className={`group relative overflow-hidden rounded-[1.35rem] space-y-3 border border-black/[0.06] bg-white p-6 shadow-[0_8px_24px_rgba(11,17,32,0.04)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[var(--brand-color)]/35 hover:shadow-[0_16px_40px_rgba(11,17,32,0.08)] sm:p-7 ${
                   index % 2 === 1 ? "lg:mt-8" : "" }`}>
                 <div className="pointer-events-none absolute -top-8 -right-8 size-28 rounded-full bg-[radial-gradient(circle,var(--brand-color),transparent_70%)] opacity-20 transition-opacity duration-300" />
-                <span className="font-display text-4xl font-bold tracking-tight text-black/[0.06] transition-colors duration-300 group-hover:text-[var(--brand-color)]/20">{String(index + 1).padStart(2, "0")}</span>
+                <span className=" text-4xl font-bold tracking-tight text-black/[0.06] transition-colors duration-300 group-hover:text-[var(--brand-color)]/20">{String(index + 1).padStart(2, "0")}</span>
                 <span className="mt-5 flex size-12 items-center justify-center rounded-full border border-black/8 bg-[var(--brand-color)]/10 text-[var(--brand-color)] transition-colors duration-300 group-hover:border-[var(--brand-color)]/40 group-hover:bg-[var(--brand-color)]/15"><ValueIcon icon={value.icon} /></span>
-                <h3 className="font-display text-lg font-bold tracking-tight text-[#0B1120]">{value.title}</h3>
+                <h3 className=" text-lg font-bold tracking-tight text-[#0B1120]">{value.title}</h3>
                 <p>{value.description}</p>
               </li>
             ))}
@@ -499,7 +621,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Surfaces collection — split layout */}
-      <section className="relative overflow-hidden bg-[#05070b]">
+      <section className="relative overflow-hidden bg-[var(--black)]">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left image */}
           <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[640px]">
@@ -528,14 +650,14 @@ export default function AboutUsPage() {
               />
 
               <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
-                {aboutSurfaces.map((surface) => (
-                  <li key={surface.id}>
-                    <Link href={surface.href} className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-5 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-color)]/30 hover:bg-white/[0.07] sm:px-5 sm:py-6">
+                {services.slice(0, 6).map((service) => (
+                  <li key={service.id}>
+                    <Link href={service.href} className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-5 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-color)]/30 hover:bg-white/[0.07] sm:px-5 sm:py-6">
                       <span className="text-[var(--brand-color)] transition-transform duration-300 group-hover:scale-110">
-                        <SurfaceIcon icon={surface.icon} />
+                        {SERVICE_ICONS[service.icon]}
                       </span>
-                      <span className="font-display text-sm font-bold tracking-tight text-white sm:text-[0.95rem]">
-                        {surface.title}
+                      <span className=" text-sm font-bold tracking-tight text-white sm:text-[0.95rem]">
+                        {service.title}
                       </span>
                     </Link>
                   </li>
@@ -549,7 +671,7 @@ export default function AboutUsPage() {
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-[#1a1408] shadow-[0_10px_28px_rgba(184,134,11,0.28)] transition-transform duration-300  group-hover:scale-105"><HeadsetIcon /></span>
                   <span className="min-w-0">
                     <span className="block text-sm font-semibold text-white/90">Call Us!</span>
-                    <span className="mt-0.5 block font-display text-base font-bold tracking-tight text-white sm:text-lg">{phone}</span>
+                    <span className="mt-0.5 block  text-base font-bold tracking-tight text-white sm:text-lg">{phone}</span>
                   </span>
                 </Link>
               </div>
@@ -595,8 +717,8 @@ export default function AboutUsPage() {
 
                 {/* Satisfaction callout — top right (your position) */}
                 <div className="absolute top-4 right-0 z-[3] flex w-[38%] max-w-[120px] flex-col items-center justify-center bg-[var(--brand-color)] px-2.5 py-4 text-center text-white shadow-md sm:top-10 sm:w-[38%] sm:max-w-[168px] sm:px-4 sm:py-7 space-y-2">
-                  <div className="font-display text-[1.65rem] font-bold leading-none tracking-tight sm:text-[2.5rem]">98%</div>
-                  <p className="leading-snug text-white/90 text-sm">Client Satisfaction Rate</p>
+                  <div className="text-4xl font-bold tracking-tight">98%</div>
+                  <p className="text-white/70">Client Satisfaction Rate</p>
                 </div>
               </div>
             </div>
@@ -622,7 +744,7 @@ export default function AboutUsPage() {
                     <div className="relative z-10 flex items-start gap-3 sm:gap-3.5">
                       <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white sm:size-10"><QualityIcon icon={quality.icon} /></span>
                       <div className="min-w-0 pt-0.5 space-y-2">
-                        <h3 className="font-display text-base font-bold tracking-tight text-[#0B1120] sm:text-[1.05rem] lg:text-lg">
+                        <h3 className=" text-base font-bold tracking-tight text-[#0B1120] sm:text-[1.05rem] lg:text-lg">
                           {quality.title}
                         </h3>
                         <p>{quality.description}</p>

@@ -94,11 +94,11 @@ export default function FaqAccordion({
 
             <h3 className="m-0">
               <button id={buttonId} type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => toggle(key)} className="group/btn flex w-full items-start gap-4 px-5 py-5 text-left sm:gap-5 sm:px-6 sm:py-6">
-                <span className={cx( "mt-0.5 font-display text-sm font-bold tracking-[0.14em] transition-colors duration-300 sm:text-base", isOpen ? "text-[var(--brand-color)]" : "text-black/25", )}>
+                <span className={cx( "mt-0.5  text-sm font-bold tracking-[0.14em] transition-colors duration-300 sm:text-base", isOpen ? "text-[var(--brand-color)]" : "text-black/25", )}>
                   {number}
                 </span>
 
-                <span className={cx( "min-w-0 flex-1 font-display text-[1.05rem] font-bold leading-snug tracking-tight text-[#0B1120] transition-colors duration-300 sm:text-lg", !isOpen && "opacity-90 group-hover/btn:opacity-100", )}>
+                <span className={cx( "min-w-0 flex-1  text-[1.05rem] font-bold leading-snug tracking-tight text-[#0B1120] transition-colors duration-300 sm:text-lg", !isOpen && "opacity-90 group-hover/btn:opacity-100", )}>
                   {item.question}
                 </span>
 
@@ -107,8 +107,8 @@ export default function FaqAccordion({
             </h3>
 
             <div id={panelId} role="region" aria-labelledby={buttonId} aria-hidden={!isOpen} className={cx( "grid transition-[grid-template-rows] duration-500 ease-out", isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]", )} >
-              <div className="overflow-hidden">
-                <p className="m-0 max-w-3xl px-5 pb-5 pl-[3.35rem] text-[0.95rem] leading-relaxed text-black/55 sm:px-6 sm:pb-6 sm:pl-[4.1rem] sm:text-base">{item.answer}</p>
+              <div className="overflow-hidden m-0 max-w-3xl px-5 pb-5 pl-[3.35rem] leading-relaxed text-black/55 sm:px-6 sm:pb-6 sm:pl-[4.1rem]">
+                <p>{item.answer}</p>
               </div>
             </div>
           </li>

@@ -76,7 +76,7 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <strong className="block text-gray-800">Office Address:</strong>
-                    <p className="text-md">{address}</p>
+                    <p>{address}</p>
                   </div>
                 </li>
 
@@ -111,7 +111,7 @@ export default function ContactUsPage() {
             <div className="lg:col-span-7 xl:col-span-8">
               <div className="mb-5 flex items-end justify-between gap-4">
                 <div className="space-y-2">
-                  <h3 className="font-display text-xl font-bold tracking-tight text-black sm:text-2xl">Request A Free Estimate</h3>
+                  <h3 className=" text-xl font-bold tracking-tight text-black sm:text-2xl">Request A Free Estimate</h3>
                   <p>Share a few details — we&apos;ll handle the rest.</p>
                 </div>
               </div>
@@ -138,8 +138,8 @@ export default function ContactUsPage() {
           <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
             {promises.map((item, index) => (
               <li key={item.id} className="rounded-[1.35rem] border border-black/8 bg-white p-6 shadow-[0_8px_30px_rgba(11,17,32,0.04)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[var(--brand-color)]/35 hover:shadow-[0_16px_40px_rgba(11,17,32,0.08)] sm:p-7 space-y-2">
-                <span className="font-display text-3xl font-bold tracking-tight text-[var(--brand-color)]/25">{String(index + 1).padStart(2, "0")}</span>
-                <h3 className="font-display text-lg font-bold tracking-tight text-black">{item.title}</h3>
+                <span className=" text-3xl font-bold tracking-tight text-[var(--brand-color)]/25">{String(index + 1).padStart(2, "0")}</span>
+                <h3 className=" text-lg font-bold tracking-tight text-black">{item.title}</h3>
                 <p>{item.description}</p>
               </li>
             ))}

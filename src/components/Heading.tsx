@@ -32,19 +32,19 @@ const sizeStyles: Record<
   { title: string; description: string; titleGap: string }
 > = {
   hero: {
-    titleGap: "mt-6",
-    title: "font-display text-[2.4rem] font-bold leading-[1.05] tracking-[-0.025em] sm:text-[3.4rem] lg:text-[4rem]",
-    description: "text-[1rem] leading-relaxed sm:text-lg",
+    titleGap: "my-4",
+    title: "text-[2.4rem] font-bold leading-[1.05] tracking-[-0.025em] sm:text-[3.4rem] lg:text-[4rem]",
+    description: "",
   },
   page: {
-    titleGap: "mt-5",
-    title: "font-display text-[2.55rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-[3.5rem] lg:text-[4.25rem]",
-    description: "mt-5 text-[1.02rem] leading-relaxed sm:text-lg",
+    titleGap: "my-4",
+    title: "text-[2.55rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-[3.5rem] lg:text-[4.25rem]",
+    description: "",
   },
   section: {
-    titleGap: "mt-3",
-    title: "font-display text-[1.85rem] font-bold tracking-tight sm:text-4xl lg:text-[2.75rem]",
-    description: "mt-4 text-[0.95rem] leading-relaxed sm:text-base space-y-2",
+    titleGap: "my-4",
+    title: "text-[1.85rem] font-bold tracking-tight sm:text-4xl lg:text-[2.75rem]",
+    description: "",
   },
 };
 
@@ -57,8 +57,8 @@ const toneStyles: Record<
     description: "text-white/78",
   },
   dark: {
-    title: "text-[#0B1120]",
-    description: "text-black/50",
+    title: "text-[var(--black)]",
+    description: "text-[var(--black)]/70",
   },
 };
 
@@ -104,7 +104,7 @@ export default function Heading({
           ) : null}
           <p
             className={cx(
-              "text-xs font-bold tracking-[0.22em] text-[var(--brand-color)] sm:text-sm",
+              "text-xs font-bold tracking-[0.12em] uppercase text-[var(--brand-color)] sm:text-sm",
               eyebrowClassName,
             )}
           >
