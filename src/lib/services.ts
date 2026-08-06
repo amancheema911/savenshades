@@ -1,11 +1,4 @@
-export type ServiceIcon =
-  | "garage"
-  | "commercial"
-  | "industrial"
-  | "metallic"
-  | "flake"
-  | "quartz"
-  | "decorative";
+import type { ReactNode } from "react";
 
 export type Service = {
   id: string;
@@ -14,7 +7,7 @@ export type Service = {
   href: string;
   image: string;
   imageAlt: string;
-  icon: ServiceIcon;
+  icon: ReactNode;
 };
 
 export const services: Service[] = [
@@ -25,7 +18,7 @@ export const services: Service[] = [
     href: "/services/garage-floors",
     image: "/images/services/service-garage.png",
     imageAlt: "Luxury car on a finished garage epoxy floor",
-    icon: "garage",
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-warehouse-icon lucide-warehouse"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>`,
   },
   {
     id: "commercial",
@@ -34,7 +27,7 @@ export const services: Service[] = [
     href: "/services/commercial",
     image: "/images/services/service-commercial.png",
     imageAlt: "Bright commercial interior with epoxy flooring",
-    icon: "commercial",
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-icon lucide-building"><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M12 6h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/><path d="M8 6h.01"/><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>`,
   },
   {
     id: "industrial",
@@ -43,7 +36,7 @@ export const services: Service[] = [
     href: "/services/industrial",
     image: "/images/services/service-industrial.png",
     imageAlt: "Industrial warehouse with polished epoxy flooring",
-    icon: "industrial",
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2-icon lucide-building-2"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>`,
   },
   {
     id: "metallic-epoxy",
@@ -52,7 +45,7 @@ export const services: Service[] = [
     href: "/services/metallic-epoxy",
     image: "/images/services/service-metallic.png",
     imageAlt: "Close-up of blue and silver metallic epoxy floor",
-    icon: "metallic",
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-waves-horizontal-icon lucide-waves-horizontal"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>`,
   },
   {
     id: "flake-flooring",
@@ -61,7 +54,7 @@ export const services: Service[] = [
     href: "/services/flake-flooring",
     image: "/images/services/service-garage.png",
     imageAlt: "Decorative flake epoxy flooring finish",
-    icon: "flake",
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stone-icon lucide-stone"><path d="M11.264 2.205A4 4 0 0 0 6.42 4.211l-4 8a4 4 0 0 0 1.359 5.117l6 4a4 4 0 0 0 4.438 0l6-4a4 4 0 0 0 1.576-4.592l-2-6a4 4 0 0 0-2.53-2.53z"/><path d="M11.99 22 14 12l7.822 3.184"/><path d="M14 12 8.47 2.302"/></svg>`,
   },
   {
     id: "quartz-flooring",
@@ -70,7 +63,7 @@ export const services: Service[] = [
     href: "/services/quartz-flooring",
     image: "/images/services/service-commercial.png",
     imageAlt: "Quartz epoxy flooring in a commercial space",
-    icon: "quartz",
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-inspection-panel-icon lucide-inspection-panel"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h.01"/><path d="M17 7h.01"/><path d="M7 17h.01"/><path d="M17 17h.01"/></svg>`,
   },  
 ];
 

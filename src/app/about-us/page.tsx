@@ -3,13 +3,13 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
-import PageHeader from "@/components/PageHeader";
+//import PageHeader from "@/components/PageHeader";
 import Button from "@/components/ui/Button";
 import Counters from "@/components/Counters";
 import { contactInfo } from "@/lib/config";
 import { counterItems } from "@/lib/counters";
 import Heading from "@/components/Heading";
-import { services, type ServiceIcon } from "@/lib/services";
+import { services } from "@/lib/services";
 
 const { phone } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
@@ -50,47 +50,6 @@ const aboutValues = [
   },
 ];
 
-const aboutSurfaces = [
-  {
-    id: "garage",
-    title: "Garage Floors",
-    href: "/services/garage-floors",
-    icon: "garage" as const,
-  },
-  {
-    id: "commercial",
-    title: "Commercial",
-    href: "/services/commercial",
-    icon: "commercial" as const,
-  },
-  {
-    id: "industrial",
-    title: "Industrial",
-    href: "/services/industrial",
-    icon: "industrial" as const,
-  },
-  {
-    id: "metallic",
-    title: "Metallic Epoxy",
-    href: "/services/metallic-epoxy",
-    icon: "metallic" as const,
-  },
-  {
-    id: "flake",
-    title: "Flake Systems",
-    href: "/services/flake-flooring",
-    icon: "flake" as const,
-  },
-  {
-    id: "quartz",
-    title: "Quartz Floors",
-    href: "/services/quartz-flooring",
-    icon: "quartz" as const,
-  },
-];
-
-type SurfaceIconName = (typeof aboutSurfaces)[number]["icon"];
-
 const aboutQualities = [
   {
     id: "equipped",
@@ -125,210 +84,6 @@ const aboutQualities = [
 type QualityIconName = (typeof aboutQualities)[number]["icon"];
 
 type ValueIconName = (typeof aboutValues)[number]["icon"];
-
-function SurfaceIcon({ icon }: { icon: SurfaceIconName }) {
-  const common = {
-    width: 30,
-    height: 30,
-    viewBox: "0 0 24 24",
-    fill: "none" as const,
-    "aria-hidden": true as const,
-  };
-
-  switch (icon) {
-    case "garage":
-      return (
-        <svg {...common}>
-          <path
-            d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    case "commercial":
-      return (
-        <svg {...common}>
-          <path
-            d="M4 20V7l8-3 8 3v13"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M9 20v-5h6v5M9 10h.01M12 10h.01M15 10h.01"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinecap="round"
-          />
-        </svg>
-      );
-    case "industrial":
-      return (
-        <svg {...common}>
-          <path
-            d="M3 20h18M5 20V9l5 3V9l5 3V6l4 2v12"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    case "metallic":
-      return (
-        <svg {...common}>
-          <path
-            d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6L12 3Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    case "flake":
-      return (
-        <svg {...common}>
-          <circle cx="8" cy="9" r="2" stroke="currentColor" strokeWidth="1.6" />
-          <circle cx="15" cy="7" r="1.6" stroke="currentColor" strokeWidth="1.6" />
-          <circle cx="12" cy="14" r="2.2" stroke="currentColor" strokeWidth="1.6" />
-        </svg>
-      );
-    case "quartz":
-      return (
-        <svg {...common}>
-          <path
-            d="M12 3 4.5 8v8L12 21l7.5-5V8L12 3Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    default:
-      return null;
-  }
-}
-
-function GarageIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9.5Z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
-      />
-      <path d="M9 21v-7h6v7" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function CommercialIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M4 20V8.5L12 4l8 4.5V20"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
-      />
-      <path d="M9 20v-5h6v5M10 10h.01M14 10h.01M10 13h.01M14 13h.01" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function IndustrialIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M4 20V10l5 3V10l5 3V7l6 3.5V20"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
-      />
-      <path d="M4 20h16" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function MetallicIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="m12 3 1.2 3.4L16.5 8 13.2 9.2 12 12.5l-1.2-3.3L7.5 8l3.3-1.6L12 3Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="m18 11 .8 2.2L21 14.4l-2.2.8L18 17.5l-.8-2.3L15 14.4l2.2-.8L18 11Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="m6.5 13 .7 1.8L9 15.6l-1.8.7L6.5 18l-.7-1.7L4 15.6l1.8-.8L6.5 13Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function FlakeIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="7.2" stroke="currentColor" strokeWidth="1.6" />
-      <circle cx="12" cy="7.5" r="1.1" fill="currentColor" />
-      <circle cx="15.8" cy="9.2" r="1.1" fill="currentColor" />
-      <circle cx="16.5" cy="13" r="1.1" fill="currentColor" />
-      <circle cx="13.5" cy="16" r="1.1" fill="currentColor" />
-      <circle cx="9.4" cy="15.5" r="1.1" fill="currentColor" />
-      <circle cx="7.6" cy="11.8" r="1.1" fill="currentColor" />
-      <circle cx="9.2" cy="8.6" r="1.1" fill="currentColor" />
-    </svg>
-  );
-}
-
-function StoneIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 3.5 19 8v8l-7 4.5L5 16V8l7-4.5Z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
-      />
-      <path d="M12 3.5 12 12M12 12 19 8M12 12 5 8" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-function DecorativeIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 3.5 20 8v8l-8 4.5L4 16V8l8-4.5Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <circle cx="12" cy="12" r="2.2" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-const SERVICE_ICONS: Record<ServiceIcon, ReactNode> = {
-  garage: <GarageIcon />,
-  commercial: <CommercialIcon />,
-  industrial: <IndustrialIcon />,
-  metallic: <MetallicIcon />,
-  flake: <FlakeIcon />,
-  quartz: <StoneIcon />,
-  decorative: <DecorativeIcon />,
-};
 
 function HeadsetIcon() {
   return (
@@ -654,7 +409,7 @@ export default function AboutUsPage() {
                   <li key={service.id}>
                     <Link href={service.href} className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-5 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-color)]/30 hover:bg-white/[0.07] sm:px-5 sm:py-6">
                       <span className="text-[var(--brand-color)] transition-transform duration-300 group-hover:scale-110">
-                        {SERVICE_ICONS[service.icon]}
+                        <div dangerouslySetInnerHTML={{ __html: service.icon as string }} />
                       </span>
                       <span className=" text-sm font-bold tracking-tight text-white sm:text-[0.95rem]">
                         {service.title}

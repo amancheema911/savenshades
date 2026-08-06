@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
 import PageHeader from "@/components/PageHeader";
-import { services, type ServiceIcon } from "@/lib/services";
+import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
 
 export const metadata: Metadata = {
@@ -54,100 +54,100 @@ function ArrowIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-function ServiceIconGlyph({ icon }: { icon: ServiceIcon }) {
-  const common = {
-    width: 18,
-    height: 18,
-    viewBox: "0 0 24 24",
-    fill: "none" as const,
-    "aria-hidden": true as const,
-  };
+// function ServiceIconGlyph({ icon }: { icon: ServiceIcon }) {
+//   const common = {
+//     width: 18,
+//     height: 18,
+//     viewBox: "0 0 24 24",
+//     fill: "none" as const,
+//     "aria-hidden": true as const,
+//   };
 
-  switch (icon) {
-    case "garage":
-      return (
-        <svg {...common}>
-          <path
-            d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    case "commercial":
-      return (
-        <svg {...common}>
-          <path
-            d="M4 20V7l8-3 8 3v13"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M9 20v-5h6v5M9 10h.01M12 10h.01M15 10h.01"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinecap="round"
-          />
-        </svg>
-      );
-    case "industrial":
-      return (
-        <svg {...common}>
-          <path
-            d="M3 20h18M5 20V9l5 3V9l5 3V6l4 2v12"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    case "metallic":
-      return (
-        <svg {...common}>
-          <path
-            d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6L12 3Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    case "flake":
-      return (
-        <svg {...common}>
-          <circle cx="8" cy="9" r="2" stroke="currentColor" strokeWidth="1.6" />
-          <circle cx="15" cy="7" r="1.6" stroke="currentColor" strokeWidth="1.6" />
-          <circle cx="12" cy="14" r="2.2" stroke="currentColor" strokeWidth="1.6" />
-        </svg>
-      );
-    case "quartz":
-      return (
-        <svg {...common}>
-          <path
-            d="M12 3 4.5 8v8L12 21l7.5-5V8L12 3Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    case "decorative":
-      return (
-        <svg {...common}>
-          <path
-            d="M12 4c2.5 3 5 4.5 8 5-3 .5-5.5 2-8 5-2.5-3-5-4.5-8-5 3-.5 5.5-2 8-5Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-    default:
-      return null;
-  }
-}
+//   switch (icon) {
+//     case "garage":
+//       return (
+//         <svg {...common}>
+//           <path
+//             d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5Z"
+//             stroke="currentColor"
+//             strokeWidth="1.7"
+//             strokeLinejoin="round"
+//           />
+//         </svg>
+//       );
+//     case "commercial":
+//       return (
+//         <svg {...common}>
+//           <path
+//             d="M4 20V7l8-3 8 3v13"
+//             stroke="currentColor"
+//             strokeWidth="1.7"
+//             strokeLinejoin="round"
+//           />
+//           <path
+//             d="M9 20v-5h6v5M9 10h.01M12 10h.01M15 10h.01"
+//             stroke="currentColor"
+//             strokeWidth="1.7"
+//             strokeLinecap="round"
+//           />
+//         </svg>
+//       );
+//     case "industrial":
+//       return (
+//         <svg {...common}>
+//           <path
+//             d="M3 20h18M5 20V9l5 3V9l5 3V6l4 2v12"
+//             stroke="currentColor"
+//             strokeWidth="1.7"
+//             strokeLinejoin="round"
+//           />
+//         </svg>
+//       );
+//     case "metallic":
+//       return (
+//         <svg {...common}>
+//           <path
+//             d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6L12 3Z"
+//             stroke="currentColor"
+//             strokeWidth="1.7"
+//             strokeLinejoin="round"
+//           />
+//         </svg>
+//       );
+//     case "flake":
+//       return (
+//         <svg {...common}>
+//           <circle cx="8" cy="9" r="2" stroke="currentColor" strokeWidth="1.6" />
+//           <circle cx="15" cy="7" r="1.6" stroke="currentColor" strokeWidth="1.6" />
+//           <circle cx="12" cy="14" r="2.2" stroke="currentColor" strokeWidth="1.6" />
+//         </svg>
+//       );
+//     case "quartz":
+//       return (
+//         <svg {...common}>
+//           <path
+//             d="M12 3 4.5 8v8L12 21l7.5-5V8L12 3Z"
+//             stroke="currentColor"
+//             strokeWidth="1.7"
+//             strokeLinejoin="round"
+//           />
+//         </svg>
+//       );
+//     case "decorative":
+//       return (
+//         <svg {...common}>
+//           <path
+//             d="M12 4c2.5 3 5 4.5 8 5-3 .5-5.5 2-8 5-2.5-3-5-4.5-8-5 3-.5 5.5-2 8-5Z"
+//             stroke="currentColor"
+//             strokeWidth="1.7"
+//             strokeLinejoin="round"
+//           />
+//         </svg>
+//       );
+//     default:
+//       return null;
+//   }
+// }
 
 export default function ServicesPage() {
   const [featured, ...rest] = services;
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.15)_0%,rgba(5,9,16,0.25)_40%,rgba(5,9,16,0.88)_100%)]" />
                 <div className="absolute left-5 top-5 sm:left-7 sm:top-7">
                   <span className="inline-flex size-12 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_8px_24px_rgba(184,134,11,0.4)]">
-                    <ServiceIconGlyph icon={featured.icon} />
+                    <div dangerouslySetInnerHTML={{ __html: featured.icon as string }} />
                   </span>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 sm:p-8">
@@ -228,7 +228,8 @@ export default function ServicesPage() {
                   <Image src={service.image} alt={service.imageAlt} fill sizes="(max-width: 1024px) 50vw, 38vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.82)_100%)]" aria-hidden="true" />
                   <div className="absolute left-4 top-4">
-                    <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white"><ServiceIconGlyph icon={service.icon} /></span>
+                    <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white">
+                      <div dangerouslySetInnerHTML={{ __html: service.icon as string }} /></span>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
                     <div className="space-y-1">
@@ -254,7 +255,7 @@ export default function ServicesPage() {
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.12)_0%,rgba(5,9,16,0.2)_45%,rgba(5,9,16,0.85)_100%)]" />
                     <div className="absolute left-4 top-4">
                       <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_8px_20px_rgba(184,134,11,0.35)]">
-                        <ServiceIconGlyph icon={service.icon} />
+                        <div dangerouslySetInnerHTML={{ __html: service.icon as string }} />
                       </span>
                     </div>
                     <div className="relative z-10 flex items-end justify-between gap-3 p-5">
