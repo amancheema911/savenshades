@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import { contactInfo } from "@/lib/config";
-import ContactForm from "./ContactForm";
 import Heading from "@/components/Heading";
+import FlooringQuoteForm from "@/components/FlooringQuoteForm";
 
 const { phone, address, email } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
@@ -36,7 +36,7 @@ const promises = [
 export default function ContactUsPage() {
   return (
     <>
-      <PageHeader
+      {/* <PageHeader
         eyebrow="CONTACT US"
         title={
           <>
@@ -51,7 +51,7 @@ export default function ContactUsPage() {
           label: `Call ${phone}`,
           icon: "phone",
         }}
-      />
+      /> */}
 
       {/* Form + details */}
       <section className="relative bg-[#F7F8FA] py-14 sm:py-16 lg:py-20">
@@ -109,13 +109,7 @@ export default function ContactUsPage() {
             </div>
 
             <div className="lg:col-span-7 xl:col-span-8">
-              <div className="mb-5 flex items-end justify-between gap-4">
-                <div className="space-y-2">
-                  <h3 className=" text-xl font-bold tracking-tight text-black sm:text-2xl">Request A Free Estimate</h3>
-                  <p>Share a few details — we&apos;ll handle the rest.</p>
-                </div>
-              </div>
-              <ContactForm />
+              <FlooringQuoteForm tone="light" className="lg:max-w-none" />
             </div>
           </div>
         </div>

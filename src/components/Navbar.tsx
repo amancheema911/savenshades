@@ -160,11 +160,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto flex items-center justify-between gap-4 py-3 px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex shrink-0 items-center gap-3">
-            <LogoMark />
-            <span className="flex flex-col leading-none">
-              <span className="text-lg font-bold tracking-wide text-white sm:text-xl uppercase">Saven shades</span>
-              <span className="text-[0.65rem] font-medium tracking-wide text-white/75 uppercase">PREMIUM EPOXY SOLUTIONS</span>
-            </span>
+            <img src="/logo.png" alt="Saven shades" className="h-14" />
           </Link>
 
           <ul className="hidden items-center gap-1 xl:flex">

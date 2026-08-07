@@ -154,7 +154,7 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-gray-50 py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 sm:rounded-[2.25rem] lg:rounded-[2.75rem]">
-        <div className="rounded-[1.75rem] bg-white overflow-hidden px-8 py-12 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-0 lg:items-center">
+        <div className="rounded-[1.75rem] bg-white overflow-hidden px-6 py-8 sm:px-8 sm:py-12 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-0 lg:items-center">
           {/* Left content */}
           <div className="lg:col-span-4 lg:pr-10 xl:pr-14 space-y-4">
             <Heading
@@ -164,9 +164,7 @@ export default function WhyChooseUs() {
               eyebrow="WHY CHOOSE US"
               title={
                 <>
-                  Stronger. Safer.
-                  <br />
-                  Better.{" "}
+                  Stronger. Safer. Better.{" "}
                   <span className="text-[var(--brand-color)]">Forever.</span>
                 </>
               }
@@ -178,16 +176,16 @@ export default function WhyChooseUs() {
 
           {/* Divider + features */}
           <div className="lg:col-span-8 lg:border-l lg:border-black/10 lg:pl-10 xl:pl-14">
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-10">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 sm:gap-x-6 sm:gap-y-10">
               {whyChooseFeatures.map((feature) => (
-                <li key={feature.id} className="min-w-0">
+                <li key={feature.id} className="flex flex-row gap-4 items-start sm:flex-col">
                   <span className="inline-flex size-12 items-center justify-center rounded-full bg-[var(--brand-color)] text-white">
                     <FeatureIcon icon={feature.icon} />
                   </span>
-                  <h3 className="mt-3 text-[0.92rem] font-bold tracking-tight text-[#0B1120] sm:text-[0.95rem]">
-                    {feature.title}
-                  </h3>
-                  <p>{feature.description}</p>
+                  <div>
+                    <h3 className="text-[0.92rem] font-bold tracking-tight text-[#0B1120] sm:text-[0.95rem]">{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
                 </li>
               ))}
             </ul>

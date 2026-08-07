@@ -127,11 +127,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Saven shades home">
-              <LogoMark />
-              <span className="flex flex-col leading-none">
-                <span className="text-lg font-bold tracking-wide uppercase">Saven shades</span>
-                <span className="text-[0.65rem] font-medium tracking-wide text-white/75 uppercase">PREMIUM EPOXY SOLUTIONS</span>
-              </span>
+              <img src="/logo.png" alt="Saven shades" className="h-14" />
             </Link>
 
             <p>We transform ordinary concrete into extraordinary floors that are beautiful, durable and built to last.</p>

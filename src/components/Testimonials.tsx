@@ -150,9 +150,9 @@ export default function Testimonials() {
         </div>
 
         <div className="relative mt-8 sm:mt-10">
-          <div ref={trackRef} onScroll={onScroll} className="flex snap-x snap-mandatory gap-2 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 lg:gap-4 [&::-webkit-scrollbar]:hidden">
+          <div ref={trackRef} onScroll={onScroll} className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {testimonials.map((item) => (
-              <div key={item.id} data-testimonial-card className="w-[min(88vw,360px)] p-2 shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3rem)/3)]">
+              <div key={item.id} data-testimonial-card className="w-[min(88vw,360px)] shrink-0 py-2 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3rem)/3)]">
                 <TestimonialCard item={item} />
               </div>
             ))}

@@ -205,7 +205,7 @@ export default function ServicesPage() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.15)_0%,rgba(5,9,16,0.25)_40%,rgba(5,9,16,0.88)_100%)]" />
                 <div className="absolute left-5 top-5 sm:left-7 sm:top-7">
-                  <span className="inline-flex size-12 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_8px_24px_rgba(184,134,11,0.4)]">
+                  <span className="inline-flex size-12 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-md">
                     <div dangerouslySetInnerHTML={{ __html: featured.icon as string }} />
                   </span>
                 </div>
@@ -247,14 +247,14 @@ export default function ServicesPage() {
 
           {/* Remaining services */}
           {remaining.length > 0 ? (
-            <ul className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:mt-6 lg:grid-cols-3 lg:gap-6">
+            <ul className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:mt-6 lg:grid-cols-4 lg:gap-6">
               {remaining.map((service, index) => (
                 <li key={service.id}>
                   <Link href={service.href} className={`group relative isolate flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.5rem] sm:min-h-[360px] sm:rounded-[1.75rem] ${ index === remaining.length - 1 &&  remaining.length % 2 === 1 ? "sm:col-span-2 lg:col-span-1" : "" }`}>
                     <Image src={service.image} alt={service.imageAlt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.12)_0%,rgba(5,9,16,0.2)_45%,rgba(5,9,16,0.85)_100%)]" />
                     <div className="absolute left-4 top-4">
-                      <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_8px_20px_rgba(184,134,11,0.35)]">
+                      <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-md">
                         <div dangerouslySetInnerHTML={{ __html: service.icon as string }} />
                       </span>
                     </div>

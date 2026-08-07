@@ -92,11 +92,11 @@ export default function CallToAction() {
               </h2>
               <p className="text-white/70">Get a free consultation and estimate today.</p>
 
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
                 <Button href="/contact-us">Get Free Quote</Button>
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent pl-6 pr-1.5 py-1.5 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
+                  className="group inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent py-1.5 pr-1.5 pl-6 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
                 >
                   Schedule Consultation
                   <CalendarIcon />

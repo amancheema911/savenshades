@@ -405,7 +405,7 @@ export default function AboutUsPage() {
               />
 
               <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
-                {services.slice(0, 6).map((service) => (
+                {services.map((service) => (
                   <li key={service.id}>
                     <Link href={service.href} className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-5 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-color)]/30 hover:bg-white/[0.07] sm:px-5 sm:py-6">
                       <span className="text-[var(--brand-color)] transition-transform duration-300 group-hover:scale-110">

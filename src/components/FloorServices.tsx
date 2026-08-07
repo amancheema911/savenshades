@@ -8,7 +8,7 @@ export default function FloorServices() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-8 xl:gap-10">
           <div className="lg:col-span-3">
-            <h2 className="max-w-[18ch] text-2xl font-semibold text-white uppercase sm:text-3xl lg:max-w-none">
+            <h2 className="lg:max-w-[18ch] text-2xl font-semibold text-white uppercase sm:text-3xl lg:max-w-none">
               Floors That Look{" "}
               <span className="text-[var(--brand-color)]">Amazing &amp; Perform</span>{" "}
               Even Better.

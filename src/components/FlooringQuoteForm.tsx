@@ -1,16 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Button from "@/components/ui/Button";
+import { services } from "@/lib/services";
 
-const PROJECT_TYPES = [
-  "Garage Flooring",
-  "Basement Flooring",
-  "Commercial Flooring",
-  "Metallic Epoxy",
-  "Flake Flooring",
-  "Quartz Flooring",
-  "Other",
-];
+const PROJECT_TYPES = [...services.map((service) => service.title), "Other"];
 
 const SIZE_OPTIONS = [
   "Under 250 sq ft",
@@ -20,19 +14,44 @@ const SIZE_OPTIONS = [
   "2,000+ sq ft",
 ];
 
-function ArrowRightIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+type FormTone = "dark" | "light";
+
+const TONE_STYLES = {
+  dark: {
+    shell: "border-[var(--brand-color)]/50 bg-[var(--black)]/90 shadow-md backdrop-blur-xl",
+    eyebrow: "text-white",
+    description: "text-white/80",
+    label: "text-white",
+    field: "border-white/12 bg-[var(--black)]/70 text-white/80 placeholder:text-white/55 focus:border-[var(--brand-color)]/65 focus:bg-[var(--black)]/80",
+    option: "bg-[var(--black)] text-white",
+    optionDisabled: "bg-[#0c1a2e] text-white/50",
+    chevron: "text-white/55",
+    dividerLine: "bg-white/15",
+    dividerText: "text-white/45",
+    successBox: "border-white/15 bg-white/5",
+    successTitle: "text-white",
+    successBody: "text-white/65",
+    footer: "text-white/50",
+    error: "border-red-400/30 bg-red-500/10 text-red-200",
+  },
+  light: {
+    shell: "border-black/10 bg-white shadow-[0_16px_40px_rgba(11,17,32,0.08)]",
+    eyebrow: "text-[var(--black)]",
+    description: "text-black/60",
+    label: "text-[var(--black)]",
+    field: "border-black/12 bg-[#F7F8FA] text-[var(--black)] placeholder:text-black/40 focus:border-[var(--brand-color)]/60 focus:bg-white",
+    option: "bg-white text-[var(--black)]",
+    optionDisabled: "bg-[#F7F8FA] text-black/45",
+    chevron: "text-black/40",
+    dividerLine: "bg-black/10",
+    dividerText: "text-black/40",
+    successBox: "border-black/10 bg-[#F7F8FA]",
+    successTitle: "text-[var(--black)]",
+    successBody: "text-black/60",
+    footer: "text-black/45",
+    error: "border-red-300 bg-red-50 text-red-700",
+  },
+} as const;
 
 function LockIcon() {
   return (
@@ -48,7 +67,7 @@ function LockIcon() {
   );
 }
 
-function ChevronDownIcon() {
+function ChevronDownIcon({ className = "" }: { className?: string }) {
   return (
     <svg
       width="14"
@@ -56,7 +75,7 @@ function ChevronDownIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="pointer-events-none absolute top-1/2 right-3.5 -translate-y-1/2 text-white/55"
+      className={`pointer-events-none absolute top-1/2 right-3.5 -translate-y-1/2 ${className}`}
     >
       <path
         d="m6 9 6 6 6-6"
@@ -69,47 +88,111 @@ function ChevronDownIcon() {
   );
 }
 
-const fieldClass = "w-full rounded-lg border border-white/12 bg-[#0c1a2e] px-3 py-2.5 text-xs text-white outline-none transition-[border-color,background-color,box-shadow] placeholder:text-white/40 focus:border-[var(--brand-color)]/65 focus:bg-[#0e2038]";
-
-const labelClass = "mb-1.5 block text-[0.7rem] font-semibold tracking-[0.04em] text-white uppercase";
-
 export default function FlooringQuoteForm({
   className = "",
+  tone = "dark",
 }: {
   className?: string;
+  tone?: FormTone;
 }) {
+  const styles = TONE_STYLES[tone];
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const fieldClass = `w-full rounded-lg border px-3 py-2.5 text-xs outline-none transition-[border-color,background-color,box-shadow] ${styles.field}`;
+  const labelClass = `mb-1.5 block text-[0.7rem] font-semibold tracking-[0.04em] uppercase ${styles.label}`;
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
+    setError(null);
 
-    window.setTimeout(() => {
-      setSubmitting(false);
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "flooring",
+          projectType: String(data.get("projectType") ?? ""),
+          size: String(data.get("size") ?? ""),
+          postalCode: String(data.get("postalCode") ?? ""),
+          name: String(data.get("name") ?? ""),
+          phone: String(data.get("phone") ?? ""),
+          email: String(data.get("email") ?? ""),
+        }),
+      });
+
+      const result = (await response.json()) as {
+        success?: boolean;
+        error?: string;
+      };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to send your request");
+      }
+
       setSubmitted(true);
-      event.currentTarget.reset();
-    }, 600);
+      form.reset();
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
-    <div className="relative w-full lg:max-w-[440px] overflow-hidden rounded-2xl border border-[var(--brand-color)]/50 bg-[#071628]/92 shadow-md backdrop-blur-xl px-3 py-4">      
-
+    <div
+      className={[
+        "relative w-full overflow-hidden rounded-2xl border px-3 py-4 lg:max-w-[440px]",
+        styles.shell,
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <div className="relative z-10">
-        <p className="text-xl text-white uppercase tracking-wide font-semibold">Get Your Free</p>
-        <h2 className=" text-[1.25rem] font-bold leading-[1.15] tracking-tight text-[var(--brand-color)] uppercase sm:text-[1.5rem]">Epoxy Flooring Quote</h2>
+        <p
+          className={`text-xl font-semibold tracking-wide uppercase ${styles.eyebrow}`}
+        >
+          Get Your Free
+        </p>
+        <h2 className="text-[1.25rem] leading-[1.15] font-bold tracking-tight text-[var(--brand-color)] uppercase sm:text-[1.5rem]">
+          Epoxy Flooring Quote
+        </h2>
 
         <div className="mt-3 flex items-center" aria-hidden="true">
           <span className="h-px w-10 bg-[var(--brand-color)]" />
         </div>
 
-        <p className="mt-3 text-sm text-white/80">Tell us about your project and we&apos;ll get back to you with a custom quote.</p>
+        <p className={`mt-3 text-sm ${styles.description}`}>
+          Tell us about your project and we&apos;ll get back to you with a custom
+          quote.
+        </p>
 
         {submitted ? (
-          <div className="mt-6 rounded-xl border border-white/15 bg-white/5 px-4 py-5 text-center" role="status">
-            <p className="font-semibold text-white">Request received!</p>
-            <p className="mt-1 text-sm text-white/65">Our team will contact you shortly.</p>
-            <button type="button" onClick={() => setSubmitted(false)} className="mt-4 text-sm font-semibold text-[var(--brand-color)] hover:underline">
+          <div
+            className={`mt-6 rounded-xl border px-4 py-5 text-center ${styles.successBox}`}
+            role="status"
+          >
+            <p className={`font-semibold ${styles.successTitle}`}>
+              Request received!
+            </p>
+            <p className={`mt-1 text-sm ${styles.successBody}`}>
+              Our team will contact you shortly.
+            </p>
+            <button
+              type="button"
+              onClick={() => setSubmitted(false)}
+              className="mt-4 text-sm font-semibold text-[var(--brand-color)] hover:underline"
+            >
               Send another request
             </button>
           </div>
@@ -124,20 +207,16 @@ export default function FlooringQuoteForm({
                   defaultValue=""
                   className={`${fieldClass} appearance-none pr-10`}
                 >
-                  <option value="" disabled className="bg-[#0c1a2e] text-white/50">
+                  <option value="" disabled className={styles.optionDisabled}>
                     Select Project Type
                   </option>
                   {PROJECT_TYPES.map((type) => (
-                    <option
-                      key={type}
-                      value={type}
-                      className="bg-[#0c1a2e] text-white"
-                    >
+                    <option key={type} value={type} className={styles.option}>
                       {type}
                     </option>
                   ))}
                 </select>
-                <ChevronDownIcon />
+                <ChevronDownIcon className={styles.chevron} />
               </span>
             </label>
 
@@ -150,20 +229,16 @@ export default function FlooringQuoteForm({
                   defaultValue=""
                   className={`${fieldClass} appearance-none pr-10`}
                 >
-                  <option value="" disabled className="bg-[#0c1a2e] text-white/50">
+                  <option value="" disabled className={styles.optionDisabled}>
                     Select Size Range
                   </option>
                   {SIZE_OPTIONS.map((size) => (
-                    <option
-                      key={size}
-                      value={size}
-                      className="bg-[#0c1a2e] text-white"
-                    >
+                    <option key={size} value={size} className={styles.option}>
                       {size}
                     </option>
                   ))}
                 </select>
-                <ChevronDownIcon />
+                <ChevronDownIcon className={styles.chevron} />
               </span>
             </label>
 
@@ -179,11 +254,13 @@ export default function FlooringQuoteForm({
             </label>
 
             <div className="flex items-center gap-3 py-1.5">
-              <span className="h-px flex-1 bg-white/15" />
-              <span className="text-[0.68rem] font-semibold tracking-[0.14em] text-white/45 uppercase">
+              <span className={`h-px flex-1 ${styles.dividerLine}`} />
+              <span
+                className={`text-[0.68rem] font-semibold tracking-[0.14em] uppercase ${styles.dividerText}`}
+              >
                 Your Details
               </span>
-              <span className="h-px flex-1 bg-white/15" />
+              <span className={`h-px flex-1 ${styles.dividerLine}`} />
             </div>
 
             <label className="block">
@@ -221,16 +298,28 @@ export default function FlooringQuoteForm({
               </label>
             </div>
 
-            <button
-              type="submit"
-              disabled={submitting}
-              className="mt-1 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand-color)] px-5 py-3.5 text-sm font-bold tracking-wide text-white uppercase transition-[filter,transform] hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {submitting ? "Sending..." : "Get My Free Estimate"}
-              {!submitting ? <ArrowRightIcon /> : null}
-            </button>
+            {error ? (
+              <p
+                className={`rounded-lg border px-3 py-2 text-xs ${styles.error}`}
+                role="alert"
+              >
+                {error}
+              </p>
+            ) : null}
 
-            <p className="flex items-center justify-center gap-1.5 pt-0.5 text-center text-[0.72rem] text-white/50">
+            <div className="flex justify-end">
+              <Button
+                type="submit"
+                size="sm"
+                disabled={submitting}
+                showIcon={!submitting}
+                className="uppercase"
+              >
+                {submitting ? "Sending..." : "Get My Free Estimate"}
+              </Button>
+            </div>
+
+            <p className={`flex items-center justify-center gap-1.5 pt-0.5 text-center text-[0.72rem] ${styles.footer}`}>
               <LockIcon />
               No obligation. Your information is safe and secure.
             </p>

@@ -64,14 +64,8 @@ function GalleryIcon() {
 
 export default function HeroBanner() {
   return (
-    <section className="relative isolate -mt-[4.75rem] overflow-hidden">
-      <Image
-        src="/images/hero-epoxy-floor-1.2.0.png"
-        alt="Premium epoxy garage floor with reflective flake finish"
-        fill
-        priority
-        className="w-full h-full object-cover object-center animate-hero-zoom"
-      />
+    <section className="relative -mt-[4.75rem] overflow-hidden">
+      <Image src="/images/hero-epoxy-floor-1.2.0.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority className="w-full h-full object-cover"/>
 
       <div className="w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>
 
@@ -112,7 +106,7 @@ export default function HeroBanner() {
                   </Link>
                 </div>
 
-                <div className="mt-8 w-full max-w-3xl rounded-2xl border border-[var(--brand-color)]/25 bg-[#0a1528]/72 px-3 py-5 shadow-md backdrop-blur-sm">
+                <div className="mt-8 w-full max-w-3xl rounded-2xl border border-[var(--brand-color)]/25 bg-[var(--black)]/90 px-3 py-5 shadow-md backdrop-blur-sm">
                   <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-2 lg:gap-3">
                     {TRUST_ITEMS.map((item) => (
                       <li key={item.id} className="flex items-center gap-2.5">
@@ -130,7 +124,7 @@ export default function HeroBanner() {
             </div>
 
             <div id="hero-quote" className="animate-hero-rise-delayed flex justify-center lg:col-span-5 lg:justify-end">
-              <FlooringQuoteForm />
+              <FlooringQuoteForm tone="dark" />
             </div>
           </div>
         </div>

@@ -187,11 +187,12 @@ export default function Visualize() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-8 md:gap-10 lg:grid-cols-12 lg:gap-6 xl:gap-8">
           {/* Title */}
-          <div className="text-center lg:col-span-3 lg:text-left">
+          <div className="text-center lg:col-span-3">
             <Heading
               tag="h2"
               size="section"
               tone="dark"
+              align="center"
               eyebrow="BEFORE & AFTER"
               title="Experience the Difference"
               description="The same space. A stunning transformation."
@@ -264,9 +265,9 @@ export default function Visualize() {
 
           {/* Features */}
           <div className="lg:col-span-3">
-            <ul className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-1 lg:gap-y-5">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-1 lg:gap-y-5">
               {FEATURES.map((feature) => (
-                <li key={feature.id} className="flex items-center gap-2.5 sm:gap-3 lg:gap-3.5 bg-white/60 rounded-2xl p-3 border border-black/8">
+                <li key={feature.id} className="flex flex-row  gap-4 items-center gap-2.5 bg-white/60 rounded-2xl p-3 border border-black/8">
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-color)] text-white sm:size-14 lg:size-12">
                     <FeatureIcon icon={feature.icon} />
                   </span>
