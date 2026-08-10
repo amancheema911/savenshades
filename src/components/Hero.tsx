@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Heading from "@/components/Heading";
-import HeroQuoteForm from "@/components/HeroQuoteForm";
+// import HeroQuoteForm from "@/components/HeroQuoteForm";
 import Button from "@/components/ui/Button";
 
 const STATS = [
@@ -148,7 +148,7 @@ export default function Hero() {
 
           {/* Right glassmorphism form */}
           <div className="flex justify-center lg:col-span-5 lg:justify-end">
-            <HeroQuoteForm />
+            {/* <HeroQuoteForm /> */}
           </div>
         </div>
       </div>
