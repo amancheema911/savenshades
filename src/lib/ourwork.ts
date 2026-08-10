@@ -1,9 +1,12 @@
 export type OurWorkCategory =
   | "All"
-  | "Residential"
+  | "Garage Floors"
   | "Commercial"
-  | "Industrial"
-  | "Decorative";
+  | "Residential"
+  | "Metallic Epoxy"
+  | "Solid Epoxy"
+  | "Stone Epoxy"
+  | "Rubber Surfacing";
 
 export type OurWorkImage = {
   src: string;
@@ -23,170 +26,197 @@ export type OurWorkItem = {
 
 export const ourWorkCategories: OurWorkCategory[] = [
   "All",
-  "Residential",
+  "Garage Floors",
   "Commercial",
-  "Industrial",
-  "Decorative",
+  "Residential",
+  "Metallic Epoxy",
+  "Solid Epoxy",
+  "Stone Epoxy",
+  "Rubber Surfacing",
 ];
 
 /** Featured project IDs shown on the homepage Our Work section */
 export const featuredOurWorkIds = [
-  "warehouse-polish",
-  "commercial-suite",
   "garage-showroom",
+  "commercial-suite",
+  "solid-epoxy-showroom",
   "metallic-lounge",
 ] as const;
 
 export const ourWorkItems: OurWorkItem[] = [
   {
     id: "garage-showroom",
-    title: "Garage Showroom",
-    category: "Residential",
+    title: "Collector Garage",
+    category: "Garage Floors",
     location: "Private Residence",
     image: "/images/services/service-garage.png",
-    imageAlt: "Luxury garage with finished epoxy floor",
+    imageAlt: "Luxury car on a finished garage epoxy floor",
     description:
-      "A showroom-grade garage floor built for collectors. Full flake broadcast, high-build clear coat, and a mirror finish that makes every vehicle the centerpiece.",
+      "Showroom-grade garage flooring built for collectors — durable coating, high-gloss finish, and a surface that stays easy to clean through seasons of driving.",
     images: [
       {
         src: "/images/services/service-garage.png",
-        alt: "Luxury garage with finished epoxy floor",
+        alt: "Luxury car on a finished garage epoxy floor",
       },
       {
         src: "/images/hero-epoxy-floor.png",
-        alt: "Wide view of the completed garage epoxy surface",
+        alt: "Wide view of the completed garage floor",
+      },
+      {
+        src: "/images/services/solid-epoxy.jpg",
+        alt: "Smooth garage floor under natural light",
+      },
+    ],
+  },
+  {
+    id: "commercial-suite",
+    title: "Office Lobby",
+    category: "Commercial",
+    location: "Corporate Building",
+    image: "/images/services/service-commercial.png",
+    imageAlt: "Bright commercial interior with epoxy flooring",
+    description:
+      "High-performance commercial epoxy for a busy lobby — seamless, scuff-resistant, and quick to maintain so the space stays polished through daily foot traffic.",
+    images: [
+      {
+        src: "/images/services/service-commercial.png",
+        alt: "Bright commercial interior with epoxy flooring",
+      },
+      {
+        src: "/images/hero-epoxy-floor.png",
+        alt: "Lobby seating area over finished epoxy floor",
+      },
+      {
+        src: "/images/services/service-garage.png",
+        alt: "Adjacent corridor with matching commercial finish",
+      },
+    ],
+  },
+  {
+    id: "residential-living",
+    title: "Open-Concept Home",
+    category: "Residential",
+    location: "Custom Home",
+    image: "/images/services/residential-floor.jpg",
+    imageAlt: "Residential home with polished epoxy flooring",
+    description:
+      "Beautiful residential epoxy for everyday home life — seamless transitions, a refined sheen, and a finish tough enough for kids, pets, and daily wear.",
+    images: [
+      {
+        src: "/images/services/residential-floor.jpg",
+        alt: "Residential home with polished epoxy flooring",
+      },
+      {
+        src: "/images/hero-epoxy-floor.png",
+        alt: "Living space with seamless epoxy floor",
       },
       {
         src: "/images/services/service-metallic.png",
-        alt: "Close detail of the garage floor flake system",
+        alt: "Floor detail in natural daylight",
       },
     ],
   },
   {
     id: "metallic-lounge",
     title: "Metallic Lounge",
-    category: "Decorative",
-    location: "Hospitality Suite",
+    category: "Metallic Epoxy",
+    location: "Entertainment Room",
     image: "/images/services/service-metallic.png",
-    imageAlt: "Metallic epoxy floor with blue and silver swirls",
+    imageAlt: "Close-up of blue and silver metallic epoxy floor",
     description:
-      "Hand-worked metallic epoxy with flowing blue and silver movement. Designed as a lounge feature floor that reads luxurious under day and evening light.",
+      "Stunning metallic epoxy with flowing blue and silver movement — a unique, luxurious finish that shifts with the light and anchors the whole room.",
     images: [
       {
         src: "/images/services/service-metallic.png",
-        alt: "Metallic epoxy floor with blue and silver swirls",
+        alt: "Close-up of blue and silver metallic epoxy floor",
       },
       {
         src: "/images/hero-epoxy-floor.png",
-        alt: "Metallic lounge floor in ambient light",
+        alt: "Metallic floor in ambient evening light",
       },
       {
         src: "/images/services/service-commercial.png",
-        alt: "Adjacent lounge space with complementary finish",
+        alt: "Lounge seating over metallic epoxy",
       },
     ],
   },
   {
-    id: "commercial-suite",
-    title: "Commercial Suite",
-    category: "Commercial",
-    location: "Office Lobby",
-    image: "/images/services/service-commercial.png",
-    imageAlt: "Bright commercial space with epoxy flooring",
+    id: "solid-epoxy-showroom",
+    title: "Solid Color Garage",
+    category: "Solid Epoxy",
+    location: "Private Garage",
+    image: "/images/services/solid-epoxy.jpg",
+    imageAlt: "Solid epoxy flooring finish",
     description:
-      "Bright, clean commercial flooring for a high-traffic lobby. Seamless epoxy that resists scuffs, cleans fast, and keeps the space looking brand-new.",
+      "Clean continuous color with lasting clarity — solid epoxy and a high-build clear coat for a seamless garage floor without flake texture.",
     images: [
+      {
+        src: "/images/services/solid-epoxy.jpg",
+        alt: "Solid epoxy flooring finish",
+      },
+      {
+        src: "/images/services/service-garage.png",
+        alt: "Solid color epoxy in a finished garage",
+      },
+      {
+        src: "/images/hero-epoxy-floor.png",
+        alt: "High-gloss solid epoxy surface",
+      },
+    ],
+  },
+  {
+    id: "stone-entry",
+    title: "Stone-Look Entry",
+    category: "Stone Epoxy",
+    location: "Front Entry & Walk",
+    image: "/images/services/stone-epoxy.jpg",
+    imageAlt: "Stone epoxy flooring with refined aggregate texture",
+    description:
+      "Natural stone look with durable textured grip — stone epoxy that handles wet boots and outdoor transitions while keeping a refined, architectural feel.",
+    images: [
+      {
+        src: "/images/services/stone-epoxy.jpg",
+        alt: "Stone epoxy flooring with refined aggregate texture",
+      },
+      {
+        src: "/images/services/residential-floor.jpg",
+        alt: "Entry path with stone epoxy finish",
+      },
+      {
+        src: "/images/hero-epoxy-floor.png",
+        alt: "Seamless stone epoxy transition at the doorway",
+      },
+    ],
+  },
+  {
+    id: "rubber-surfacing",
+    title: "Rubber Surfacing",
+    category: "Rubber Surfacing",
+    location: "Backyard Play Zone",
+    image: "/images/services/rubber-surfacing.jpg",
+    imageAlt: "Rubber surfacing for recreation and activity spaces",
+    description:
+      "Soft, durable rubber surfacing for play — cushioned underfoot, easy to clean, and built to stay flat and safe in active spaces.",
+    images: [
+      {
+        src: "/images/services/rubber-surfacing.jpg",
+        alt: "Rubber surfacing for recreation and activity spaces",
+      },
       {
         src: "/images/services/service-commercial.png",
-        alt: "Bright commercial space with epoxy flooring",
-      },
-      {
-        src: "/images/services/service-industrial.png",
-        alt: "High-traffic corridor within the commercial suite",
-      },
-      {
-        src: "/images/hero-epoxy-floor.png",
-        alt: "Lobby seating area over finished epoxy floor",
+        alt: "Playground with rubber surfacing",
       },
     ],
   },
   {
-    id: "warehouse-polish",
-    title: "Warehouse Polish",
-    category: "Industrial",
-    location: "Distribution Center",
-    image: "/images/services/service-industrial.png",
-    imageAlt: "High-gloss industrial warehouse epoxy floor",
-    description:
-      "Industrial-grade epoxy built for forklifts, pallet traffic, and 24/7 logistics. High-gloss finish improves visibility while staying tough under heavy loads.",
-    images: [
-      {
-        src: "/images/services/service-industrial.png",
-        alt: "High-gloss industrial warehouse epoxy floor",
-      },
-      {
-        src: "/images/services/service-commercial.png",
-        alt: "Polished warehouse aisle under work lighting",
-      },
-      {
-        src: "/images/services/service-garage.png",
-        alt: "Loading bay with durable epoxy coating",
-      },
-    ],
-  },
-  {
-    id: "hero-install",
-    title: "Luxury Living Floor",
-    category: "Residential",
-    location: "Custom Home",
-    image: "/images/hero-epoxy-floor.png",
-    imageAlt: "Premium epoxy floor in a luxury residential space",
-    description:
-      "A custom residential install with a refined gloss level and seamless transitions. Soft enough in tone for living spaces, tough enough for daily family life.",
-    images: [
-      {
-        src: "/images/hero-epoxy-floor.png",
-        alt: "Premium epoxy floor in a luxury residential space",
-      },
-      {
-        src: "/images/services/service-metallic.png",
-        alt: "Living area floor detail with natural light",
-      },
-      {
-        src: "/images/services/service-garage.png",
-        alt: "Connected mudroom epoxy transition",
-      },
-    ],
-  },
-  {
-    id: "flake-garage",
-    title: "Flake System Garage",
-    category: "Residential",
-    location: "Car Collector Bay",
-    image: "/images/services/service-garage.png",
-    imageAlt: "Flake epoxy garage floor with high-gloss finish",
-    description:
-      "Full-broadcast flake system for a collector bay — texture for grip, UV-stable clear for lasting gloss, and a finish that hides dust between washes.",
-    images: [
-      {
-        src: "/images/services/service-garage.png",
-        alt: "Flake epoxy garage floor with high-gloss finish",
-      },
-      {
-        src: "/images/hero-epoxy-floor.png",
-        alt: "Collector bay overview with flake epoxy",
-      },
-    ],
-  },
-  {
-    id: "retail-floor",
+    id: "commercial-retail",
     title: "Retail Walkway",
     category: "Commercial",
     location: "Boutique Storefront",
     image: "/images/services/service-commercial.png",
     imageAlt: "Commercial retail epoxy flooring",
     description:
-      "Seamless retail walkway flooring that handles foot traffic all day without looking worn. Easy wipe-downs and a polished look for boutique spaces.",
+      "Commercial flooring for all-day shoppers — seamless epoxy that wipes down fast and keeps boutique spaces looking intentional under display lighting.",
     images: [
       {
         src: "/images/services/service-commercial.png",
@@ -194,39 +224,39 @@ export const ourWorkItems: OurWorkItem[] = [
       },
       {
         src: "/images/services/service-metallic.png",
-        alt: "Retail display area over epoxy walkway",
+        alt: "Display area adjacent to retail walkway",
       },
     ],
   },
   {
-    id: "plant-floor",
-    title: "Plant Floor System",
-    category: "Industrial",
-    location: "Manufacturing Facility",
-    image: "/images/services/service-industrial.png",
-    imageAlt: "Industrial epoxy floor built for heavy traffic",
+    id: "garage-workshop",
+    title: "Workshop Bay",
+    category: "Garage Floors",
+    location: "Home Workshop",
+    image: "/images/services/service-garage.png",
+    imageAlt: "Durable garage workshop epoxy floor",
     description:
-      "Chemical-resistant plant floor system rated for heavy equipment and spill exposure. Installed for fast return-to-service with minimal downtime.",
+      "Garage floor coating for tools, spills, and project days — tough, sleek, and easy to sweep so the workshop stays ready for the next build.",
     images: [
       {
-        src: "/images/services/service-industrial.png",
-        alt: "Industrial epoxy floor built for heavy traffic",
+        src: "/images/services/service-garage.png",
+        alt: "Durable garage workshop epoxy floor",
       },
       {
-        src: "/images/services/service-commercial.png",
-        alt: "Plant walkway with industrial epoxy finish",
+        src: "/images/services/solid-epoxy.jpg",
+        alt: "Workshop floor with clean epoxy finish",
       },
     ],
   },
   {
-    id: "metallic-feature",
-    title: "Metallic Feature Slab",
-    category: "Decorative",
-    location: "Design Studio",
+    id: "metallic-studio",
+    title: "Design Studio Floor",
+    category: "Metallic Epoxy",
+    location: "Creative Studio",
     image: "/images/services/service-metallic.png",
     imageAlt: "Decorative metallic epoxy feature floor",
     description:
-      "A statement metallic slab for a design studio — layered pigments, controlled flow patterns, and a crystal-clear topcoat for depth and drama.",
+      "Layered metallic pigments and controlled flow for a one-of-a-kind studio slab — depth, drama, and a crystal-clear topcoat for a true signature floor.",
     images: [
       {
         src: "/images/services/service-metallic.png",
@@ -234,67 +264,43 @@ export const ourWorkItems: OurWorkItem[] = [
       },
       {
         src: "/images/hero-epoxy-floor.png",
-        alt: "Studio corner featuring metallic epoxy slab",
+        alt: "Studio corner featuring metallic epoxy",
       },
     ],
   },
   {
-    id: "showroom-bay",
-    title: "Dealer Showroom Bay",
-    category: "Commercial",
-    location: "Auto Showroom",
-    image: "/images/services/service-garage.png",
-    imageAlt: "Auto showroom epoxy floor with reflective finish",
+    id: "rubber-play",
+    title: "Play Area Surface",
+    category: "Rubber Surfacing",
+    location: "Backyard Play Zone",
+    image: "/images/services/rubber-surfacing.jpg",
+    imageAlt: "Rubber surfacing in a children's play area",
     description:
-      "Reflective showroom bay flooring that puts inventory on display. Smooth, durable, and detailed for crisp brand presentation under showroom lights.",
+      "Impact-friendly rubber surfacing for play spaces — consistent cushion, weather-ready durability, and colors that define safe zones for kids.",
     images: [
       {
-        src: "/images/services/service-garage.png",
-        alt: "Auto showroom epoxy floor with reflective finish",
-      },
-      {
-        src: "/images/services/service-commercial.png",
-        alt: "Dealer showroom bay under display lighting",
+        src: "/images/services/rubber-surfacing.jpg",
+        alt: "Rubber surfacing in a children's play area",
       },
     ],
   },
   {
-    id: "logistics-aisle",
-    title: "Logistics Aisle",
-    category: "Industrial",
-    location: "Fulfillment Hub",
-    image: "/images/services/service-industrial.png",
-    imageAlt: "Logistics warehouse epoxy flooring aisle",
+    id: "residential-basement",
+    title: "Finished Basement",
+    category: "Residential",
+    location: "Family Home",
+    image: "/images/services/residential-floor.jpg",
+    imageAlt: "Residential basement with epoxy flooring",
     description:
-      "Marked logistics aisle with abrasion-resistant coating for continuous picker and cart traffic. Built to stay bright and readable under warehouse LEDs.",
+      "Residential epoxy that turns a basement into livable square footage — moisture-aware prep, seamless coat, and a finish that feels at home with furniture and rugs.",
     images: [
       {
-        src: "/images/services/service-industrial.png",
-        alt: "Logistics warehouse epoxy flooring aisle",
-      },
-      {
-        src: "/images/services/service-commercial.png",
-        alt: "Fulfillment aisle with durable epoxy coating",
-      },
-    ],
-  },
-  {
-    id: "art-resin",
-    title: "Art Resin Floor",
-    category: "Decorative",
-    location: "Private Space",
-    image: "/images/services/service-metallic.png",
-    imageAlt: "Artistic decorative epoxy resin floor",
-    description:
-      "Space-ready art resin flooring with custom color movement. Designed as a quiet backdrop for the collection while still reading as a finished art piece.",
-    images: [
-      {
-        src: "/images/services/service-metallic.png",
-        alt: "Artistic decorative epoxy resin floor",
+        src: "/images/services/residential-floor.jpg",
+        alt: "Residential basement with epoxy flooring",
       },
       {
         src: "/images/hero-epoxy-floor.png",
-        alt: "Private space with art resin floor",
+        alt: "Basement lounge over epoxy floor",
       },
     ],
   },

@@ -1,11 +1,12 @@
 export const APP_NAME = "Saven Shades";
 
 export const contactInfo = {
-    logo: `/logo.png`,
+    logo: `/saven-shade-logo.png`,
     phone: "+1-778-957-4061",
     email: "sevenshadesepoxy@gmail.com",
     address: "23-17528 60 Avenue, Surrey, BC, Canada, V3S 1T8",
-    hours: "Mon - Sat: 7AM - 7PM",
+    hours: "Mon - Fri: 7AM - 7PM",
+    weekends: "Sat - Sun: 9AM - 5PM",
 };
 
 

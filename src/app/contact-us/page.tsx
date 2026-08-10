@@ -5,7 +5,7 @@ import { contactInfo } from "@/lib/config";
 import Heading from "@/components/Heading";
 import FlooringQuoteForm from "@/components/FlooringQuoteForm";
 
-const { phone, address, email } = contactInfo;
+const { phone, address, email, hours, weekends } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 const emailHref = `mailto:${email}`;
 
@@ -104,6 +104,19 @@ export default function ContactUsPage() {
                     <strong className="block text-gray-800">Email Address:</strong>
                     <Link href={emailHref} className="text-md hover:text-indigo-800">{email}</Link>
                   </div>
+                </li>
+
+                {/* Hours */}
+                <li className="flex items-start gap-4">
+                  <div className="bg-[var(--brand-color)] p-2 rounded-sm">
+                    <svg className="w-5 h-5 text-white" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong className="block text-gray-800">Hours:</strong>
+                    <div>{hours}, {weekends}</div>
+                  </div>  
                 </li>
               </ul>
             </div>

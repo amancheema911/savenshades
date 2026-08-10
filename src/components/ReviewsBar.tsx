@@ -120,10 +120,10 @@ export default function ReviewsBar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
         <ul className="grid grid-cols-1 items-center gap-5 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-6 md:gap-x-6 lg:grid-cols-[1.35fr_1fr_1fr_1fr_1fr] lg:gap-0">
           <li className="flex flex-wrap items-center sm:justify-center gap-x-2.5 gap-y-2 border-b border-[#C8CCD3]/80 pb-5 sm:col-span-2 sm:pb-6 lg:col-span-1 lg:justify-center lg:border-b-0 lg:pb-0 lg:pr-3">
-            <span className="text-[1.55rem] font-bold leading-none tracking-tight text-[var(--black)] sm:text-[1.7rem]">5.0</span>
+            <span className="text-[1.55rem] font-bold leading-none tracking-tight text-[var(--black)] sm:text-[1.7rem]">4.9</span>
             <Stars />
             <span className="text-xs font-bold tracking-wide text-[var(--black)] uppercase">100+ Reviews</span>
-            <GoogleWordmark />
+            {/* <GoogleWordmark /> */}
           </li>
 
           {FEATURES.map((item, index) => (

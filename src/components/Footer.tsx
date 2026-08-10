@@ -1,8 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { contactInfo, socialLinks } from "@/lib/config";
+import CtaActions from "./CtaActions";
 
-const { phone, address, email } = contactInfo;
+
+
+const { phone, address, email, logo } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 const emailHref = `mailto:${email}`;
 
@@ -127,23 +130,21 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Saven shades home">
-              <img src="/logo.png" alt="Saven shades" className="h-14" />
+              <img src={logo} alt="Saven shades" className="h-18" />
             </Link>
-
             <p>We transform ordinary concrete into extraordinary floors that are beautiful, durable and built to last.</p>
-
-              <div className="flex items-center space-x-2 mt-4">
-                {socialLinks.map((item) => (
-                  <Link
-                    key={item.link}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={item.ariaLabel}
-                    className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/50 hover:text-[var(--brand-color)] transition-colors duration-300 hover:border-[var(--brand-color)]"
-                    dangerouslySetInnerHTML={{ __html: item.icon }}
-                  />
-                ))}
+            <div className="flex items-center space-x-2 mt-4">
+              {socialLinks.map((item) => (
+                <Link
+                  key={item.link}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.ariaLabel}
+                  className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/50 hover:text-[var(--brand-color)] transition-colors duration-300 hover:border-[var(--brand-color)]"
+                  dangerouslySetInnerHTML={{ __html: item.icon }}
+                />
+              ))}
             </div>
           </div>
 
@@ -215,6 +216,8 @@ export default function Footer() {
           <p>© 2026 Saven Shades. All rights reserved.</p>
         </div>
       </div>
+
+      <CtaActions />
     </footer>
   );
 }

@@ -64,8 +64,8 @@ function GalleryIcon() {
 
 export default function HeroBanner() {
   return (
-    <section className="relative -mt-[4.75rem] overflow-hidden">
-      <Image src="/images/hero-epoxy-floor-1.2.0.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority className="w-full h-full object-cover"/>
+    <section className="relative -mt-[5.75rem] overflow-hidden">
+      <Image src="/images/hero-epoxy-floor-1.2.1.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority className="w-full h-full object-cover object-top"/>
 
       <div className="w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>
 
@@ -88,13 +88,6 @@ export default function HeroBanner() {
                 </div>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
-                  {/* <Link
-                    href="#hero-quote"
-                    className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand-color)] px-5 py-3.5 text-sm font-bold tracking-wide text-white uppercase transition-[filter,transform] hover:brightness-110 active:scale-[0.99] sm:px-6"
-                  >
-                    Get A Free On-Site Estimate
-                    <ArrowRightIcon />
-                  </Link> */}
                   <Button href="/contact-us">Get A Free On-Site Estimate</Button>
 
                   <Link

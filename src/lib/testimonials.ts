@@ -10,8 +10,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     id: "james-r",
-    quote:
-      "Our garage looks absolutely incredible! The team was professional, on time, and the quality is unmatched.",
+    quote: "Our garage looks absolutely incredible! The team was professional, on time, and the quality is unmatched.",
     name: "James R.",
     role: "Homeowner",
     initials: "JR",
@@ -19,8 +18,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "sarah-l",
-    quote:
-      "Best investment for our showroom. The metallic epoxy floor is a true showstopper!",
+    quote: "Best investment for our showroom. The metallic epoxy floor is a true showstopper!",
     name: "Sarah L.",
     role: "Business Owner",
     initials: "SL",
@@ -28,8 +26,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "michael-t",
-    quote:
-      "Durable, beautiful and easy to clean. I highly recommend their epoxy flooring!",
+    quote: "Durable, beautiful and easy to clean. I highly recommend their epoxy flooring!",
     name: "Michael T.",
     role: "Facility Manager",
     initials: "MT",
@@ -37,8 +34,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "priya-k",
-    quote:
-      "They turned our dull concrete into a mirror finish. Clean workmanship from start to finish.",
+    quote: "They turned our dull concrete into a mirror finish. Clean workmanship from start to finish.",
     name: "Priya K.",
     role: "Homeowner",
     initials: "PK",
@@ -46,8 +42,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "daniel-m",
-    quote:
-      "Our warehouse floors hold up under heavy traffic every day. Outstanding durability.",
+    quote: "Our warehouse floors hold up under heavy traffic every day. Outstanding durability.",
     name: "Daniel M.",
     role: "Operations Lead",
     initials: "DM",
@@ -55,8 +50,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "emily-c",
-    quote:
-      "The flake system looks premium and is so easy to maintain. Guests always ask about it.",
+    quote: "The flake system looks premium and is so easy to maintain. Guests always ask about it.",
     name: "Emily C.",
     role: "Boutique Owner",
     initials: "EC",

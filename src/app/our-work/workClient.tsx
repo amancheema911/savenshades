@@ -382,7 +382,7 @@ export default function OurWorkClient() {
             Real Floors. Real <span className="text-[var(--brand-color)]">Results.</span>
           </>
         }
-        description="Browse finished installs across residential, commercial, and industrial spaces — click any project to open photos and details."
+        description="Browse finished installs across garage, commercial, residential, and specialty epoxy and rubber surfaces — click any project to open photos and details."
         primaryAction={{ href: "#our-work-grid", label: "Explore Our Work" }}
         secondaryAction={{
           href: "/contact-us",
@@ -392,7 +392,7 @@ export default function OurWorkClient() {
         aside={{
           label: "Projects",
           value: `${ourWorkItems.length}+`,
-          description: "Featured installs from garages to warehouses.",
+          description: "Featured installs matched to our flooring services.",
         }}
       />
 
@@ -407,7 +407,7 @@ export default function OurWorkClient() {
                 tone="dark"
                 eyebrow="PROJECT ARCHIVE"
                 title={<>Surfaces Worth <span className="text-[var(--brand-color)]">A Closer Look.</span></>}
-                description="Browse finished installs across residential, commercial, and industrial spaces — click any project to open photos and details."
+                description="Browse finished installs across garage, commercial, residential, and specialty epoxy and rubber surfaces — click any project to open photos and details."
               />
             </div>
 

@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
-//import PageHeader from "@/components/PageHeader";
 import Button from "@/components/ui/Button";
 import Counters from "@/components/Counters";
 import { contactInfo } from "@/lib/config";
@@ -252,29 +251,6 @@ function ValueIcon({ icon }: { icon: ValueIconName }) {
 export default function AboutUsPage() {
   return (
     <>
-      {/* <PageHeader
-        eyebrow="ABOUT US"
-        title={
-          <>
-            Floor Built with{" "}
-            <span className="text-[var(--brand-color)]">obsession.</span>
-          </>
-        }
-        description="We're not just a company — we're a team of obsessive perfectionists who are passionate about creating the best epoxy floors possible."
-        primaryAction={{ href: "/contact-us", label: "Work With Us" }}
-        secondaryAction={{
-          href: "/our-work",
-          label: "View Our Work",
-          icon: "arrow",
-        }}
-        aside={{
-          label: "Since",
-          value: "2014",
-          description:
-            "A decade refining epoxy systems that stay sharp under real use.",
-        }}
-      /> */}
-
       {/* Story — asymmetric editorial */}
       <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-24">
         
@@ -288,7 +264,7 @@ export default function AboutUsPage() {
                 <div className="absolute -top-4 -left-4 hidden h-28 w-28 rounded-[1.25rem] border border-[var(--brand-color)]/40 sm:block lg:-top-6 lg:-left-6" />
                 <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
                   <Image
-                    src="/images/services/service-garage.png"
+                    src="/images/hero-epoxy-floor.png"
                     alt="Premium epoxy garage floor installed by Saven shades"
                     fill
                     sizes="(max-width: 1024px) 92vw, 55vw"

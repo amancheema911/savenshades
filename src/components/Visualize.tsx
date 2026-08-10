@@ -187,12 +187,12 @@ export default function Visualize() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-8 md:gap-10 lg:grid-cols-12 lg:gap-6 xl:gap-8">
           {/* Title */}
-          <div className="text-center lg:col-span-3">
+          <div className="lg:col-span-3">
             <Heading
               tag="h2"
               size="section"
               tone="dark"
-              align="center"
+              align="left"
               eyebrow="BEFORE & AFTER"
               title="Experience the Difference"
               description="The same space. A stunning transformation."

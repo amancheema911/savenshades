@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { href: "/contact-us", label: "Contact Us" },
 ];
 
-const { phone, hours } = contactInfo;
+const { phone, hours, logo } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 
 function PhoneIcon() {
@@ -160,7 +160,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto flex items-center justify-between gap-4 py-3 px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex shrink-0 items-center gap-3">
-            <img src="/logo.png" alt="Saven shades" className="h-14" />
+            <img src={logo} alt="Saven shades" className="h-14" />
           </Link>
 
           <ul className="hidden items-center gap-1 xl:flex">
