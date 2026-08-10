@@ -56,7 +56,7 @@ export default function PageHeader({
   eyebrow,
   title,
   description,
-  image = "/images/hero-epoxy-floor-1.jpg",
+  image = "/images/epoxy-floor.png",
   imageAlt = "",
   imageClassName = "object-cover object-bottom animate-hero-zoom",
   minHeightClassName = "py-14 sm:py-16",
