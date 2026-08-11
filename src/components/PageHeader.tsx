@@ -92,7 +92,7 @@ export default function PageHeader({
                 {primaryAction ? (
                   <Button href={primaryAction.href}>{primaryAction.label}</Button>
                 ) : null}
-                {secondaryAction ? (
+                {/* {secondaryAction ? (
                   <Link href={secondaryAction.href} className="group inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent py-1.5 pr-1.5 pl-6 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]">
                     {secondaryAction.label}
                     {secondaryAction.icon === "phone" ? (
@@ -101,7 +101,7 @@ export default function PageHeader({
                       <ArrowUpRightIcon />
                     )}
                   </Link>
-                ) : null}
+                ) : null} */}
               </div>
             ) : null}
           </div>

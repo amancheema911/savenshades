@@ -178,38 +178,9 @@ function CheckIcon() {
 }
 
 export default function ResidentialPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Residential Epoxy Flooring",
-    description:
-      "Professional residential epoxy flooring for garages, basements, mudrooms, and living spaces — durable, stylish, and built for everyday home life.",
-    provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Residential Epoxy Flooring Installation",
-    url: "/services/residential",
-    image: "/images/services/service-garage.png",
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
 
       <PageHeader
         eyebrow="RESIDENTIAL EPOXY SYSTEMS"

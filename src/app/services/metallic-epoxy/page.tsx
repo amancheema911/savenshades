@@ -179,38 +179,9 @@ function CheckIcon() {
 }
 
 export default function MetallicEpoxyPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Metallic Epoxy Flooring",
-    description:
-      "Professional metallic epoxy flooring with liquid depth and custom color movement for showrooms, residences, and feature spaces.",
-    provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Metallic Epoxy Flooring Installation",
-    url: "/services/metallic-epoxy",
-    image: "/images/services/service-metallic.png",
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
 
       <PageHeader
         eyebrow="METALLIC EPOXY SYSTEMS"

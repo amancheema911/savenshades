@@ -252,7 +252,7 @@ export default function AboutUsPage() {
   return (
     <>
       {/* Story — asymmetric editorial */}
-      <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-gray-50 py-14 sm:py-20 lg:py-24">
         
         <div className="pointer-events-none absolute top-0 left-0 h-64 w-full bg-[radial-gradient(ellipse_at_top_left,rgba(184,134,11,0.08),transparent_55%)]" />
         
@@ -264,7 +264,7 @@ export default function AboutUsPage() {
                 <div className="absolute -top-4 -left-4 hidden h-28 w-28 rounded-[1.25rem] border border-[var(--brand-color)]/40 sm:block lg:-top-6 lg:-left-6" />
                 <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
                   <Image
-                    src="/images/hero-epoxy-floor.png"
+                    src="/images/about-us.png"
                     alt="Premium epoxy garage floor installed by Saven shades"
                     fill
                     sizes="(max-width: 1024px) 92vw, 55vw"
@@ -274,9 +274,9 @@ export default function AboutUsPage() {
                 </div>
 
                 <div className="absolute -right-2 -bottom-8 w-[42%] overflow-hidden rounded-[1.15rem] shadow-[0_20px_50px_rgba(0,0,0,0.28)] ring-1 ring-white/20 sm:-right-4 sm:-bottom-10 sm:rounded-[1.35rem] lg:-right-6 animate-about-float">
-                  <div className="relative aspect-[4/5]">
+                  <div className="relative aspect-[4/3]">
                     <Image
-                      src="/images/services/service-metallic.png"
+                      src="/images/metalic-epoxy.jpg"
                       alt="Metallic epoxy detail"
                       fill
                       sizes="(max-width: 1024px) 40vw, 22vw"
@@ -323,7 +323,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Values — modern bento strip */}
-      <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-gray-50 pb-14 sm:pb-20 lg:pb-24">
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
             <Heading
@@ -357,7 +357,7 @@ export default function AboutUsPage() {
           {/* Left image */}
           <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[640px]">
             <Image
-              src="/images/services/service-metallic.png"
+              src="/images/metallic-service-2.png"
               alt="Elegant epoxy surface in a refined interior space"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -427,7 +427,7 @@ export default function AboutUsPage() {
                 {/* Top/back image — left aligned (your position) */}
                 <div className="relative mr-auto aspect-[4/5] w-[78%] max-w-[450px] overflow-hidden rounded-[1.15rem] shadow-[0_18px_40px_rgba(11,17,32,0.12)] sm:w-[75%] sm:rounded-[1.35rem] lg:w-[72%]">
                   <Image
-                    src="/images/services/service-metallic.png"
+                    src="/images/solid-floor.jpg"
                     alt="Premium epoxy floor hallway with soft natural light"
                     fill
                     sizes="(max-width: 640px) 75vw, (max-width: 1024px) 40vw, 28vw"
@@ -438,7 +438,7 @@ export default function AboutUsPage() {
                 {/* Bottom/front image — right + bottom (your position) */}
                 <div className="absolute right-0 bottom-4 z-[2] aspect-[4/3] w-[68%] max-w-[260px] overflow-hidden rounded-[1.15rem] shadow-[0_22px_50px_rgba(11,17,32,0.16)] sm:bottom-10 sm:w-[60%] sm:max-w-[340px] sm:rounded-[1.35rem] lg:max-w-[380px]">
                   <Image
-                    src="/images/hero-epoxy-floor.png"
+                    src="/images/solid-floor-1.jpg"
                     alt="Luxury living space with finished epoxy flooring"
                     fill
                     sizes="(max-width: 640px) 60vw, (max-width: 1024px) 35vw, 26vw"

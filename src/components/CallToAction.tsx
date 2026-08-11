@@ -68,7 +68,7 @@ function CheckIcon() {
 
 export default function CallToAction() {
   return (
-    <section className="bg-gray-50 py-12 lg:py-20">
+    <section className="bg-gray-50 py-14 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-[#050A14] sm:rounded-[2.25rem] lg:rounded-[2.75rem]">
           <div className="pointer-events-none absolute inset-y-0 right-0 w-full sm:w-[55%] lg:w-[48%]">

@@ -178,38 +178,9 @@ function CheckIcon() {
 }
 
 export default function SolidEpoxyPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Solid Epoxy Flooring",
-    description:
-      "Professional solid epoxy flooring with continuous color and gloss or satin clear — modern, durable, and easy to maintain.",
-    provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Solid Epoxy Flooring Installation",
-    url: "/services/solid-epoxy",
-    image: "/images/services/service-commercial.png",
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
 
       <PageHeader
         eyebrow="SOLID EPOXY SYSTEMS"

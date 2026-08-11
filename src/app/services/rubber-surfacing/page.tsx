@@ -178,38 +178,9 @@ function CheckIcon() {
 }
 
 export default function RubberSurfacingPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Rubber Surfacing",
-    description:
-      "Professional rubber surfacing for gyms, play areas, and recreational spaces — impact absorbing, slip resistant, and built for high activity.",
-    provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Rubber Surfacing Installation",
-    url: "/services/rubber-surfacing",
-    image: "/images/services/service-garage.png",
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
 
       <PageHeader
         eyebrow="RUBBER SURFACING SYSTEMS"

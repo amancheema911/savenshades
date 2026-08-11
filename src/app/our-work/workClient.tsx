@@ -8,7 +8,6 @@ import {
   useId,
   useMemo,
   useState,
-  type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import {
   ourWorkCategories,
@@ -360,19 +359,6 @@ export default function OurWorkClient() {
     syncProjectParam(null);
   };
 
-  const onFilterKeyDown = (
-    event: ReactKeyboardEvent<HTMLButtonElement>,
-    index: number,
-  ) => {
-    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
-    event.preventDefault();
-    const next =
-      event.key === "ArrowRight"
-        ? (index + 1) % ourWorkCategories.length
-        : (index - 1 + ourWorkCategories.length) % ourWorkCategories.length;
-    selectCategory(ourWorkCategories[next]);
-  };
-
   return (
     <>
       <PageHeader
@@ -411,27 +397,18 @@ export default function OurWorkClient() {
               />
             </div>
 
-            <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter our work by category">
-              {ourWorkCategories.map((item, index) => {
-                const active = category === item;
-                return (
-                  <button
-                    key={item}
-                    type="button"
-                    role="tab"
-                    aria-selected={active}
-                    onClick={() => selectCategory(item)}
-                    onKeyDown={(event) => onFilterKeyDown(event, index)}
-                    className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-color)] ${
-                      active
-                        ? "bg-[#05070b] text-white shadow-[0_8px_20px_rgba(11,17,32,0.2)]"
-                        : "bg-white text-black/55 ring-1 ring-black/8 hover:text-[#0B1120]"
-                    }`}
-                  >
-                    {item}
-                  </button>
-                );
-              })}
+            <div className="relative w-full sm:w-auto sm:min-w-[240px]">
+              <label htmlFor="our-work-category" className="sr-only">Filter our work by category</label>
+              <select id="our-work-category" value={category} onChange={(event) => selectCategory(event.target.value as OurWorkCategory)} className="w-full appearance-none rounded-full bg-[#05070b] px-4 py-2.5 pr-10 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(11,17,32,0.2)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-color)]">
+                {ourWorkCategories.map((item) => (
+                  <option key={item} value={item}>{item}</option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-white/70" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
             </div>
           </div>
 
@@ -440,12 +417,7 @@ export default function OurWorkClient() {
               const tall = index % 5 === 1 || index % 5 === 3;
               return (
                 <li key={`${category}-${item.id}`} className="mb-4 break-inside-avoid sm:mb-5 lg:mb-6">
-                  <button
-                    type="button"
-                    onClick={() => openAt(index)}
-                    className="group relative block w-full overflow-hidden rounded-[1.35rem] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand-color)] sm:rounded-[1.5rem]"
-                    aria-label={`Open ${item.title} preview`}
-                  >
+                  <button type="button" onClick={() => openAt(index)} className="group relative block w-full overflow-hidden rounded-[1.35rem] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand-color)] sm:rounded-[1.5rem]" aria-label={`Open ${item.title} preview`}>
                     <div className={`relative overflow-hidden ${ tall ? "aspect-[3/4]" : "aspect-[4/3]" }`}>
                       <Image
                         src={item.image}

@@ -36,22 +36,6 @@ const promises = [
 export default function ContactUsPage() {
   return (
     <>
-      {/* <PageHeader
-        eyebrow="CONTACT US"
-        title={
-          <>
-            Let&apos;s Build Your{" "}
-            <span className="text-[var(--brand-color)]">Next Floor.</span>
-          </>
-        }
-        description="Tell us about your space and we'll prepare a free estimate — usually within one business day."
-        primaryAction={{ href: "#contact-form", label: "Send A Message" }}
-        secondaryAction={{
-          href: phoneHref,
-          label: `Call ${phone}`,
-          icon: "phone",
-        }}
-      /> */}
 
       {/* Form + details */}
       <section className="relative bg-[#F7F8FA] py-14 sm:py-16 lg:py-20">

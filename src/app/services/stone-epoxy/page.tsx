@@ -178,39 +178,9 @@ function CheckIcon() {
 }
 
 export default function StoneEpoxyPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Stone Epoxy Flooring",
-    description:
-      "Professional stone epoxy flooring with natural stone-look aggregate, durable texture, and a refined finish for homes and commercial spaces.",
-    provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Stone Epoxy Flooring Installation",
-    url: "/services/stone-epoxy",
-    image: "/images/services/service-commercial.png",
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-
       <PageHeader
         eyebrow="STONE EPOXY SYSTEMS"
         title={

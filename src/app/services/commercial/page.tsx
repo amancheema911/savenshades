@@ -179,38 +179,8 @@ function CheckIcon() {
 }
 
 export default function CommercialPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Commercial Epoxy Flooring",
-    description:
-      "Professional commercial epoxy flooring for retail, offices, hospitality, and showrooms — durable, cleanable, and built for high foot traffic.",
-    provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Commercial Epoxy Flooring Installation",
-    url: "/services/commercial",
-    image: "/images/services/service-commercial.png",
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
 
       <PageHeader
         eyebrow="COMMERCIAL EPOXY SYSTEMS"

@@ -181,7 +181,7 @@ export default function Visualize() {
   };
 
   return (
-    <div className="relative overflow-hidden py-12 sm:py-14 lg:py-20">
+    <div className="relative overflow-hidden py-14 sm:py-14 lg:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(184,134,11,0.08)_0%,transparent_55%)]" aria-hidden="true" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">

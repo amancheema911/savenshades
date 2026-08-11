@@ -13,8 +13,22 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Saven shades | Premium Epoxy Solutions",
-  description:
-    "Premium epoxy flooring solutions for residential and commercial spaces.",
+  description: "Premium epoxy flooring in Surrey, BC — durable, beautiful garage, residential, and commercial floors installed by local experts. Free quotes.",
+  keywords: [ "epoxy flooring Surrey", "garage epoxy flooring", "commercial epoxy floors", "residential epoxy flooring", "premium epoxy solutions", "metallic epoxy flooring", ],
+  alternates: { 
+    canonical: "/" 
+  },
+  openGraph: {
+    title: "Saven shades | Premium Epoxy Solutions",
+    description: "Transform your garage, basement, or commercial space with high-performance epoxy flooring installed by local experts in Surrey, BC.",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-epoxy-floor-1.2.1.webp",
+        alt: "Premium epoxy garage floor with reflective flake finish",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

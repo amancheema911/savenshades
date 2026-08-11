@@ -179,39 +179,9 @@ function CheckIcon() {
 }
 
 export default function GarageFloorsPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Garage Epoxy Flooring",
-    description:
-      "Professional garage epoxy flooring installation with hot-tire resistance, UV-stable finishes, and optional flake systems.",
-    provider: { "@type": "Organization", name: "Saven shades" },
-    serviceType: "Garage Epoxy Flooring Installation",
-    url: "/services/garage-floors",
-    image: "/images/services/service-garage.png",
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-
+  
       <PageHeader
         eyebrow="GARAGE EPOXY SYSTEMS"
         title={
@@ -307,7 +277,7 @@ export default function GarageFloorsPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-[0_28px_70px_rgba(11,17,32,0.3)] sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/hero-epoxy-floor.png"
+                    src="/images/services/service_garage.png"
                     alt="Wide residential epoxy flooring detail"
                     fill
                     sizes="300px"
