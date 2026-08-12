@@ -33,9 +33,10 @@ export default function FloorServices() {
                       <Image
                         src={service.image}
                         alt={service.imageAlt}
-                        fill
-                        sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 15vw"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        width={200}
+                        height={200}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                     </div>
 

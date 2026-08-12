@@ -79,22 +79,6 @@ function IconHeadset() {
   );
 }
 
-function GoogleWordmark() {
-  return (
-    <span
-      className="inline-flex items-center font-sans text-[1.1rem] font-semibold leading-none tracking-[-0.03em]"
-      aria-label="Google"
-    >
-      <span className="text-[#4285F4]">G</span>
-      <span className="text-[#EA4335]">o</span>
-      <span className="text-[#FBBC05]">o</span>
-      <span className="text-[#4285F4]">g</span>
-      <span className="text-[#34A853]">l</span>
-      <span className="text-[#EA4335]">e</span>
-    </span>
-  );
-}
-
 function Stars() {
   return (
     <span className="inline-flex items-center gap-px text-[#F4B400]" aria-hidden="true">
@@ -123,7 +107,6 @@ export default function ReviewsBar() {
             <span className="text-[1.55rem] font-bold leading-none tracking-tight text-[var(--black)] sm:text-[1.7rem]">4.9</span>
             <Stars />
             <span className="text-xs font-bold tracking-wide text-[var(--black)] uppercase">100+ Reviews</span>
-            {/* <GoogleWordmark /> */}
           </li>
 
           {FEATURES.map((item, index) => (

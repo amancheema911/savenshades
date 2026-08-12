@@ -100,13 +100,14 @@ export default function ServicesPage() {
           {/* Featured + secondary */}
           <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
             {featured ? (
-              <Link href={featured.href} className="group relative isolate min-h-[420px] overflow-hidden rounded-[1.75rem] sm:min-h-[480px] sm:rounded-[2rem] lg:col-span-7 lg:min-h-[560px]">
+              <Link href={featured.href} className="group relative isolate h-[420px] overflow-hidden rounded-[1.75rem] min-h-[420px] sm:rounded-[2rem] lg:col-span-7 lg:min-h-[560px]">
                 <Image
                   src={featured.image}
                   alt={featured.imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.15)_0%,rgba(5,9,16,0.25)_40%,rgba(5,9,16,0.88)_100%)]" />
                 <div className="absolute left-5 top-5 sm:left-7 sm:top-7">
@@ -129,8 +130,15 @@ export default function ServicesPage() {
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1 lg:gap-6">
               {secondary.map((service) => (
-                <Link key={service.id} href={service.href} className="group relative isolate min-h-[240px] overflow-hidden rounded-[1.5rem] sm:min-h-[260px] sm:rounded-[1.75rem] lg:min-h-0 lg:flex-1">
-                  <Image src={service.image} alt={service.imageAlt} fill sizes="(max-width: 1024px) 50vw, 38vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                <Link key={service.id} href={service.href} className="group relative isolate h-[260px] overflow-hidden rounded-[1.5rem] sm:rounded-[1.75rem]">
+                  <Image 
+                  src={service.image} 
+                  alt={service.imageAlt} 
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                  />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.82)_100%)]" aria-hidden="true" />
                   <div className="absolute left-4 top-4">
                     <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white">
@@ -156,7 +164,14 @@ export default function ServicesPage() {
               {remaining.map((service, index) => (
                 <li key={service.id}>
                   <Link href={service.href} className={`group relative isolate flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.5rem] sm:min-h-[360px] sm:rounded-[1.75rem] ${ index === remaining.length - 1 &&  remaining.length % 2 === 1 ? "sm:col-span-2 lg:col-span-1" : "" }`}>
-                    <Image src={service.image} alt={service.imageAlt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                    <Image 
+                    src={service.image} 
+                    alt={service.imageAlt} 
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" 
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                    />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.12)_0%,rgba(5,9,16,0.2)_45%,rgba(5,9,16,0.85)_100%)]" />
                     <div className="absolute left-4 top-4">
                       <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-md">

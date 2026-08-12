@@ -1,7 +1,5 @@
-"use client";
 import { contactInfo } from "@/lib/config";
 import Link from "next/link";
-
 
 export default function CtaActions() {
   const { phone } = contactInfo;

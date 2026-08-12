@@ -29,21 +29,17 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ service, className = "" }: ServiceCardProps) {
   return (
-    <article
-      className={`group relative isolate h-full min-h-[320px] overflow-hidden rounded-[1.5rem] aspect-[3/4] sm:min-h-[360px] sm:rounded-[1.75rem] lg:min-h-[400px] ${className}`}
-    >
+    <article className={`group relative isolate h-full min-h-[320px] overflow-hidden rounded-[1.5rem] aspect-[3/4] sm:min-h-[360px] sm:rounded-[1.75rem] lg:min-h-[400px] ${className}`}>
       <Image
         src={service.image}
         alt={service.imageAlt}
-        fill
-        sizes="(max-width: 640px) 82vw, (max-width: 1280px) 33vw, 25vw"
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        width={400}
+        height={400}
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
 
-      <div
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,12,20,0.1)_0%,rgba(8,12,20,0.2)_45%,rgba(8,12,20,0.85)_100%)]"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,12,20,0.1)_0%,rgba(8,12,20,0.2)_45%,rgba(8,12,20,0.85)_100%)]" aria-hidden="true" />
 
       <div className="absolute top-4 left-4 z-10 sm:top-5 sm:left-5">
         <span className="inline-flex size-11 items-center justify-center rounded-full bg-[var(--brand-color)] text-white shadow-[0_8px_20px_rgba(184,134,11,0.35)]">

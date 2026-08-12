@@ -1,5 +1,3 @@
-"use client";
-
 import { useCallback, useEffect, useRef, useState } from "react";
 import Heading from "@/components/Heading";
 import ServiceCard from "@/components/ServiceCard";

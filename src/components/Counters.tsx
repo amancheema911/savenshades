@@ -1,8 +1,4 @@
-import {
-  counterItems,
-  type CounterIcon,
-  type CounterItem,
-} from "@/lib/counters";
+import { counterItems, type CounterIcon, type CounterItem, } from "@/lib/counters";
 
 function CounterGlyph({ icon }: { icon: CounterIcon }) {
   const common = {

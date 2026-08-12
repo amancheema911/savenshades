@@ -214,7 +214,7 @@ export default function RubberSurfacingPage() {
       />
 
       <section className="relative border-b border-black/5 bg-gray-50 py-8 sm:py-10 lg:py-12">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <dl className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
             {specs.map((spec, index) => (
               <div key={spec.label} className={index > 0 ? "lg:border-l lg:border-black/8 lg:pl-8" : undefined}>
@@ -227,7 +227,7 @@ export default function RubberSurfacingPage() {
       </section>
 
       <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="order-2 lg:order-1 lg:col-span-5">
               <Heading
@@ -265,21 +265,23 @@ export default function RubberSurfacingPage() {
                 <Image
                   src="/images/services/rubber-surfacing.jpg"
                   alt="Rubber surfacing for recreation and activity spaces"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover"
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070b]/45 via-transparent to-transparent" />
               </div>
 
-              <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-[0_28px_70px_rgba(11,17,32,0.3)] sm:block lg:-left-8 lg:-bottom-7">
+              <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
                     src="/images/services/rubber-surfacing-working-man.jpg"
                     alt="Rubber flooring detail for gym and play spaces"
-                    fill
-                    sizes="300px"
-                    className="object-cover"
+                    width={400}
+                    height={400}
+                    loading="lazy"  
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -355,9 +357,9 @@ export default function RubberSurfacingPage() {
       </section>
 
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-xl">
+            <div className="max-w-2xl">
               <Heading
                 tag="h2"
                 size="section"
@@ -369,16 +371,17 @@ export default function RubberSurfacingPage() {
               </div>
           </div>
 
-          <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+          <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
               <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "min-h-[380px] sm:min-h-[420px]" : "min-h-[340px] sm:min-h-[380px]"}`}>
+                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
                   <Image
                     src={finish.image}
                     alt={finish.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 space-y-2 p-5 text-white/85 sm:p-6">
@@ -483,7 +486,7 @@ export default function RubberSurfacingPage() {
       </section>
 
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <Heading
@@ -504,13 +507,14 @@ export default function RubberSurfacingPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block min-h-[280px] overflow-hidden rounded-[1.5rem] sm:min-h-[320px]">
+                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">

@@ -216,7 +216,7 @@ export default function MetallicEpoxyPage() {
 
       {/* ── Spec strip ── */}
       <section className="relative border-b border-black/5 bg-gray-50 py-8 sm:py-10 lg:py-12">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <dl className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
             {specs.map((spec, index) => (
               <div key={spec.label} className={index > 0 ? "lg:border-l lg:border-black/8 lg:pl-8" : undefined}>
@@ -230,7 +230,7 @@ export default function MetallicEpoxyPage() {
 
       {/* ── System overview ── */}
       <section className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="order-2 lg:order-1 lg:col-span-5">
               <Heading
@@ -268,21 +268,23 @@ export default function MetallicEpoxyPage() {
                 <Image
                   src="/images/services/service-metallic.png"
                   alt="Close-up of blue and silver metallic epoxy floor"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover"
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070b]/45 via-transparent to-transparent" />
               </div>
 
-              <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-[0_28px_70px_rgba(11,17,32,0.3)] sm:block lg:-left-8 lg:-bottom-7">
+              <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/hero-epoxy-floor.png"
+                    src="/images/services/metalic-floor-4.jpg"
                     alt="Metallic epoxy flooring detail with depth and sheen"
-                    fill
-                    sizes="300px"
-                    className="object-cover"
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -360,9 +362,9 @@ export default function MetallicEpoxyPage() {
 
       {/* ── Finish options ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-xl">
+            <div className="max-w-2xl">
               <Heading
                 tag="h2"
                 size="section"
@@ -374,16 +376,17 @@ export default function MetallicEpoxyPage() {
               </div>
           </div>
 
-          <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+          <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
               <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "min-h-[380px] sm:min-h-[420px]" : "min-h-[340px] sm:min-h-[380px]"}`}>
+                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
                   <Image
                     src={finish.image}
                     alt={finish.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white/85 space-y-2">
@@ -491,7 +494,7 @@ export default function MetallicEpoxyPage() {
 
       {/* ── Related ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <Heading
@@ -499,7 +502,7 @@ export default function MetallicEpoxyPage() {
                 size="section"
                 tone="dark"
                 eyebrow="KEEP EXPLORING"
-                title={<>Related<span className="text-[var(--brand-color)]">Systems.</span></>}
+                title={<>Related <span className="text-[var(--brand-color)]">Systems.</span></>}
                 description="Explore other epoxy systems that pair well with metallic feature floors."
               />
             </div>
@@ -512,18 +515,19 @@ export default function MetallicEpoxyPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block min-h-[280px] overflow-hidden rounded-[1.5rem] sm:min-h-[320px]">
+                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
                     <div className="min-w-0 text-white/85 space-y-2">
-                      <h3 className=" text-xl font-bold">{item.title}</h3>
+                      <h3 className="text-xl font-bold">{item.title}</h3>
                       <p>{item.description}</p>
                     </div>
                     <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">

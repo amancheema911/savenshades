@@ -1,9 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { contactInfo, socialLinks } from "@/lib/config";
 import CtaActions from "./CtaActions";
-
-
 
 const { phone, address, email, logo } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
@@ -15,7 +14,7 @@ const QUICK_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/our-work", label: "Our Work" },
   { href: "/contact-us", label: "Contact Us" },
-] as const;
+];
 
 const SERVICES = [
   { href: "/services/garage-floors", label: "Garage Floors" },
@@ -23,63 +22,13 @@ const SERVICES = [
   { href: "/services/industrial", label: "Industrial Flooring" },
   { href: "/services/metallic-epoxy", label: "Metallic Epoxy" },
   { href: "/services/flake-flooring", label: "Flake Flooring" },
-] as const;
+];
 
 const SUPPORT = [
   { href: "/blog", label: "Blog" },
-  { href: "/privacy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms & Conditions" },
-] as const;
-
-function LogoMark() {
-  return (
-    <svg
-      width="40"
-      height="40"
-      viewBox="0 0 42 42"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      className="shrink-0"
-    >
-      <path
-        d="M21 2.5L37.5 12.25V31.75L21 41.5L4.5 31.75V12.25L21 2.5Z"
-        fill="var(--brand-color)"
-      />
-      <path
-        d="M21 9L30.5 14.5V25.5L21 31L11.5 25.5V14.5L21 9Z"
-        fill="var(--black)"
-        fillOpacity="0.35"
-      />
-      <path
-        d="M15 18.5L21 15L27 18.5V25.5L21 29L15 25.5V18.5Z"
-        stroke="white"
-        strokeWidth="1.4"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M21 15V29M15 18.5L27 25.5M27 18.5L15 25.5"
-        stroke="white"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-      />
-      <defs>
-        <linearGradient
-          id="Saven shades-footer-logo-grad"
-          x1="4.5"
-          y1="2.5"
-          x2="37.5"
-          y2="41.5"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#C9A84B" />
-          <stop offset="0.45" stopColor="#B8860B" />
-          <stop offset="1" stopColor="#6B4F0E" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-}
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-and-conditions", label: "Terms & Conditions" },
+];
 
 function PhoneIcon() {
   return (
@@ -130,7 +79,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Saven shades home">
-              <img src={logo} alt="Saven shades" className="h-18" />
+              <Image src={logo} alt="Saven shades" width={280} height={280} loading="lazy" />
             </Link>
             <p>We transform ordinary concrete into extraordinary floors that are beautiful, durable and built to last.</p>
             <div className="flex items-center space-x-2 mt-4">

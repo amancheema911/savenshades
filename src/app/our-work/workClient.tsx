@@ -174,10 +174,10 @@ function ProjectLightbox({
               <Image
                 src={activeImage.src}
                 alt={activeImage.alt}
-                fill
-                sizes="(max-width: 1024px) 94vw, 640px"
-                className="object-contain"
-                priority
+                width={600}
+                height={600}
+                loading="lazy"
+                className="w-full h-full object-cover"
               />
 
               {ourWork.length > 1 ? (
@@ -221,10 +221,11 @@ function ProjectLightbox({
                     >
                       <Image
                         src={image.src}
-                        alt=""
-                        fill
-                        sizes="64px"
-                        className="object-cover"
+                        alt={image.alt}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
                       />
                     </button>
                   );
@@ -384,7 +385,7 @@ export default function OurWorkClient() {
 
       {/* Our Work grid */}
       <section className="relative bg-gray-50 pt-14 sm:pt-16 lg:pt-20">
-        <div className="container mx-auto sm:px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">
               <Heading
@@ -397,18 +398,36 @@ export default function OurWorkClient() {
               />
             </div>
 
-            <div className="relative w-full sm:w-auto sm:min-w-[240px]">
-              <label htmlFor="our-work-category" className="sr-only">Filter our work by category</label>
-              <select id="our-work-category" value={category} onChange={(event) => selectCategory(event.target.value as OurWorkCategory)} className="w-full appearance-none rounded-full bg-[#05070b] px-4 py-2.5 pr-10 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(11,17,32,0.2)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-color)]">
-                {ourWorkCategories.map((item) => (
-                  <option key={item} value={item}>{item}</option>
-                ))}
-              </select>
-              <span className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-white/70" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
+            <div className="w-full sm:w-auto sm:min-w-[260px]">
+              <label htmlFor="our-work-category" className="mb-2 block text-xs font-semibold uppercase tracking-wide text-black/45">Filter by category</label>
+              <div className="relative">
+                <select
+                  id="our-work-category"
+                  value={category}
+                  onChange={(event) =>
+                    selectCategory(event.target.value as OurWorkCategory)
+                  }
+                  className="w-full cursor-pointer appearance-none rounded-full border border-black/8 bg-white px-4 py-2.5 pr-10 text-sm shadow-sm transition-colors hover:border-black/12 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-color)]"
+                >
+                  {ourWorkCategories.map((item) => (
+                    <option key={item} value={item}>{item}</option>
+                  ))}
+                </select>
+                <span
+                  className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-black/45"
+                  aria-hidden="true"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
 
@@ -422,9 +441,10 @@ export default function OurWorkClient() {
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                        width={600}
+                        height={600}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95"/>
                       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 sm:p-5">

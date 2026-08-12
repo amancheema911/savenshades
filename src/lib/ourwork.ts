@@ -42,7 +42,7 @@ export const featuredOurWorkIds = [
   "solid-epoxy-showroom",
   "metallic-lounge",
   "residential-living"
-] as const;
+];
 
 export const ourWorkItems: OurWorkItem[] = [
   {
@@ -168,25 +168,6 @@ export const ourWorkItems: OurWorkItem[] = [
       {
         src: "/images/services/service-metallic.png",
         alt: "Display area adjacent to retail walkway",
-      },
-    ],
-  },
-  {
-    id: "residential-basement",
-    title: "Finished Basement",
-    category: "Residential",
-    location: "Family Home",
-    image: "/images/services/residential-floor.jpg",
-    imageAlt: "Residential basement with epoxy flooring",
-    description: "Residential epoxy that turns a basement into livable square footage — moisture-aware prep, seamless coat, and a finish that feels at home with furniture and rugs.",
-    images: [
-      {
-        src: "/images/services/residential-floor.jpg",
-        alt: "Residential basement with epoxy flooring",
-      },
-      {
-        src: "/images/hero-epoxy-floor.png",
-        alt: "Basement lounge over epoxy floor",
       },
     ],
   },

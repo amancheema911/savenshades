@@ -1,12 +1,7 @@
-"use client";
-
+"use client"
 import { useCallback, useEffect, useRef, useState } from "react";
 import Heading from "@/components/Heading";
-import {
-  testimonials,
-  testimonialRating,
-  type Testimonial,
-} from "@/lib/testimonials";
+import { testimonials, testimonialRating, type Testimonial, } from "@/lib/testimonials";
 
 function QuoteIcon() {
   return (

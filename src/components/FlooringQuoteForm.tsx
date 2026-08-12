@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useState, type FormEvent } from "react";
 import Button from "@/components/ui/Button";
 import { services } from "@/lib/services";
@@ -51,7 +50,7 @@ const TONE_STYLES = {
     footer: "text-black/45",
     error: "border-red-300 bg-red-50 text-red-700",
   },
-} as const;
+};
 
 function LockIcon() {
   return (

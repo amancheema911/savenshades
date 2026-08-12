@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Heading from "@/components/Heading";
-// import HeroQuoteForm from "@/components/HeroQuoteForm";
 import Button from "@/components/ui/Button";
 
 const STATS = [
@@ -78,7 +77,14 @@ function PlayIcon() {
 export default function Hero() {
   return (
     <section className="relative isolate -mt-[4.75rem] min-h-screen overflow-hidden py-12 sm:py-20">
-      <Image src="/images/hero-epoxy-floor-1.1.png" alt="" fill priority sizes="100vw" className="object-cover object-[72%_center] animate-hero-zoom" />
+      <Image src="/images/hero-epoxy-floor-1.1.png" 
+        alt="" 
+        width={1920} 
+        height={1080} 
+        loading="lazy" 
+        className="w-full h-full object-cover animate-hero-zoom" 
+        priority 
+      />
 
       {/* <div className="absolute inset-0 bg-[#05070b]/70" aria-hidden="true" /> */}
       <div className="w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>

@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useId, useState } from "react";
 
 export type FaqItem = {

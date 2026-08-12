@@ -1,9 +1,6 @@
 import Heading from "@/components/Heading";
 import Button from "@/components/ui/Button";
-import {
-  whyChooseFeatures,
-  type WhyChooseFeature,
-} from "@/lib/why-choose-us";
+import { whyChooseFeatures, type WhyChooseFeature, } from "@/lib/why-choose-us";
 
 function FeatureIcon({ icon }: { icon: WhyChooseFeature["icon"] }) {
   const common = {

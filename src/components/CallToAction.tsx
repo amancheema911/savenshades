@@ -7,7 +7,7 @@ const CTA_PERKS = [
   "No Hidden Costs",
   "Quick Response",
   "Satisfaction Guaranteed",
-] as const;
+];
 
 function CalendarIcon() {
   return (
@@ -75,9 +75,10 @@ export default function CallToAction() {
             <Image
               src="/images/services/service-metallic.png"
               alt=""
-              fill
-              sizes="(max-width: 640px) 100vw, 50vw"
-              className="object-cover object-center opacity-80"
+              width={800}
+              height={600}
+              loading="lazy"
+              className="w-full h-full object-cover object-center opacity-80"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,#050A14_0%,rgba(5,10,20,0.92)_28%,rgba(5,10,20,0.45)_58%,rgba(5,10,20,0.15)_100%)] sm:bg-[linear-gradient(90deg,#050A14_0%,rgba(5,10,20,0.95)_18%,rgba(5,10,20,0.55)_48%,transparent_78%)]" />
           </div>

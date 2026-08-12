@@ -266,21 +266,23 @@ export default function AboutUsPage() {
                   <Image
                     src="/images/about-us.png"
                     alt="Premium epoxy garage floor installed by Saven shades"
-                    fill
-                    sizes="(max-width: 1024px) 92vw, 55vw"
-                    className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,9,16,0.65)_100%)]" />
                 </div>
 
-                <div className="absolute -right-2 -bottom-8 w-[42%] overflow-hidden rounded-[1.15rem] shadow-[0_20px_50px_rgba(0,0,0,0.28)] ring-1 ring-white/20 sm:-right-4 sm:-bottom-10 sm:rounded-[1.35rem] lg:-right-6 animate-about-float">
+                <div className="absolute -right-2 -bottom-8 w-[42%] overflow-hidden rounded-[1.15rem] shadow-xl sm:-right-4 sm:-bottom-10 sm:rounded-[1.35rem] lg:-right-6 animate-about-float">
                   <div className="relative aspect-[4/3]">
                     <Image
                       src="/images/metalic-epoxy.jpg"
                       alt="Metallic epoxy detail"
-                      fill
-                      sizes="(max-width: 1024px) 40vw, 22vw"
-                      className="object-cover"
+                      width={400}
+                      height={400}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -359,9 +361,10 @@ export default function AboutUsPage() {
             <Image
               src="/images/metallic-service-2.png"
               alt="Elegant epoxy surface in a refined interior space"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              width={1024}
+              height={1024}
+              loading="lazy"
+              className="w-full h-full object-cover"
             />
           </div>
 
@@ -425,24 +428,26 @@ export default function AboutUsPage() {
                 <div className="pointer-events-none absolute top-[3%] right-0 z-0 h-[28%] w-[38%] opacity-60 sm:top-[4%] sm:h-[36%] sm:w-[42%] sm:opacity-70" style={{ backgroundImage: "radial-gradient(circle, rgba(11,17,32,0.14) 1.1px, transparent 1.2px)", backgroundSize: "10px 10px", }} />
 
                 {/* Top/back image — left aligned (your position) */}
-                <div className="relative mr-auto aspect-[4/5] w-[78%] max-w-[450px] overflow-hidden rounded-[1.15rem] shadow-[0_18px_40px_rgba(11,17,32,0.12)] sm:w-[75%] sm:rounded-[1.35rem] lg:w-[72%]">
+                <div className="relative mr-auto aspect-[4/5] w-[78%] max-w-[450px] overflow-hidden rounded-[1.15rem] shadow-xl sm:w-[75%] sm:rounded-[1.35rem] lg:w-[72%]">
                   <Image
                     src="/images/solid-floor.jpg"
                     alt="Premium epoxy floor hallway with soft natural light"
-                    fill
-                    sizes="(max-width: 640px) 75vw, (max-width: 1024px) 40vw, 28vw"
-                    className="object-cover"
+                    width={600}
+                    height={600}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
                 {/* Bottom/front image — right + bottom (your position) */}
-                <div className="absolute right-0 bottom-4 z-[2] aspect-[4/3] w-[68%] max-w-[260px] overflow-hidden rounded-[1.15rem] shadow-[0_22px_50px_rgba(11,17,32,0.16)] sm:bottom-10 sm:w-[60%] sm:max-w-[340px] sm:rounded-[1.35rem] lg:max-w-[380px]">
+                <div className="absolute right-0 bottom-4 z-[2] aspect-[4/3] w-[68%] max-w-[260px] overflow-hidden rounded-[1.15rem] shadow-xl sm:bottom-10 sm:w-[60%] sm:max-w-[340px] sm:rounded-[1.35rem] lg:max-w-[380px]">
                   <Image
                     src="/images/solid-floor-1.jpg"
                     alt="Luxury living space with finished epoxy flooring"
-                    fill
-                    sizes="(max-width: 640px) 60vw, (max-width: 1024px) 35vw, 26vw"
-                    className="object-cover"
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 

@@ -1,10 +1,10 @@
-"use client";
-
+"use client"
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import Button from "@/components/ui/Button";
-import { contactInfo } from "@/lib/config";
+import { BASE_URL, contactInfo } from "@/lib/config";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -20,56 +20,6 @@ const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 function PhoneIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
-  );
-}
-
-function LogoMark() {
-  return (
-    <svg
-      width="42"
-      height="42"
-      viewBox="0 0 42 42"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      className="shrink-0"
-    >
-      <path
-        d="M21 2.5L37.5 12.25V31.75L21 41.5L4.5 31.75V12.25L21 2.5Z"
-        fill="var(--brand-color)"
-      />
-      <path
-        d="M21 9L30.5 14.5V25.5L21 31L11.5 25.5V14.5L21 9Z"
-        fill="var(--black)"
-        fillOpacity="0.35"
-      />
-      <path
-        d="M15 18.5L21 15L27 18.5V25.5L21 29L15 25.5V18.5Z"
-        stroke="white"
-        strokeWidth="1.4"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M21 15V29M15 18.5L27 25.5M27 18.5L15 25.5"
-        stroke="white"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-      />
-      <defs>
-        <linearGradient
-          id="Saven shades-logo-grad"
-          x1="4.5"
-          y1="2.5"
-          x2="37.5"
-          y2="41.5"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#C9A84B" />
-          <stop offset="0.45" stopColor="#B8860B" />
-          <stop offset="1" stopColor="#6B4F0E" />
-        </linearGradient>
-      </defs>
-    </svg>
   );
 }
 
@@ -159,8 +109,8 @@ export default function Navbar() {
         aria-label="Primary"
       >
         <div className="container mx-auto flex items-center justify-between gap-4 py-3 px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex shrink-0 items-center gap-3">
-            <img src={logo} alt="Saven shades" className="h-14" />
+          <Link href={BASE_URL}>
+            <Image src={logo} alt="Saven shades" width={250} height={250} loading="lazy" />
           </Link>
 
           <ul className="hidden items-center gap-1 xl:flex">
