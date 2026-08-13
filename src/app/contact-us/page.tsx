@@ -1,18 +1,38 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHeader from "@/components/PageHeader";
 import { contactInfo } from "@/lib/config";
 import Heading from "@/components/Heading";
 import FlooringQuoteForm from "@/components/FlooringQuoteForm";
+import { BASE_URL } from "@/lib/config";
 
-const { phone, address, email, hours, weekends } = contactInfo;
+const { phone, address, email, hours, weekends, DEFAULT_IMAGE } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 const emailHref = `mailto:${email}`;
 
 export const metadata: Metadata = {
-  title: "Contact Us | Saven shades Premium Epoxy Flooring",
-  description:
-    "Request a free Saven shades epoxy flooring estimate. Call, email, or send a message — we respond within 24 hours.",
+  title: "Contact Saven shades | Free Epoxy Flooring Quote",
+  description: "Get a free Saven shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
+  keywords: ["contact Saven shades", "epoxy flooring quote", "free epoxy estimate Surrey", "epoxy flooring consultation"],
+  alternates: {
+    canonical: `${BASE_URL}/contact-us`,
+  },
+  openGraph: {
+    title: "Contact Saven shades | Free Epoxy Flooring Quote",
+    description: "Reach the Saven Shades team by phone, email, or quote form. Free, no-obligation estimates with a clear scope of work.",
+    type: "website",
+    images: [
+      {
+        url: BASE_URL + DEFAULT_IMAGE,
+        alt: "Saven Shades team in a garage with epoxy flooring",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Saven shades | Free Epoxy Flooring Quote",
+    description: "Get a free Saven shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
+    images: [BASE_URL + DEFAULT_IMAGE],
+  },
 };
 
 const promises = [

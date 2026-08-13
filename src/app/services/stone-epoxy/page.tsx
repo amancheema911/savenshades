@@ -2,34 +2,37 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import OverlayCard from "@/components/OverlayCard";
 import PageHeader from "@/components/PageHeader";
 import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
+import { serviceFaqs } from "@/lib/service-faqs";
+import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Stone Epoxy Flooring Installation | Saven shades",
-  description:
-    "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
-  keywords: [
-    "stone epoxy flooring",
-    "stone look epoxy floor",
-    "epoxy stone flooring",
-    "aggregate epoxy floor",
-    "stone epoxy installation",
-  ],
-  alternates: { canonical: "/services/stone-epoxy" },
+  description: "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
+  keywords: ["stone epoxy flooring", "stone look epoxy floor", "epoxy stone flooring", "aggregate epoxy floor", "stone epoxy installation"],
+  alternates: {
+    canonical: `${BASE_URL}/services/stone-epoxy`,
+  },
   openGraph: {
     title: "Stone Epoxy Flooring Installation | Saven shades",
-    description:
-      "Stone-look epoxy floors with durable aggregate texture — refined style and real-world toughness for homes and commercial spaces.",
+    description: "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-commercial.png",
+        url: BASE_URL + "/images/services/stone-epoxy.jpg",
         alt: "Stone epoxy flooring with refined aggregate texture",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stone Epoxy Flooring Installation | Saven shades",
+    description: "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
+    images: [BASE_URL + "/images/services/stone-epoxy.jpg"],
   },
 };
 
@@ -111,28 +114,7 @@ const finishes = [
   },
 ];
 
-const faqs = [
-  {
-    question: "How is stone epoxy different from flake or solid?",
-    answer:
-      "Stone epoxy uses mineral aggregate for a natural stone-inspired look and stronger textured grip. Solid is continuous color. Flake uses decorative chips for camouflage. We recommend stone when you want texture, traction, and a stone aesthetic.",
-  },
-  {
-    question: "Where does stone epoxy work best?",
-    answer:
-      "It’s a strong fit for home entries, mudrooms, basements, garages with wet weather use, retail floors, and commercial service areas that need grip without looking purely industrial.",
-  },
-  {
-    question: "Will stone epoxy feel too rough underfoot?",
-    answer:
-      "Texture is selectable. Fine stone profiles feel more refined, while bolder builds maximize slip resistance. We’ll match the profile to footwear, traffic, and how wet the space gets.",
-  },
-  {
-    question: "How long does stone epoxy flooring last?",
-    answer:
-      "A properly prepped Saven shades stone system is engineered for years of residential and commercial use. Lifespan depends on prep quality, traffic, cleaning chemicals, and the aggregate profile installed.",
-  },
-];
+const faqs = serviceFaqs["stone-epoxy"];
 
 const idealFor = [
   "Home entries & mudrooms",
@@ -211,7 +193,8 @@ export default function StoneEpoxyPage() {
           </div>
         }
       />
-
+    
+      {/* ── Spec strip ── */}
       <section className="relative border-b border-black/5 bg-gray-50 py-8 sm:py-10 lg:py-12">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <dl className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
@@ -225,6 +208,7 @@ export default function StoneEpoxyPage() {
         </div>
       </section>
 
+      {/* ── System overview ── */}
       <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
@@ -294,6 +278,7 @@ export default function StoneEpoxyPage() {
         </div>
       </section>
 
+      {/* ── Benefits ── */}
       <section className="relative overflow-hidden bg-[var(--black)] py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(13,127,232,0.14),transparent_50%),radial-gradient(ellipse_at_0%_100%,rgba(13,127,232,0.06),transparent_40%)]" />
 
@@ -354,7 +339,8 @@ export default function StoneEpoxyPage() {
           </ul>
         </div>
       </section>
-
+            
+      {/* ── Finish options ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -372,28 +358,24 @@ export default function StoneEpoxyPage() {
 
           <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
-              <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
-                  <Image
-                    src={finish.image}
-                    alt={finish.name}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 space-y-2 p-5 text-white/85 sm:p-6">
-                    <h3 className="text-2xl font-bold text-white">{finish.name}</h3>
-                    <p>{finish.detail}</p>
-                  </div>
-                </div>
+              <li key={finish.id}>
+                <OverlayCard
+                  image={finish.image}
+                  imageAlt={finish.name}
+                  title={finish.name}
+                  description={finish.detail}
+                  alwaysVisible
+                  captionStyle="panel"
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName={index === 1 ? "h-[400px]" : "h-[340px]"}
+                />
               </li>
             ))}
           </ul>
         </div>
       </section>
-
+            
+      {/* ── Process ── */}
       <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[var(--brand-color)]/12" />
         <div className="pointer-events-none absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-black/20" />
@@ -457,7 +439,8 @@ export default function StoneEpoxyPage() {
           </div>
         </div>
       </section>
-
+              
+      {/* ── FAQs ── */}
       <section className="relative overflow-hidden bg-white pt-16 sm:pt-20 lg:pt-28">
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
@@ -483,7 +466,8 @@ export default function StoneEpoxyPage() {
           </div>
         </div>
       </section>
-
+              
+      {/* ── Related ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -506,26 +490,18 @@ export default function StoneEpoxyPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <div className="min-w-0 space-y-2 text-white/85">
-                      <h3 className="text-xl font-bold">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                </Link>
+                <OverlayCard
+                  href={item.href}
+                  image={item.image}
+                  imageAlt={item.imageAlt}
+                  title={item.title}
+                  description={item.description}
+                  alwaysVisible
+                  captionStyle="plain"
+                  showArrow
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName="h-[320px]"
+                />
               </li>
             ))}
           </ul>

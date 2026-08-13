@@ -2,35 +2,38 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import OverlayCard from "@/components/OverlayCard";
 import PageHeader from "@/components/PageHeader";
 import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
+import { serviceFaqs } from "@/lib/service-faqs";
+import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Residential Epoxy Flooring Installation | Saven shades",
-  description:
-    "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
-  keywords: [
-    "residential epoxy flooring",
-    "home epoxy floors",
-    "garage epoxy flooring",
-    "basement epoxy floor",
-    "residential floor coating",
-  ],
-  alternates: { canonical: "/services/residential" },
+  description: "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
+  keywords: ["residential epoxy flooring", "home epoxy floors", "garage epoxy flooring", "basement epoxy floor", "residential floor coating"],
+  alternates: {
+    canonical: `${BASE_URL}/services/residential`,
+  },
   openGraph: {
     title: "Residential Epoxy Flooring Installation | Saven shades",
-    description:
-      "Stylish, durable epoxy floors for homes — garages, basements, mudrooms, and living spaces engineered for daily life.",
+    description: "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-garage.png",
-        alt: "Residential home with polished epoxy flooring",
+        url: BASE_URL + "/images/services/service-garage.png",
+        alt: "Residential garage with finished epoxy flooring",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Residential Epoxy Flooring Installation | Saven shades",
+    description: "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
+    images: [BASE_URL + "/images/services/service-residential.png"],
+  },  
 };
 
 const specs = [
@@ -111,28 +114,7 @@ const finishes = [
   },
 ];
 
-const faqs = [
-  {
-    question: "How long does residential epoxy flooring last?",
-    answer:
-      "A properly prepped Saven shades residential system is built for years of normal home use. Lifespan depends on prep quality, traffic, UV exposure, chemicals, and how the space is maintained.",
-  },
-  {
-    question: "Which rooms in my home can use epoxy?",
-    answer:
-      "Garages, basements, mudrooms, laundry rooms, workshops, and many living-area conversions are strong fits. We’ll confirm moisture, slab condition, and the best finish for each room.",
-  },
-  {
-    question: "Will epoxy peel in a garage or basement?",
-    answer:
-      "Peeling is almost always a prep or moisture issue — not epoxy itself. We grind for mechanical adhesion, address contaminants, and only install when conditions support a lasting bond.",
-  },
-  {
-    question: "Solid, flake, or metallic — which should I choose?",
-    answer:
-      "Solid suits clean modern looks. Flake adds grip and hides dust between cleanings. Metallic creates a distinctive feature floor. We’ll recommend based on room use and the style you want.",
-  },
-];
+const faqs = serviceFaqs.residential;
 
 const idealFor = [
   "Residential garages",
@@ -213,6 +195,7 @@ export default function ResidentialPage() {
         }
       />
 
+      {/* ── Spec strip ── */}
       <section className="relative border-b border-black/5 bg-gray-50 py-8 sm:py-10 lg:py-12">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <dl className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
@@ -226,6 +209,7 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* ── System overview ── */}
       <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
@@ -295,6 +279,7 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* ── Benefits ── */}
       <section className="relative overflow-hidden bg-[var(--black)] py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(13,127,232,0.14),transparent_50%),radial-gradient(ellipse_at_0%_100%,rgba(13,127,232,0.06),transparent_40%)]" />
 
@@ -356,6 +341,7 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* ── Finish options ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -373,28 +359,24 @@ export default function ResidentialPage() {
 
           <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
-              <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
-                  <Image
-                    src={finish.image}
-                    alt={finish.name}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 space-y-2 p-5 text-white/85 sm:p-6">
-                    <h3 className="text-2xl font-bold text-white">{finish.name}</h3>
-                    <p>{finish.detail}</p>
-                  </div>
-                </div>
+              <li key={finish.id}>
+                <OverlayCard
+                  image={finish.image}
+                  imageAlt={finish.name}
+                  title={finish.name}
+                  description={finish.detail}
+                  alwaysVisible
+                  captionStyle="panel"
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName={index === 1 ? "h-[400px]" : "h-[340px]"}
+                />
               </li>
             ))}
           </ul>
         </div>
       </section>
 
+      {/* ── Process ── */}
       <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[var(--brand-color)]/12" />
         <div className="pointer-events-none absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-black/20" />
@@ -459,6 +441,7 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* ── FAQs ── */}
       <section className="relative overflow-hidden bg-white pt-16 sm:pt-20 lg:pt-24">
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
@@ -485,6 +468,7 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* ── Related ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -507,26 +491,18 @@ export default function ResidentialPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <div className="min-w-0 space-y-2 text-white/85">
-                      <h3 className="text-xl font-bold">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                </Link>
+                <OverlayCard
+                  href={item.href}
+                  image={item.image}
+                  imageAlt={item.imageAlt}
+                  title={item.title}
+                  description={item.description}
+                  alwaysVisible
+                  captionStyle="plain"
+                  showArrow
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName="h-[320px]"
+                />
               </li>
             ))}
           </ul>

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import PageJsonLd from "@/components/PageJsonLd";
 import "./globals.css";
+import { BASE_URL } from "@/lib/config";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -16,18 +18,25 @@ export const metadata: Metadata = {
   description: "Premium epoxy flooring in Surrey, BC — durable, beautiful garage, residential, and commercial floors installed by local experts. Free quotes.",
   keywords: [ "epoxy flooring Surrey", "garage epoxy flooring", "commercial epoxy floors", "residential epoxy flooring", "premium epoxy solutions", "metallic epoxy flooring", ],
   alternates: { 
-    canonical: "/" 
+    canonical: BASE_URL
   },
+
   openGraph: {
     title: "Saven shades | Premium Epoxy Solutions",
     description: "Transform your garage, basement, or commercial space with high-performance epoxy flooring installed by local experts in Surrey, BC.",
     type: "website",
     images: [
       {
-        url: "/images/hero-epoxy-floor-1.2.1.webp",
+        url: BASE_URL + "/images/hero-epoxy-floor-1.2.1.webp",
         alt: "Premium epoxy garage floor with reflective flake finish",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Epoxy Flooring Services | Saven shades",
+    description: "Browse Saven shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
+    images: [BASE_URL + "/images/hero-epoxy-floor-1.2.1.webp"],
   },
 };
 
@@ -38,6 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} h-full antialiased`}>
+      <head>
+        <PageJsonLd />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

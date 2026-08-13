@@ -25,7 +25,7 @@ const SERVICES = [
 ];
 
 const SUPPORT = [
-  { href: "/blog", label: "Blog" },
+  // { href: "/blog", label: "Blog" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ];

@@ -2,34 +2,37 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import OverlayCard from "@/components/OverlayCard";
 import PageHeader from "@/components/PageHeader";
 import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
+import { serviceFaqs } from "@/lib/service-faqs";
+import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Solid Epoxy Flooring Installation | Saven shades",
-  description:
-    "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
-  keywords: [
-    "solid epoxy flooring",
-    "solid color epoxy floor",
-    "gloss epoxy flooring",
-    "satin epoxy floor coating",
-    "solid epoxy installation",
-  ],
-  alternates: { canonical: "/services/solid-epoxy" },
+  description: "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
+  keywords: ["solid epoxy flooring", "solid color epoxy floor", "gloss epoxy flooring", "satin epoxy floor coating", "solid epoxy installation"],
+  alternates: {
+    canonical: `${BASE_URL}/services/solid-epoxy`,
+  },
   openGraph: {
     title: "Solid Epoxy Flooring Installation | Saven shades",
-    description:
-      "Clean continuous-color epoxy floors with gloss or satin clear — modern, durable, and easy to maintain.",
+    description: "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-commercial.png",
+        url: BASE_URL + "/images/services/solid-epoxy.jpg",
         alt: "Solid color epoxy flooring finish",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Solid Epoxy Flooring Installation | Saven shades",
+    description: "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
+    images: [BASE_URL + "/images/services/solid-epoxy.jpg"],
   },
 };
 
@@ -111,28 +114,7 @@ const finishes = [
   },
 ];
 
-const faqs = [
-  {
-    question: "What’s the difference between solid epoxy and flake?",
-    answer:
-      "Solid epoxy is continuous color with a clear topcoat — clean and modern. Flake adds multi-tone chips for extra camouflage and texture. Choose solid when you want a showroom look; choose flake when you want more grip and forgiving daily wear.",
-  },
-  {
-    question: "Will solid color show scratches and dirt more?",
-    answer:
-      "Solid floors can show dust and micro-scuffs more than flake, which also means they look freshly cleaned quickly. We recommend a maintenance plan and the right clear sheen for how aggressively the space is used.",
-  },
-  {
-    question: "Can solid epoxy work in a garage?",
-    answer:
-      "Yes. Solid systems are popular in residential and collector garages when a clean showroom finish is the priority. We’ll confirm hot-tire resistance, UV clearance, and optional light texture for wet weather.",
-  },
-  {
-    question: "Gloss or satin — which should I choose?",
-    answer:
-      "Gloss maximizes depth and light bounce. Satin softens reflection while keeping a refined finish. We’ll sample both against your lighting and wall colors before install.",
-  },
-];
+const faqs = serviceFaqs["solid-epoxy"];
 
 const idealFor = [
   "Residential & collector garages",
@@ -213,6 +195,7 @@ export default function SolidEpoxyPage() {
         }
       />
 
+      {/* ── Spec strip ── */}
       <section className="relative border-b border-black/5 bg-gray-50 py-8 sm:py-10 lg:py-12">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <dl className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
@@ -225,7 +208,8 @@ export default function SolidEpoxyPage() {
           </dl>
         </div>
       </section>
-
+            
+      {/* ── System overview ── */}
       <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
@@ -294,7 +278,8 @@ export default function SolidEpoxyPage() {
           </div>
         </div>
       </section>
-
+                    
+      {/* ── Benefits ── */}
       <section className="relative overflow-hidden bg-[var(--black)] py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(13,127,232,0.14),transparent_50%),radial-gradient(ellipse_at_0%_100%,rgba(13,127,232,0.06),transparent_40%)]" />
 
@@ -355,7 +340,8 @@ export default function SolidEpoxyPage() {
           </ul>
         </div>
       </section>
-
+            
+      {/* ── Finish options ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -373,28 +359,24 @@ export default function SolidEpoxyPage() {
 
           <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
-              <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
-                  <Image
-                    src={finish.image}
-                    alt={finish.name}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 space-y-2 p-5 text-white/85 sm:p-6">
-                    <h3 className="text-2xl font-bold text-white">{finish.name}</h3>
-                    <p>{finish.detail}</p>
-                  </div>
-                </div>
+              <li key={finish.id}>
+                <OverlayCard
+                  image={finish.image}
+                  imageAlt={finish.name}
+                  title={finish.name}
+                  description={finish.detail}
+                  alwaysVisible
+                  captionStyle="panel"
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName={index === 1 ? "h-[400px]" : "h-[340px]"}
+                />
               </li>
             ))}
           </ul>
         </div>
       </section>
-
+            
+      {/* ── Process ── */}
       <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[var(--brand-color)]/12" />
         <div className="pointer-events-none absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-black/20" />
@@ -459,6 +441,7 @@ export default function SolidEpoxyPage() {
         </div>
       </section>
 
+      {/* ── FAQs ── */}
       <section className="relative overflow-hidden bg-white pt-16 sm:pt-20 lg:pt-28">
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
@@ -485,6 +468,7 @@ export default function SolidEpoxyPage() {
         </div>
       </section>
 
+      {/* ── Related ── */}
       <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -507,26 +491,18 @@ export default function SolidEpoxyPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <div className="min-w-0 space-y-2 text-white/85">
-                      <h3 className="text-xl font-bold">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                </Link>
+                <OverlayCard
+                  href={item.href}
+                  image={item.image}
+                  imageAlt={item.imageAlt}
+                  title={item.title}
+                  description={item.description}
+                  alwaysVisible
+                  captionStyle="plain"
+                  showArrow
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName="h-[320px]"
+                />
               </li>
             ))}
           </ul>

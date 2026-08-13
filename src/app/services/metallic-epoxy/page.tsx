@@ -2,35 +2,38 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import OverlayCard from "@/components/OverlayCard";
 import PageHeader from "@/components/PageHeader";
 import Button from "@/components/ui/Button";
 import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
+import { serviceFaqs } from "@/lib/service-faqs";
+import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Metallic Epoxy Flooring Installation | Saven shades",
-  description:
-    "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and one-of-a-kind patterns for showrooms, residences, and feature spaces — stunning, durable, and custom finished.",
-  keywords: [
-    "metallic epoxy flooring",
-    "metallic epoxy floor coating",
-    "decorative metallic floors",
-    "luxury epoxy flooring",
-    "metallic epoxy installation",
-  ],
-  alternates: { canonical: "/services/metallic-epoxy" },
+  description: "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
+  keywords: ["metallic epoxy flooring", "metallic epoxy floor coating", "decorative metallic floors", "luxury epoxy flooring", "metallic epoxy installation"],
+  alternates: {
+    canonical: `${BASE_URL}/services/metallic-epoxy`,
+  },
   openGraph: {
     title: "Metallic Epoxy Flooring Installation | Saven shades",
-    description:
-      "Stunning metallic epoxy floors with liquid depth, custom color movement, and showroom-ready finishes.",
+    description: "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-metallic.png",
+        url: BASE_URL + "/images/services/service-metallic.png",
         alt: "Close-up of blue and silver metallic epoxy floor",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Metallic Epoxy Flooring Installation | Saven shades",
+    description: "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
+    images: [BASE_URL + "/images/services/service-metallic.png"],
   },
 };
 
@@ -112,28 +115,7 @@ const finishes = [
   },
 ];
 
-const faqs = [
-  {
-    question: "Is every metallic epoxy floor unique?",
-    answer:
-      "Yes. Metallic pigment is manipulated during install, so pattern and movement vary by space, technique, and color blend. We aim for a designed look — not a factory-repeat print.",
-  },
-  {
-    question: "Can metallic epoxy work in homes and showrooms?",
-    answer:
-      "Absolutely. Metallic systems are popular for living areas, studios, collector bays, boutiques, and showrooms where the floor itself is part of the design statement.",
-  },
-  {
-    question: "Will the metallic finish scratch or dull easily?",
-    answer:
-      "A quality UV clear protects the metallic layer. Like any premium finish, avoiding harsh abrasives and following care guidance keeps clarity and depth looking sharp longer.",
-  },
-  {
-    question: "How do I choose the right metallic colors?",
-    answer:
-      "We start with lighting, wall tones, and the mood you want. Sample boards and color consults help lock in cool, warm, or high-contrast blends before install day.",
-  },
-];
+const faqs = serviceFaqs["metallic-epoxy"];
 
 const idealFor = [
   "Feature living spaces",
@@ -378,22 +360,17 @@ export default function MetallicEpoxyPage() {
 
           <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
-              <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
-                  <Image
-                    src={finish.image}
-                    alt={finish.name}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white/85 space-y-2">
-                    <h3 className=" text-2xl font-bold text-white">{finish.name}</h3>
-                    <p>{finish.detail}</p>
-                  </div>
-                </div>
+              <li key={finish.id}>
+                <OverlayCard
+                  image={finish.image}
+                  imageAlt={finish.name}
+                  title={finish.name}
+                  description={finish.detail}
+                  alwaysVisible
+                  captionStyle="panel"
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName={index === 1 ? "h-[400px]" : "h-[340px]"}
+                />
               </li>
             ))}
           </ul>
@@ -515,26 +492,18 @@ export default function MetallicEpoxyPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <div className="min-w-0 text-white/85 space-y-2">
-                      <h3 className="text-xl font-bold">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                </Link>
+                <OverlayCard
+                  href={item.href}
+                  image={item.image}
+                  imageAlt={item.imageAlt}
+                  title={item.title}
+                  description={item.description}
+                  alwaysVisible
+                  captionStyle="plain"
+                  showArrow
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName="h-[320px]"
+                />
               </li>
             ))}
           </ul>

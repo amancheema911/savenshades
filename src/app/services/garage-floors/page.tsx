@@ -2,35 +2,38 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import OverlayCard from "@/components/OverlayCard";
 import PageHeader from "@/components/PageHeader";
 import Button from "@/components/ui/Button";
 import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
+import { serviceFaqs } from "@/lib/service-faqs";
+import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Garage Epoxy Flooring Installation | Saven shades",
-  description:
-    "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
-  keywords: [
-    "garage epoxy flooring",
-    "garage floor coating",
-    "epoxy garage floor installation",
-    "hot tire resistant epoxy",
-    "residential garage floors",
-  ],
-  alternates: { canonical: "/services/garage-floors" },
+  description: "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+  keywords: ["garage epoxy flooring", "garage floor coating", "epoxy garage floor installation", "hot tire resistant epoxy", "residential garage floors"],
+  alternates: { 
+    canonical: `${BASE_URL}/services/garage-floors` 
+  },
   openGraph: {
     title: "Garage Epoxy Flooring Installation | Saven shades",
-    description:
-      "Showroom-grade garage floors engineered for hot tires, oil, salt, and daily life.",
+    description: "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-garage.png",
+        url: BASE_URL + "/images/services/service-garage.png",
         alt: "Luxury car on a finished garage epoxy floor",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Garage Epoxy Flooring Installation | Saven shades",
+    description: "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    images: [BASE_URL + "/images/services/service-garage.png"],
   },
 };
 
@@ -112,28 +115,7 @@ const finishes = [
   },
 ];
 
-const faqs = [
-  {
-    question: "How long does garage epoxy flooring last?",
-    answer:
-      "A properly prepped and installed Saven shades garage system typically lasts many years with normal residential use. Longevity depends on prep quality, topcoat, UV exposure, and how vehicles and chemicals are managed.",
-  },
-  {
-    question: "Can I park cars soon after install?",
-    answer:
-      "Light foot traffic is often possible within 24–48 hours. Vehicle parking is usually recommended after 48–72 hours depending on temperature and the system we install — we confirm exact timing at handoff.",
-  },
-  {
-    question: "Will epoxy peel from my garage floor?",
-    answer:
-      "Peeling is almost always a prep or moisture issue — not epoxy itself. We grind for mechanical adhesion, remediate contaminants, and only install when conditions support a lasting bond.",
-  },
-  {
-    question: "Solid color or flake — which should I choose?",
-    answer:
-      "Choose solid for a clean showroom look. Choose full flake when you want more grip and a surface that hides dust and micro-scuffs between cleanings. We’ll recommend based on how you use the space.",
-  },
-];
+const faqs = serviceFaqs["garage-floors"];
 
 const idealFor = [
   "Residential garages",
@@ -377,22 +359,17 @@ export default function GarageFloorsPage() {
 
           <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
-              <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
-                  <Image
-                    src={finish.image}
-                    alt={finish.name}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white/85 space-y-2">
-                    <h3 className=" text-2xl font-bold text-white">{finish.name}</h3>
-                    <p>{finish.detail}</p>
-                  </div>
-                </div>
+              <li key={finish.id}>
+                <OverlayCard
+                  image={finish.image}
+                  imageAlt={finish.name}
+                  title={finish.name}
+                  description={finish.detail}
+                  alwaysVisible
+                  captionStyle="panel"
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName={index === 1 ? "h-[400px]" : "h-[340px]"}
+                />
               </li>
             ))}
           </ul>
@@ -514,26 +491,18 @@ export default function GarageFloorsPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <div className="min-w-0 text-white/85 space-y-2">
-                      <h3 className="text-xl font-bold">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                </Link>
+                <OverlayCard
+                  href={item.href}
+                  image={item.image}
+                  imageAlt={item.imageAlt}
+                  title={item.title}
+                  description={item.description}
+                  alwaysVisible
+                  captionStyle="plain"
+                  showArrow
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName="h-[320px]"
+                />
               </li>
             ))}
           </ul>

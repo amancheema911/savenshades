@@ -5,7 +5,7 @@ import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
 import Button from "@/components/ui/Button";
 import Counters from "@/components/Counters";
-import { contactInfo } from "@/lib/config";
+import { BASE_URL, contactInfo } from "@/lib/config";
 import { counterItems } from "@/lib/counters";
 import Heading from "@/components/Heading";
 import { services } from "@/lib/services";
@@ -14,8 +14,29 @@ const { phone } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 
 export const metadata: Metadata = {
-  title: "About Us | Saven shades Premium Epoxy Solutions",
-  description: "Learn how Saven shades crafts high-performance epoxy floors — our story, values, and the standards behind every install.",
+  title: "About Saven shades | Epoxy Flooring Specialists Since 2014",
+  description: "Meet Saven shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
+  keywords: ["epoxy flooring company Surrey", "residential epoxy flooring", "commercial epoxy flooring", "epoxy flooring specialists", "premium epoxy floors BC"],
+  alternates: {
+    canonical: `${BASE_URL}/about-us`,
+  },
+  openGraph: {
+    title: "About Saven shades | Epoxy Flooring Specialists Since 2014",
+    description: "Epoxy-only installers since 2014. We rebuilt the process from the slab up so residential and commercial floors stay sharp under real use.",
+    type: "website",
+    images: [
+      {
+        url: BASE_URL + "/images/about-us.png",
+        alt: "Premium epoxy garage floor installed by Saven shades",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Saven shades | Epoxy Flooring Specialists Since 2014",
+    description: "Meet Saven shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
+    images: [BASE_URL + "/images/about-us.png"],
+  },
 };
 
 const aboutValues = [

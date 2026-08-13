@@ -5,10 +5,32 @@ import CallToAction from "@/components/CallToAction";
 import PageHeader from "@/components/PageHeader";
 import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
+import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Services | Saven shades Premium Epoxy Flooring",
-  description: "Explore Saven shades epoxy flooring services including garage, commercial, industrial, metallic, flake, quartz, and decorative systems.",
+  title: "Epoxy Flooring Services | Saven shades",
+  description: "Browse Saven shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
+  keywords: ["epoxy flooring services", "garage epoxy flooring", "commercial epoxy floors", "residential epoxy flooring", "metallic epoxy flooring", "solid epoxy flooring", "stone epoxy flooring", "rubber surfacing" ],
+  alternates: {
+    canonical: `${BASE_URL}/services`,
+  },
+  openGraph: {
+    title: "Epoxy Flooring Services | Saven shades",
+    description: "High-performance epoxy systems engineered for durability — from garages to commercial spaces, specified for traffic, chemicals, and the look you want.",
+    type: "website",
+    images: [
+      {
+        url: BASE_URL + "/images/services/service-garage.png",
+        alt: "Luxury car on a finished garage epoxy floor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Epoxy Flooring Services | Saven shades",
+    description: "Browse Saven shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
+    images: [BASE_URL + "/images/services/service-garage.png"],
+  },
 };
 
 const servicePerks = [

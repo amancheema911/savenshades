@@ -2,35 +2,38 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import OverlayCard from "@/components/OverlayCard";
 import PageHeader from "@/components/PageHeader";
 import Button from "@/components/ui/Button";
 import { services } from "@/lib/services";
 import Heading from "@/components/Heading";
 import FaqAccordion from "@/components/faq-accordion";
+import { serviceFaqs } from "@/lib/service-faqs";
+import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Commercial Epoxy Flooring Installation | Saven shades",
-  description:
-    "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
-  keywords: [
-    "commercial epoxy flooring",
-    "retail epoxy floor coating",
-    "commercial floor installation",
-    "high traffic epoxy flooring",
-    "business epoxy floors",
-  ],
-  alternates: { canonical: "/services/commercial" },
+  description: "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
+  keywords: ["commercial epoxy flooring", "retail epoxy floor coating", "commercial floor installation", "high traffic epoxy flooring", "business epoxy floors"],
+  alternates: { 
+    canonical: `${BASE_URL}/services/commercial`,
+  },
   openGraph: {
     title: "Commercial Epoxy Flooring Installation | Saven shades",
-    description:
-      "High-performance commercial floors engineered for foot traffic, daily cleaning, and brand-ready spaces.",
+    description: "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
     type: "website",
     images: [
       {
-        url: "/images/services/service-commercial.png",
+        url: BASE_URL + "/images/services/service-commercial.png",
         alt: "Bright commercial interior with epoxy flooring",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Epoxy Flooring Installation | Saven shades",
+    description: "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
+    images: [BASE_URL + "/images/services/service-commercial.png"],
   },
 };
 
@@ -112,28 +115,7 @@ const finishes = [
   },
 ];
 
-const faqs = [
-  {
-    question: "How long does commercial epoxy flooring last?",
-    answer:
-      "A properly prepped Saven shades commercial system is designed for years of daily foot traffic. Lifespan depends on prep quality, traffic volume, cleaning chemicals, and the finish system specified for the space.",
-  },
-  {
-    question: "Can you install without fully shutting down my business?",
-    answer:
-      "Often yes. We plan phased installs and off-hour work whenever possible. Exact sequencing depends on square footage, access, and cure windows — we’ll map a schedule around your operations.",
-  },
-  {
-    question: "Will the floor hold up to carts, chairs, and cleaning chemicals?",
-    answer:
-      "Commercial systems are selected for abrasion and chemical resistance. We’ll recommend solid, flake, or quartz based on how the space is used and how aggressively it is cleaned.",
-  },
-  {
-    question: "Solid, flake, or quartz — which is best for commercial spaces?",
-    answer:
-      "Solid fits polished offices and showrooms. Flake adds grip and hides micro-wear in high-traffic retail. Quartz suits corridors and service zones that need maximum toughness. We’ll match the system to your use case.",
-  },
-];
+const faqs = serviceFaqs.commercial;
 
 const idealFor = [
   "Retail & boutiques",
@@ -377,22 +359,17 @@ export default function CommercialPage() {
 
           <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 items-center">
             {finishes.map((finish, index) => (
-              <li key={finish.id} className="group relative isolate">
-                <div className={`relative overflow-hidden rounded-[1.5rem] ${index === 1 ? "h-[400px]" : "h-[340px]"}`}>
-                  <Image
-                    src={finish.image}
-                    alt={finish.name}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.08)_0%,rgba(5,9,16,0.82)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white/85 space-y-2">
-                    <h3 className=" text-2xl font-bold text-white">{finish.name}</h3>
-                    <p>{finish.detail}</p>
-                  </div>
-                </div>
+              <li key={finish.id}>
+                <OverlayCard
+                  image={finish.image}
+                  imageAlt={finish.name}
+                  title={finish.name}
+                  description={finish.detail}
+                  alwaysVisible
+                  captionStyle="panel"
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName={index === 1 ? "h-[400px]" : "h-[340px]"}
+                />
               </li>
             ))}
           </ul>
@@ -514,26 +491,18 @@ export default function CommercialPage() {
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
             {related.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="group relative block overflow-hidden rounded-[1.5rem] h-[320px]">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.85)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <div className="min-w-0 text-white/85 space-y-2">
-                      <h3 className=" text-xl font-bold">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/70 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#0B1120]">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                </Link>
+                <OverlayCard
+                  href={item.href}
+                  image={item.image}
+                  imageAlt={item.imageAlt}
+                  title={item.title}
+                  description={item.description}
+                  alwaysVisible
+                  captionStyle="plain"
+                  showArrow
+                  roundedClassName="rounded-[1.5rem]"
+                  aspectClassName="h-[320px]"
+                />
               </li>
             ))}
           </ul>
