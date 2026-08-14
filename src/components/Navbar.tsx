@@ -111,7 +111,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto flex items-center justify-between gap-4 py-3 px-4 sm:px-6 lg:px-8">
           <Link href={BASE_URL}>
-            <Image src={logo} alt="Seven Shades" width={250} height={250} loading="lazy" />
+            <Image src={logo} alt="Seven Shades" width={250} height={250} />
           </Link>
 
           <ul className="hidden items-center gap-1 xl:flex">

@@ -252,7 +252,6 @@ export default function MetallicEpoxyPage() {
                   alt="Close-up of blue and silver metallic epoxy floor"
                   width={800}
                   height={800}
-                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070b]/45 via-transparent to-transparent" />
@@ -265,7 +264,6 @@ export default function MetallicEpoxyPage() {
                     alt="Metallic epoxy flooring detail with depth and sheen"
                     width={400}
                     height={400}
-                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

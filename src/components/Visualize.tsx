@@ -215,7 +215,6 @@ export default function Visualize() {
                   alt="Warehouse with polished premium epoxy floor"
                   width={700}
                   height={500}
-                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <span className="absolute top-3 right-3 rounded-md bg-[var(--brand-color)] px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-white sm:top-4 sm:right-4 sm:px-3.5 sm:py-1.5 sm:text-[0.7rem]">
@@ -229,7 +228,6 @@ export default function Visualize() {
                   alt="Warehouse with worn unfinished concrete floor"
                   width={700}
                   height={500}
-                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <span className="absolute top-3 left-3 rounded-md bg-black/55 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-white backdrop-blur-sm sm:top-4 sm:left-4 sm:px-3.5 sm:py-1.5 sm:text-[0.7rem]">

@@ -81,7 +81,6 @@ export default function Hero() {
         alt="" 
         width={1920} 
         height={1080} 
-        loading="lazy" 
         className="w-full h-full object-cover animate-hero-zoom" 
         priority 
       />

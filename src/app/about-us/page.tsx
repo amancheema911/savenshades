@@ -289,7 +289,6 @@ export default function AboutUsPage() {
                     alt="Premium epoxy garage floor installed by Seven Shades"
                     width={800}
                     height={800}
-                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,9,16,0.65)_100%)]" />
@@ -302,7 +301,6 @@ export default function AboutUsPage() {
                       alt="Metallic epoxy detail"
                       width={400}
                       height={400}
-                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -384,7 +382,6 @@ export default function AboutUsPage() {
               alt="Elegant epoxy surface in a refined interior space"
               width={1024}
               height={1024}
-              loading="lazy"
               className="w-full h-full object-cover"
             />
           </div>
@@ -455,7 +452,6 @@ export default function AboutUsPage() {
                     alt="Premium epoxy floor hallway with soft natural light"
                     width={600}
                     height={600}
-                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -467,7 +463,6 @@ export default function AboutUsPage() {
                     alt="Luxury living space with finished epoxy flooring"
                     width={400}
                     height={400}
-                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

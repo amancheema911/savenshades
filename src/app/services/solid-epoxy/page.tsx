@@ -251,7 +251,6 @@ export default function SolidEpoxyPage() {
                   alt="Solid color epoxy flooring finish"
                   width={800}
                   height={800}
-                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070b]/45 via-transparent to-transparent" />
@@ -264,7 +263,6 @@ export default function SolidEpoxyPage() {
                     alt="Solid epoxy garage flooring detail"
                     width={400}
                     height={400}
-                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

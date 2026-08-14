@@ -79,7 +79,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Seven Shades home">
-              <Image src={logo} alt="Seven Shades" width={280} height={280} loading="lazy" />
+              <Image src={logo} alt="Seven Shades" width={280} height={280} />
             </Link>
             <p>We transform ordinary concrete into extraordinary floors that are beautiful, durable and built to last.</p>
             <div className="flex items-center space-x-2 mt-4">

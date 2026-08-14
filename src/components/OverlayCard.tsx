@@ -75,7 +75,6 @@ export default function OverlayCard({
         alt={imageAlt}
         width={400}
         height={400}
-        loading="lazy"
         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
 

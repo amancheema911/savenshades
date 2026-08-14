@@ -176,7 +176,6 @@ function ProjectLightbox({
                 alt={activeImage.alt}
                 width={600}
                 height={600}
-                loading="lazy"
                 className="w-full h-full object-cover"
               />
 
@@ -224,7 +223,6 @@ function ProjectLightbox({
                         alt={image.alt}
                         width={100}
                         height={100}
-                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                     </button>
@@ -442,7 +440,6 @@ export default function OurWorkClient() {
                         alt={item.imageAlt}
                         width={600}
                         height={600}
-                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95"/>

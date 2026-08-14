@@ -55,7 +55,6 @@ export default function BlogCard({
           src={image}
           alt={imageAlt}
           fill
-          loading="lazy"
           sizes={featured ? "(max-width: 1024px) 100vw, 60vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />

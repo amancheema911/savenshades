@@ -35,7 +35,6 @@ export default function FloorServices() {
                         alt={service.imageAlt}
                         width={200}
                         height={200}
-                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                     </div>

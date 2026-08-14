@@ -128,7 +128,6 @@ export default function ServicesPage() {
                   alt={featured.imageAlt}
                   width={600}
                   height={600}
-                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.15)_0%,rgba(5,9,16,0.25)_40%,rgba(5,9,16,0.88)_100%)]" />
@@ -158,7 +157,6 @@ export default function ServicesPage() {
                   alt={service.imageAlt} 
                   width={600}
                   height={600}
-                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.1)_0%,rgba(5,9,16,0.82)_100%)]" aria-hidden="true" />
@@ -190,7 +188,6 @@ export default function ServicesPage() {
                     src={service.image} 
                     alt={service.imageAlt} 
                     fill
-                    loading="lazy"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" 
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
                     />

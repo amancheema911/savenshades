@@ -50,7 +50,7 @@ function GalleryIcon() {
 export default function HeroBanner() {
   return (
     <section className="relative -mt-[5.75rem] overflow-hidden">
-      <Image src="/images/hero-epoxy-floor-1.2.1.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority sizes="100vw" className="hidden sm:block w-full h-full object-cover object-top"/>
+      <Image src="/images/hero-epoxy-floor-1.2.1.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority  sizes="100vw" className="hidden sm:block object-cover"/>
 
       <div className="hidden sm:block w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>
 
