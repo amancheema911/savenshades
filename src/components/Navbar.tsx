@@ -100,7 +100,9 @@ export default function Navbar() {
   const navSolid = !isHome || scrolled || menuOpen;
 
   return (
-    <header className="sticky top-0 z-50 inset-x-0">
+    <header
+      className={`${isHome ? "fixed" : "sticky"} top-0 z-50 w-full`}
+    >
       <nav
         className={`relative z-50 transition-[background-color,box-shadow,backdrop-filter,border-color] duration-300 ${
           navSolid

@@ -38,7 +38,7 @@ export default function PageHeader({
   description,
   image = "/images/epoxy-floor.webp",
   imageAlt = "",
-  imageClassName = "w-full h-full object-cover object-bottom animate-hero-zoom",
+  imageClassName = "w-full h-full object-cover animate-hero-zoom",
   minHeightClassName = "py-14 sm:py-16",
   primaryAction,
   secondaryAction,
@@ -49,7 +49,7 @@ export default function PageHeader({
   const showAside = Boolean(asideContent || aside);
 
   return (
-    <section className={`relative isolate overflow-hidden ${minHeightClassName}`}>
+    <section className={`relative overflow-hidden ${minHeightClassName}`}>
       <Image src={image} alt={imageAlt} fill priority sizes="100vw" className={imageClassName} />
 
       <div className="absolute inset-0 bg-[var(--black)]/80" aria-hidden="true" />
