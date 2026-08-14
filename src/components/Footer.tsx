@@ -73,15 +73,16 @@ function FooterLink({ href, children }: { href: string; children: ReactNode }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#05070b] text-white">
+    <footer className="bg-[#05070b] text-white w-full">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-4">
+          <div className="sm:col-span-2 lg:col-span-3">
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Seven Shades home">
-              <Image src={logo} alt="Seven Shades" width={280} height={280} />
+              <Image src={logo} alt="Seven Shades" width={220} height={220} />
             </Link>
             <p>We transform ordinary concrete into extraordinary floors that are beautiful, durable and built to last.</p>
+            
             <div className="flex items-center space-x-2 mt-4">
               {socialLinks.map((item) => (
                 <Link
@@ -134,25 +135,25 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <h2 className="text-base font-semibold text-white">Contact Us</h2>
             <ul className="mt-5 flex flex-col gap-4">
               <li>
-                <a href={phoneHref} className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
+                <a href={phoneHref} className="flex min-w-0 items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
                   <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80"><PhoneIcon /></span>
-                  <span className="pt-1.5">{phone}</span>
+                  <span className="min-w-0 flex-1 break-words pt-1.5">{phone}</span>
                 </a>
               </li>
               <li>
-                <a href={emailHref} className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
+                <a href={emailHref} className="flex min-w-0 items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
                   <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80"><MailIcon /></span>
-                  <span className="pt-1.5">{email}</span>
+                  <span className="min-w-0 flex-1 break-words pt-1.5 leading-relaxed">{email}</span>
                 </a>
               </li>
               <li>
-                  <div className="flex items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
+                  <div className="flex min-w-0 items-start gap-3 text-[0.92rem] text-white/55 transition-colors hover:text-white">
                     <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80"><PinIcon /></span>
-                    <span className="pt-1.5 leading-relaxed">{address}</span>
+                    <span className="min-w-0 flex-1 break-words pt-1.5 leading-relaxed">{address}</span>
                   </div>
               </li>
             </ul>
