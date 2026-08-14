@@ -211,7 +211,7 @@ export default function Visualize() {
             >
               <div className="absolute inset-0">
                 <Image
-                  src="/images/before-after/after-floor.png"
+                  src="/images/before-after/after-floor.webp"
                   alt="Warehouse with polished premium epoxy floor"
                   width={700}
                   height={500}
@@ -225,7 +225,7 @@ export default function Visualize() {
 
               <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
                 <Image
-                  src="/images/before-after/before-floor.png"
+                  src="/images/before-after/before-floor.webp"
                   alt="Warehouse with worn unfinished concrete floor"
                   width={700}
                   height={500}

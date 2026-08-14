@@ -8,28 +8,28 @@ import Heading from "@/components/Heading";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Epoxy Flooring Services | Saven shades",
-  description: "Browse Saven shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
+  title: "Epoxy Flooring Services | Seven Shades",
+  description: "Browse Seven Shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
   keywords: ["epoxy flooring services", "garage epoxy flooring", "commercial epoxy floors", "residential epoxy flooring", "metallic epoxy flooring", "solid epoxy flooring", "stone epoxy flooring", "rubber surfacing" ],
   alternates: {
     canonical: `${BASE_URL}/services`,
   },
   openGraph: {
-    title: "Epoxy Flooring Services | Saven shades",
+    title: "Epoxy Flooring Services | Seven Shades",
     description: "High-performance epoxy systems engineered for durability — from garages to commercial spaces, specified for traffic, chemicals, and the look you want.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/service-garage.png",
+        url: BASE_URL + "/images/services/service-garage.webp",
         alt: "Luxury car on a finished garage epoxy floor",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Epoxy Flooring Services | Saven shades",
-    description: "Browse Saven shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
-    images: [BASE_URL + "/images/services/service-garage.png"],
+    title: "Epoxy Flooring Services | Seven Shades",
+    description: "Browse Seven Shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
+    images: [BASE_URL + "/images/services/service-garage.webp"],
   },
 };
 
@@ -227,7 +227,7 @@ export default function ServicesPage() {
               tag="h2"
               size="section"
               tone="light"
-              eyebrow="WHY Saven shades"
+              eyebrow="WHY Seven Shades"
               title={<>Spec&apos;d For Real Life. <span className="text-[var(--brand-color)]">Not Showrooms Only.</span></>}
               description="Every system is specified for traffic, chemicals, moisture, and the look you want to live with."
             />

@@ -10,27 +10,27 @@ const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 const emailHref = `mailto:${email}`;
 
 export const metadata: Metadata = {
-  title: "Contact Saven shades | Free Epoxy Flooring Quote",
-  description: "Get a free Saven shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
-  keywords: ["contact Saven shades", "epoxy flooring quote", "free epoxy estimate Surrey", "epoxy flooring consultation"],
+  title: "Contact Seven Shades | Free Epoxy Flooring Quote",
+  description: "Get a free Seven Shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
+  keywords: ["contact Seven Shades", "epoxy flooring quote", "free epoxy estimate Surrey", "epoxy flooring consultation"],
   alternates: {
     canonical: `${BASE_URL}/contact-us`,
   },
   openGraph: {
-    title: "Contact Saven shades | Free Epoxy Flooring Quote",
-    description: "Reach the Saven Shades team by phone, email, or quote form. Free, no-obligation estimates with a clear scope of work.",
+    title: "Contact Seven Shades | Free Epoxy Flooring Quote",
+    description: "Reach the Seven Shades team by phone, email, or quote form. Free, no-obligation estimates with a clear scope of work.",
     type: "website",
     images: [
       {
         url: BASE_URL + DEFAULT_IMAGE,
-        alt: "Saven Shades team in a garage with epoxy flooring",
+        alt: "Seven Shades team in a garage with epoxy flooring",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Saven shades | Free Epoxy Flooring Quote",
-    description: "Get a free Saven shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
+    title: "Contact Seven Shades | Free Epoxy Flooring Quote",
+    description: "Get a free Seven Shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
     images: [BASE_URL + DEFAULT_IMAGE],
   },
 };
@@ -68,7 +68,7 @@ export default function ContactUsPage() {
                 tone="dark"
                 eyebrow="GET IN TOUCH"
                 title={<>Prefer Direct <span className="text-[var(--brand-color)]">Contact?</span></>}
-                description="Reach the Saven Shades team by phone, email, or visit — or use the form and we&apos;ll follow up with next steps."
+                description="Reach the Seven Shades team by phone, email, or visit — or use the form and we&apos;ll follow up with next steps."
               />
 
               <ul className="space-y-6">

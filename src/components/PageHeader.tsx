@@ -32,15 +32,13 @@ export type PageHeaderProps = {
   asideContent?: ReactNode;
 };
 
-const NOISE_BG = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E\")";
-
 export default function PageHeader({
   eyebrow,
   title,
   description,
-  image = "/images/epoxy-floor.png",
+  image = "/images/epoxy-floor.webp",
   imageAlt = "",
-  imageClassName = "object-cover object-bottom animate-hero-zoom",
+  imageClassName = "w-full h-full object-cover object-bottom animate-hero-zoom",
   minHeightClassName = "py-14 sm:py-16",
   primaryAction,
   secondaryAction,
@@ -52,10 +50,9 @@ export default function PageHeader({
 
   return (
     <section className={`relative isolate overflow-hidden ${minHeightClassName}`}>
-      <Image src={image} alt={imageAlt} fill priority sizes="100vw" className={imageClassName} />
+      <Image src={image} alt={imageAlt} fill className={imageClassName} />
 
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(5,9,16,0.95)_0%,rgba(5,9,16,0.78)_40%,rgba(5,9,16,0.42)_72%,rgba(5,9,16,0.7)_100%),linear-gradient(180deg,rgba(5,9,16,0.45)_0%,transparent_30%,rgba(5,9,16,0.75)_100%)]" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-soft-light" style={{ backgroundImage: NOISE_BG }} aria-hidden="true" />
+      <div className="absolute inset-0 bg-[var(--black)]/80" aria-hidden="true" />
 
       <div className="relative z-10 container mx-auto flex w-full flex-col justify-end px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12">

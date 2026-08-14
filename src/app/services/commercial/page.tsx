@@ -12,28 +12,28 @@ import { serviceFaqs } from "@/lib/service-faqs";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Commercial Epoxy Flooring Installation | Saven shades",
-  description: "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
+  title: "Commercial Epoxy Flooring Installation | Seven Shades",
+  description: "Professional commercial epoxy flooring by Seven Shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
   keywords: ["commercial epoxy flooring", "retail epoxy floor coating", "commercial floor installation", "high traffic epoxy flooring", "business epoxy floors"],
   alternates: { 
     canonical: `${BASE_URL}/services/commercial`,
   },
   openGraph: {
-    title: "Commercial Epoxy Flooring Installation | Saven shades",
-    description: "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
+    title: "Commercial Epoxy Flooring Installation | Seven Shades",
+    description: "Professional commercial epoxy flooring by Seven Shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/service-commercial.png",
+        url: BASE_URL + "/images/services/service-commercial.webp",
         alt: "Bright commercial interior with epoxy flooring",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial Epoxy Flooring Installation | Saven shades",
-    description: "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
-    images: [BASE_URL + "/images/services/service-commercial.png"],
+    title: "Commercial Epoxy Flooring Installation | Seven Shades",
+    description: "Professional commercial epoxy flooring by Seven Shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
+    images: [BASE_URL + "/images/services/service-commercial.webp"],
   },
 };
 
@@ -99,19 +99,19 @@ const finishes = [
     id: "solid",
     name: "Solid Color",
     detail: "Clean, continuous color that reads polished and professional in offices and showrooms.",
-    image: "/images/services/service-commercial.png",
+    image: "/images/services/service-commercial.webp",
   },
   {
     id: "flake",
     name: "Full Flake",
     detail: "Multi-tone broadcast for grip, camouflage of everyday wear, and high-traffic resilience.",
-    image: "/images/services/service-garage.png",
+    image: "/images/services/service-garage.webp",
   },
   {
     id: "quartz",
     name: "Quartz System",
     detail: "Heavy-duty texture and durability for corridors, service areas, and demanding commercial zones.",
-    image: "/images/services/service-industrial.png",
+    image: "/images/services/service-industrial.webp",
   },
 ];
 
@@ -222,7 +222,7 @@ export default function CommercialPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Your commercial floor works every open hour — welcoming customers, taking carts and chair traffic, and facing daily cleaning. Saven shades commercial epoxy turns ordinary concrete into a seamless, high-performance surface that looks intentional and stays maintainable.</p>
+                  <p>Your commercial floor works every open hour — welcoming customers, taking carts and chair traffic, and facing daily cleaning. Seven Shades commercial epoxy turns ordinary concrete into a seamless, high-performance surface that looks intentional and stays maintainable.</p>
 
                   <p>From retail sales floors to office lobbies and hospitality spaces, we diamond-grind the slab and install systems chosen for abrasion, sanitation, and lasting appearance — not thin temporary coatings.</p>
                   </>
@@ -247,7 +247,7 @@ export default function CommercialPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/service-commercial.png"
+                  src="/images/services/service-commercial.webp"
                   alt="Bright commercial interior with epoxy flooring"
                   width={800}
                   height={800}
@@ -260,7 +260,7 @@ export default function CommercialPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/services/service-industrial.png"
+                    src="/images/services/service-industrial.webp"
                     alt="Commercial corridor epoxy flooring detail"
                     width={400}
                     height={400}
@@ -287,7 +287,6 @@ export default function CommercialPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="commercial-benefits-heading"
               align="center"
               size="section"
               tone="light"
@@ -386,7 +385,6 @@ export default function CommercialPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="commercial-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -447,7 +445,6 @@ export default function CommercialPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Heading
               tag="h2"
-              id="faq-heading"
               size="section"
               tone="dark"
               eyebrow="QUESTIONS"

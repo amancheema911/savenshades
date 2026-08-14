@@ -25,7 +25,7 @@ const SERVICES = [
 ];
 
 const SUPPORT = [
-  // { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Blog" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ];
@@ -78,8 +78,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-3" aria-label="Saven shades home">
-              <Image src={logo} alt="Saven shades" width={280} height={280} loading="lazy" />
+            <Link href="/" className="inline-flex items-center gap-3" aria-label="Seven Shades home">
+              <Image src={logo} alt="Seven Shades" width={280} height={280} loading="lazy" />
             </Link>
             <p>We transform ordinary concrete into extraordinary floors that are beautiful, durable and built to last.</p>
             <div className="flex items-center space-x-2 mt-4">
@@ -162,7 +162,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto container px-4 sm:px-6 lg:px-8 py-5 text-white/70">
-          <p>© 2026 Saven Shades. All rights reserved.</p>
+          <p>© 2026 Seven Shades. All rights reserved.</p>
         </div>
       </div>
 

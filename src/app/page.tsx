@@ -13,14 +13,14 @@ import { counterItems } from "@/lib/counters";
 import { BASE_URL, contactInfo } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Saven shades | Premium Epoxy Solutions",
+  title: "Seven Shades | Premium Epoxy Solutions",
   description: "Premium epoxy flooring in Surrey, BC — durable, beautiful garage, residential, and commercial floors installed by local experts. Free quotes.",
   keywords: [ "epoxy flooring Surrey", "garage epoxy flooring", "commercial epoxy floors", "residential epoxy flooring", "premium epoxy solutions", "metallic epoxy flooring" ],
   alternates: { 
     canonical: BASE_URL
   },
   openGraph: {
-    title: "Saven shades | Premium Epoxy Solutions",
+    title: "Seven Shades | Premium Epoxy Solutions",
     description: "Transform your garage, basement, or commercial space with high-performance epoxy flooring installed by local experts in Surrey, BC.",
     type: "website",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saven shades | Premium Epoxy Solutions",
+    title: "Seven Shades | Premium Epoxy Solutions",
     description: "Premium epoxy flooring in Surrey, BC — durable, beautiful garage, residential, and commercial floors installed by local experts. Free quotes.",
     images: [BASE_URL + contactInfo.DEFAULT_IMAGE],
   },

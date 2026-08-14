@@ -14,28 +14,28 @@ const { phone } = contactInfo;
 const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 
 export const metadata: Metadata = {
-  title: "About Saven shades | Epoxy Flooring Specialists Since 2014",
-  description: "Meet Saven shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
+  title: "About Seven Shades | Epoxy Flooring Specialists Since 2014",
+  description: "Meet Seven Shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
   keywords: ["epoxy flooring company Surrey", "residential epoxy flooring", "commercial epoxy flooring", "epoxy flooring specialists", "premium epoxy floors BC"],
   alternates: {
     canonical: `${BASE_URL}/about-us`,
   },
   openGraph: {
-    title: "About Saven shades | Epoxy Flooring Specialists Since 2014",
+    title: "About Seven Shades | Epoxy Flooring Specialists Since 2014",
     description: "Epoxy-only installers since 2014. We rebuilt the process from the slab up so residential and commercial floors stay sharp under real use.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/about-us.png",
-        alt: "Premium epoxy garage floor installed by Saven shades",
+        url: BASE_URL + "/images/about-us.webp",
+        alt: "Premium epoxy garage floor installed by Seven Shades",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Saven shades | Epoxy Flooring Specialists Since 2014",
-    description: "Meet Saven shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
-    images: [BASE_URL + "/images/about-us.png"],
+    title: "About Seven Shades | Epoxy Flooring Specialists Since 2014",
+    description: "Meet Seven Shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
+    images: [BASE_URL + "/images/about-us.webp"],
   },
 };
 
@@ -285,8 +285,8 @@ export default function AboutUsPage() {
                 <div className="absolute -top-4 -left-4 hidden h-28 w-28 rounded-[1.25rem] border border-[var(--brand-color)]/40 sm:block lg:-top-6 lg:-left-6" />
                 <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
                   <Image
-                    src="/images/about-us.png"
-                    alt="Premium epoxy garage floor installed by Saven shades"
+                    src="/images/about-us.webp"
+                    alt="Premium epoxy garage floor installed by Seven Shades"
                     width={800}
                     height={800}
                     loading="lazy"
@@ -298,7 +298,7 @@ export default function AboutUsPage() {
                 <div className="absolute -right-2 -bottom-8 w-[42%] overflow-hidden rounded-[1.15rem] shadow-xl sm:-right-4 sm:-bottom-10 sm:rounded-[1.35rem] lg:-right-6 animate-about-float">
                   <div className="relative aspect-[4/3]">
                     <Image
-                      src="/images/metalic-epoxy.jpg"
+                      src="/images/metalic-epoxy.webp"
                       alt="Metallic epoxy detail"
                       width={400}
                       height={400}
@@ -324,7 +324,7 @@ export default function AboutUsPage() {
                 eyebrow="OUR STORY"
                 title={<>More Than Coatings. <span className="text-[var(--brand-color)]">A Standard.</span></>}
                 description={<>
-                  <p>Saven shades started with a simple frustration: too many floors looked great on day one and failed by year three. We rebuilt the process from the slab up — materials, prep, install discipline — so every surface earns its finish. </p>
+                  <p>Seven Shades started with a simple frustration: too many floors looked great on day one and failed by year three. We rebuilt the process from the slab up — materials, prep, install discipline — so every surface earns its finish. </p>
                   
                   <p>Today we partner with homeowners, builders, and facility managers who want floors that stay sharp under real use.</p>
                 </>}
@@ -380,7 +380,7 @@ export default function AboutUsPage() {
           {/* Left image */}
           <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[640px]">
             <Image
-              src="/images/metallic-service-2.png"
+              src="/images/metallic-service-2.webp"
               alt="Elegant epoxy surface in a refined interior space"
               width={1024}
               height={1024}
@@ -399,7 +399,7 @@ export default function AboutUsPage() {
                 eyebrow="Our Surfaces"
                 title={<>Enhance your spaces with elegant <span className="text-[var(--brand-color)]">surface collection</span></>}
                 description={<>
-                  <p>From garages to showrooms, Saven shades systems are engineered for durability and designed for spaces that deserve a finished look — not a temporary coat.</p>
+                  <p>From garages to showrooms, Seven Shades systems are engineered for durability and designed for spaces that deserve a finished look — not a temporary coat.</p>
                   <p>Choose the surface that fits your traffic, style, and timeline. Every install starts with precision prep and ends with lasting protection.</p>
                 </>}
               />
@@ -451,7 +451,7 @@ export default function AboutUsPage() {
                 {/* Top/back image — left aligned (your position) */}
                 <div className="relative mr-auto aspect-[4/5] w-[78%] max-w-[450px] overflow-hidden rounded-[1.15rem] shadow-xl sm:w-[75%] sm:rounded-[1.35rem] lg:w-[72%]">
                   <Image
-                    src="/images/solid-floor.jpg"
+                    src="/images/solid-floor.webp"
                     alt="Premium epoxy floor hallway with soft natural light"
                     width={600}
                     height={600}
@@ -463,7 +463,7 @@ export default function AboutUsPage() {
                 {/* Bottom/front image — right + bottom (your position) */}
                 <div className="absolute right-0 bottom-4 z-[2] aspect-[4/3] w-[68%] max-w-[260px] overflow-hidden rounded-[1.15rem] shadow-xl sm:bottom-10 sm:w-[60%] sm:max-w-[340px] sm:rounded-[1.35rem] lg:max-w-[380px]">
                   <Image
-                    src="/images/solid-floor-1.jpg"
+                    src="/images/solid-floor-1.webp"
                     alt="Luxury living space with finished epoxy flooring"
                     width={400}
                     height={400}

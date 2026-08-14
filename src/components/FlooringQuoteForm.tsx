@@ -34,7 +34,7 @@ const TONE_STYLES = {
     error: "border-red-400/30 bg-red-500/10 text-red-200",
   },
   light: {
-    shell: "border-black/10 bg-white shadow-[0_16px_40px_rgba(11,17,32,0.08)]",
+    shell: "border-black/10 bg-white shadow-xl",
     eyebrow: "text-[var(--black)]",
     description: "text-black/60",
     label: "text-[var(--black)]",
@@ -148,9 +148,7 @@ export default function FlooringQuoteForm({
   };
 
   return (
-    <div
-      className={[
-        "relative w-full overflow-hidden rounded-2xl border px-3 py-4 lg:max-w-[440px]",
+    <div className={["relative w-full overflow-hidden rounded-2xl border px-5 py-6 lg:max-w-[440px]",
         styles.shell,
         className,
       ]
@@ -158,35 +156,19 @@ export default function FlooringQuoteForm({
         .join(" ")}
     >
       <div className="relative z-10">
-        <p
-          className={`text-xl font-semibold tracking-wide uppercase ${styles.eyebrow}`}
-        >
-          Get Your Free
-        </p>
-        <h2 className="text-[1.25rem] leading-[1.15] font-bold tracking-tight text-[var(--brand-color)] uppercase sm:text-[1.5rem]">
-          Epoxy Flooring Quote
-        </h2>
+        <p className={`text-xl font-semibold tracking-wide uppercase ${styles.eyebrow}`}>Get Your Free</p>
+        <h2 className="text-[1.25rem] leading-[1.15] font-bold tracking-tight text-[var(--brand-color)] uppercase sm:text-[1.5rem]">Epoxy Flooring Quote</h2>
 
         <div className="mt-3 flex items-center" aria-hidden="true">
           <span className="h-px w-10 bg-[var(--brand-color)]" />
         </div>
 
-        <p className={`mt-3 text-sm ${styles.description}`}>
-          Tell us about your project and we&apos;ll get back to you with a custom
-          quote.
-        </p>
+        <p className={`mt-3 text-sm ${styles.description}`}>Tell us about your project and we&apos;ll get back to you with a custom quote.</p>
 
         {submitted ? (
-          <div
-            className={`mt-6 rounded-xl border px-4 py-5 text-center ${styles.successBox}`}
-            role="status"
-          >
-            <p className={`font-semibold ${styles.successTitle}`}>
-              Request received!
-            </p>
-            <p className={`mt-1 text-sm ${styles.successBody}`}>
-              Our team will contact you shortly.
-            </p>
+          <div className={`mt-6 rounded-xl border px-4 py-5 text-center ${styles.successBox}`} role="status">
+            <p className={`font-semibold ${styles.successTitle}`}>Request received!</p>
+            <p className={`mt-1 text-sm ${styles.successBody}`}>Our team will contact you shortly.</p>
             <button
               type="button"
               onClick={() => setSubmitted(false)}

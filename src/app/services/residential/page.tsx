@@ -11,27 +11,27 @@ import { serviceFaqs } from "@/lib/service-faqs";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Residential Epoxy Flooring Installation | Saven shades",
-  description: "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
+  title: "Residential Epoxy Flooring Installation | Seven Shades",
+  description: "Professional residential epoxy flooring by Seven Shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
   keywords: ["residential epoxy flooring", "home epoxy floors", "garage epoxy flooring", "basement epoxy floor", "residential floor coating"],
   alternates: {
     canonical: `${BASE_URL}/services/residential`,
   },
   openGraph: {
-    title: "Residential Epoxy Flooring Installation | Saven shades",
-    description: "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
+    title: "Residential Epoxy Flooring Installation | Seven Shades",
+    description: "Professional residential epoxy flooring by Seven Shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/service-garage.png",
+        url: BASE_URL + "/images/services/service-garage.webp",
         alt: "Residential garage with finished epoxy flooring",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Residential Epoxy Flooring Installation | Saven shades",
-    description: "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
+    title: "Residential Epoxy Flooring Installation | Seven Shades",
+    description: "Professional residential epoxy flooring by Seven Shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
     images: [BASE_URL + "/images/services/service-residential.png"],
   },  
 };
@@ -98,19 +98,19 @@ const finishes = [
     id: "solid",
     name: "Solid Color",
     detail: "Clean continuous color with gloss or satin clear — ideal for modern homes and tidy garage or basement builds.",
-    image: "/images/services/service-commercial.png",
+    image: "/images/services/service-commercial.webp",
   },
   {
     id: "flake",
     name: "Full Flake",
     detail: "Multi-tone broadcast for grip, style, and everyday forgiveness in busy family spaces.",
-    image: "/images/services/service-garage.png",
+    image: "/images/services/service-garage.webp",
   },
   {
     id: "metallic",
     name: "Metallic",
     detail: "Liquid depth and movement for feature rooms, basements, and collector bays that deserve a statement floor.",
-    image: "/images/services/service-metallic.png",
+    image: "/images/services/service-metallic.webp",
   },
 ];
 
@@ -210,7 +210,7 @@ export default function ResidentialPage() {
       </section>
 
       {/* ── System overview ── */}
-      <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="order-2 lg:order-1 lg:col-span-5">
@@ -222,7 +222,7 @@ export default function ResidentialPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Your home floor should handle muddy shoes, parked cars, laundry spills, and weekend projects — without looking worn out. Saven shades residential epoxy turns ordinary concrete into a seamless, easy-care surface with style that fits the house.</p>
+                  <p>Your home floor should handle muddy shoes, parked cars, laundry spills, and weekend projects — without looking worn out. Seven Shades residential epoxy turns ordinary concrete into a seamless, easy-care surface with style that fits the house.</p>
 
                   <p>From garage bays and basements to mudrooms and recreation rooms, we diamond-grind the slab and install systems chosen for durability and everyday beauty — not thin temporary coatings.</p>
                   </>
@@ -247,7 +247,7 @@ export default function ResidentialPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/service-garage.png"
+                  src="/images/services/service-garage.webp"
                   alt="Residential garage with finished epoxy flooring"
                   width={800}
                   height={800}
@@ -260,7 +260,7 @@ export default function ResidentialPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/services/service-metallic.png"
+                    src="/images/services/service-metallic.webp"
                     alt="Residential metallic epoxy flooring detail"
                     width={400}
                     height={400}
@@ -287,7 +287,6 @@ export default function ResidentialPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="residential-benefits-heading"
               align="center"
               size="section"
               tone="light"
@@ -386,7 +385,6 @@ export default function ResidentialPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="residential-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -447,7 +445,6 @@ export default function ResidentialPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Heading
               tag="h2"
-              id="faq-heading"
               size="section"
               tone="dark"
               eyebrow="QUESTIONS"

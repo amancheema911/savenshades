@@ -11,28 +11,28 @@ import { serviceFaqs } from "@/lib/service-faqs";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Solid Epoxy Flooring Installation | Saven shades",
-  description: "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
+  title: "Solid Epoxy Flooring Installation | Seven Shades",
+  description: "Professional solid epoxy flooring by Seven Shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
   keywords: ["solid epoxy flooring", "solid color epoxy floor", "gloss epoxy flooring", "satin epoxy floor coating", "solid epoxy installation"],
   alternates: {
     canonical: `${BASE_URL}/services/solid-epoxy`,
   },
   openGraph: {
-    title: "Solid Epoxy Flooring Installation | Saven shades",
-    description: "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
+    title: "Solid Epoxy Flooring Installation | Seven Shades",
+    description: "Professional solid epoxy flooring by Seven Shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/solid-epoxy.jpg",
+        url: BASE_URL + "/images/services/solid-epoxy.webp",
         alt: "Solid color epoxy flooring finish",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solid Epoxy Flooring Installation | Saven shades",
-    description: "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
-    images: [BASE_URL + "/images/services/solid-epoxy.jpg"],
+    title: "Solid Epoxy Flooring Installation | Seven Shades",
+    description: "Professional solid epoxy flooring by Seven Shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
+    images: [BASE_URL + "/images/services/solid-epoxy.webp"],
   },
 };
 
@@ -98,19 +98,19 @@ const finishes = [
     id: "gloss",
     name: "High Gloss",
     detail: "Reflective, showroom-ready clarity that amplifies light and makes color feel bold and continuous.",
-    image: "/images/services/service-commercial.png",
+    image: "/images/services/service-commercial.webp",
   },
   {
     id: "satin",
     name: "Satin Clear",
     detail: "A softer sheen with the same durable build — ideal when you want polished without high glare.",
-    image: "/images/services/service-garage.png",
+    image: "/images/services/service-garage.webp",
   },
   {
     id: "texture",
     name: "Light Texture",
     detail: "Subtle grip added to a solid color base for wet entries without switching to a full flake system.",
-    image: "/images/services/service-industrial.png",
+    image: "/images/services/service-industrial.webp",
   },
 ];
 
@@ -210,7 +210,7 @@ export default function SolidEpoxyPage() {
       </section>
             
       {/* ── System overview ── */}
-      <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="order-2 lg:order-1 lg:col-span-5">
@@ -222,7 +222,7 @@ export default function SolidEpoxyPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Solid epoxy delivers a crisp, continuous finish — one color, one seamless plane, and a clear coat that brings the whole slab together. Saven shades solid systems turn ordinary concrete into a polished surface with modern clarity.</p>
+                  <p>Solid epoxy delivers a crisp, continuous finish — one color, one seamless plane, and a clear coat that brings the whole slab together. Seven Shades solid systems turn ordinary concrete into a polished surface with modern clarity.</p>
 
                   <p>From collector garages and showrooms to clean workshops and basements, we diamond-grind the slab and install pigmented coats plus protective clear — not thin temporary floor paint.</p>
                   </>
@@ -247,7 +247,7 @@ export default function SolidEpoxyPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/solid-epoxy.jpg"
+                  src="/images/services/solid-epoxy.webp"
                   alt="Solid color epoxy flooring finish"
                   width={800}
                   height={800}
@@ -260,7 +260,7 @@ export default function SolidEpoxyPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/services/service-garage.png"
+                    src="/images/services/service-garage.webp"
                     alt="Solid epoxy garage flooring detail"
                     width={400}
                     height={400}
@@ -287,7 +287,6 @@ export default function SolidEpoxyPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="solid-benefits-heading"
               align="center"
               size="section"
               tone="light"
@@ -386,7 +385,6 @@ export default function SolidEpoxyPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="solid-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -447,7 +445,6 @@ export default function SolidEpoxyPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Heading
               tag="h2"
-              id="faq-heading"
               size="section"
               tone="dark"
               eyebrow="QUESTIONS"

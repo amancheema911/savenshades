@@ -11,28 +11,28 @@ import { serviceFaqs } from "@/lib/service-faqs";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Stone Epoxy Flooring Installation | Saven shades",
-  description: "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
+  title: "Stone Epoxy Flooring Installation | Seven Shades",
+  description: "Professional stone epoxy flooring by Seven Shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
   keywords: ["stone epoxy flooring", "stone look epoxy floor", "epoxy stone flooring", "aggregate epoxy floor", "stone epoxy installation"],
   alternates: {
     canonical: `${BASE_URL}/services/stone-epoxy`,
   },
   openGraph: {
-    title: "Stone Epoxy Flooring Installation | Saven shades",
-    description: "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
+    title: "Stone Epoxy Flooring Installation | Seven Shades",
+    description: "Professional stone epoxy flooring by Seven Shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/stone-epoxy.jpg",
+        url: BASE_URL + "/images/services/stone-epoxy.webp",
         alt: "Stone epoxy flooring with refined aggregate texture",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stone Epoxy Flooring Installation | Saven shades",
-    description: "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
-    images: [BASE_URL + "/images/services/stone-epoxy.jpg"],
+    title: "Stone Epoxy Flooring Installation | Seven Shades",
+    description: "Professional stone epoxy flooring by Seven Shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
+    images: [BASE_URL + "/images/services/stone-epoxy.webp"],
   },
 };
 
@@ -98,19 +98,19 @@ const finishes = [
     id: "fine",
     name: "Fine Stone",
     detail: "Subtle aggregate texture with a refined stone look — ideal for entries, corridors, and polished interiors.",
-    image: "/images/services/service-commercial.png",
+    image: "/images/services/service-commercial.webp",
   },
   {
     id: "medium",
     name: "Medium Stone",
     detail: "Balanced depth and grip for mudrooms, basements, retail floors, and busy household or commercial traffic.",
-    image: "/images/services/service-garage.png",
+    image: "/images/services/service-garage.webp",
   },
   {
     id: "bold",
     name: "Bold Stone",
     detail: "Heavier aggregate presence for maximum texture and toughness in wet-prone or high-abuse zones.",
-    image: "/images/services/service-industrial.png",
+    image: "/images/services/service-industrial.webp",
   },
 ];
 
@@ -209,7 +209,7 @@ export default function StoneEpoxyPage() {
       </section>
 
       {/* ── System overview ── */}
-      <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="order-2 lg:order-1 lg:col-span-5">
@@ -221,7 +221,7 @@ export default function StoneEpoxyPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Stone epoxy delivers the look of natural aggregate with the seamless performance of a high-build floor system. Saven shades stone floors combine mineral texture, durable clear seals, and a refined finish that belongs in homes and professional spaces alike.</p>
+                  <p>Stone epoxy delivers the look of natural aggregate with the seamless performance of a high-build floor system. Seven Shades stone floors combine mineral texture, durable clear seals, and a refined finish that belongs in homes and professional spaces alike.</p>
 
                   <p>From entries and mudrooms to retail and service floors, we diamond-grind the slab and install stone aggregate systems matched to grip, style, and long-term toughness — not temporary coatings.</p>
                   </>
@@ -246,7 +246,7 @@ export default function StoneEpoxyPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/stone-epoxy.jpg"
+                  src="/images/services/stone-epoxy.webp"
                   alt="Stone epoxy flooring with refined aggregate texture"
                   width={800}
                   height={800}
@@ -259,7 +259,7 @@ export default function StoneEpoxyPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/services/service-garage.png"
+                    src="/images/services/service-garage.webp"
                     alt="Stone epoxy flooring texture detail"
                     width={400}
                     height={400}
@@ -286,7 +286,6 @@ export default function StoneEpoxyPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="stone-benefits-heading"
               align="center"
               size="section"
               tone="light"
@@ -385,7 +384,6 @@ export default function StoneEpoxyPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="stone-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -446,7 +444,6 @@ export default function StoneEpoxyPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Heading
               tag="h2"
-              id="faq-heading"
               size="section"
               tone="dark"
               eyebrow="QUESTIONS"

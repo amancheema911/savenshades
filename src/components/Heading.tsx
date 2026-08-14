@@ -13,7 +13,6 @@ export type HeadingProps = {
   align?: HeadingAlign;
   tone?: HeadingTone;
   size?: HeadingSize;
-  id?: string;
   showLine?: boolean;
   className?: string;
   eyebrowClassName?: string;
@@ -70,7 +69,6 @@ export default function Heading({
   align = "left",
   tone = "dark",
   size = "section",
-  id,
   showLine = true,
   className,
   eyebrowClassName,
@@ -114,7 +112,6 @@ export default function Heading({
       ) : null}
 
       <Tag
-        id={id}
         className={cx(
           sizes.titleGap,
           sizes.title,

@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/about-us", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/our-work", label: "Our Work" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact-us", label: "Contact Us" },
 ];
 
@@ -110,7 +111,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto flex items-center justify-between gap-4 py-3 px-4 sm:px-6 lg:px-8">
           <Link href={BASE_URL}>
-            <Image src={logo} alt="Saven shades" width={250} height={250} loading="lazy" />
+            <Image src={logo} alt="Seven Shades" width={250} height={250} loading="lazy" />
           </Link>
 
           <ul className="hidden items-center gap-1 xl:flex">
@@ -184,11 +185,10 @@ export default function Navbar() {
 
       {/* Right-to-left slide drawer */}
       <aside
-        id={menuId}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
-        className={`fixed inset-y-0 right-0 z-50 flex w-[min(86vw,320px)] flex-col border-l border-white/10 bg-[rgba(8,14,24,0.98)] shadow-[-12px_0_40px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-transform duration-300 ease-out sm:w-[min(70vw,380px)] xl:hidden ${
+        className={`fixed inset-y-0 right-0 z-50 flex w-[min(86vw,320px)] flex-col border-l border-white/10 bg-[var(--black)] shadow-lg backdrop-blur-xl transition-transform duration-300 ease-out sm:w-[min(70vw,380px)] xl:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

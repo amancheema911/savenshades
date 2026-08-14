@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
               size="section"
               tone="dark"
               title={<>Privacy <span className="text-[var(--brand-color)]">Policy.</span></>}
-              description="How Saven Shades handles your information when you browse our site, request a quote, or get in touch about epoxy flooring."
+              description="How Seven Shades handles your information when you browse our site, request a quote, or get in touch about epoxy flooring."
             />
             <p>Effective date: {effectiveDate}</p>
 

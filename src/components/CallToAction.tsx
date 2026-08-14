@@ -73,7 +73,7 @@ export default function CallToAction() {
         <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-[#050A14] sm:rounded-[2.25rem] lg:rounded-[2.75rem]">
           <div className="pointer-events-none absolute inset-y-0 right-0 w-full sm:w-[55%] lg:w-[48%]">
             <Image
-              src="/images/services/service-metallic.png"
+              src="/images/services/service-metallic.webp"
               alt=""
               width={800}
               height={600}

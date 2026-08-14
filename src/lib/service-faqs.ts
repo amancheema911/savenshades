@@ -8,7 +8,7 @@ export const serviceFaqs: Record<string, ServiceFaq[]> = {
     {
       question: "How long does garage epoxy flooring last?",
       answer:
-        "A properly prepped and installed Saven shades garage system typically lasts many years with normal residential use. Longevity depends on prep quality, topcoat, UV exposure, and how vehicles and chemicals are managed.",
+        "A properly prepped and installed Seven Shades garage system typically lasts many years with normal residential use. Longevity depends on prep quality, topcoat, UV exposure, and how vehicles and chemicals are managed.",
     },
     {
       question: "Can I park cars soon after install?",
@@ -30,7 +30,7 @@ export const serviceFaqs: Record<string, ServiceFaq[]> = {
     {
       question: "How long does commercial epoxy flooring last?",
       answer:
-        "A properly prepped Saven shades commercial system is designed for years of daily foot traffic. Lifespan depends on prep quality, traffic volume, cleaning chemicals, and the finish system specified for the space.",
+        "A properly prepped Seven Shades commercial system is designed for years of daily foot traffic. Lifespan depends on prep quality, traffic volume, cleaning chemicals, and the finish system specified for the space.",
     },
     {
       question: "Can you install without fully shutting down my business?",
@@ -52,7 +52,7 @@ export const serviceFaqs: Record<string, ServiceFaq[]> = {
     {
       question: "How long does residential epoxy flooring last?",
       answer:
-        "A properly prepped Saven shades residential system is built for years of normal home use. Lifespan depends on prep quality, traffic, UV exposure, chemicals, and how the space is maintained.",
+        "A properly prepped Seven Shades residential system is built for years of normal home use. Lifespan depends on prep quality, traffic, UV exposure, chemicals, and how the space is maintained.",
     },
     {
       question: "Which rooms in my home can use epoxy?",
@@ -133,7 +133,7 @@ export const serviceFaqs: Record<string, ServiceFaq[]> = {
     {
       question: "How long does stone epoxy flooring last?",
       answer:
-        "A properly prepped Saven shades stone system is engineered for years of residential and commercial use. Lifespan depends on prep quality, traffic, cleaning chemicals, and the aggregate profile installed.",
+        "A properly prepped Seven Shades stone system is engineered for years of residential and commercial use. Lifespan depends on prep quality, traffic, cleaning chemicals, and the aggregate profile installed.",
     },
   ],
   "rubber-surfacing": [

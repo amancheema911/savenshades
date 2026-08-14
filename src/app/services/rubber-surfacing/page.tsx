@@ -11,28 +11,28 @@ import { serviceFaqs } from "@/lib/service-faqs";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Rubber Surfacing Installation | Saven shades",
-  description: "Professional rubber surfacing by Saven shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
+  title: "Rubber Surfacing Installation | Seven Shades",
+  description: "Professional rubber surfacing by Seven Shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
   keywords: ["rubber surfacing", "rubber flooring installation", "gym rubber floor", "playground rubber surface", "impact absorbing rubber flooring" ],
   alternates: {
     canonical: `${BASE_URL}/services/rubber-surfacing`,
   },
   openGraph: {
-    title: "Rubber Surfacing Installation | Saven shades",
-    description: "Professional rubber surfacing by Saven shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
+    title: "Rubber Surfacing Installation | Seven Shades",
+    description: "Professional rubber surfacing by Seven Shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/rubber-surfacing.jpg",
+        url: BASE_URL + "/images/services/rubber-surfacing.webp",
         alt: "Rubber surfacing for recreation and activity spaces",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rubber Surfacing Installation | Saven shades",
-    description: "Professional rubber surfacing by Saven shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
-    images: [BASE_URL + "/images/services/rubber-surfacing.jpg"],
+    title: "Rubber Surfacing Installation | Seven Shades",
+    description: "Professional rubber surfacing by Seven Shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
+    images: [BASE_URL + "/images/services/rubber-surfacing.webp"],
   },
 };
 
@@ -98,19 +98,19 @@ const finishes = [
     id: "tiles",
     name: "Rubber Tiles",
     detail: "Interlocking tiles for fast install, modular replacement, and flexible layouts in gyms and play rooms.",
-    image: "/images/services/service-garage.png",
+    image: "/images/services/service-garage.webp",
   },
   {
     id: "rolls",
     name: "Rubber Rolls",
     detail: "Continuous rolled rubber for cleaner sightlines and fewer seams in training floors and recreational interiors.",
-    image: "/images/services/service-commercial.png",
+    image: "/images/services/service-commercial.webp",
   },
   {
     id: "poured",
     name: "Poured Systems",
     detail: "Seamless poured rubber for outdoor play zones and custom shapes that need continuous coverage and strong drainage performance.",
-    image: "/images/services/service-industrial.png",
+    image: "/images/services/service-industrial.webp",
   },
 ];
 
@@ -210,7 +210,7 @@ export default function RubberSurfacingPage() {
       </section>
 
       {/* ── System overview ── */}
-      <section id="system" className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="order-2 lg:order-1 lg:col-span-5">
@@ -222,7 +222,7 @@ export default function RubberSurfacingPage() {
                 title={<>More Than Soft. <span className="text-[var(--brand-color)]">A Real Activity Floor.</span></>}
                 description={
                   <>
-                  <p>Rubber surfacing is the system you choose when the floor has to cushion impact, reduce noise, and stay safe under constant movement. Saven shades rubber floors turn hard concrete into a softer, high-grip surface built for training, play, and recreation.</p>
+                  <p>Rubber surfacing is the system you choose when the floor has to cushion impact, reduce noise, and stay safe under constant movement. Seven Shades rubber floors turn hard concrete into a softer, high-grip surface built for training, play, and recreation.</p>
 
                   <p>From home gyms and daycare rooms to commercial fitness and outdoor play zones, we prep the slab and install tile, roll, or poured systems matched to use — not temporary mats that curl and shift.</p>
                   </>
@@ -247,7 +247,7 @@ export default function RubberSurfacingPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/rubber-surfacing.jpg"
+                  src="/images/services/rubber-surfacing.webp"
                   alt="Rubber surfacing for recreation and activity spaces"
                   width={800}
                   height={800}
@@ -260,7 +260,7 @@ export default function RubberSurfacingPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/services/rubber-surfacing-working-man.jpg"
+                    src="/images/services/rubber-surfacing-working-man.webp"
                     alt="Rubber flooring detail for gym and play spaces"
                     width={400}
                     height={400}
@@ -287,7 +287,6 @@ export default function RubberSurfacingPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="rubber-benefits-heading"
               align="center"
               size="section"
               tone="light"
@@ -386,7 +385,6 @@ export default function RubberSurfacingPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="rubber-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -447,7 +445,6 @@ export default function RubberSurfacingPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Heading
               tag="h2"
-              id="faq-heading"
               size="section"
               tone="dark"
               eyebrow="QUESTIONS"

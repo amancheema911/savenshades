@@ -37,7 +37,7 @@ export default function TermsAndConditionsPage() {
                   Terms & <span className="text-[var(--brand-color)]">Conditions.</span>
                 </>
               }
-              description="The rules and guidelines for using our website and working with Saven Shades on epoxy flooring projects."
+              description="The rules and guidelines for using our website and working with Seven Shades on epoxy flooring projects."
             />
             <p>Effective date: {effectiveDate}</p>
 

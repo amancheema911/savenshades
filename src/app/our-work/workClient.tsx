@@ -151,7 +151,7 @@ function ProjectLightbox({
         <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-4">
           <div className="min-w-0">
             <div className="text-sm text-[var(--brand-color)] uppercase">{item.category}</div>
-            <h2 id={titleId} className="truncate text-2xl font-bold text-white">{item.title}</h2>
+            <h2 className="truncate text-2xl font-bold text-white">{item.title}</h2>
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <span className="hidden text-sm text-white/50 sm:inline">
@@ -402,7 +402,6 @@ export default function OurWorkClient() {
               <label htmlFor="our-work-category" className="mb-2 block text-xs font-semibold uppercase tracking-wide text-black/45">Filter by category</label>
               <div className="relative">
                 <select
-                  id="our-work-category"
                   value={category}
                   onChange={(event) =>
                     selectCategory(event.target.value as OurWorkCategory)

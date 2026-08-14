@@ -14,7 +14,7 @@ const roboto = Roboto({
 
 
 export const metadata: Metadata = {
-  title: "Saven shades | Premium Epoxy Solutions",
+  title: "Seven Shades | Premium Epoxy Solutions",
   description: "Premium epoxy flooring in Surrey, BC — durable, beautiful garage, residential, and commercial floors installed by local experts. Free quotes.",
   keywords: [ "epoxy flooring Surrey", "garage epoxy flooring", "commercial epoxy floors", "residential epoxy flooring", "premium epoxy solutions", "metallic epoxy flooring", ],
   alternates: { 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Saven shades | Premium Epoxy Solutions",
+    title: "Seven Shades | Premium Epoxy Solutions",
     description: "Transform your garage, basement, or commercial space with high-performance epoxy flooring installed by local experts in Surrey, BC.",
     type: "website",
     images: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Epoxy Flooring Services | Saven shades",
-    description: "Browse Saven shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
+    title: "Epoxy Flooring Services | Seven Shades",
+    description: "Browse Seven Shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
     images: [BASE_URL + "/images/hero-epoxy-floor-1.2.1.webp"],
   },
 };

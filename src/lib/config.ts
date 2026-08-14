@@ -1,15 +1,15 @@
-export const APP_NAME = "Saven Shades";
+export const APP_NAME = "Seven Shades";
 export const BASE_URL = "https://savenshades.vercel.app";
-//export const BASE_URL = "http://localhost:3001";
+//export const BASE_URL = "http://localhost:3000";
 
 export const contactInfo = {
-    logo: `/saven-shade-logo.png`,
+    logo: `/saven-shade-logo.webp`,
     phone: "+1-778-957-4061",
     email: "sevenshadesepoxy@gmail.com",
     address: "23-17528 60 Avenue, Surrey, BC, Canada, V3S 1T8",
     hours: "Mon - Fri: 7AM - 7PM",
     weekends: "Sat - Sun: 9AM - 5PM",
-    DEFAULT_IMAGE: "/images/hero-epoxy-floor-1.2.2.png",
+    DEFAULT_IMAGE: "/images/hero-epoxy-floor-1.2.1.webp",
 };
 
 

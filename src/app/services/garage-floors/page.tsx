@@ -12,28 +12,28 @@ import { serviceFaqs } from "@/lib/service-faqs";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Garage Epoxy Flooring Installation | Saven shades",
-  description: "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+  title: "Garage Epoxy Flooring Installation | Seven Shades",
+  description: "Professional garage epoxy flooring by Seven Shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
   keywords: ["garage epoxy flooring", "garage floor coating", "epoxy garage floor installation", "hot tire resistant epoxy", "residential garage floors"],
   alternates: { 
     canonical: `${BASE_URL}/services/garage-floors` 
   },
   openGraph: {
-    title: "Garage Epoxy Flooring Installation | Saven shades",
-    description: "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    title: "Garage Epoxy Flooring Installation | Seven Shades",
+    description: "Professional garage epoxy flooring by Seven Shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/service-garage.png",
+        url: BASE_URL + "/images/services/service-garage.webp",
         alt: "Luxury car on a finished garage epoxy floor",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Garage Epoxy Flooring Installation | Saven shades",
-    description: "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
-    images: [BASE_URL + "/images/services/service-garage.png"],
+    title: "Garage Epoxy Flooring Installation | Seven Shades",
+    description: "Professional garage epoxy flooring by Seven Shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    images: [BASE_URL + "/images/services/service-garage.webp"],
   },
 };
 
@@ -99,19 +99,19 @@ const finishes = [
     id: "solid",
     name: "Solid Color",
     detail: "Clean, continuous color with a high-gloss or satin clear.",
-    image: "/images/services/service-commercial.png",
+    image: "/images/services/service-commercial.webp",
   },
   {
     id: "flake",
     name: "Full Flake",
     detail: "Multi-tone broadcast for grip, style, and everyday forgiveness.",
-    image: "/images/services/service-garage.png",
+    image: "/images/services/service-garage.webp",
   },
   {
     id: "metallic",
     name: "Metallic Accent",
     detail: "Liquid depth for collector bays that deserve a feature floor.",
-    image: "/images/services/service-metallic.png",
+    image: "/images/services/service-metallic.webp",
   },
 ];
 
@@ -222,7 +222,7 @@ export default function GarageFloorsPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Your garage is more than parking — it&apos;s cars, tools, seasonal traffic, and the first space guests see. Saven shades garage epoxy transforms bare concrete into a seamless, high-performance surface with UV-stable clears and lasting chemical resistance.</p>
+                  <p>Your garage is more than parking — it&apos;s cars, tools, seasonal traffic, and the first space guests see. Seven Shades garage epoxy transforms bare concrete into a seamless, high-performance surface with UV-stable clears and lasting chemical resistance.</p>
 
                   <p>Whether you want a mirror polish under a weekend car or a tough flake system that hides dust between cleanings, we diamond-grind the slab and install coatings built to last — not thin temporary coverings.</p>
                   </>
@@ -247,7 +247,7 @@ export default function GarageFloorsPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/service-garage.png"
+                  src="/images/services/service-garage.webp"
                   alt="Finished garage epoxy floor with luxury vehicle"
                   width={800}
                   height={800}
@@ -260,7 +260,7 @@ export default function GarageFloorsPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/services/service_garage.png"
+                    src="/images/services/service_garage.webp"
                     alt="Wide residential epoxy flooring detail"
                     width={400}
                     height={400}
@@ -287,7 +287,6 @@ export default function GarageFloorsPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="garage-benefits-heading"
               align="center"
               size="section"
               tone="light"
@@ -386,7 +385,6 @@ export default function GarageFloorsPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="garage-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -447,7 +445,6 @@ export default function GarageFloorsPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Heading
               tag="h2"
-              id="faq-heading"
               size="section"
               tone="dark"
               eyebrow="QUESTIONS"

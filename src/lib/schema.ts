@@ -1,4 +1,5 @@
 import { BASE_URL, APP_NAME, contactInfo, socialLinks } from "@/lib/config";
+import { blogPosts, getBlogPostBySlug } from "@/lib/blog";
 import { serviceFaqs } from "@/lib/service-faqs";
 import { services } from "@/lib/services";
 
@@ -186,7 +187,7 @@ const homeCrumbs: Breadcrumb[] = [{ name: "Home", path: "/" }];
 
 const homeSchema = createPageGraph({
   "path": "/",
-  "name": "Saven shades | Premium Epoxy Solutions",
+  "name": "Seven Shades | Premium Epoxy Solutions",
   "description": "Transform your garage, basement, or commercial space with high-performance epoxy flooring installed by local experts in Surrey, BC.",
   "mainEntityId": `${BASE_URL}/#services`,
   "breadcrumbs": homeCrumbs,
@@ -208,32 +209,32 @@ const homeSchema = createPageGraph({
 
 const serviceSeo: Record<string, { title: string; description: string }> = {
   "garage-floors": {
-    title: "Garage Epoxy Flooring Installation | Saven shades",
-    description: "Professional garage epoxy flooring by Saven shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
+    title: "Garage Epoxy Flooring Installation | Seven Shades",
+    description: "Professional garage epoxy flooring by Seven Shades. Hot-tire resistant, easy to clean, UV-stable showroom finishes for residential and collector garages. Free quotes.",
   },
   commercial: {
-    title: "Commercial Epoxy Flooring Installation | Saven shades",
-    description: "Professional commercial epoxy flooring by Saven shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
+    title: "Commercial Epoxy Flooring Installation | Seven Shades",
+    description: "Professional commercial epoxy flooring by Seven Shades. High-traffic systems for retail, offices, restaurants, and showrooms — durable, cleanable, and built for business hours.",
   },
   residential: {
-    title: "Residential Epoxy Flooring Installation | Saven shades",
-    description: "Professional residential epoxy flooring by Saven shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
+    title: "Residential Epoxy Flooring Installation | Seven Shades",
+    description: "Professional residential epoxy flooring by Seven Shades. Beautiful, durable floors for garages, basements, mudrooms, and living spaces — easy to clean, stylish, and built for everyday home life.",
   },
   "metallic-epoxy": {
-    title: "Metallic Epoxy Flooring Installation | Saven shades",
-    description: "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
+    title: "Metallic Epoxy Flooring Installation | Seven Shades",
+    description: "Professional metallic epoxy flooring by Seven Shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
   },
   "solid-epoxy": {
-    title: "Solid Epoxy Flooring Installation | Saven shades",
-    description: "Professional solid epoxy flooring by Saven shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
+    title: "Solid Epoxy Flooring Installation | Seven Shades",
+    description: "Professional solid epoxy flooring by Seven Shades. Clean continuous color systems with gloss or satin clear — durable, easy to maintain, and built for a modern finished look.",
   },
   "stone-epoxy": {
-    title: "Stone Epoxy Flooring Installation | Saven shades",
-    description: "Professional stone epoxy flooring by Saven shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
+    title: "Stone Epoxy Flooring Installation | Seven Shades",
+    description: "Professional stone epoxy flooring by Seven Shades. Natural stone-look systems with durable aggregate texture — refined appearance, strong grip, and built for residential and commercial spaces.",
   },
   "rubber-surfacing": {
-    title: "Rubber Surfacing Installation | Saven shades",
-    description: "Professional rubber surfacing by Saven shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
+    title: "Rubber Surfacing Installation | Seven Shades",
+    description: "Professional rubber surfacing by Seven Shades. Soft, durable, slip-resistant floors for gyms, play areas, daycare spaces, and recreational zones — impact absorbing and built for high activity.",
   },
 };
 
@@ -241,9 +242,9 @@ const staticPages: Record<string, PageSchemaConfig> = {
   "/about-us": {
     "type": "AboutPage",
     "path": "/about-us",
-    "name": "About Saven shades | Epoxy Flooring Specialists Since 2014",
-    "description": "Meet Saven shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
-    "image": "/images/about-us.png",
+    "name": "About Seven Shades | Epoxy Flooring Specialists Since 2014",
+    "description": "Meet Seven Shades — epoxy-only flooring specialists in Surrey, BC since 2014. Precision prep, premium materials, and lasting residential and commercial floors.",
+    "image": "/images/about-us.webp",
     "mainEntityId": `${BASE_URL}/about-us#about`,
     "breadcrumbs": [
       ...homeCrumbs,
@@ -256,8 +257,8 @@ const staticPages: Record<string, PageSchemaConfig> = {
   "/contact-us": {
     "type": "ContactPage",
     "path": "/contact-us",
-    "name": "Contact Saven shades | Free Epoxy Flooring Quote",
-    "description": "Get a free Saven shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
+    "name": "Contact Seven Shades | Free Epoxy Flooring Quote",
+    "description": "Get a free Seven Shades epoxy flooring quote in Surrey, BC. Call, email, or use our quote form — clear scope, no obligation, 24-hour response.",
     "breadcrumbs": [
       ...homeCrumbs,
       { 
@@ -269,9 +270,9 @@ const staticPages: Record<string, PageSchemaConfig> = {
   "/our-work": {
     "type": "CollectionPage",
     "path": "/our-work",
-    "name": "Our Work | Saven shades Epoxy Flooring Projects",
-    "description": "Browse finished Saven shades epoxy installs — garage, commercial, residential, metallic, solid, and stone epoxy floors, plus rubber surfacing, across Surrey, BC.",
-    "image": "/images/services/garage.jpg",
+    "name": "Our Work | Seven Shades Epoxy Flooring Projects",
+    "description": "Browse finished Seven Shades epoxy installs — garage, commercial, residential, metallic, solid, and stone epoxy floors, plus rubber surfacing, across Surrey, BC.",
+    "image": "/images/services/garage.webp",
     "breadcrumbs": [
       ...homeCrumbs,
       { 
@@ -283,9 +284,9 @@ const staticPages: Record<string, PageSchemaConfig> = {
   "/services": {
     "type": "CollectionPage",
     "path": "/services",
-    "name": "Epoxy Flooring Services | Saven shades",
-    "description": "Browse Saven shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
-    "image": "/images/services/service-garage.png",
+    "name": "Epoxy Flooring Services | Seven Shades",
+    "description": "Browse Seven Shades epoxy systems for every space — garage, commercial, residential, metallic, solid, stone epoxy, and rubber surfacing. Precision install, built to last.",
+    "image": "/images/services/service-garage.webp",
     "mainEntityId": `${BASE_URL}/services#service-list`,
     "breadcrumbs": [
       ...homeCrumbs,
@@ -305,6 +306,37 @@ const staticPages: Record<string, PageSchemaConfig> = {
           "name": service.title,
           "url": absoluteUrl(service.href),
           "description": service.description,
+        })),
+      },
+    ],
+  },
+  "/blog": {
+    "type": "CollectionPage",
+    "path": "/blog",
+    "name": "Blog | Seven Shades Epoxy Flooring Insights",
+    "description": "Epoxy flooring tips, comparisons, and maintenance guides from Seven Shades — helping you choose, install, and care for garage, residential, and commercial floors.",
+    "image": "/images/services/garage-1.webp",
+    "mainEntityId": `${BASE_URL}/blog#post-list`,
+    "breadcrumbs": [
+      ...homeCrumbs,
+      { 
+        "name": "Blog", 
+        "path": "/blog" 
+      },
+    ],
+    "extraNodes": [
+      {
+        "@type": "Blog",
+        "@id": `${BASE_URL}/blog#post-list`,
+        "name": "Seven Shades Blog",
+        "blogPost": blogPosts.map((post) => ({
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": post.excerpt,
+          "url": absoluteUrl(`/blog/${post.slug}`),
+          "image": absoluteUrl(post.image),
+          "datePublished": post.date,
+          "author": { "@id": orgId },
         })),
       },
     ],
@@ -368,6 +400,64 @@ function createServicePageSchema(serviceId: string) {
   });
 }
 
+function createBlogPostSchema(slug: string) {
+  const post = getBlogPostBySlug(slug);
+  if (!post) return null;
+
+  const path = `/blog/${post.slug}`;
+  const url = absoluteUrl(path);
+
+  return createPageGraph({
+    "type": "WebPage",
+    "path": path,
+    "name": `${post.title} | ${APP_NAME}`,
+    "description": post.excerpt,
+    "image": post.image,
+    "breadcrumbs": [
+      ...homeCrumbs,
+      { "name": "Blog", "path": "/blog" },
+      { "name": post.title, "path": path },
+    ],
+    "mainEntityId": `${url}#post`,
+    "extraNodes": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#post`,
+        "headline": post.title,
+        "description": post.excerpt,
+        "url": url,
+        "image": absoluteUrl(post.image),
+        "datePublished": post.publishedAt,
+        "dateModified": post.publishedAt,
+        "author": {
+          "@type": "Person",
+          "name": post.author,
+        },
+        "publisher": { "@id": orgId },
+        "mainEntityOfPage": { "@id": `${url}#webpage` },
+        "articleSection": post.category,
+      },
+      ...(post.faqs?.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${url}#faq`,
+              "url": url,
+              "mainEntity": post.faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer,
+                },
+              })),
+            },
+          ]
+        : []),
+    ],
+  });
+}
+
 /** Returns the JSON-LD graph for a route. Add new internal pages to `staticPages` or `serviceSeo`. */
 export function getSchemaForPath(pathname: string) {
   const path = normalizePath(pathname);
@@ -379,6 +469,12 @@ export function getSchemaForPath(pathname: string) {
 
   const service = services.find((item) => item.href === path);
   if (service) return createServicePageSchema(service.id);
+
+  if (path.startsWith("/blog/")) {
+    const slug = path.replace("/blog/", "");
+    const blogSchema = createBlogPostSchema(slug);
+    if (blogSchema) return blogSchema;
+  }
 
   return createPageGraph({
     "path": path,

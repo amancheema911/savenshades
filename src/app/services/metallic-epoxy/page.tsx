@@ -12,28 +12,28 @@ import { serviceFaqs } from "@/lib/service-faqs";
 import { BASE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Metallic Epoxy Flooring Installation | Saven shades",
-  description: "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
+  title: "Metallic Epoxy Flooring Installation | Seven Shades",
+  description: "Professional metallic epoxy flooring by Seven Shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
   keywords: ["metallic epoxy flooring", "metallic epoxy floor coating", "decorative metallic floors", "luxury epoxy flooring", "metallic epoxy installation"],
   alternates: {
     canonical: `${BASE_URL}/services/metallic-epoxy`,
   },
   openGraph: {
-    title: "Metallic Epoxy Flooring Installation | Saven shades",
-    description: "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
+    title: "Metallic Epoxy Flooring Installation | Seven Shades",
+    description: "Professional metallic epoxy flooring by Seven Shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
     type: "website",
     images: [
       {
-        url: BASE_URL + "/images/services/service-metallic.png",
+        url: BASE_URL + "/images/services/service-metallic.webp",
         alt: "Close-up of blue and silver metallic epoxy floor",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Metallic Epoxy Flooring Installation | Saven shades",
-    description: "Professional metallic epoxy flooring by Saven shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
-    images: [BASE_URL + "/images/services/service-metallic.png"],
+    title: "Metallic Epoxy Flooring Installation | Seven Shades",
+    description: "Professional metallic epoxy flooring by Seven Shades. Liquid-metal depth and custom color movement for showrooms, residences, and feature spaces — stunning, durable, and sealed to last.",
+    images: [BASE_URL + "/images/services/service-metallic.webp"],
   },
 };
 
@@ -99,19 +99,19 @@ const finishes = [
     id: "ocean",
     name: "Ocean Metallic",
     detail: "Cool blues and silvers with flowing depth — ideal for modern residences and gallery-like spaces.",
-    image: "/images/services/service-metallic.png",
+    image: "/images/services/service-metallic.webp",
   },
   {
     id: "bronze",
     name: "Bronze Metallic",
     detail: "Warm gold and bronze movement for showrooms and feature floors that need richness underlight.",
-    image: "/images/services/service-commercial.png",
+    image: "/images/services/service-commercial.webp",
   },
   {
     id: "graphite",
     name: "Graphite Metallic",
     detail: "Deep charcoal metallics with subtle pearl shift — refined, dramatic, and architectural.",
-    image: "/images/services/service-industrial.png",
+    image: "/images/services/service-industrial.webp",
   },
 ];
 
@@ -223,7 +223,7 @@ export default function MetallicEpoxyPage() {
                 title={<>More Than Paint. <span className="text-[var(--brand-color)]">A Real Floor Build.</span></>}
                 description={
                   <>
-                  <p>Metallic epoxy is where performance meets design. Pigments move through the resin to create liquid metal depth — luminous, dimensional, and unique to every install. Saven shades metallic systems turn ordinary concrete into a feature surface that defines the room.</p>
+                  <p>Metallic epoxy is where performance meets design. Pigments move through the resin to create liquid metal depth — luminous, dimensional, and unique to every install. Seven Shades metallic systems turn ordinary concrete into a feature surface that defines the room.</p>
 
                   <p>From residential statement floors to boutique showrooms and collector spaces, we diamond-grind the slab and hand-finish metallic coats for controlled movement — then lock it in with a UV-stable clear.</p>
                   </>
@@ -248,7 +248,7 @@ export default function MetallicEpoxyPage() {
             <div className="relative order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[1.75rem] sm:rounded-[2.1rem]">
                 <Image
-                  src="/images/services/service-metallic.png"
+                  src="/images/services/service-metallic.webp"
                   alt="Close-up of blue and silver metallic epoxy floor"
                   width={800}
                   height={800}
@@ -261,7 +261,7 @@ export default function MetallicEpoxyPage() {
               <div className="absolute -bottom-5 -left-3 hidden w-[46%] overflow-hidden rounded-[1.35rem] shadow-xl sm:block lg:-left-8 lg:-bottom-7">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/images/services/metalic-floor-4.jpg"
+                    src="/images/services/metalic-floor-4.webp"
                     alt="Metallic epoxy flooring detail with depth and sheen"
                     width={400}
                     height={400}
@@ -288,7 +288,6 @@ export default function MetallicEpoxyPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               tag="h2"
-              id="metallic-benefits-heading"
               align="center"
               size="section"
               tone="light"
@@ -387,7 +386,6 @@ export default function MetallicEpoxyPage() {
             <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
               <Heading
                 tag="h2"
-                id="metallic-process-heading"
                 size="section"
                 tone="dark"
                 eyebrow="HOW WE INSTALL"
@@ -448,7 +446,6 @@ export default function MetallicEpoxyPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Heading
               tag="h2"
-              id="faq-heading"
               size="section"
               tone="dark"
               eyebrow="QUESTIONS"

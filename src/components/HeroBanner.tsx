@@ -67,7 +67,7 @@ export default function HeroBanner() {
     <section className="relative -mt-[5.75rem] overflow-hidden">
       <Image src="/images/hero-epoxy-floor-1.2.1.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority className="hidden sm:block w-full h-full object-cover object-top"/>
 
-      <div className="w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>
+      <div className="hidden sm:block w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>
 
       <div className="relative z-10 flex flex-col bg-[var(--black)] sm:bg-transparent">
         <div className="container mx-auto flex flex-1 flex-col justify-center px-4 pt-28 pb-10 sm:px-6 sm:pt-30 sm:pb-1 lg:px-8 lg:pt-30">
@@ -90,10 +90,7 @@ export default function HeroBanner() {
                 <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
                   <Button href="/contact-us">Get A Free On-Site Estimate</Button>
 
-                  <Link
-                    href="/our-work"
-                    className="group inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent py-1.5 pr-1.5 pl-6 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]"
-                  >
+                  <Link href="/our-work" className="group inline-flex items-center gap-2.5 rounded-full border border-white/75 bg-transparent py-1.5 pr-1.5 pl-6 text-[0.95rem] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 active:scale-[0.98]">
                     View Our Work
                     <GalleryIcon />
                   </Link>
@@ -116,7 +113,7 @@ export default function HeroBanner() {
               </div>
             </div>
 
-            <div id="hero-quote" className="animate-hero-rise-delayed flex justify-center lg:col-span-5 lg:justify-end">
+            <div className="animate-hero-rise-delayed flex justify-center lg:col-span-5 lg:justify-end">
               <FlooringQuoteForm tone="dark" />
             </div>
           </div>
