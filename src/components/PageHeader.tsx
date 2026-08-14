@@ -59,7 +59,7 @@ export default function PageHeader({
           <div className={`max-w-3xl animate-hero-rise ${showAside ? "lg:col-span-8" : "lg:col-span-10"}`}>
             <Heading
               tag="h1"
-              size="page"
+              size="section"
               tone="light"
               eyebrow={eyebrow}
               title={title}

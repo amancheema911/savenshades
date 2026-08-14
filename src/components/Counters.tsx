@@ -90,9 +90,9 @@ export default function Counters({
   className = "",
 }: CountersProps) {
   return (
-    <section className={`bg-gray-50 py-14 lg:py-20 ${className}`} aria-label="Company statistics">
+    <section className={`bg-gray-50 py-14 sm:py-16 ${className}`} aria-label="Company statistics">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[1.75rem] bg-[var(--black)] px-5 py-7 sm:rounded-[2rem] sm:px-8 sm:py-8 lg:rounded-[2.5rem] lg:px-10 lg:py-9">
+        <div className="rounded-3xl bg-[var(--black)] px-5 py-7 sm:rounded-[2rem] sm:px-8 sm:py-8 lg:rounded-[2.5rem] lg:px-10 lg:py-9">
           <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-6">
             {items.map((item) => (
               <li key={item.id} className="flex items-center gap-4">

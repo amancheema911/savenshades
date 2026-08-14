@@ -158,7 +158,7 @@ function StepIcon({ icon }: { icon: ProcessStep["icon"] }) {
 
 export default function OurProcess() {
   return (
-    <section className="relative overflow-hidden bg-[#05070b] py-14 lg:py-20">
+    <section className="relative overflow-hidden bg-[#05070b] py-14 sm:py-16">
       {/* Ambient glow on the right */}
       <div className="pointer-events-none absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(204, 200, 200, 0.22)_0%,transparent_68%)] blur-2xl" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-[linear-gradient(90deg,transparent,hsla(36, 6.30%, 84.50%, 0.06))]" aria-hidden="true" />

@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
 
-      <section className="bg-gray-50 py-14 sm:py-16 lg:py-20">
+      <section className="bg-gray-50 py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <article className="mx-auto max-w-5xl space-y-10 rounded-[1.5rem] border border-black/8 bg-white p-6 shadow-xl sm:p-8 lg:p-10">
             <Heading

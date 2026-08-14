@@ -273,7 +273,7 @@ export default function AboutUsPage() {
   return (
     <>
       {/* Story — asymmetric editorial */}
-      <section className="relative overflow-hidden bg-gray-50 py-14 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-gray-50 py-14 sm:py-16">
         
         <div className="pointer-events-none absolute top-0 left-0 h-64 w-full bg-[radial-gradient(ellipse_at_top_left,rgba(184,134,11,0.08),transparent_55%)]" />
         
@@ -344,7 +344,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Values — modern bento strip */}
-      <section className="relative overflow-hidden bg-gray-50 pb-14 sm:pb-20 lg:pb-24">
+      <section className="relative overflow-hidden bg-gray-50 pb-14 sm:pb-16">
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
             <Heading
@@ -387,7 +387,7 @@ export default function AboutUsPage() {
           </div>
 
           {/* Right content */}
-          <div className="relative flex flex-col justify-center px-5 py-12 sm:px-8 sm:py-16 md:px-10 lg:px-12 xl:px-16 lg:py-20">
+          <div className="relative flex flex-col justify-center px-5 py-12 sm:px-8 sm:py-16 md:px-10 lg:px-12 xl:px-16">
             <div className="relative z-10">
               <Heading
                 tag="h2"

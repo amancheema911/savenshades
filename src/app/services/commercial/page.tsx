@@ -196,7 +196,7 @@ export default function CommercialPage() {
       />
 
       {/* ── Spec strip ── */}
-      <section className="relative border-b border-black/5 bg-gray-50 py-8 sm:py-10 lg:py-12">
+      <section className="relative border-b border-black/5 bg-gray-50 py-6 sm:py-8">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <dl className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
             {specs.map((spec, index) => (
@@ -210,7 +210,7 @@ export default function CommercialPage() {
       </section>
 
       {/* ── System overview ── */}
-      <section className="relative bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-gray-50 py-14 sm:py-16">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="order-2 lg:order-1 lg:col-span-5">
@@ -278,8 +278,8 @@ export default function CommercialPage() {
       </section>
 
       {/* ── Benefits ── */}
-      <section className="relative overflow-hidden bg-[var(--black)] py-16 sm:py-20 lg:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(184,134,11,0.14),transparent_50%),radial-gradient(ellipse_at_0%_100%,rgba(184,134,11,0.06),transparent_40%)]" />
+      <section className="relative overflow-hidden bg-[var(--black)] py-14 sm:py-16">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(13,127,232,0.14),transparent_50%),radial-gradient(ellipse_at_0%_100%,rgba(13,127,232,0.06),transparent_40%)]" />
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -339,7 +339,7 @@ export default function CommercialPage() {
       </section>
 
       {/* ── Finish options ── */}
-      <section className="relative bg-white py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-white py-14 sm:py-16">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl">
@@ -374,7 +374,7 @@ export default function CommercialPage() {
       </section>
 
       {/* ── Process ── */}
-      <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-gray-50 py-14 sm:py-16">
         <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[var(--brand-color)]/12" />
         <div className="pointer-events-none absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-black/20" />
 
@@ -438,7 +438,7 @@ export default function CommercialPage() {
       </section>
 
       {/* ── FAQs ── */}
-      <section className="relative overflow-hidden bg-white pt-16 sm:pt-20 lg:pt-28">
+      <section className="relative overflow-hidden bg-white pt-14 sm:pt-16">
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <Heading
@@ -464,7 +464,7 @@ export default function CommercialPage() {
       </section>
 
       {/* ── Related ── */}
-      <section className="relative bg-white py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-white py-14 sm:py-16">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>

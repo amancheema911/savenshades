@@ -86,7 +86,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         }}
       />
 
-      <section className="relative bg-gray-50 pt-14 sm:pt-16 lg:pt-20">
+      <section className="relative bg-gray-50 pt-14 sm:pt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-xl">

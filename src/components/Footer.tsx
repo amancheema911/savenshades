@@ -74,7 +74,7 @@ function FooterLink({ href, children }: { href: string; children: ReactNode }) {
 export default function Footer() {
   return (
     <footer className="bg-[#05070b] text-white w-full">
-      <div className="mx-auto container px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+      <div className="mx-auto container px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-3">

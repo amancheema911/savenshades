@@ -106,7 +106,7 @@ export default function ServicesPage() {
       />
 
       {/* Featured bento */}
-      <section className="relative bg-[#F7F8FA] py-14 sm:py-16 lg:py-20">
+      <section className="relative bg-[#F7F8FA] py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
             <Heading
@@ -215,8 +215,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Perks strip */}
-      <section className="relative overflow-hidden bg-[#070b14] py-14 sm:py-16 lg:py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgba(184,134,11,0.14),transparent_45%),radial-gradient(ellipse_at_90%_100%,rgba(184,134,11,0.1),transparent_40%)]" />
+      <section className="relative overflow-hidden bg-[#070b14] py-14 sm:py-16">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(13,127,232,0.14),transparent_50%),radial-gradient(ellipse_at_0%_100%,rgba(13,127,232,0.06),transparent_40%)]" />
         
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">

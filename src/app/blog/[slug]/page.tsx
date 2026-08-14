@@ -114,16 +114,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <header className="relative overflow-hidden bg-white pt-14 sm:pt-20 lg:pt-24">
+      <header className="relative overflow-hidden bg-white pt-14 sm:pt-16">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(ellipse_at_top,rgba(13,127,232,0.08),transparent_60%)]" aria-hidden="true" />
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <span className="inline-flex items-center rounded-full bg-[var(--brand-color)]/10 px-4 py-1.5 text-xs font-bold tracking-[0.1em] text-[var(--brand-color)] uppercase">
-              {post.category}
-            </span>
-            <h1 className="mt-5 text-[2.5rem] font-bold leading-[1.08] tracking-tight text-black sm:text-[2.75rem] lg:text-[3.25rem]">{post.title}</h1>
-            <p className="mt-5 text-lg text-black/60">{post.excerpt}</p>
+            <Heading
+              tag="h1"
+              size="section"
+              tone="dark"
+              eyebrow={post.category}
+              title={post.title}
+              description={post.excerpt}
+            />
           </div>
 
           <div className="mt-6 flex flex-wrap gap-6 border-y border-black/8 py-4 sm:flex-row sm:items-center sm:justify-between">
@@ -255,7 +258,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       {related.length > 0 ? (
-        <section className="relative bg-gray-50 pt-16 sm:pt-20 lg:pt-24">
+        <section className="relative bg-gray-50 pt-14 sm:pt-16">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <Heading

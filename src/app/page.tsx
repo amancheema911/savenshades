@@ -50,9 +50,6 @@ export default function Home() {
       {/* Reviews Section */}
       <ReviewsBar />
 
-      {/* Services Section */}
-      {/* <Services /> */}
-
       {/* Why Choose Us Section */}
       <WhyChooseUs />
 
@@ -60,7 +57,7 @@ export default function Home() {
       <OurProcess />
 
       {/* Before & After Section */}
-      <section className="relative -mt-8 rounded-t-[2rem] bg-gray-50 sm:-mt-12 sm:rounded-t-[2.75rem] lg:rounded-t-[3.5rem]">
+      <section className="relative -mt-6 rounded-t-[2rem] bg-gray-50 sm:-mt-10 sm:rounded-t-[2.75rem] lg:rounded-t-[3.5rem]">
         <Visualize />
       </section>
       
