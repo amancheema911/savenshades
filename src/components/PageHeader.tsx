@@ -50,7 +50,7 @@ export default function PageHeader({
 
   return (
     <section className={`relative isolate overflow-hidden ${minHeightClassName}`}>
-      <Image src={image} alt={imageAlt} fill className={imageClassName} />
+      <Image src={image} alt={imageAlt} fill priority sizes="100vw" className={imageClassName} />
 
       <div className="absolute inset-0 bg-[var(--black)]/80" aria-hidden="true" />
 

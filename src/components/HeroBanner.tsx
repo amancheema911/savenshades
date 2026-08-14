@@ -38,21 +38,6 @@ const TRUST_ITEMS = [
     ),
   },
 ];
-
-function ArrowRightIcon({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function GalleryIcon() {
   return (
     <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/80 bg-white/30 text-white transition-transform duration-300 group-hover:scale-105 sm:size-11">
@@ -65,7 +50,7 @@ function GalleryIcon() {
 export default function HeroBanner() {
   return (
     <section className="relative -mt-[5.75rem] overflow-hidden">
-      <Image src="/images/hero-epoxy-floor-1.2.1.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority className="hidden sm:block w-full h-full object-cover object-top"/>
+      <Image src="/images/hero-epoxy-floor-1.2.1.webp" alt="Premium epoxy garage floor with reflective flake finish" fill priority sizes="100vw" className="hidden sm:block w-full h-full object-cover object-top"/>
 
       <div className="hidden sm:block w-full xl:w-1/2 h-full absolute inset-0 bg-gradient-to-r from-[#05070b]/85 via-[#05070b]/70 via-70% md:via-70% lg:via-50% xl:via-80% 2xl:via-70% to-transparent"></div>
 
