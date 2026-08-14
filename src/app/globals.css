@@ -4,7 +4,7 @@
   --black: #0a1018;
   --white: #f4f7fb;
   /* --brand-color: #6D1731; */
-  --brand-color: #0d7fe8;
+  --brand-color: #057be9;
   --brand-color-deep: #141d28;
 }
 
@@ -16,7 +16,7 @@
 
 body {
   font-size: 15px;
-  color: #0a1018b2;
+  color: var(--black);
 }
 
 @keyframes hero-rise {

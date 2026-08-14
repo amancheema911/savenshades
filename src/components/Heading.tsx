@@ -102,7 +102,7 @@ export default function Heading({
           ) : null}
           <p
             className={cx(
-              "text-xs font-bold tracking-[0.12em] uppercase text-[var(--brand-color)] sm:text-sm",
+              "text-xs font-medium uppercase text-[var(--brand-color)] sm:text-sm",
               eyebrowClassName,
             )}
           >

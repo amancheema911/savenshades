@@ -180,7 +180,7 @@ export default function WhyChooseUs() {
                     <FeatureIcon icon={feature.icon} />
                   </span>
                   <div>
-                    <h3 className="text-[0.92rem] font-bold tracking-tight text-[#0B1120] sm:text-[0.95rem]">{feature.title}</h3>
+                    <h3 className="text-md font-bold text-[var(--black)]">{feature.title}</h3>
                     <p>{feature.description}</p>
                   </div>
                 </li>

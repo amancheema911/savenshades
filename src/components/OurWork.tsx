@@ -47,10 +47,7 @@ export default function OurWork() {
             />
           </div>
 
-          <Link
-            href="/our-work"
-            className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-black/45 transition-colors hover:text-[var(--brand-color)]"
-          >
+          <Link href="/our-work" className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-black transition-colors hover:text-[var(--brand-color)]">
             View All Projects
             <span className="text-[var(--brand-color)]">
               <ChevronIcon />

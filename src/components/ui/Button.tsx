@@ -85,7 +85,7 @@ export default function Button({
     "group inline-flex items-center rounded-full",
     showIcon ? "justify-between" : "justify-center",
     "bg-[var(--brand-color)] text-white",
-    "font-semibold tracking-[-0.01em]",
+    "font-medium",
     "shadow-md",
     "transition-[transform,filter,box-shadow] duration-300",
     "hover:brightness-110 hover:shadow-lg",
@@ -100,7 +100,7 @@ export default function Button({
 
   const content = (
     <>
-      <span className="min-w-0 pr-1 whitespace-nowrap">{children}</span>
+      <span className="whitespace-nowrap">{children}</span>
       {showIcon ? (
         <span
           className={cx(

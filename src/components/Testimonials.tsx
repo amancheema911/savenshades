@@ -154,7 +154,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-2.5" role="tablist" aria-label="Testimonials slides">
+        <div className="mt-6 flex items-center justify-center gap-2" role="tablist" aria-label="Testimonials slides">
           {Array.from({ length: maxIndex + 1 }, (_, index) => {
             const active = index === activeIndex;
             return (
@@ -165,7 +165,7 @@ export default function Testimonials() {
                 aria-selected={active}
                 aria-label={`Go to testimonials slide ${index + 1}`}
                 onClick={() => goToSlide(index)}
-                className={`size-2.5 rounded-full transition-colors duration-300 ${
+                className={`w-2 h-2 min-w-2 min-h-2 cursor-pointer rounded-full ${
                   active
                     ? "bg-[var(--brand-color)]"
                     : "bg-black/15 hover:bg-black/25"
