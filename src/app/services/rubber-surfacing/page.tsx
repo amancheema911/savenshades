@@ -473,7 +473,7 @@ export default function RubberSurfacingPage() {
                 size="section"
                 tone="dark"
                 eyebrow="KEEP EXPLORING"
-                title={<>Related<span className="text-[var(--brand-color)]">Systems.</span></>}
+                title={<>Related <span className="text-[var(--brand-color)]">Systems.</span></>}
                 description="Explore other flooring systems that pair well with active or mixed-use spaces."
               />
             </div>

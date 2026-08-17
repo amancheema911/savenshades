@@ -188,7 +188,7 @@ export default function Navbar() {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
-        className={`fixed inset-y-0 right-0 z-50 flex w-[min(86vw,320px)] flex-col border-l border-white/10 bg-[var(--black)] shadow-lg backdrop-blur-xl transition-transform duration-300 ease-out sm:w-[min(70vw,380px)] xl:hidden ${
+        className={`fixed inset-y-0 right-0 z-999 flex w-[min(86vw,320px)] flex-col border-l border-white/10 bg-[var(--black)] shadow-lg backdrop-blur-xl transition-transform duration-300 ease-out sm:w-[min(70vw,380px)] xl:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

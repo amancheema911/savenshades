@@ -178,3 +178,9 @@ body {
     animation: none;
   }
 }
+
+@media (max-width: 575px) {
+  body {
+    font-size: 14px;
+  }
+}

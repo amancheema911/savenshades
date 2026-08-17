@@ -300,7 +300,7 @@ export default function FlooringQuoteForm({
               </Button>
             </div>
 
-            <p className={`flex items-center justify-center gap-1.5 pt-0.5 text-center text-[0.72rem] ${styles.footer}`}>
+            <p className={`flex justify-center gap-1.5 pt-0.5 text-center text-[0.72rem] ${styles.footer}`}>
               <LockIcon />
               No obligation. Your information is safe and secure.
             </p>

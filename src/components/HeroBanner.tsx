@@ -57,7 +57,7 @@ export default function HeroBanner() {
       <div className="relative z-10 flex flex-col bg-[var(--black)] sm:bg-transparent">
         <div className="container mx-auto flex flex-1 flex-col justify-center px-4 pt-28 pb-10 sm:px-6 sm:pt-30 sm:pb-1 lg:px-8 lg:pt-30">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
-            <div className="animate-hero-rise lg:col-span-7">
+            <div className="sm:animate-hero-rise lg:col-span-7">
               <div>
 
                 <div className="max-w-xl">

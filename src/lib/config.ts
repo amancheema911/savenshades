@@ -1,6 +1,6 @@
 export const APP_NAME = "Seven Shades";
 export const BASE_URL = "https://savenshades.vercel.app";
-//export const BASE_URL = "http://localhost:3000";
+//export const BASE_URL = "http://localhost:3001";
 
 export const contactInfo = {
     logo: `/saven-shade-logo.webp`,
